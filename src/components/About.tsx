@@ -65,7 +65,7 @@ const About = () => {
               for building intelligent systems that solve real-world problems.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              From enterprise-grade RAG systems like <span className="text-foreground">MetIQ</span> 
+              From building intelligent platforms like <span className="text-foreground">Ai-Career Platform</span> 
               I have Built Ai powered Application for detecting Fake Institution and Fake Cerificate
               detection models achieving 94% accuracy, I specialize in deep learning, computer vision, and NLP. I have exprence in developing and deploying Ai Full Stack applications.
             </p>

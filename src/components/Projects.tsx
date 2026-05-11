@@ -157,7 +157,7 @@ const ProjectCard = ({ repo, index }: { repo: Repo; index: number }) => {
         </div>
       </div>
       <p className="text-muted-foreground text-xs mb-3 line-clamp-2">
-        {repo.description || "An AI/ML project by Rushikesh Kadam."}
+        {repo.description || "An AI/ML & Full-Stack Development project by Aniket Suryawanshi."}
       </p>
       <div className="flex flex-wrap gap-1.5 mb-4">
         {repo.language && (

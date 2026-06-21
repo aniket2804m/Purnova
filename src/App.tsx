@@ -22,6 +22,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import CursorGlow from "@/components/CursorGlow";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Team = lazy(() => import("@/components/Team/Team"));
 
@@ -44,6 +45,7 @@ const App = () => {
 
         <BrowserRouter>
           <LoadingScreen isLoading={isLoading} />
+          {/* <ScrollToTop /> */}
           <CursorGlow />
           <ScrollProgress />
 

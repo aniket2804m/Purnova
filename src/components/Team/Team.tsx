@@ -214,7 +214,7 @@ const Team = () => {
     duration: 0.8,
     ease: "easeOut",
   }}
-  className="text-5xl font-bold text-center mb-5 text-black mt-8"
+  className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-black mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5"
 >
   Meet The Purnovians
 </motion.h2>
@@ -222,14 +222,14 @@ const Team = () => {
 
 <div
   ref={shootersRef}
-  className="mb-10 py-1"
+  className="mb-10 py-6 px-5 sm:px-6 md:px-8 lg:px-0"
 >
-  <div className="grid lg:grid-cols-2 gap-10 items-center">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
 
     {/* LEFT */}
 
     <motion.div
-      className="shooters-left lg:pl-16 md:pl-8"
+      className="shooters-left text-center lg:text-left lg:pl-16 md:pl-8"
       initial={{ x: -100, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
@@ -242,7 +242,7 @@ const Team = () => {
           duration: 5,
           type: "spring",
         }}
-        className="text-[#f5c400] text-3xl md:text-3xl font-black leading-none"
+        className="text-[#f5c400] text-3xl sm:text-4xl font-black leading-none"
       >
         😎
       </motion.h3>
@@ -251,7 +251,7 @@ const Team = () => {
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 4 }}
-        className="text-5xl md:text-3xl font-black text-black leading-[0.95]"
+        className="mt-3 text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight lg:leading-[0.95]"
       >
         Faces Behind
         <br />
@@ -267,7 +267,7 @@ const Team = () => {
               repeat: Infinity,
               duration: 3,
             }}
-            className="absolute -bottom-3 left-0 h-2 bg-[#f5c400]"
+            className="absolute -bottom-2 md:-bottom-3 left-0 h-2 bg-[#f5c400]"
           />
         </span>
       </motion.h2>
@@ -280,21 +280,38 @@ const Team = () => {
       initial={{ x: 100, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        duration: 1.2,
+        delay: 0.3,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       <motion.p
         initial={{ y: 40 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 1 }}
-        className="text-xl md:text-2xl text-black leading-relaxed font-medium ml-[-50px] lg:-ml-24"
+        className="
+          text-base
+          sm:text-lg
+          md:text-xl
+          lg:text-2xl
+          text-black
+          leading-relaxed
+          font-medium
+          ml-0
+          md:ml-0
+          lg:-ml-24
+          text-center
+          lg:text-left
+        "
       >
         Meet the{" "}
 
         <span
-  className="relative inline-block font-bold text-[#f5c400] cursor-pointer"
-  onMouseEnter={() => setShowPurnovaImg(true)}
-  onMouseLeave={() => setShowPurnovaImg(false)}
->
+          className="relative inline-block font-bold text-[#f5c400] cursor-pointer"
+          onMouseEnter={() => setShowPurnovaImg(true)}
+          onMouseLeave={() => setShowPurnovaImg(false)}
+        >
           Purnovians
 
           <motion.span
@@ -310,7 +327,9 @@ const Team = () => {
         </span>
 
         {" "}
-        the strategists, designers, and brand architects who made it happen. The people your customers will never know by name, but whose thinking shapes every perception they hold of you.
+        the strategists, designers, and brand architects who made it happen.
+        The people your customers will never know by name, but whose thinking
+        shapes every perception they hold of you.
       </motion.p>
     </motion.div>
 
@@ -330,45 +349,68 @@ const Team = () => {
         </div>
       </div>
 
+{/* Purnova Team Img */}
+     <AnimatePresence>
+  {showPurnovaImg && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 pointer-events-none"
+    >
+      {/* Glowing Border Container */}
+      <div
+        className="
+          relative
+          w-full
+          h-full
+          max-w-[2000px]
+          max-h-[1000px]
+          p-[3px]
+          overflow-hidden
+          rounded-xl
+          md:rounded-2xl
+          shadow-2xl
+          border
+          border-white/5
+          flex
+          items-center
+          justify-center
+        "
+      >
+        {/* Rotating Light Border */}
+        <div
+          className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
+          style={{
+            background:
+              "conic-gradient(from 0deg, transparent 30%, #3b82f6 45%, #8b5cf6 55%, #ec4899 65%, transparent 80%)",
+          }}
+        />
 
-      <AnimatePresence>
-        {showPurnovaImg && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-[9999] bg-black/70 flex items-center justify-center pointer-events-none"
-          >
-            {/* Glowing Border Container - Full Screen with 10px Gap on 4 sides */}
-            <div 
-              className="fixed inset-[10px] p-[3px] overflow-hidden rounded-2xl shadow-2xl flex items-center justify-center border border-white/5"
-            >
-              {/* Rotating Light Border Layer */}
-              <div 
-                className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
-                style={{
-                  background: "conic-gradient(from 0deg, transparent 30%, #3b82f6 45%, #8b5cf6 55%, #ec4899 65%, transparent 80%)",
-                }}
-              />
-              
-              {/* Inner Container holding the Image */}
-              <div className="relative w-full h-full bg-[#0a0a0a] rounded-[13px] overflow-hidden flex items-center justify-center z-10">
-                <motion.img
-                  src={img1}
-                  alt="Purnova Team"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Team Image */}
+        <div className="relative z-10 w-full h-full bg-[#0a0a0a] rounded-[10px] md:rounded-[13px] overflow-hidden flex items-center justify-center">
+          <motion.img
+            src={img1}
+            alt="Purnova Team"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="
+              w-full
+              h-full
+              object-contain
+              select-none
+            "
+          />
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
+{/* Click img Fullscreen Img */}
       <AnimatePresence>
   {fullscreenImage && (
     <motion.div

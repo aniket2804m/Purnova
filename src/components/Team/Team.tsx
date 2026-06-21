@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 // Founder
 import img from "../../img/role/rushi sir (1).png"

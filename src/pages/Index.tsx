@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
+// import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import NeuralShowcase from "@/components/NeuralShowcase";
 import Publications from "@/components/Publications";
@@ -20,7 +20,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1800);
+    const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -33,7 +33,7 @@ const Index = () => {
         <Navbar />
         <Hero />
         <About />
-        <Skills />
+        {/* <Skills /> */}
         <Projects />
         <NeuralShowcase />
         <Publications />

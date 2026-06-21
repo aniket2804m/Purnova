@@ -65,18 +65,17 @@ const NeuralShowcase = () => {
       // Draw nodes
       nodes.forEach((node, i) => {
         const pulse = Math.sin(frame * 0.04 + i) * 0.3 + 0.7;
-        // Glow
-        const grd = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, 15);
-        grd.addColorStop(0, `rgba(99, 102, 241, ${0.3 * pulse})`);
-        grd.addColorStop(1, "rgba(99, 102, 241, 0)");
+        
+        // Use a simpler but still beautiful glow
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 15, 0, Math.PI * 2);
-        ctx.fillStyle = grd;
+        ctx.arc(node.x, node.y, 10, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(99, 102, 241, ${0.15 * pulse})`;
         ctx.fill();
+
         // Core
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(139, 92, 246, ${0.6 + pulse * 0.4})`;
+        ctx.arc(node.x, node.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(139, 92, 246, ${0.7 + pulse * 0.3})`;
         ctx.fill();
       });
 

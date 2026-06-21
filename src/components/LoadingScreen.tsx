@@ -20,7 +20,7 @@ const LoadingScreen = ({ isLoading }: { isLoading: boolean }) => (
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            Aniket Suryawanshi
+            Purnova Digital Marketing
           </motion.div>
           <div className="w-48 h-0.5 bg-muted rounded-full overflow-hidden mx-auto">
             <motion.div

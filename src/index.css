@@ -126,3 +126,16 @@
   50% { opacity: 1; }
   100% { stroke-dashoffset: 0; opacity: 0.2; }
 }
+
+
+:root {
+  --tile: #f5c400;
+}
+
+.light body {
+  --tile: #f5c400;
+}
+
+.dark body {
+  --tile: #1a1a1a;
+}

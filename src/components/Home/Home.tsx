@@ -86,6 +86,7 @@ const Home = () => {
   muted
   loop
   playsInline
+  preload="none"
   initial={{ scale: 0.5, opacity: 0 }}
   animate={{ scale: 1, opacity: 1 }}
   exit={{ scale: 0.5, opacity: 0 }}
@@ -95,7 +96,7 @@ const Home = () => {
     h-[60vh]
 
     md:w-[85vw]
-    md:h-[70vh]
+    md:h-[80vh]
 
     lg:w-[90vw]
     lg:h-[85vh]
@@ -168,7 +169,14 @@ const Home = () => {
                 opacity: { duration: 0.4 },
                 filter: { repeat: Infinity, duration: 3, ease: "easeInOut" }
               }}
-              className="w-full h-full object-contain"
+              className="
+w-[90vw] h-[80vh]
+sm:w-[500px] sm:h-[700px]
+md:w-[700px] md:h-[800px]
+lg:w-[900px] lg:h-[550px]
+xl:w-[1200px] xl:h-[700px]
+object-contain
+"
             />
           </div>
         </div>
@@ -215,7 +223,7 @@ const Home = () => {
       // 5 seconds nantar auto hide
       setTimeout(() => {
         setShowVideo(false);
-      }, 10000);
+      }, 15000);
     }
   }}
   whileHover={{
@@ -285,6 +293,7 @@ const Home = () => {
                 <span className="animate-pulse">|</span>
               </span>
 
+{/* Cirlce in img */}
               <AnimatePresence mode="wait">
                 <motion.img
                   key={hovered ? "hover" : "normal"}

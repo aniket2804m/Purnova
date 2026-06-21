@@ -45,7 +45,7 @@ const App = () => {
 
         <BrowserRouter>
           <LoadingScreen isLoading={isLoading} />
-          {/* <ScrollToTop /> */}
+          <ScrollToTop />
           <CursorGlow />
           <ScrollProgress />
 

@@ -16,7 +16,7 @@ const LoadingScreen = ({ isLoading }: { isLoading: boolean }) => (
           className="text-center"
         >
           <motion.div
-            className="text-5xl font-display font-bold gradient-text mb-4"
+            className="text-xl md:text-3xl lg:text-5xl font-display font-bold gradient-text mb-4"
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >

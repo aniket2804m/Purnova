@@ -80,8 +80,8 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
                 className="group relative h-full w-full rounded-3xl bg-white/5 border border-white/10 p-[1.5px] shadow-[0_15px_35px_rgba(0,0,0,0.4)] hover:shadow-[0_25px_50px_rgba(139,92,246,0.25)] transition-shadow duration-500"
             >
                 <div
-                    style={{ transform: "translateZ(50px)", transformStyle: "preserve-3d" }}
-                    className="relative h-full w-full rounded-[22px] bg-neutral-950/60 backdrop-blur-xl overflow-hidden"
+                    style={{ transform: "translateZ(25px)", transformStyle: "preserve-3d" }}
+                    className="relative h-full w-full rounded-[20px] bg-neutral-950/60 backdrop-blur-xl overflow-hidden"
                 >
                     {/* Background Image with Parallax-ish Effect */}
                     <motion.img
@@ -89,7 +89,7 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
                         alt={service.title}
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 h-full w-full object-cover opacity-15 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-25"
+                        className="absolute inset-0 h-full w-full object-cover opacity-0.1 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-25"
                     />
 
                     {/* Overlays */}

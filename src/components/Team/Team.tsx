@@ -10,47 +10,47 @@ import clickimg1 from "../../img/Imgh/Rushi sir.jpg.jpeg"
 // Digital Growth
 import img2 from "../../img/role/saurabh sir.png"
 import imgh2 from "../../img/Imgh/Saurabh sir.jpg.jpeg"
-import clickimg2 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg2 from "../../img/Imgh/Saurabh sir.jpg.jpeg"
 
 // Brand Architect
 import img3 from "../../img/role/manager.png"
 import imgh3 from "../../img/Imgh/Pallavi.jpg.jpeg"
-import clickimg3 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg3 from "../../img/Imgh/Pallavi.jpg.jpeg"
 
 // Web Developer
 import img4 from "../../img/role/avinash.png"
 import imgh4 from "../../img/Imgh/Avinash.jpg.jpeg"
-import clickimg4 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg4 from "../../img/Imgh/Avinash.jpg.jpeg"
 
 // Visual Storyteller
 import img5 from "../../img/role/tejaa.png"
 import imgh5 from "../../img/Imgh/Tejas.jpg.jpeg"
-import clickimg5 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg5 from "../../img/Imgh/Tejas.jpg.jpeg"
 
 // Video Editor
 import img6 from "../../img/role/ritesh.png"
 import imgh6 from "../../img/Imgh/Ritesh.jpg.jpeg"
-import clickimg6 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg6 from "../../img/Imgh/Ritesh.jpg.jpeg"
 
 // Graphics designer
 import img7 from "../../img/role/rutu.png"
 import imgh7 from "../../img/Imgh/Rutu.jpg.jpeg"
-import clickimg7 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg7 from "../../img/Imgh/Rutu.jpg.jpeg"
 
 // Content Architect
 import img8 from "../../img/role/anu.png"
 import imgh8 from "../../img/Imgh/Anushka.jpg.jpeg"
-import clickimg8 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg8 from "../../img/Imgh/Anushka.jpg.jpeg"
 
 // Web developer
 import img9 from "../../img/role/aniket (1).png"
 import imgh9 from "../../img/Imgh/Aniket.jpg.jpeg"
-import clickimg9 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg9 from "../../img/Imgh/Aniket.jpg.jpeg"
 
 // video editor
 import img10 from "../../img/role/pratap.png"
 import imgh10 from "../../img/Imgh/Pratap.jpg.jpeg"
-import clickimg10 from "../../img/Imgh/Rushi sir.jpg.jpeg"
+import clickimg10 from "../../img/Imgh/Pratap.jpg.jpeg"
 
 import img1 from "../../img/team/ai.png"
 
@@ -96,7 +96,7 @@ const Team = () => {
       role: "Brand Architect",
       image: img3,
       hoverImage: imgh3,
-      clickimg: clickimg1,
+      clickimg: clickimg3,
       shortDesc:
         "My mind multitasks so your brand doesn't have to...",
       fullDesc:
@@ -108,7 +108,7 @@ const Team = () => {
       role: "Digital Growth Manager",
       image: img2,
       hoverImage: imgh2,
-      clickimg: clickimg1,
+      clickimg: clickimg2,
       shortDesc:
         "I don't talk strategy. I deliver it...",
       fullDesc:
@@ -120,7 +120,7 @@ const Team = () => {
       role: "Graphic Designer",
       image: img7,
       hoverImage: imgh7,
-      clickimg: clickimg1,
+      clickimg: clickimg7,
       shortDesc:
         "I design for the years, not the algorithm...",
       fullDesc:
@@ -132,7 +132,7 @@ const Team = () => {
       role: "Web Developer",
       image: img9,
       hoverImage: imgh9,
-      clickimg: clickimg1,
+      clickimg: clickimg9,
       shortDesc:
         "Tell me the task. I'll skip the drama...",
       fullDesc:
@@ -144,7 +144,7 @@ const Team = () => {
       role: "Content Architect ",
       image: img8,
       hoverImage: imgh8,
-      clickimg: clickimg1,
+      clickimg: clickimg8,
       shortDesc:
         "Every brand has a story. I just go looking for it...",
       fullDesc:
@@ -156,7 +156,7 @@ const Team = () => {
       role: "Visual Storyteller",
       image: img5,
       hoverImage: imgh5,
-      clickimg: clickimg1,
+      clickimg: clickimg5,
       shortDesc:
         "I don't find the moment. The moment finds me...",
       fullDesc:
@@ -168,7 +168,7 @@ const Team = () => {
       role: "Video Editor",
       image: img10,
       hoverImage: imgh10,
-      clickimg: clickimg1,
+      clickimg: clickimg10,
       shortDesc:
         "Keep it real, or don't keep it at all...",
       fullDesc:
@@ -180,7 +180,7 @@ const Team = () => {
       role: "Video Editor",
       image: img6,
       hoverImage: imgh6,
-      clickimg: clickimg1,
+      clickimg: clickimg6,
       shortDesc:
         "I don't edit videos. I edit feelings into them...",
       fullDesc:
@@ -192,7 +192,7 @@ const Team = () => {
       role: "Web Developer",
       image: img4,
       hoverImage: imgh4,
-      clickimg: clickimg1,
+      clickimg: clickimg4,
       shortDesc:
         "Difficult is just a feature I haven't built yet...",
       fullDesc:
@@ -250,7 +250,7 @@ const Team = () => {
       <motion.h2
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 4 }}
+        transition={{ duration: 2 }}
         className="mt-3 text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight lg:leading-[0.95]"
       >
         Faces Behind

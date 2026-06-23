@@ -60,18 +60,18 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 sm:px-6 md:px-8 pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full pointer-events-none">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`w-full pointer-events-auto transition-all duration-500 ease-in-out relative ${
+        className={`w-full pointer-events-auto transition-all duration-300 ease-in-out border-b bg-white border-neutral-200/80 ${
           scrolled
-            ? "mt-4 max-w-5xl rounded-full bg-background/80 border border-white/10 backdrop-blur-xl py-3 px-6 shadow-[0_12px_40px_rgba(0,0,0,0.5)] shadow-primary/5"
-            : "max-w-7xl py-6 px-4 bg-transparent border-b border-transparent"
+            ? "py-3 shadow-md"
+            : "py-5"
         }`}
       >
-        <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           {/* Logo Brand */}
           <Link
             to="/"
@@ -81,9 +81,9 @@ const Navbar = () => {
             <img
               src={logo}
               alt="PURNOVA Logo"
-              className="w-24 h-9 object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]"
+              className="w-35 h-12 object-contain transition-all duration-300 group-hover:scale-105 bg-black px-3 py-1.5 rounded-xl shadow-sm"
             />
-            <div className="absolute -inset-2 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-full -z-10" />
+            <div className="absolute -inset-2 bg-yellow-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-full -z-10" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -94,8 +94,8 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`relative px-4 py-2 text-sm font-semibold transition-colors duration-300 rounded-full flex items-center ${
-                    isActive ? "text-primary" : "text-muted-foreground hover:text-white"
+                  className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-full flex items-center ${
+                    isActive ? "text-yellow-600" : "text-neutral-700 hover:text-black"
                   }`}
                   onMouseEnter={() => setHoveredPath(link.href)}
                   onMouseLeave={() => setHoveredPath(null)}
@@ -104,7 +104,7 @@ const Navbar = () => {
                   {hoveredPath === link.href && (
                     <motion.span
                       layoutId="hovered-pill"
-                      className="absolute inset-0 bg-white/5 rounded-full -z-10"
+                      className="absolute inset-0 bg-yellow-500/10 rounded-full -z-10"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -115,7 +115,7 @@ const Navbar = () => {
                   {isActive && (
                     <motion.span
                       layoutId="active-dot"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,1)]"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -129,7 +129,7 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Button
                 asChild
-                className="rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold px-6 border-none hover:shadow-[0_0_25px_rgba(99,102,241,0.4)] transition-all duration-300 group/btn"
+                className="rounded-full bg-neutral-950 text-white hover:bg-yellow-500 hover:text-neutral-950 font-bold px-6 border-none hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all duration-300 group/btn"
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Book a Call
@@ -142,10 +142,10 @@ const Navbar = () => {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-full hover:bg-white/5 transition-colors relative flex items-center justify-center w-10 h-10 border border-white/5 bg-black/20"
+            className="lg:hidden p-2 rounded-full hover:bg-neutral-100 transition-colors relative flex items-center justify-center w-10 h-10 border border-neutral-200 bg-white"
             aria-label="Toggle Menu"
           >
-            <svg width="18" height="18" viewBox="0 0 23 23" className="text-white">
+            <svg width="18" height="18" viewBox="0 0 23 23" className="text-neutral-900">
               <motion.path
                 fill="transparent"
                 strokeWidth="2.5"
@@ -196,7 +196,7 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="absolute top-[calc(100%+12px)] left-4 right-4 bg-background/95 border border-white/10 backdrop-blur-2xl p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] lg:hidden flex flex-col gap-4 pointer-events-auto"
+            className="absolute top-[calc(100%+8px)] left-4 right-4 bg-white/95 border border-neutral-200/80 backdrop-blur-2xl p-5 rounded-2xl shadow-lg lg:hidden flex flex-col gap-4 pointer-events-auto"
           >
             <div className="flex flex-col gap-1.5">
               {navLinks.map((link) => {
@@ -214,14 +214,14 @@ const Navbar = () => {
                       onClick={() => setMobileOpen(false)}
                       className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${
                         isActive
-                          ? "bg-primary/10 text-primary border border-primary/20"
-                          : "text-muted-foreground hover:text-white hover:bg-white/5 border border-transparent"
+                          ? "bg-yellow-500/10 text-yellow-600 border border-yellow-500/20"
+                          : "text-neutral-700 hover:text-black hover:bg-neutral-100 border border-transparent"
                       }`}
                     >
                       <Icon className="w-5 h-5" />
                       <span className="font-semibold text-base">{link.label}</span>
                       {isActive && (
-                        <span className="ml-auto w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(99,102,241,1)]" />
+                        <span className="ml-auto w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,1)]" />
                       )}
                     </Link>
                   </motion.div>
@@ -229,10 +229,10 @@ const Navbar = () => {
               })}
             </div>
 
-            <motion.div variants={itemVariants} className="pt-3 border-t border-white/5">
+            <motion.div variants={itemVariants} className="pt-3 border-t border-neutral-100">
               <Button
                 asChild
-                className="w-full rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold py-6 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-300"
+                className="w-full rounded-xl bg-neutral-950 text-white font-bold py-6 hover:bg-yellow-500 hover:text-neutral-950 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300"
               >
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2">
                   Get Started

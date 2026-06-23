@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 // import { Github, Linkedin, ArrowDown, Download, Bold } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ParticleBackground from "../ParticleBackground";
+// import ParticleBackground from "../ParticleBackground";
 import { motion, AnimatePresence } from "framer-motion";
 
 import video from "../../img/video.mp4";
+
+import bgImg from "../../img/bgImg1.png"
 
 import { roles } from "../data/Home"
 
@@ -185,94 +187,105 @@ object-contain
 </AnimatePresence>
 
       <section
-        id="home"
-        className={`relative min-h-screen flex items-center justify-center overflow-hidden mt-10 `}
-      >
-        <ParticleBackground />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.2,
-                },
-              },
-            }}
-          >
-
-
-
-            <motion.h1
-  onHoverStart={() => {
-    if (window.innerWidth >= 768) {
-      setShowVideo(true);
-    }
-  }}
-  onHoverEnd={() => {
-    if (window.innerWidth >= 768) {
-      setShowVideo(false);
-    }
-  }}
-  onClick={() => {
-    if (window.innerWidth < 768) {
-      setShowVideo(true);
-
-      // 5 seconds nantar auto hide
-      setTimeout(() => {
-        setShowVideo(false);
-      }, 15000);
-    }
-  }}
-  whileHover={{
-    scale: 1.08,
-    textShadow: "0 0 30px rgba(59,130,246,0.8)",
-  }}
-  className="
-    text-5xl
-    md:text-7xl
-    lg:text-8xl
-    font-extrabold
-    mb-15
-    mt-4
-    leading-tight
-    cursor-pointer
-  "
+  id="home"
+  className="relative h-[140vh] flex items-center justify-center overflow-hidden mt-20"
 >
-  PURNOVA
-</motion.h1>
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-10">
+    <img
+      src={bgImg}
+      alt="Background"
+      className="w-full h-full object-cover object-center"
+    />
 
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="max-w-[700px] text-white text-base sm:text-lg md:text-xl lg:text-base tracking-[0.4em] uppercase mt-5 font-semibold"
-            >
-               Where brands become Legends
-             
-            </motion.p>
+    {/* Optional Overlay */}
+    <div className="absolute inset-0 bg-white/5"></div>
+  </div>
 
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-lg md:text-2xl text-gray-300 mb-15 mt-5 max-w-2xl mx-auto"
-            >
-              We do not decorate brands. We architect transformations reaching into the space between what you are today and everything you are destined to become
-            </motion.p>
+  {/* Content */}
+  
+  <div className="relative z-10 text-center text-black px-4 max-w-4xl mx-auto">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+    >
+      {/* ----- तुझा बाकीचा code जसाच्या तसा ----- */}
 
+      <motion.h1
+        onHoverStart={() => {
+          if (window.innerWidth >= 768) {
+            setShowVideo(true);
+          }
+        }}
+        onHoverEnd={() => {
+          if (window.innerWidth >= 768) {
+            setShowVideo(false);
+          }
+        }}
+        onClick={() => {
+          if (window.innerWidth < 768) {
+            setShowVideo(true);
 
-            <motion.div
+            setTimeout(() => {
+              setShowVideo(false);
+            }, 15000);
+          }
+        }}
+        whileHover={{
+          scale: 1.08,
+          textShadow: "0 0 30px rgba(59,130,246,0.8)",
+        }}
+        className="
+          text-5xl
+          md:text-7xl
+          lg:text-8xl
+          font-extrabold
+          mb-15
+          mt-4
+          leading-tight
+          cursor-pointer
+        "
+      >
+        PURNOVA
+      </motion.h1>
+
+      <motion.p
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        className="text-black text-xl sm:text-lg md:text-xl lg:text-xl tracking-[0.4em] text-center uppercase mt-10 font-semibold"
+      >
+        Where brands become Legends
+      </motion.p>
+
+      <motion.p
+        variants={{
+          hidden: { opacity: 0, y: 30 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        className="text-lg md:text-3xl lg:text-4xl text-black mt-10 max-w-4xl mx-auto font-medium mb-10"
+      >
+        We do not decorate brands. We architect transformations reaching into
+        the space between what you are today and everything you are destined to
+        become
+      </motion.p>
+
+      <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{
                 duration: 3,
                 repeat: Infinity,
               }}
-              className="flex items-center justify-center gap-5 mt-10 "
+              className="flex items-center justify-center gap-5 mt-20"
             >
 
               <span
@@ -280,10 +293,7 @@ object-contain
       text-2xl
       md:text-3xl
       font-bold
-      bg-gradient-to-r
-      from-cyan-400
-      via-blue-500
-      to-purple-500
+      bg-black
       bg-clip-text
       text-transparent
       drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]
@@ -319,8 +329,7 @@ object-contain
   cursor-pointer
   rounded-full
   border-2
-  border-cyan-400
-  shadow-[0_0_15px_#22d3ee,0_0_30px_#22d3ee]
+  bg-white
 "
                   onMouseEnter={() => {
                     if (window.innerWidth >= 1024) {
@@ -346,14 +355,10 @@ object-contain
 
             </motion.div>
 
+    </motion.div>
+  </div>
+</section>
 
-           
-
-          </motion.div>
-        </div>
-
-
-      </section>
     </div>
   )
 }

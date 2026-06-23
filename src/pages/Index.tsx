@@ -3,12 +3,12 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 // import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
+// import Projects from "@/components/Projects";
 import NeuralShowcase from "@/components/NeuralShowcase";
-import Publications from "@/components/Publications";
-import Timeline from "@/components/Timeline";
-import Certifications from "@/components/Certifications";
-import GitHubStats from "@/components/GitHubStats";
+// import Publications from "@/components/Publications";
+// import Timeline from "@/components/Timeline";
+// import Certifications from "@/components/Certifications";
+// import GitHubStats from "@/components/GitHubStats";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -34,12 +34,12 @@ const Index = () => {
         <Hero />
         <About />
         {/* <Skills /> */}
-        <Projects />
+        {/* <Projects /> */}
         <NeuralShowcase />
-        <Publications />
-        <Timeline />
-        <Certifications />
-        <GitHubStats />
+        {/* <Publications /> */}
+        {/* <Timeline /> */}
+        {/* <Certifications /> */}
+        {/* <GitHubStats /> */}
         <Contact />
         <Footer />
       </div>

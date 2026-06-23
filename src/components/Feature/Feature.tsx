@@ -10,6 +10,8 @@ const Feature = () => {
   // Triple the brands for infinite scrolling
   const infiniteBrands = [...brands, ...brands];
 
+  const CARD_WIDTH = 210;
+
   return (
     <section className="img-slider">
       <div className="top">
@@ -30,12 +32,12 @@ const Feature = () => {
           animate={isPaused ? "paused" : "animate"}
           variants={{
             animate: {
-              x: [0, -1200],
+               x: [0, -(brands.length * CARD_WIDTH)],
               transition: {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 20,
                   ease: "linear",
                 },
               },

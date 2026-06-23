@@ -10,22 +10,16 @@ import NotFound from "./pages/NotFound";
 
 const Navbar = lazy(() => import("@/components/Navbar"));
 const Hero = lazy(() => import("@/components/Hero"));
-import About from "@/components/About";
-
-import NeuralShowcase from "@/components/NeuralShowcase";
-
-import Timeline from "@/components/Timeline";
-
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import LoadingScreen from "@/components/LoadingScreen";
-import ScrollProgress from "@/components/ScrollProgress";
-import BackToTop from "@/components/BackToTop";
-import CursorGlow from "@/components/CursorGlow";
-import ScrollToTop from "./components/ScrollToTop";
+const About = lazy(() => import("@/components/About"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+const LoadingScreen = lazy(() => import("@/components/LoadingScreen"));
+const ScrollProgress = lazy(() => import("@/components/ScrollProgress"));
+const BackToTop = lazy(() => import("@/components/BackToTop"));
+const CursorGlow = lazy(() => import("@/components/CursorGlow"));
+const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
 
 const Team = lazy(() => import("@/components/Team/Team"));
-
 
 const queryClient = new QueryClient();
 
@@ -57,8 +51,6 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/about" element={<About />} />
-              <Route path="/neural-showcase" element={<NeuralShowcase />} />
-              <Route path="/timeline" element={<Timeline />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/team" element={<Team />} />
               <Route path="*" element={<NotFound />} />

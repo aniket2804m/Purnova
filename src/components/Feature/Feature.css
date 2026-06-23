@@ -62,8 +62,8 @@
 /* CARD LOOK */
 .feature-card {
     flex: 0 0 179px;
-    width: 179px;
-    height: 67px;
+    width: 259px;
+    height: 80px;
     background: #ffffff;
     border: 1.5px solid rgba(var(--primary), 0.1);
     border-radius: 12px;

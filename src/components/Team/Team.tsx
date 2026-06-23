@@ -222,7 +222,7 @@ const Team = () => {
 
 <div
   ref={shootersRef}
-  className="mb-10 py-6 px-5 sm:px-6 md:px-8 lg:px-0"
+  className="mb-5 py-3 px-5 sm:px-6 md:px-8 lg:px-0"
 >
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
 
@@ -308,7 +308,7 @@ const Team = () => {
         Meet the{" "}
 
         <span
-          className="relative inline-block font-bold text-[#f5c400] cursor-pointer"
+          className="relative inline-block md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#f5c400] cursor-pointer"
           onMouseEnter={() => setShowPurnovaImg(true)}
           onMouseLeave={() => setShowPurnovaImg(false)}
         >

@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import logo from "../img/logo.png";
+
 import {
   Facebook,
   Instagram,
@@ -80,6 +83,11 @@ const Footer = () => {
           {/* Company */}
           <div className="footer-col">
             <h2 className="text-3xl font-extrabold mb-4">
+              <img
+          src={logo}
+          alt="logo"
+          className="w-60 h-50 object-cover object-center opacity-95 bg-black hover:bg-yellow-500 rounded-md mb-4"
+        />
               <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
                 Purnova Digital
               </span>

@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail, Send, Phone, MapPin, MessageCircle, FileText } from "lucide-react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import bgImg2 from "../img/bgImg1.png";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const { ref, isVisible } = useScrollReveal();
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
 
@@ -37,76 +43,156 @@ const Contact = () => {
   };
 
   const contactLinks = [
-    { icon: Github, label: "GitHub", href: "https://github.com/aniket2804m", text: "aniket2804m" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/aniket-suryawanshi-74a90a257", text: "Aniket Suryawanshi" },
     { icon: Mail, label: "Email", href: "mailto:suryawanshianiket7576@gmail.com", text: "suryawanshianiket7576@gmail.com" },
     { icon: Phone, label: "Phone", href: "tel:+919307736352", text: "+91 9307736352" },
     { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919307736352", text: "Chat on WhatsApp" },
     { icon: MapPin, label: "Location", href: "#", text: "Pune, India" },
   ];
 
-  return (
-    <section id="contact" className="py-24 px-4" ref={ref}>
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-3">Get in Touch</p>
-          <h2 className="text-3xl md:text-5xl font-bold font-display">
-            Let's <span className="gradient-text">Connect</span>
-          </h2>
-        </motion.div>
+  // GSAP animations for Header, Left links, and Right Form
+  useEffect(() => {
+    const leftItems = sectionRef.current?.querySelectorAll(".contact-link-item");
+    const rightForm = sectionRef.current?.querySelector(".form-container-card");
+    const header = sectionRef.current?.querySelector(".contact-header");
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
-          >
-            <p className="text-muted-foreground mb-4">
+    const ctx = gsap.context(() => {
+      // Header animation
+      if (header) {
+        gsap.fromTo(
+          header,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 85%"
+            }
+          }
+        );
+      }
+
+      // Left links stagger animation
+      if (leftItems && leftItems.length > 0) {
+        gsap.fromTo(
+          leftItems,
+          { opacity: 0, x: -40, scale: 0.95 },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%"
+            }
+          }
+        );
+      }
+
+      // Right form slide in
+      if (rightForm) {
+        gsap.fromTo(
+          rightForm,
+          { opacity: 0, x: 40, scale: 0.95 },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%"
+            }
+          }
+        );
+      }
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="contact" className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-white" ref={sectionRef}>
+      {/* Background Image & Light Yellow Glow Blend */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={bgImg2}
+          alt="Background Image"
+          className="w-full h-full object-cover object-center opacity-95"
+        />
+        <div className="absolute inset-0 bg-white/30"></div>
+      </div>
+
+      {/* Decorative Golden / Yellow Radial Glows for premium depth */}
+      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-full bg-yellow-400/25 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-amber-500/20 blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto z-10">
+        {/* Heading Section */}
+        <div className="contact-header text-center mb-16 opacity-0">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md mb-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
+            Get in Touch
+          </span>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
+            Let's{" "}
+            <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
+              Connect
+            </span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column: Info & Links */}
+          <div className="space-y-4">
+            <p className="contact-link-item text-black font-bold text-lg opacity-90 mb-4 opacity-0">
               Interested in collaborating on AI projects, have a question, or just want to say hello? I'd love to hear from you.
             </p>
-            <div className="flex items-center gap-2 mb-6 p-3 rounded-lg bg-primary/5 border border-primary/10">
-              <FileText className="w-4 h-4 text-primary shrink-0" />
-              <p className="text-sm text-muted-foreground">
-                <span className="text-foreground font-medium">Looking for my resume?</span> Drop a message and I'll share it with you!
+
+            {/* Resume helper box */}
+            <div className="contact-link-item flex items-center gap-3 mb-6 p-4 rounded-xl bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md opacity-0">
+              <FileText className="w-5 h-5 text-amber-600 shrink-0" />
+              <p className="text-sm text-black font-semibold">
+                Looking for my resume? <span className="text-amber-700 underline cursor-pointer">Drop a message</span> and I'll share it with you!
               </p>
             </div>
+
             {contactLinks.map((item, i) => (
               <a
                 key={i}
                 href={item.href}
                 target={item.href !== "#" ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 glass rounded-xl p-4 hover:bg-card/60 transition-all group"
+                className="contact-link-item flex items-center gap-4 bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md rounded-2xl p-4 hover:bg-neutral-900/60 hover:border-yellow-500 hover:shadow-[0_10px_30px_rgba(234,179,8,0.15)] transition-all duration-300 group opacity-0"
               >
-                <div className="p-2.5 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-5 h-5 text-primary" />
+                <div className="p-3 rounded-xl bg-black text-yellow-400 group-hover:bg-yellow-400 group-hover:text-black transition-all duration-300 shadow-md">
+                  <item.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">{item.label}</p>
-                  <p className="text-sm text-foreground font-medium">{item.text}</p>
+                  <p className="text-xs text-black/60 font-bold group-hover:text-yellow-400/80 transition-colors duration-300">{item.label}</p>
+                  <p className="text-sm text-black font-extrabold group-hover:text-white transition-colors duration-300">{item.text}</p>
                 </div>
               </a>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.form
-            initial={{ opacity: 0, x: 30 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          {/* Right Column: Contact Form */}
+          <form
             onSubmit={handleSubmit}
-            className="glass rounded-xl p-6 space-y-4"
+            className="form-container-card bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md rounded-3xl p-8 space-y-6 hover:bg-neutral-800/15 hover:shadow-lg transition-all duration-500 opacity-0"
           >
             <Input
               placeholder="Your Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="bg-background/50 border-border/50 focus:border-primary/50"
+              className="bg-white/50 border-neutral-400/30 text-black placeholder:text-black/45 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 rounded-2xl py-6 font-bold shadow-sm"
               maxLength={100}
             />
             <Input
@@ -114,25 +200,28 @@ const Contact = () => {
               placeholder="Your Email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="bg-background/50 border-border/50 focus:border-primary/50"
+              className="bg-white/50 border-neutral-400/30 text-black placeholder:text-black/45 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 rounded-2xl py-6 font-bold shadow-sm"
               maxLength={255}
             />
             <Textarea
               placeholder="Your Message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="bg-background/50 border-border/50 focus:border-primary/50 min-h-[120px]"
+              className="bg-white/50 border-neutral-400/30 text-black placeholder:text-black/45 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 rounded-2xl font-bold min-h-[140px] shadow-sm"
               maxLength={1000}
             />
-            <Button
+
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={sending}
-              className="w-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-display gap-2"
+              className="w-full bg-black text-white hover:bg-yellow-400 hover:text-black py-4 rounded-2xl font-bold text-base flex gap-2 items-center justify-center transition-all duration-300 border border-yellow-500/20 shadow-md disabled:opacity-50"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-5 h-5" />
               {sending ? "Sending..." : "Send Message"}
-            </Button>
-          </motion.form>
+            </motion.button>
+          </form>
         </div>
       </div>
     </section>

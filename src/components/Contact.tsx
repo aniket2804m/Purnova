@@ -160,7 +160,7 @@ const Contact = () => {
             <div className="contact-link-item flex items-center gap-3 mb-6 p-4 rounded-xl bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md opacity-0">
               <FileText className="w-5 h-5 text-amber-600 shrink-0" />
               <p className="text-sm text-black font-semibold">
-                Looking for my resume? <span className="text-amber-700 underline cursor-pointer">Drop a message</span> and I'll share it with you!
+                Looking for ? <span className="text-amber-700 underline cursor-pointer">Drop a message</span> and I'll share it with you!
               </p>
             </div>
 

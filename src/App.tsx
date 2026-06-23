@@ -18,6 +18,7 @@ const ScrollProgress = lazy(() => import("@/components/ScrollProgress"));
 const BackToTop = lazy(() => import("@/components/BackToTop"));
 const CursorGlow = lazy(() => import("@/components/CursorGlow"));
 const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
+const Work = lazy(() => import("@/components/Work/Work"));
 
 const Team = lazy(() => import("@/components/Team/Team"));
 
@@ -53,6 +54,7 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/team" element={<Team />} />
+              <Route path="/work" element={<Work />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

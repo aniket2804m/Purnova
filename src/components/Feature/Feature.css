@@ -1,6 +1,6 @@
 /* SECTION */
 .img-slider {
-    background: #ffffff;
+    background: black;
     padding: 30px 0;
     overflow: hidden;
     position: relative;
@@ -23,7 +23,7 @@
     font-size: 2rem;
     font-weight: 800;
     font-family: 'Space Grotesk', sans-serif;
-    color: #1a1a1a;
+    color: white;
     letter-spacing: -0.02em;
 }
 
@@ -64,7 +64,6 @@
     flex: 0 0 179px;
     width: 259px;
     height: 80px;
-    background: #ffffff;
     border: 1.5px solid rgba(var(--primary), 0.1);
     border-radius: 12px;
 

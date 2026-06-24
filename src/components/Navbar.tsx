@@ -82,7 +82,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="PURNOVA Logo"
-              className="w-35 h-12 object-contain transition-all duration-300 group-hover:scale-105 bg-black px-3 py-1.5 rounded-xl shadow-sm"
+              className="w-35 h-12 object-contain transition-all duration-300 group-hover:scale-105 px-3 py-1.5 rounded-xl shadow-sm"
             />
             <div className="absolute -inset-2 bg-yellow-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-full -z-10" />
           </Link>

@@ -12,21 +12,21 @@ import PratapImg from "../../img/Imgh/Pratap.jpg.jpeg";
 
 const testimonials = [
   {
-    name: "Tejas Patil",
+    name: "Tejas",
     company: "E-Commerce Founder",
     image: TejasImg,
     review:
       "Working with this team completely transformed our online presence. Within just a few months, our revenue increased significantly and customer acquisition became much more efficient.",
   },
   {
-    name: "Anushka Deshmukh",
+    name: "Anushka",
     company: "Healthcare Clinic Owner",
     image: AnushkaImg,
     review:
       "Their SEO and advertising strategy helped us attract more local patients than ever before. The results were measurable, transparent, and exceeded our expectations.",
   },
   {
-    name: "Pratap Singh",
+    name: "Pratap",
     company: "Real Estate Consultant",
     image: PratapImg,
     review:
@@ -43,7 +43,7 @@ const Testimonials = () => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
@@ -273,4 +273,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Testimonials;

@@ -86,7 +86,7 @@ const Footer = () => {
               <img
           src={logo}
           alt="logo"
-          className="w-60 h-50 object-cover object-center opacity-95 bg-black hover:bg-yellow-500 rounded-md mb-4"
+          className="w-60 h-50 object-cover object-center opacity-95 hover:bg-yellow-500 rounded-md mb-4"
         />
               <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
                 Purnova Digital

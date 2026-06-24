@@ -23,8 +23,8 @@ const stats = [
     subtitle: "Clients",
   },
   {
-    number: 300,
-    suffix: "%",
+    number: 6,
+    suffix: "x",
     title: "Average ROI",
     subtitle: "Growth",
   },

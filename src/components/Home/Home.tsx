@@ -28,7 +28,7 @@ const Home = () => {
         if (displayText.length < role.length) {
           setDisplayText(role.slice(0, displayText.length + 1));
         } else {
-          setTimeout(() => setIsDeleting(true), 3000);
+          setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
         if (displayText.length > 0) {
@@ -233,45 +233,121 @@ const Home = () => {
 
             {/* Premium Custom Vector SVG human workspace */}
             <svg viewBox="0 0 200 200" className="w-full h-full select-none">
-              {/* Floating tech background shapes */}
-              <circle cx="100" cy="90" r="60" className="fill-indigo-500/5 stroke-indigo-500/10 stroke-[1.5]" />
-              
-              {/* Small floating idea gear/stars */}
-              <motion.circle cx="160" cy="50" r="6" className="fill-yellow-400" animate={{ y: [-4, 4, -4] }} transition={{ repeat: Infinity, duration: 2.5 }} />
-              <motion.circle cx="40" cy="70" r="4" className="fill-purple-400" animate={{ y: [3, -3, 3] }} transition={{ repeat: Infinity, duration: 2.2 }} />
-              <motion.polygon points="100,20 103,26 110,27 105,32 106,38 100,35 94,38 95,32 90,27 97,26" className="fill-blue-400" animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 15, ease: "linear" }} style={{ transformOrigin: "100px 29px" }} />
+              <defs>
+                {/* Gradients */}
+                <linearGradient id="avatarTorsoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6366f1" />
+                  <stop offset="100%" stopColor="#4f46e5" />
+                </linearGradient>
+                <linearGradient id="avatarHeadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#ffedd5" />
+                  <stop offset="100%" stopColor="#fed7aa" />
+                </linearGradient>
+                <linearGradient id="avatarHairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#334155" />
+                  <stop offset="100%" stopColor="#0f172a" />
+                </linearGradient>
+                <linearGradient id="laptopScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="100%" stopColor="#8b5cf6" />
+                </linearGradient>
+                <linearGradient id="lampBeamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="rgba(253, 224, 71, 0.4)" />
+                  <stop offset="100%" stopColor="rgba(253, 224, 71, 0.0)" />
+                </linearGradient>
+                
+                {/* Soft shadow filter */}
+                <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.1" />
+                </filter>
+              </defs>
 
-              {/* Creator Chair */}
-              <rect x="80" y="95" width="40" height="45" rx="8" fill="#1e293b" />
-              <line x1="100" y1="140" x2="100" y2="165" stroke="#0f172a" strokeWidth="4" />
-              <line x1="85" y1="165" x2="115" y2="165" stroke="#0f172a" strokeWidth="6" strokeLinecap="round" />
+              {/* Ambient Circular Dashboard in background */}
+              <circle cx="100" cy="90" r="65" className="fill-indigo-500/5 stroke-indigo-500/10 stroke-[1.5]" />
+              <circle cx="100" cy="90" r="55" className="fill-none stroke-purple-500/5 stroke-[1] stroke-dasharray-[4,4]" />
+              
+              {/* Floating Idea Lightbulb - Upper Right */}
+              <motion.g
+                animate={{ y: [-5, 5, -5] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                filter="url(#softShadow)"
+              >
+                <circle cx="155" cy="45" r="15" fill="rgba(234,179,8,0.1)" />
+                <path d="M 155 35 A 6 6 0 0 1 161 41 Q 161 45 158 47 L 158 50 L 152 50 L 152 47 Q 149 45 149 41 A 6 6 0 0 1 155 35 Z" fill="#eab308" />
+                <rect x="153" y="50" width="4" height="2" fill="#94a3b8" />
+                <path d="M 151 30 L 153 32 M 159 30 L 157 32 M 164 38 L 161 39 M 146 38 L 149 39" stroke="#eab308" strokeWidth="1" strokeLinecap="round" />
+              </motion.g>
+
+              {/* Floating Code Tag - Upper Left */}
+              <motion.g
+                animate={{ y: [4, -4, 4] }}
+                transition={{ repeat: Infinity, duration: 2.7, ease: "easeInOut" }}
+                filter="url(#softShadow)"
+              >
+                <circle cx="45" cy="55" r="14" fill="rgba(16,185,129,0.1)" />
+                <path d="M 41 51 L 37 55 L 41 59 M 49 51 L 53 55 L 49 59 M 47 49 L 43 61" fill="none" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" />
+              </motion.g>
+
+              {/* Workspace Chair */}
+              <rect x="80" y="95" width="40" height="42" rx="8" fill="#1e293b" />
+              <line x1="100" y1="135" x2="100" y2="160" stroke="#0f172a" strokeWidth="4" />
+              <line x1="82" y1="160" x2="118" y2="160" stroke="#0f172a" strokeWidth="6" strokeLinecap="round" />
 
               {/* Creator Human Torso */}
-              <path d="M 75 160 L 125 160 L 115 110 L 85 110 Z" fill="#6366f1" />
+              <path d="M 75 156 L 125 156 L 115 110 L 85 110 Z" fill="url(#avatarTorsoGrad)" />
               {/* Neck */}
-              <rect x="94" y="98" width="12" height="15" rx="2" fill="#fed7aa" />
+              <rect x="94" y="98" width="12" height="15" rx="2" fill="url(#avatarHeadGrad)" />
               {/* Head */}
-              <circle cx="100" cy="85" r="18" fill="#fed7aa" />
+              <circle cx="100" cy="85" r="18" fill="url(#avatarHeadGrad)" />
+              
               {/* Hair */}
-              <path d="M 85 80 Q 100 60, 115 80 Q 107 72, 100 72 Q 93 72, 85 80" fill="#1e293b" />
-              <rect x="85" y="74" width="30" height="9" rx="4.5" fill="#1e293b" />
+              <path d="M 85 80 Q 100 60, 115 80 Q 107 72, 100 72 Q 93 72, 85 80" fill="url(#avatarHairGrad)" />
+              <rect x="85" y="74" width="30" height="9" rx="4.5" fill="url(#avatarHairGrad)" />
+              
               {/* Face Details */}
               <circle cx="94" cy="84" r="1.5" fill="#0f172a" />
               <circle cx="106" cy="84" r="1.5" fill="#0f172a" />
-              <path d="M 97 90 Q 100 94, 103 90" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M 96 90 Q 100 93, 104 90" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" />
 
-              {/* Creative workspace desk surface */}
-              <rect x="40" y="150" width="120" height="6" rx="3" fill="#e2e8f0" stroke="#cbd5e1" strokeWidth="1" />
+              {/* Headphones */}
+              <path d="M 84 84 C 84 68, 116 68, 116 84" fill="none" stroke="#ef4444" strokeWidth="2.5" />
+              <rect x="81" y="81" width="5" height="10" rx="2" fill="#ef4444" />
+              <rect x="114" y="81" width="5" height="10" rx="2" fill="#ef4444" />
+
+              {/* Desk Surface */}
+              <rect x="35" y="150" width="130" height="7" rx="3" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="1" filter="url(#softShadow)" />
+
+              {/* Desk Plant (Terracotta pot and green leaves) - Left Side */}
+              <polygon points="45,150 53,150 51,139 47,139" fill="#f97316" />
+              {/* Leaves */}
+              <path d="M 49 139 C 45 130, 42 128, 45 122 C 49 122, 48 130, 49 139 Z" fill="#22c55e" />
+              <path d="M 49 139 C 53 130, 56 128, 53 122 C 49 122, 50 130, 49 139 Z" fill="#15803d" />
+              <path d="M 49 139 Q 49 123, 49 116 Q 47 122, 49 139" fill="none" stroke="#166534" strokeWidth="1.5" strokeLinecap="round" />
+
               {/* Laptop screen */}
-              <polygon points="75,150 82,125 105,125 98,150" fill="#475569" />
+              <polygon points="76,150 83,124 107,124 100,150" fill="url(#laptopScreenGrad)" stroke="#475569" strokeWidth="1" />
               {/* Glowing laptop light projection */}
-              <polygon points="82,125 105,125 125,90 62,90" className="fill-indigo-400/10" />
+              <polygon points="83,124 107,124 125,95 65,95" className="fill-indigo-400/10 pointer-events-none" />
+
+              {/* Cute Coffee Mug - Left of laptop */}
+              <rect x="62" y="141" width="8" height="9" rx="1.5" fill="#ef4444" />
+              <path d="M 70 143 C 72 143, 72 148, 70 148" fill="none" stroke="#ef4444" strokeWidth="1" />
+              {/* Steam waves */}
+              <path d="M 64 137 Q 66 134, 64 131" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeLinecap="round" className="animate-pulse" />
+              <path d="M 68 137 Q 70 134, 68 131" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeLinecap="round" className="animate-pulse" />
+
+              {/* Desk Lamp - Right of Laptop */}
+              <rect x="135" y="150" width="10" height="2" fill="#475569" />
+              <path d="M 140 150 L 140 130 L 132 122" fill="none" stroke="#475569" strokeWidth="2.5" strokeLinecap="round" />
+              <polygon points="128,125 136,118 130,111 122,118" fill="#f59e0b" />
+              {/* Glowing lamp light beam projection */}
+              <polygon points="122,118 130,111 95,150 75,150" fill="url(#lampBeamGrad)" className="pointer-events-none" />
 
               {/* Arms Typing */}
-              <path d="M 80 115 Q 70 128, 83 144" fill="none" stroke="#6366f1" strokeWidth="7" strokeLinecap="round" />
-              <path d="M 120 115 Q 130 128, 117 144" fill="none" stroke="#6366f1" strokeWidth="7" strokeLinecap="round" />
-              <circle cx="83" cy="144" r="3.5" fill="#fed7aa" />
-              <circle cx="117" cy="144" r="3.5" fill="#fed7aa" />
+              <path d="M 80 115 Q 70 128, 83 144" fill="none" stroke="url(#avatarTorsoGrad)" strokeWidth="6" strokeLinecap="round" />
+              <path d="M 120 115 Q 130 128, 117 144" fill="none" stroke="url(#avatarTorsoGrad)" strokeWidth="6" strokeLinecap="round" />
+              <circle cx="83" cy="144" r="3.5" fill="url(#avatarHeadGrad)" />
+              <circle cx="117" cy="144" r="3.5" fill="url(#avatarHeadGrad)" />
             </svg>
           </motion.div>
 

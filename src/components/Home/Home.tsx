@@ -188,7 +188,7 @@ object-contain
 
       <section
   id="home"
-  className="relative h-[120vh] flex items-center justify-center overflow-hidden mt-20"
+  className="relative h-[130vh] flex items-center justify-center overflow-hidden mt-20"
 >
   {/* Background Image */}
   <div className="absolute inset-0 -z-10">
@@ -248,7 +248,7 @@ object-contain
           md:text-7xl
           lg:text-8xl
           font-extrabold
-          mb-28
+          mb-36
           mt-10
           leading-tight
           cursor-pointer

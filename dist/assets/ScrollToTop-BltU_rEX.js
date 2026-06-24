@@ -1,0 +1,1 @@
+import{u as t,r as e}from"./index-BLqKwHgs.js";import{g as s}from"./index-DSpwt0cg.js";import{S as r}from"./ScrollTrigger-CezCZ8EY.js";s.registerPlugin(r);const l=()=>{const{pathname:o}=t();return e.useEffect(()=>{window.scrollTo({top:0,left:0,behavior:"instant"}),requestAnimationFrame(()=>{r.refresh(!0)})},[o]),null};export{l as default};

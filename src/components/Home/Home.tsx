@@ -206,7 +206,7 @@ const Home = () => {
   className="
     text-black
     uppercase
-    font-bold
+    font-medium
     tracking-[0.30em]
     mt-6
     text-sm
@@ -227,7 +227,7 @@ const Home = () => {
   }}
   className="
     text-black
-    font-semibold
+    font-display
     leading-[1.5]
     text-center
     mx-auto

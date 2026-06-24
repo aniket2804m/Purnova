@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: "Healthcare Website",
+    title: "Real Estate Platform",
     image: img1,
   },
   {
@@ -337,10 +337,10 @@ export default function Work() {
       >
       {/* Header Info */}
       <div className="relative z-50 text-center select-none px-4">
-        <p className="uppercase tracking-[4px] text-zinc-400 text-[10px] md:text-xs mt-10 mb-10">
+        <p className="uppercase tracking-[4px] text-zinc-400 text-[50px] md:text-xs mt-10 mb-10">
           Featured Work
         </p>
-        <h2 className="text-4xl md:text-6xl font-black text-white mt-15 mb-10 bg-gradient-to-r from-zinc-300 via-white to-zinc-400 bg-clip-text text-transparent">
+        <h2 className="text-2xl md:text-3xl font-black text-white mt-5 mb-5 bg-gradient-to-r from-zinc-300 via-white to-zinc-400 bg-clip-text text-transparent">
           {projects[activeIndex].title}
         </h2>
       </div>
@@ -349,7 +349,7 @@ export default function Work() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.06),transparent_65%)] pointer-events-none mt-10" />
 
       {/* Coverflow Carousel Wrapper */}
-      <div className="relative w-full flex-grow flex items-center justify-center perspective-[2000px] transform-style-[preserve-3d] mt-28 mb-20">
+      <div className="relative w-full flex-grow flex items-center justify-center perspective-[2000px] transform-style-[preserve-3d] mt-10 mb-10">
         {projects.map((project, index) => (
           <LaptopMockup
             key={index}

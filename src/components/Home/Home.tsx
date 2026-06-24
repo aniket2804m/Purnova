@@ -206,7 +206,7 @@ const Home = () => {
   className="
     text-black
     uppercase
-    font-medium
+    font-normal
     tracking-[0.30em]
     mt-6
     text-sm
@@ -217,7 +217,7 @@ const Home = () => {
     2xl:text-4xl
   "
 >
-  Where Brands Become Legends
+  Where Brands Become <span className="font-extrabold">Legends</span>
 </motion.p>
 
 <motion.p

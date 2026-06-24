@@ -9,14 +9,12 @@ import img4 from "../../img/role/avinash.png";
 export default function StrategyPopup() {
   const [showPopup, setShowPopup] = useState(false);
 
-  // Track popup already shown at each stage
   const [shown, setShown] = useState({
     start: false,
     middle: false,
     end: false,
   });
 
-  // Website load popup
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
@@ -26,7 +24,6 @@ export default function StrategyPopup() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Scroll popup
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -36,22 +33,12 @@ export default function StrategyPopup() {
       const scrollPercent =
         (scrollTop / (documentHeight - windowHeight)) * 100;
 
-      // Middle (around 50%)
-      if (
-        scrollPercent >= 50 &&
-        !shown.middle &&
-        !showPopup
-      ) {
+      if (scrollPercent >= 50 && !shown.middle && !showPopup) {
         setShowPopup(true);
         setShown((prev) => ({ ...prev, middle: true }));
       }
 
-      // End (95%)
-      if (
-        scrollPercent >= 95 &&
-        !shown.end &&
-        !showPopup
-      ) {
+      if (scrollPercent >= 95 && !shown.end && !showPopup) {
         setShowPopup(true);
         setShown((prev) => ({ ...prev, end: true }));
       }
@@ -65,20 +52,20 @@ export default function StrategyPopup() {
   if (!showPopup) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 sm:p-6">
       {/* Popup */}
-      <div className="relative w-full max-w-2xl rounded-3xl bg-black p-8 shadow-2xl border-4 border-black">
+      <div className="relative w-full max-w-[95%] sm:max-w-xl lg:max-w-2xl rounded-2xl lg:rounded-3xl bg-black border-4 border-black shadow-2xl px-5 py-8 sm:px-8 sm:py-10">
 
         {/* Close Button */}
         <button
           onClick={() => setShowPopup(false)}
-          className="absolute right-5 top-5"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-white hover:text-yellow-300 transition"
         >
-          <X size={30} />
+          <X className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
 
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center leading-tight">
+        <h2 className="text-center font-bold leading-tight text-2xl sm:text-3xl lg:text-4xl">
           Talk to a Growth Expert at
           <br />
           <span className="text-yellow-300">Purnova</span>
@@ -86,50 +73,42 @@ export default function StrategyPopup() {
 
         {/* Team Images */}
         <div className="flex justify-center mt-6 -space-x-3">
-          <img
-            src={img1}
-            alt=""
-            className="w-14 h-14 rounded-full border-2 border-white"
-          />
-          <img
-            src={img2}
-            alt=""
-            className="w-14 h-14 rounded-full border-2 border-white"
-          />
-          <img
-            src={img3}
-            alt=""
-            className="w-14 h-14 rounded-full border-2 border-white"
-          />
-          <img
-            src={img4}
-            alt=""
-            className="w-14 h-14 rounded-full border-2 border-white"
-          />
-        </div>
+            <img
+              src={img1}
+              className="w-14 h-14 rounded-full border-2 border-white"
+            />
+            <img
+              src={img2}
+              className="w-14 h-14 rounded-full border-2 border-white"
+            />
+            <img
+              src={img3}
+              className="w-14 h-14 rounded-full border-2 border-white"
+            />
+          </div>
 
         {/* Description */}
-        <p className="text-center text-yellow-200 mt-6 text-lg">
+        <p className="text-center text-yellow-200 mt-5 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed">
           Book a 30-minute strategy call and get clarity on your
           marketing, branding & growth roadmap.
         </p>
 
         {/* Features */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8 text-lg font-medium">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-3 sm:gap-5 lg:gap-6 mt-6 sm:mt-8 text-sm sm:text-base lg:text-lg font-medium text-center">
           <div>✅ No spam</div>
           <div>✅ No sales pressure</div>
           <div>✅ Just actionable insights</div>
         </div>
 
         {/* Button */}
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-7 sm:mt-8">
           <a
             href="https://calendly.com/your-link"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border-2 border-black px-8 py-3 text-xl font-semibold hover:bg-yellow-300 hover:text-black transition"
+            className="flex items-center gap-2 rounded-full border-2 border-black bg-yellow-300 text-black hover:bg-yellow-400 transition px-5 py-3 sm:px-7 lg:px-8 text-sm sm:text-base lg:text-xl font-semibold"
           >
-            <Calendar size={22} />
+            <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
             Book Strategy Call ↗
           </a>
         </div>

@@ -136,9 +136,9 @@ const Count = () => {
         </div>
 
         {/* Text descriptions */}
-        <div className="max-w-4xl mx-auto text-center mb-16 space-y-6">
+        <div className="max-w-5xl mx-auto text-center mb-16 space-y-6">
           <p className="count-para text-black font-extrabold text-lg sm:text-xl lg:text-2xl leading-relaxed opacity-95 opacity-0">
-            "Where the most ambitious brands come to become unforgettable."
+            "Purnova Where the most ambitious brands come to become unforgettable."
           </p>
 
           <p className="count-para text-black font-bold text-sm sm:text-base lg:text-lg leading-relaxed opacity-85 opacity-0">

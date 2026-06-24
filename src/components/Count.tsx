@@ -126,15 +126,11 @@ const Count = () => {
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Header Section */}
         <div className="count-header text-center mb-16 opacity-0">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
-            Why Choose Us?
-          </span>
-
+        
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
             
             <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
-              Purnova
+            Why Choose Purnova ?
             </span>
           </h2>
         </div>

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 
 import video from "../../img/video.mp4";
-import bgImg from "../../img/bgImg1.png"
+import bgImg from "../../img/bgImg.png";
 import { roles } from "../data/Home"
 
 const Home = () => {
@@ -145,7 +145,7 @@ const Home = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center text-black px-4 max-w-4xl mx-auto flex flex-col justify-center items-center h-full">
+       <div className="relative z-10 text-center text-black w-full px-4 sm:px-6 lg:px-10 mx-auto flex flex-col justify-center items-center h-full">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -182,32 +182,83 @@ const Home = () => {
                 scale: 1.08,
                 textShadow: "0 0 30px rgba(59,130,246,0.8)",
               }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-10 mt-6 leading-tight cursor-pointer"
+              className="
+    font-extrabold
+    text-black
+    leading-none
+
+    text-5xl
+    sm:text-6xl
+    md:text-7xl
+    lg:text-8xl
+    xl:text-[7rem]
+    2xl:text-[9rem]
+  "
             >
               PURNOVA
             </motion.h1>
 
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-black text-lg sm:text-base md:text-xl lg:text-xl tracking-[0.4em] text-center uppercase mt-2 font-semibold"
-            >
-              Where brands become Legends
-            </motion.p>
+          <motion.p
+  variants={{
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  className="
+    text-black
+    uppercase
+    font-bold
+    tracking-[0.30em]
+    mt-6
+    text-sm
+    sm:text-base
+    md:text-xl
+    lg:text-2xl
+    xl:text-3xl
+    2xl:text-4xl
+  "
+>
+  Where Brands Become Legends
+</motion.p>
 
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-base sm:text-lg md:text-2xl lg:text-3xl text-black mt-6 max-w-3xl mx-auto font-medium mb-6 px-2 sm:px-6 leading-relaxed"
-            >
-              We do not decorate brands. We architect transformations reaching into
-              the space between what you are today and everything you are destined to
-              become
-            </motion.p>
+<motion.p
+  variants={{
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  className="
+    text-black
+    font-semibold
+    leading-[1.5]
+    text-center
+    mx-auto
+    mt-8
+
+    w-full
+    max-w-[350px]
+    sm:max-w-[600px]
+    md:max-w-[850px]
+    lg:max-w-[1100px]
+    xl:max-w-[1250px]
+    2xl:max-w-[1450px]
+
+    text-lg
+    sm:text-xl
+    md:text-2xl
+    lg:text-3xl
+    xl:text-4xl
+    2xl:text-5xl
+
+    px-4
+    sm:px-6
+    md:px-8
+    lg:px-0
+  "
+>
+  We do not decorate brands. We architect transformations reaching into
+  the space between what you are today and everything you are destined to
+  become.
+</motion.p>
+
           </motion.div>
         </div>
       </section>
@@ -219,137 +270,6 @@ const Home = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60 -z-10 pointer-events-none" />
 
         <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
-          
-          {/* Animated Human Character SVG ("Animated Manav") - Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex-shrink-0 relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] bg-slate-50 rounded-3xl border border-slate-100 flex items-center justify-center p-3 shadow-inner group"
-          >
-            {/* Ambient pulse circle around character */}
-            <div className="absolute inset-2 bg-indigo-500/5 rounded-2xl animate-pulse -z-10" />
-
-            {/* Premium Custom Vector SVG human workspace */}
-            <svg viewBox="0 0 200 200" className="w-full h-full select-none">
-              <defs>
-                {/* Gradients */}
-                <linearGradient id="avatarTorsoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#6366f1" />
-                  <stop offset="100%" stopColor="#4f46e5" />
-                </linearGradient>
-                <linearGradient id="avatarHeadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#ffedd5" />
-                  <stop offset="100%" stopColor="#fed7aa" />
-                </linearGradient>
-                <linearGradient id="avatarHairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#334155" />
-                  <stop offset="100%" stopColor="#0f172a" />
-                </linearGradient>
-                <linearGradient id="laptopScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#8b5cf6" />
-                </linearGradient>
-                <linearGradient id="lampBeamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(253, 224, 71, 0.4)" />
-                  <stop offset="100%" stopColor="rgba(253, 224, 71, 0.0)" />
-                </linearGradient>
-                
-                {/* Soft shadow filter */}
-                <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.1" />
-                </filter>
-              </defs>
-
-              {/* Ambient Circular Dashboard in background */}
-              <circle cx="100" cy="90" r="65" className="fill-indigo-500/5 stroke-indigo-500/10 stroke-[1.5]" />
-              <circle cx="100" cy="90" r="55" className="fill-none stroke-purple-500/5 stroke-[1] stroke-dasharray-[4,4]" />
-              
-              {/* Floating Idea Lightbulb - Upper Right */}
-              <motion.g
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                filter="url(#softShadow)"
-              >
-                <circle cx="155" cy="45" r="15" fill="rgba(234,179,8,0.1)" />
-                <path d="M 155 35 A 6 6 0 0 1 161 41 Q 161 45 158 47 L 158 50 L 152 50 L 152 47 Q 149 45 149 41 A 6 6 0 0 1 155 35 Z" fill="#eab308" />
-                <rect x="153" y="50" width="4" height="2" fill="#94a3b8" />
-                <path d="M 151 30 L 153 32 M 159 30 L 157 32 M 164 38 L 161 39 M 146 38 L 149 39" stroke="#eab308" strokeWidth="1" strokeLinecap="round" />
-              </motion.g>
-
-              {/* Floating Code Tag - Upper Left */}
-              <motion.g
-                animate={{ y: [4, -4, 4] }}
-                transition={{ repeat: Infinity, duration: 2.7, ease: "easeInOut" }}
-                filter="url(#softShadow)"
-              >
-                <circle cx="45" cy="55" r="14" fill="rgba(16,185,129,0.1)" />
-                <path d="M 41 51 L 37 55 L 41 59 M 49 51 L 53 55 L 49 59 M 47 49 L 43 61" fill="none" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" />
-              </motion.g>
-
-              {/* Workspace Chair */}
-              <rect x="80" y="95" width="40" height="42" rx="8" fill="#1e293b" />
-              <line x1="100" y1="135" x2="100" y2="160" stroke="#0f172a" strokeWidth="4" />
-              <line x1="82" y1="160" x2="118" y2="160" stroke="#0f172a" strokeWidth="6" strokeLinecap="round" />
-
-              {/* Creator Human Torso */}
-              <path d="M 75 156 L 125 156 L 115 110 L 85 110 Z" fill="url(#avatarTorsoGrad)" />
-              {/* Neck */}
-              <rect x="94" y="98" width="12" height="15" rx="2" fill="url(#avatarHeadGrad)" />
-              {/* Head */}
-              <circle cx="100" cy="85" r="18" fill="url(#avatarHeadGrad)" />
-              
-              {/* Hair */}
-              <path d="M 85 80 Q 100 60, 115 80 Q 107 72, 100 72 Q 93 72, 85 80" fill="url(#avatarHairGrad)" />
-              <rect x="85" y="74" width="30" height="9" rx="4.5" fill="url(#avatarHairGrad)" />
-              
-              {/* Face Details */}
-              <circle cx="94" cy="84" r="1.5" fill="#0f172a" />
-              <circle cx="106" cy="84" r="1.5" fill="#0f172a" />
-              <path d="M 96 90 Q 100 93, 104 90" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" />
-
-              {/* Headphones */}
-              <path d="M 84 84 C 84 68, 116 68, 116 84" fill="none" stroke="#ef4444" strokeWidth="2.5" />
-              <rect x="81" y="81" width="5" height="10" rx="2" fill="#ef4444" />
-              <rect x="114" y="81" width="5" height="10" rx="2" fill="#ef4444" />
-
-              {/* Desk Surface */}
-              <rect x="35" y="150" width="130" height="7" rx="3" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="1" filter="url(#softShadow)" />
-
-              {/* Desk Plant (Terracotta pot and green leaves) - Left Side */}
-              <polygon points="45,150 53,150 51,139 47,139" fill="#f97316" />
-              {/* Leaves */}
-              <path d="M 49 139 C 45 130, 42 128, 45 122 C 49 122, 48 130, 49 139 Z" fill="#22c55e" />
-              <path d="M 49 139 C 53 130, 56 128, 53 122 C 49 122, 50 130, 49 139 Z" fill="#15803d" />
-              <path d="M 49 139 Q 49 123, 49 116 Q 47 122, 49 139" fill="none" stroke="#166534" strokeWidth="1.5" strokeLinecap="round" />
-
-              {/* Laptop screen */}
-              <polygon points="76,150 83,124 107,124 100,150" fill="url(#laptopScreenGrad)" stroke="#475569" strokeWidth="1" />
-              {/* Glowing laptop light projection */}
-              <polygon points="83,124 107,124 125,95 65,95" className="fill-indigo-400/10 pointer-events-none" />
-
-              {/* Cute Coffee Mug - Left of laptop */}
-              <rect x="62" y="141" width="8" height="9" rx="1.5" fill="#ef4444" />
-              <path d="M 70 143 C 72 143, 72 148, 70 148" fill="none" stroke="#ef4444" strokeWidth="1" />
-              {/* Steam waves */}
-              <path d="M 64 137 Q 66 134, 64 131" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeLinecap="round" className="animate-pulse" />
-              <path d="M 68 137 Q 70 134, 68 131" fill="none" stroke="#cbd5e1" strokeWidth="1" strokeLinecap="round" className="animate-pulse" />
-
-              {/* Desk Lamp - Right of Laptop */}
-              <rect x="135" y="150" width="10" height="2" fill="#475569" />
-              <path d="M 140 150 L 140 130 L 132 122" fill="none" stroke="#475569" strokeWidth="2.5" strokeLinecap="round" />
-              <polygon points="128,125 136,118 130,111 122,118" fill="#f59e0b" />
-              {/* Glowing lamp light beam projection */}
-              <polygon points="122,118 130,111 95,150 75,150" fill="url(#lampBeamGrad)" className="pointer-events-none" />
-
-              {/* Arms Typing */}
-              <path d="M 80 115 Q 70 128, 83 144" fill="none" stroke="url(#avatarTorsoGrad)" strokeWidth="6" strokeLinecap="round" />
-              <path d="M 120 115 Q 130 128, 117 144" fill="none" stroke="url(#avatarTorsoGrad)" strokeWidth="6" strokeLinecap="round" />
-              <circle cx="83" cy="144" r="3.5" fill="url(#avatarHeadGrad)" />
-              <circle cx="117" cy="144" r="3.5" fill="url(#avatarHeadGrad)" />
-            </svg>
-          </motion.div>
 
           {/* Original Circular Image and Typing Text Layout */}
           <motion.div

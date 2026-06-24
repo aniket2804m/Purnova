@@ -22,6 +22,8 @@ const Work = lazy(() => import("@/components/Work/Work"));
 
 const Team = lazy(() => import("@/components/Team/Team"));
 
+const StrategyPopup = lazy(() => import("@/components/Popup/StrategyPopup"));
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -47,6 +49,10 @@ const App = () => {
           <Suspense fallback={null}>
             <Navbar />
           </Suspense>
+
+           <Suspense fallback={null}>
+    <StrategyPopup />
+  </Suspense>
 
           <Suspense fallback={null}>
             <Routes>

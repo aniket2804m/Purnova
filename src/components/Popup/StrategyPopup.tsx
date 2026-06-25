@@ -19,7 +19,7 @@ export default function StrategyPopup() {
     const timer = setTimeout(() => {
       setShowPopup(true);
       setShown((prev) => ({ ...prev, start: true }));
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -72,24 +72,30 @@ export default function StrategyPopup() {
         </h2>
 
         {/* Team Images */}
-        <div className="flex justify-center mt-6 -space-x-3">
-            <img
-              src={img1}
-              className="w-14 h-14 rounded-full border-2 border-yellow-300 bg-white"
-            />
-            <img
-              src={img2}
-              className="w-14 h-14 rounded-full border-2 border-yellow-300 bg-white"
-            />
-            <img
-              src={img3}
-              className="w-14 h-14 rounded-full border-2 border-yellow-300 bg-white"
-            />
-          </div>
+        <div className="flex justify-center mt-4 md:mt-6 -space-x-2 sm:-space-x-3 md:-space-x-4">
+  {[img1, img2, img3].map((img, index) => (
+    <img
+      key={index}
+      src={img}
+      alt={`User ${index + 1}`}
+      className="
+        w-10 h-10
+        sm:w-12 sm:h-12
+        md:w-14 md:h-14
+        lg:w-16 lg:h-16
+        xl:w-20 xl:h-20
+        rounded-full
+        border-2 border-yellow-300
+        bg-white
+        object-contain
+      "
+    />
+  ))}
+</div>
 
         {/* Description */}
         <p className="text-center text-yellow-200 mt-5 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed">
-          Book a 30-minute strategy call and get clarity on your
+          Book strategy call and get clarity on your
           marketing, branding & growth roadmap.
         </p>
 

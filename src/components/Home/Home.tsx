@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import gsap from "gsap";
 
 import video from "../../img/video.mp4";
-import bgImg from "../../img/background.png";
+import bgImg from "../../img/background 2.png";
 import { roles } from "../data/Home"
 
 const Home = () => {

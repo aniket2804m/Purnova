@@ -77,7 +77,7 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
                 className={`group relative h-full w-full rounded-3xl p-[1.5px] transition-all duration-500 ${
                     isHovered
                         ? "bg-neutral-900/60 border-2 border-yellow-500 shadow-[0_20px_50px_rgba(234,179,8,0.25)] backdrop-blur-lg scale-[1.03] z-10"
-                        : "bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md opacity-85 scale-100 hover:opacity-100 hover:bg-neutral-800/15"
+                        : "bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md opacity-100 scale-100 hover:opacity-100 hover:bg-neutral-800/15"
                 }`}
             >
                 <div

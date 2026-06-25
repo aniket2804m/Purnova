@@ -1,4 +1,4 @@
-import brand from "../../img/card/brand strategy_.jpg.jpeg";
+import brand from "../../img/card/brand strategy 1.jpg.jpeg";
 import performance from "../../img/card/preformance marketing_.jpg.jpeg";
 import website from "../../img/card/web devlopment_.jpg.jpeg"
 import google from "../../img/card/google ads.jpg.jpeg"

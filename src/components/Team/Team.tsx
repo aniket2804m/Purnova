@@ -384,7 +384,7 @@ const Team = () => {
           className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
           style={{
             background:
-              "conic-gradient(from 0deg, transparent 30%, #3b82f6 45%, #8b5cf6 55%, #ec4899 65%, transparent 80%)",
+              "conic-gradient(from 0deg, transparent 30%, #ffffff 45%, #d4af37 55%, #eab308 65%, transparent 80%)",
           }}
         />
 
@@ -441,7 +441,7 @@ const Team = () => {
           className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
           style={{
             background:
-              "conic-gradient(from 0deg, transparent 30%, #3b82f6 45%, #8b5cf6 55%, #ec4899 65%, transparent 80%)",
+              "conic-gradient(from 0deg, transparent 30%, #ffffff 45%, #d4af37 55%, #eab308 65%, transparent 80%)",
           }}
         />
 

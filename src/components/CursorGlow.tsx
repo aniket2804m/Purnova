@@ -49,29 +49,42 @@ const CursorGlow = () => {
           height: glowSize,
           translateX: "-50%",
           translateY: "-50%",
-          background: "radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--secondary) / 0.5) 50%, transparent 100%)",
+          background: "radial-gradient(circle, rgba(255,215,0,0.9) 0%, rgba(255,193,7,0.5) 50%, transparent 100%)",
         }}
       />
 
       {/* Main Cursor Circle */}
       <motion.div
-        className="absolute border border-primary/30 rounded-full flex items-center justify-center backdrop-blur-[1px]"
-        style={{
-          x: displayX,
-          y: displayY,
-          width: cursorSize,
-          height: cursorSize,
-          translateX: "-50%",
-          translateY: "-50%",
-          opacity,
-        }}
-      >
-        {/* Core Dot */}
-        <motion.div 
-          className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_hsl(var(--primary))]"
-          animate={{ scale: isHovered ? 1.5 : 1 }}
-        />
-      </motion.div>
+  className="absolute flex items-center justify-center"
+  style={{
+    x: displayX,
+    y: displayY,
+    width: cursorSize,
+    height: cursorSize,
+    translateX: "-50%",
+    translateY: "-50%",
+    opacity,
+  }}
+>
+  <motion.div
+    animate={{
+      scale: isHovered ? 1.3 : 1,
+      rotate: isHovered ? 180 : 0,
+    }}
+    transition={{
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    }}
+    style={{
+      fontSize: isHovered ? "40px" : "24px",
+      color: "#FFD700",
+      filter: "drop-shadow(0 0 12px #FFD700) drop-shadow(0 0 25px #FFC107)",
+    }}
+  >
+    ✦
+  </motion.div>
+</motion.div>
     </div>
   );
 };

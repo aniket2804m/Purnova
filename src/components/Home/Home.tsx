@@ -95,13 +95,13 @@ const Home = () => {
               }
             }}
           >
-            <div className="relative w-[95vw] aspect-[2/1] h-auto md:fixed md:inset-0 md:w-screen md:h-screen md:aspect-auto md:max-w-none md:max-h-none p-[3px] md:p-0 overflow-hidden rounded-2xl md:rounded-none shadow-2xl flex items-center justify-center border border-white/5 md:border-none">
-              <div className="absolute inset-[-200%] animate-[spin_6s_linear_infinite] md:hidden"
+            <div className="relative w-[90vw] h-[80vh] sm:w-[500px] sm:h-[700px] md:w-[700px] md:h-[800px] lg:w-[900px] lg:h-[550px] xl:w-[1200px] xl:h-[700px] p-[3px] overflow-hidden rounded-[24px] shadow-2xl flex items-center justify-center border border-white/10">
+              <div className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
                 style={{
-                  background: "conic-gradient(from 0deg, transparent 30%, #3b82f6 45%, #8b5cf6 55%, #ec4899 65%, transparent 80%)",
+                  background: "conic-gradient(from 0deg, transparent 30%, #ffffff 45%, #d4af37 55%, #eab308 65%, transparent 80%)",
                 }}
               />
-              <div className="relative w-full h-full bg-[#0a0a0a] md:rounded-none rounded-[13px] overflow-hidden flex items-center justify-center z-10">
+              <div className="relative w-full h-full bg-[#0a0a0a] rounded-[21px] overflow-hidden flex items-center justify-center z-10">
                 <motion.img
                   src={roles[currentRole].hoverImage || roles[currentRole].image}
                   alt={roles[currentRole].title}
@@ -109,11 +109,12 @@ const Home = () => {
                   animate={{ 
                     scale: 1, 
                     opacity: 1,
-                    filter: window.innerWidth >= 1024 ? [
-                      "drop-shadow(0 0 15px rgba(34,211,238,0.5))",
-                      "drop-shadow(0 0 35px rgba(139,92,246,0.7))",
-                      "drop-shadow(0 0 15px rgba(34,211,238,0.5))"
-                    ] : "none"
+                    filter: [
+                      "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))",
+                      "drop-shadow(0 0 35px rgba(212, 175, 55, 0.8))",
+                      "drop-shadow(0 0 20px rgba(234, 179, 8, 0.7))",
+                      "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))"
+                    ]
                   }}
                   exit={{ scale: 0.8, opacity: 0 }}
                   transition={{ 
@@ -121,7 +122,7 @@ const Home = () => {
                     opacity: { duration: 0.4 },
                     filter: { repeat: Infinity, duration: 3, ease: "easeInOut" }
                   }}
-                  className="w-[90vw] h-[80vh] sm:w-[500px] sm:h-[700px] md:w-[700px] md:h-[800px] lg:w-[900px] lg:h-[550px] xl:w-[1200px] xl:h-[700px] object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
@@ -132,7 +133,7 @@ const Home = () => {
       {/* SECTION 1: Locked to exactly 1 viewport screen on all sizes */}
       <section
         id="home"
-        className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden pt-20"
+        className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden"
       >
         {/* Background Image */}
         <div className="absolute inset-0 -z-10">
@@ -145,7 +146,7 @@ const Home = () => {
         </div>
 
         {/* Content */}
-       <div className="relative z-10 text-center text-black w-full px-4 sm:px-6 lg:px-10 mx-auto flex flex-col justify-center items-center h-full">
+       <div className="relative z-10 text-center text-black w-full px-4 sm:px-6 lg:px-10 mx-auto flex flex-col justify-center items-center h-full pt-20">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -267,7 +268,7 @@ const Home = () => {
       <section className="relative bg-white py-16 md:py-24 px-4 w-full flex items-center justify-center overflow-hidden border-t border-slate-100">
         
         {/* Subtle grid background lines for premium feel */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60 -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-80 -z-10 pointer-events-none" />
 
         <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
 

@@ -176,7 +176,7 @@ const Team = () => {
     },
     {
       id: 9,
-      name: "Ritesh Dharane",
+      name: "Ritesh Dharne",
       role: "Video Editor",
       image: img6,
       hoverImage: imgh6,

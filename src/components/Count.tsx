@@ -137,11 +137,11 @@ const Count = () => {
 
         {/* Text descriptions */}
         <div className="max-w-5xl mx-auto text-center mb-16 space-y-6">
-          <p className="count-para text-black font-extrabold text-lg sm:text-xl lg:text-2xl leading-relaxed opacity-95 opacity-0">
+          <p className="count-para text-black font-extrabold text-lg sm:text-xl lg:text-2xl leading-relaxed opacity-95">
             "Purnova Where the most ambitious brands come to become unforgettable."
           </p>
 
-          <p className="count-para text-black font-bold text-sm sm:text-base lg:text-lg leading-relaxed opacity-85 opacity-0">
+          <p className="count-para text-black font-bold text-sm sm:text-base lg:text-lg leading-relaxed opacity-85">
             We don’t look at your business as a checklist of deliverables; we see it as an unfolding legacy. We take the raw, powerful architecture of what you’ve built and breathe an undeniable, modern force into it aligning your strategy, your creative, and your scale until they command the entire landscape.
             The era of merely competing is over. It is time to occupy the space only you can inhabit.
             Stop chasing the market. Become the standard.

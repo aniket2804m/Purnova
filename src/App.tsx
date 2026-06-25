@@ -19,6 +19,9 @@ const BackToTop = lazy(() => import("@/components/BackToTop"));
 const CursorGlow = lazy(() => import("@/components/CursorGlow"));
 const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
 const Work = lazy(() => import("@/components/Work/Work"));
+const Card = lazy(() => import("@/components/Card/Card"));
+
+const Brand = lazy(() => import("@/components/Services/Brand"));
 
 const Team = lazy(() => import("@/components/Team/Team"));
 
@@ -61,6 +64,9 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/team" element={<Team />} />
               <Route path="/work" element={<Work />} />
+              <Route path="/card" element={<Card />} />
+
+              <Route path="/brand" element={<Brand />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

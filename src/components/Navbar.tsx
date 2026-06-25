@@ -1,16 +1,34 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Home, Info, Users, PhoneCall } from "lucide-react";
+import {
+  ArrowRight,
+  Home,
+  Info,
+  Users,
+  PhoneCall,
+  FolderOpen,
+  Briefcase
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import logo from "../img/logo.png";
 
 const navLinks = [
   { label: "About", href: "/about" },
+  { label: "Services", href: "/card" },
   { label: " Purnovians", href: "/team" },
   { label: "Our Work", href: "/work" },
   { label: "Contact", href: "/contact" },
+];
+
+const servicesDropdown = [
+  { label: "SEO Optimization", href: "/services/seo" },
+  { label: "Social Media Marketing", href: "/services/social-media" },
+  { label: "Google Ads", href: "/services/google-ads" },
+  { label: "Meta Ads", href: "/services/meta-ads" },
+  { label: "Website Development", href: "/services/web-development" },
+  { label: "Brand Strategy", href: "/brand" },
 ];
 
 const Navbar = () => {
@@ -18,6 +36,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
   const location = useLocation();
+
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -89,6 +109,50 @@ const Navbar = () => {
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
+
+              if (link.label === "Services") {
+  return (
+    <div
+      key={link.href}
+      className="relative group"
+    >
+      <Link
+        to={link.href}
+        className="px-4 py-2 font-semibold text-neutral-700 hover:text-black"
+      >
+        Services
+      </Link>
+
+      <div
+        className="
+          absolute top-full left-0 mt-2
+          w-72 bg-slate-500 rounded-2xl shadow-xl
+          border border-neutral-200
+          opacity-0 invisible
+          group-hover:opacity-100
+          group-hover:visible
+          transition-all duration-300
+          z-50
+        "
+      >
+        {servicesDropdown.map((service) => (
+          <Link
+            key={service.href}
+            to={service.href}
+            className="
+              block px-5 py-3
+              hover:bg-yellow-50
+              hover:text-yellow-600
+              transition
+            "
+          >
+            {service.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
               const isActive = location.pathname === link.href;
               return (
                 <Link
@@ -200,12 +264,61 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-1.5">
               {navLinks.map((link) => {
+
+
+if (link.label === "Services") {
+  return (
+    <div key={link.href}>
+     <button
+  onClick={() => setServicesOpen(!servicesOpen)}
+  className="
+    w-full flex items-center justify-between
+    px-4 py-3 rounded-xl hover:bg-slate-300
+  "
+>
+  <div className="flex items-center gap-4">
+    <Briefcase className="w-5 h-5 text-black" />
+    <span className="font-semibold text-black">
+      Services
+    </span>
+  </div>
+
+  <span>{servicesOpen ? "-" : "+"}</span>
+</button>
+
+      {servicesOpen && (
+        <div className="ml-4 mt-2 flex flex-col">
+          {servicesDropdown.map((service) => (
+            <Link
+              key={service.href}
+              to={service.href}
+              onClick={() => {
+                setMobileOpen(false);
+                setServicesOpen(false);
+              }}
+              className="
+                py-2 text-sm
+                text-neutral-600
+                hover:text-yellow-600
+              "
+            >
+              {service.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
                 const isActive = location.pathname === link.href;
 
                 // Pick corresponding icon
-                const Icon = link.href === "/" ? Home :
-                             link.href === "/about" ? Info :
-                             link.href === "/team" ? Users : PhoneCall;
+                const Icon =
+  link.label === "About" ? Info :
+  link.label === "Services" ? Briefcase :
+  link.label === "Our Work" ? FolderOpen :
+  link.label === " Purnovians" ? Users :
+  PhoneCall;
 
                 return (
                   <motion.div key={link.href} variants={itemVariants}>

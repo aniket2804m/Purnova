@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 import logo from "../img/logo.png";
 
@@ -123,31 +124,32 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="footer-col">
-            <h3 className="font-extrabold text-lg text-black mb-5">
-              Quick Links
-            </h3>
+         <div className="footer-col">
+  <h3 className="font-extrabold text-lg text-black mb-5">
+    Quick Links
+  </h3>
 
-            <ul className="space-y-3">
-              {[
-                "Home",
-                "About",
-                "Services",
-                "Portfolio",
-                "Contact",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="flex items-center gap-2 text-black/80 font-bold hover:text-amber-700 transition"
-                  >
-                    <ArrowUpRight size={14} className="text-amber-600" />
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <ul className="space-y-3">
+    {[
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+      { name: "Services", path: "/services" },
+      { name: "Purnovians", path: "/purnovians" },
+      { name: "Work", path: "/work" },
+      { name: "Contact", path: "/contact" },
+    ].map((item) => (
+      <li key={item.name}>
+        <Link
+          to={item.path}
+          className="flex items-center gap-2 text-black/80 font-bold hover:text-amber-700 transition"
+        >
+          <ArrowUpRight size={14} className="text-amber-600" />
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* Services */}
           <div className="footer-col">
@@ -155,14 +157,25 @@ const Footer = () => {
               Our Services
             </h3>
 
-            <ul className="space-y-3 text-black/80 font-bold">
-              <li className="hover:text-amber-700 transition cursor-pointer">SEO Optimization</li>
-              <li className="hover:text-amber-700 transition cursor-pointer">Social Media Marketing</li>
-              <li className="hover:text-amber-700 transition cursor-pointer">Google Ads</li>
-              <li className="hover:text-amber-700 transition cursor-pointer">Meta Ads</li>
-              <li className="hover:text-amber-700 transition cursor-pointer">Website Development</li>
-              <li className="hover:text-amber-700 transition cursor-pointer">Brand Strategy</li>
-            </ul>
+           <ul className="space-y-3 text-black/80 font-bold">
+  {[
+    { name: "SEO Optimization", path: "/services/seo-optimization" },
+    { name: "Social Media Marketing", path: "/services/social-media-marketing" },
+    { name: "Google Ads", path: "/services/google-ads" },
+    { name: "Meta Ads", path: "/services/meta-ads" },
+    { name: "Website Development", path: "/services/website-development" },
+    { name: "Brand Strategy", path: "/services/brand-strategy" },
+  ].map((service) => (
+    <li key={service.name}>
+      <Link
+        to={service.path}
+        className="hover:text-amber-700 transition cursor-pointer"
+      >
+        {service.name}
+      </Link>
+    </li>
+  ))}
+</ul>
           </div>
 
           {/* Contact */}

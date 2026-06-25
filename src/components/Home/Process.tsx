@@ -97,7 +97,7 @@ const Process = () => {
 
                 {/* Step Number */}
                 <div className="text-sm sm:text-base uppercase tracking-[4px] text-gray-400 mb-4 font-bold">
-                  Step {index + 1}
+                  {/* Step {index + 1} */}
                 </div>
 
                 {/* Title */}

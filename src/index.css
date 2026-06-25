@@ -152,6 +152,6 @@
   --tile: #1a1a1a;
 }
 
-* {
+/* * {
   cursor: url("/star-cursor.svg") 16 16, auto;
-}
+} */

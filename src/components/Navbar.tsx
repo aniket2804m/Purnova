@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import logo from "../img/logo.png";
 
 const navLinks = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Our Team", href: "/team" },
+  { label: " Purnovians", href: "/team" },
   { label: "Our Work", href: "/work" },
   { label: "Contact", href: "/contact" },
 ];

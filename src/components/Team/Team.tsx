@@ -4,52 +4,52 @@ import { gsap } from "gsap";
 
 // Founder
 import img from "../../img/role/rushi sir (1).png"
-import imgh1 from "../../img/role/anu.png"
+import imgh1 from "../../img/role1/rushi sir.png"
 import clickimg1 from "../../img/Imgh/Rushi sir.jpg.jpeg"
 
 // Digital Growth
 import img2 from "../../img/role/saurabh sir.png"
-import imgh2 from "../../img/Imgh/Saurabh sir.jpg.jpeg"
+import imgh2 from "../../img/role1/saurabh sir (2).png"
 import clickimg2 from "../../img/Imgh/Saurabh sir.jpg.jpeg"
 
 // Brand Architect
 import img3 from "../../img/role/manager.png"
-import imgh3 from "../../img/Imgh/Pallavi.jpg.jpeg"
+import imgh3 from "../../img/role1/pallavi.png"
 import clickimg3 from "../../img/Imgh/Pallavi.jpg.jpeg"
 
 // Web Developer
 import img4 from "../../img/role/avinash.png"
-import imgh4 from "../../img/Imgh/Avinash.jpg.jpeg"
+import imgh4 from "../../img/role1/avinash (3).png"
 import clickimg4 from "../../img/Imgh/Avinash.jpg.jpeg"
 
 // Visual Storyteller
 import img5 from "../../img/role/tejaa.png"
-import imgh5 from "../../img/Imgh/Tejas.jpg.jpeg"
+import imgh5 from "../../img/role1/tejas (3).png"
 import clickimg5 from "../../img/Imgh/Tejas.jpg.jpeg"
 
 // Video Editor
 import img6 from "../../img/role/ritesh.png"
-import imgh6 from "../../img/Imgh/Ritesh.jpg.jpeg"
+import imgh6 from "../../img/role1/ritesh (3).png"
 import clickimg6 from "../../img/Imgh/Ritesh.jpg.jpeg"
 
 // Graphics designer
 import img7 from "../../img/role/rutu.png"
-import imgh7 from "../../img/Imgh/Rutu.jpg.jpeg"
+import imgh7 from "../../img/role1/rutu (2).png"
 import clickimg7 from "../../img/Imgh/Rutu.jpg.jpeg"
 
 // Content Architect
 import img8 from "../../img/role/anu.png"
-import imgh8 from "../../img/Imgh/Anushka.jpg.jpeg"
+import imgh8 from "../../img/role1/anushka (2).png"
 import clickimg8 from "../../img/Imgh/Anushka.jpg.jpeg"
 
 // Web developer
 import img9 from "../../img/role/aniket (1).png"
-import imgh9 from "../../img/Imgh/Aniket.jpg.jpeg"
+import imgh9 from "../../img/role1/aniket (2).png"
 import clickimg9 from "../../img/Imgh/Aniket.jpg.jpeg"
 
 // video editor
 import img10 from "../../img/role/pratap.png"
-import imgh10 from "../../img/Imgh/Pratap.jpg.jpeg"
+import imgh10 from "../../img/role1/pratap (1).png"
 import clickimg10 from "../../img/Imgh/Pratap.jpg.jpeg"
 
 import img1 from "../../img/team/ai.png"
@@ -214,7 +214,7 @@ const Team = () => {
     duration: 0.8,
     ease: "easeOut",
   }}
-  className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-black mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5"
+  className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5"
 >
   Meet The Purnovians
 </motion.h2>

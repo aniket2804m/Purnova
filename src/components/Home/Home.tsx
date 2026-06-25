@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 
 import video from "../../img/video.mp4";
-import bgImg from "../../img/bgImg.png";
+import bgImg from "../../img/background.png";
 import { roles } from "../data/Home"
 
 const Home = () => {
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 1000], ["0%", "20%"]);
 
   const [currentRole, setCurrentRole] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -135,14 +137,59 @@ const Home = () => {
         id="home"
         className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden"
       >
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-10">
+        {/* Background Image Wrapper with zoom-out and parallax */}
+        <motion.div
+          initial={{ scale: 1.25, rotate: 1.5, filter: "blur(12px)", opacity: 0 }}
+          animate={{ scale: 1, rotate: 0, filter: "blur(0px)", opacity: 1 }}
+          style={{ y: bgY }}
+          transition={{ duration: 2.8, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 -z-10 w-full h-full"
+        >
           <img
             src={bgImg}
             alt="Background"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-white/5"></div>
+        </motion.div>
+
+        {/* Cinematic light streaks / floating particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.1, 1], x: [0, 30, 0], y: [0, -20, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-yellow-500/10 blur-[100px]"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1], x: [0, -40, 0], y: [0, 30, 0] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-yellow-600/5 blur-[120px]"
+          />
+          {/* Subtle floating particles (small light circles) */}
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1.5 h-1.5 bg-yellow-500/30 rounded-full blur-[0.5px]"
+              style={{
+                top: `${20 + Math.random() * 60}%`,
+                left: `${10 + Math.random() * 80}%`,
+              }}
+              initial={{ y: 50, opacity: 0, scale: 0 }}
+              animate={{
+                y: [-20, -120],
+                opacity: [0, 0.7, 0],
+                scale: [0, 1.5, 0]
+              }}
+              transition={{
+                duration: 6 + Math.random() * 6,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+                ease: "easeOut"
+              }}
+            />
+          ))}
         </div>
 
         {/* Content */}
@@ -154,13 +201,23 @@ const Home = () => {
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.2,
+                  staggerChildren: 0.25,
+                  delayChildren: 0.4, // Stagger text after background zoom-out starts
                 },
               },
             }}
             className="flex flex-col items-center justify-center"
           >
             <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 50, filter: "blur(12px)" },
+                visible: { 
+                  opacity: 1, 
+                  y: 0, 
+                  filter: "blur(0px)",
+                  transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1] }
+                }
+              }}
               onHoverStart={() => {
                 if (window.innerWidth >= 768) {
                   setShowVideo(true);
@@ -201,8 +258,13 @@ const Home = () => {
 
           <motion.p
   variants={{
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 35, filter: "blur(8px)" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: "blur(0px)",
+      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+    },
   }}
   className="
     text-black
@@ -223,8 +285,13 @@ const Home = () => {
 
 <motion.p
   variants={{
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 35, filter: "blur(8px)" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: "blur(0px)",
+      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+    },
   }}
   className="
     text-black

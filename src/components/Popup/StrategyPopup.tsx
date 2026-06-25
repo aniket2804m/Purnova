@@ -75,15 +75,15 @@ export default function StrategyPopup() {
         <div className="flex justify-center mt-6 -space-x-3">
             <img
               src={img1}
-              className="w-14 h-14 rounded-full border-2 border-white"
+              className="w-14 h-14 rounded-full border-2 border-yellow-300 bg-white"
             />
             <img
               src={img2}
-              className="w-14 h-14 rounded-full border-2 border-white"
+              className="w-14 h-14 rounded-full border-2 border-yellow-300 bg-white"
             />
             <img
               src={img3}
-              className="w-14 h-14 rounded-full border-2 border-white"
+              className="w-14 h-14 rounded-full border-2 border-yellow-300 bg-white"
             />
           </div>
 

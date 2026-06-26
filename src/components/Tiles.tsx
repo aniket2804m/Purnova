@@ -1,39 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "./ui/cn";
+import { cn } from "@/lib/utils";
 
 const TilesComponent = ({
   className = "",
-  rows: r = 30,
-  cols: c = 20,
+  rows: r = 40,
+  cols: c = 10,
 }) => {
-  const rows = new Array(r).fill(1);
-  const cols = new Array(c).fill(1);
+  const totalTiles = r * c;
 
   return (
     <div
       className={cn(
-        "relative z-0 flex w-full h-full justify-center",
+        "grid justify-center content-center border-t border-l border-white/[0.15]",
         className
       )}
+      style={{
+        gridTemplateColumns: `repeat(${c}, 40px)`,
+        gridTemplateRows: `repeat(${r}, 40px)`,
+      }}
     >
-      {rows.map((_, i) => (
-        <motion.div
-          key={`row-${i}`}
-          className="w-10 h-10 border-l border-neutral-200 relative"
-        >
-          {cols.map((_, j) => (
-            <motion.div
-              key={`col-${j}`}
-              whileHover={{
-                backgroundColor: "#f5c400",
-                transition: { duration: 0 },
-              }}
-              className="w-10 h-10 border-r border-t border-neutral-200"
-            />
-          ))}
-        </motion.div>
-      ))}
+      {Array.from({ length: totalTiles }).map((_, index) => {
+        const row = Math.floor(index / c);
+        const col = index % c;
+        const isEven = (row + col) % 2 === 0;
+
+        return (
+          <motion.div
+            key={index}
+            initial={{ backgroundColor: "transparent" }}
+            whileHover={{
+              backgroundColor: isEven ? "#FFFF00" : "#ffffff",
+              transition: { duration: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className="w-10 h-10 border-r border-b border-white/[0.15]"
+          />
+        );
+      })}
     </div>
   );
 };

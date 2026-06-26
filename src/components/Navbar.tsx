@@ -119,6 +119,8 @@ const Navbar = () => {
             {navLinks.map((link) => {
 
               if (link.label === "Services") {
+
+              const isActive = location.pathname === link.href;
   return (
     <div
   key={link.href}
@@ -128,9 +130,21 @@ const Navbar = () => {
 >
       <Link
         to={link.href}
-        className="px-4 py-2 font-semibold text-neutral-700 hover:text-black"
+       className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-full flex items-center ${
+                    isActive ? "text-yellow-600" : "text-neutral-700 hover:text-black"
+                  }`}
+                  onMouseEnter={() => setHoveredPath(link.href)}
+                  onMouseLeave={() => setHoveredPath(null)}
       >
-        Services
+        Services {servicesOpen ? "▼" : "▲"}
+
+        {isActive && (
+                    <motion.span
+                      layoutId="active-dot"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                    />
+                  )}
       </Link>
 
       <div
@@ -156,6 +170,14 @@ const Navbar = () => {
   "
 >
             {service.label}
+
+            {isActive && (
+                    <motion.span
+                      layoutId="active-dot"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                    />
+                  )}
           </Link>
         ))}
       </div>
@@ -276,6 +298,9 @@ const Navbar = () => {
 
 
 if (link.label === "Services") {
+
+  const isActive = location.pathname === link.href;
+
   return (
     <div key={link.href}>
      <button
@@ -288,11 +313,11 @@ if (link.label === "Services") {
   <div className="flex items-center gap-4">
     <Briefcase className="w-5 h-5 text-black" />
     <span className="font-semibold text-black">
-      Services
+      Services 
     </span>
   </div>
 
-  <span>{servicesOpen ? "-" : "+"}</span>
+  <span className="text-black">{servicesOpen ? "▼" : "▲"}</span>
 </button>
 
       {servicesOpen && (
@@ -305,13 +330,16 @@ if (link.label === "Services") {
                 setMobileOpen(false);
                 setServicesOpen(false);
               }}
-              className="
-                py-2 text-sm
-                text-neutral-600
-                hover:text-yellow-600
-              "
+             className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${
+                        isActive
+                          ? "bg-yellow-500/10 text-yellow-600 border border-yellow-500/20"
+                          : "text-neutral-700 hover:text-black hover:bg-yellow-600 border border-transparent"
+                      }`}
             >
               {service.label}
+              {isActive && (
+                        <span className="ml-auto w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,1)]" />
+                      )}
             </Link>
           ))}
         </div>

@@ -158,14 +158,14 @@ export default function BrandHome() {
               <div className="absolute -inset-1 rounded-[40%_60%_50%_50%/50%_40%_65%_45%] bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 opacity-80 blur-[2px] transition duration-1000 group-hover:opacity-100" />
               
               {/* Image Inner Holder with Glassmorphism shadow */}
-              <div className="relative h-full w-full overflow-hidden rounded-[40%_60%_50%_50%/50%_40%_65%_45%] bg-neutral-900 border-2 border-white/20 p-2 shadow-2xl transition-all duration-700">
+              <div className="relative h-full w-full overflow-hidden rounded-[40%_60%_50%_50%/50%_40%_65%_45%] border- border-white/20 p-2 shadow-2xl transition-all duration-700">
                 <div className="relative h-full w-full overflow-hidden rounded-[40%_60%_50%_50%/50%_40%_65%_45%]">
                   <img
                     src={Image}
                     alt="Brand Strategy Illustration"
                     className="h-full w-full object-contain transform transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 via-transparent to-transparent opacity-80" />
                 </div>
               </div>
 

@@ -108,7 +108,7 @@ const Process = () => {
       className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-20 text-center"
     >
       <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center">
-        <div className="bg-white rounded-2xl shadow-lg p-3 sm:p-4 md:p-5">
+        <div className="p-3 sm:p-4 md:p-5">
           <img
             src={step.image}
             alt={step.title}

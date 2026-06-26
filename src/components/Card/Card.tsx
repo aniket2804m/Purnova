@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 
 import { services } from "../data/Card";
 import bgImg2 from "../../img/bgImg1.png";
@@ -10,6 +11,9 @@ import bgImg2 from "../../img/bgImg1.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const TiltCard = ({ service, index }: { service: typeof services[0]; index: number }) => {
+
+    const navigate = useNavigate();
+    
     const [isHovered, setIsHovered] = useState(false);
     
     // Normalized values (-0.5 to 0.5) for 3D tilt rotation
@@ -147,6 +151,7 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
 
                             {/* Explore Button */}
                             <motion.button
+                                onClick={() => navigate(service.route)}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className={`w-fit rounded-full px-6 py-2.5 text-sm font-bold shadow-md transition-all duration-300 delay-150 ${

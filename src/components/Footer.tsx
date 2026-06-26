@@ -133,8 +133,8 @@ const Footer = () => {
     {[
       { name: "Home", path: "/" },
       { name: "About", path: "/about" },
-      { name: "Services", path: "/services" },
-      { name: "Purnovians", path: "/purnovians" },
+      { name: "Services", path: "/card" },
+      { name: "Purnovians", path: "/team" },
       { name: "Work", path: "/work" },
       { name: "Contact", path: "/contact" },
     ].map((item) => (
@@ -159,12 +159,12 @@ const Footer = () => {
 
            <ul className="space-y-3 text-black/80 font-bold">
   {[
-    { name: "SEO Optimization", path: "/services/seo-optimization" },
-    { name: "Social Media Marketing", path: "/services/social-media-marketing" },
-    { name: "Google Ads", path: "/services/google-ads" },
-    { name: "Meta Ads", path: "/services/meta-ads" },
-    { name: "Website Development", path: "/services/website-development" },
-    { name: "Brand Strategy", path: "/services/brand-strategy" },
+    { name: "SEO Optimization", path: "/seo" },
+    { name: "Social Media Marketing", path: "/social" },
+    { name: "Google Ads", path: "/google" },
+    { name: "Meta Ads", path: "/meta" },
+    { name: "Website Development", path: "/web" },
+    { name: "Brand Strategy", path: "/brand" },
   ].map((service) => (
     <li key={service.name}>
       <Link

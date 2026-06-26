@@ -4,7 +4,7 @@ import Overview from "../../components/Brand/Overview";
 import Process from "../../components/Home/Process";
 import Faq from "../../components/Brand/Faq";
 
-const Brand = () => {
+const Facebook = () => {
   return (
     <div>
       
@@ -16,4 +16,4 @@ const Brand = () => {
   )
 }
 
-export default Brand
+export default Facebook

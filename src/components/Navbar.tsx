@@ -23,12 +23,16 @@ const navLinks = [
 ];
 
 const servicesDropdown = [
-  { label: "SEO Optimization", href: "/services/seo" },
-  { label: "Social Media Marketing", href: "/services/social-media" },
-  { label: "Google Ads", href: "/services/google-ads" },
-  { label: "Meta Ads", href: "/services/meta-ads" },
-  { label: "Website Development", href: "/services/web-development" },
   { label: "Brand Strategy", href: "/brand" },
+  { label: "Performance Marketing", href: "/perform" },
+  { label: "Website Development", href: "/web" },
+  { label: "Google Ads", href: "/google" },
+  { label: "Facebook Ads", href: "/facebook" },
+  { label: "Linkdin Ads", href: "/linkdin" },
+  { label: "SEO Optimization", href: "/seo" },
+  { label: "Social Media Marketing", href: "/social" },
+  
+  
 ];
 
 const Navbar = () => {
@@ -44,6 +48,10 @@ const Navbar = () => {
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  useEffect(() => {
+  setServicesOpen(false);
+}, [location.pathname]);
 
   // Menu Animation Variants
   const menuVariants = {
@@ -113,9 +121,11 @@ const Navbar = () => {
               if (link.label === "Services") {
   return (
     <div
-      key={link.href}
-      className="relative group"
-    >
+  key={link.href}
+  className="relative"
+  onMouseEnter={() => setServicesOpen(true)}
+  onMouseLeave={() => setServicesOpen(false)}
+>
       <Link
         to={link.href}
         className="px-4 py-2 font-semibold text-neutral-700 hover:text-black"
@@ -124,28 +134,27 @@ const Navbar = () => {
       </Link>
 
       <div
-        className="
-          absolute top-full left-0 mt-2
-          w-72 bg-slate-500 rounded-2xl shadow-xl
-          border border-neutral-200
-          opacity-0 invisible
-          group-hover:opacity-100
-          group-hover:visible
-          transition-all duration-300
-          z-50
-        "
-      >
+  className={`absolute top-full left-0 mt-2
+    w-72 bg-slate-500 rounded-2xl shadow-xl
+    border border-neutral-200
+    transition-all duration-300 z-50 ${
+      servicesOpen
+        ? "opacity-100 visible"
+        : "opacity-0 invisible"
+    }`}
+>
         {servicesDropdown.map((service) => (
           <Link
-            key={service.href}
-            to={service.href}
-            className="
-              block px-5 py-3
-              hover:bg-yellow-50
-              hover:text-yellow-600
-              transition
-            "
-          >
+  key={service.href}
+  to={service.href}
+  onClick={() => setServicesOpen(false)}
+  className="
+    block px-5 py-3
+    hover:bg-yellow-50
+    hover:text-yellow-600
+    transition
+  "
+>
             {service.label}
           </Link>
         ))}

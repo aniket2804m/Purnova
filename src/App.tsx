@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NotFound from "./pages/NotFound";
+import Website from "@/components/Services/Website";
 
 const Navbar = lazy(() => import("@/components/Navbar"));
 const Hero = lazy(() => import("@/components/Hero"));
@@ -26,6 +27,20 @@ const Brand = lazy(() => import("@/components/Services/Brand"));
 const Team = lazy(() => import("@/components/Team/Team"));
 
 const StrategyPopup = lazy(() => import("@/components/Popup/StrategyPopup"));
+
+const Seo = lazy(() => import("@/components/Services/Seo"));
+
+const Social = lazy(() => import("@/components/Services/Social"));
+
+const Google = lazy(() => import("@/components/Services/Google"));
+
+const Facebook = lazy(() => import("@/components/Services/Facebook"));
+
+const Linkdin = lazy(() => import("@/components/Services/Linkdin"));
+
+const Web = lazy(() => import("@/components/Services/Website"));
+
+const Performance = lazy(() => import("@/components/Services/Performance"))
 
 const queryClient = new QueryClient();
 
@@ -67,6 +82,13 @@ const App = () => {
               <Route path="/card" element={<Card />} />
 
               <Route path="/brand" element={<Brand />} />
+              <Route path="/perform" element={<Performance />} />
+              <Route path="/web" element={<Website />} />
+              <Route path="/google" element={<Google />} />
+              <Route path="/facebook" element={<Facebook />} />
+              <Route path="/linkdin" element={<Linkdin />} />
+              <Route path="/seo" element={<Seo />} />
+              <Route path="/social" element={<Social />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

@@ -12,49 +12,57 @@ export const services = [
         title: "Brand Strategy",
         image: brand,
         description: "Create a distinct brand identity that sets you apart from competitors.",
-        icon: "🚀"
+        icon: "🚀",
+        route: "/brand"
     },
     {
         title: "Performance Marketing",
         image: performance,
         description: "Drive measurable growth with campaigns focused on ROI and conversions.",
-        icon: "📱"
+        icon: "📱",
+        route: "/perform"
     },
     {
         title: "Website Development",
         image: website,
         description: "Build fast, modern websites designed to engage and convert visitors.",
-        icon: "🎯"
+        icon: "🎯",
+        route: "/web"
     },
     {
         title: "Google Ads",
         image: google,
         description: "Reach customers at the right moment with targeted Google campaigns.",
-        icon: "💻"
+        icon: "💻",
+        route: "/google"
     },
     {
         title: "Facebook Ads",
         image: facebook,
         description: "Generate leads and sales through data driven social advertising.",
-        icon: "✨"
+        icon: "✨",
+        route: "/facebook"
     },
     {
         title: "Linkdin Ads",
         image: linkdin,
         description: "Connect with decision makers and grow your professional network.",
-        icon: "📈"
+        icon: "📈",
+        route: "/linkdin"
     },
     {
         title: "SEO Optimization",
         image: seo,
         description: "Boost your search visibility and attract high intent customers organically.",
-        icon: "📈"
+        icon: "📈",
+        route: "/seo"
     },
     {
         title: "Social Media Marketing",
         image: social,
         description: "Build meaningful connections and grow your brand across social platforms.",
-        icon: "📈"
+        icon: "📈",
+        route: "/social"
     },
     
 ];

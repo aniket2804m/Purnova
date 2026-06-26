@@ -15,6 +15,8 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
     const navigate = useNavigate();
     
     const [isHovered, setIsHovered] = useState(false);
+
+    const [showSubCards, setShowSubCards] = useState(false);
     
     // Normalized values (-0.5 to 0.5) for 3D tilt rotation
     const x = useMotionValue(0);
@@ -78,6 +80,11 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
                 onMouseMove={handleMouseMove}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => {
+    if (service.title === "Google Ads") {
+        setShowSubCards(!showSubCards);
+    }
+}}
                 className={`group relative h-full w-full rounded-3xl p-[1.5px] transition-all duration-500 ${
                     isHovered
                         ? "bg-neutral-900/60 border-2 border-yellow-500 shadow-[0_20px_50px_rgba(234,179,8,0.25)] backdrop-blur-lg scale-[1.03] z-10"
@@ -185,6 +192,9 @@ const TiltCard = ({ service, index }: { service: typeof services[0]; index: numb
                     }}
                 >
                     <div className="w-full h-full rounded-[22px] bg-transparent" />
+
+
+                    
                 </motion.div>
             </motion.div>
         </div>

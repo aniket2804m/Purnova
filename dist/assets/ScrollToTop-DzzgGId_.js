@@ -1,0 +1,1 @@
+import{h as e,i as r,u as o,r as s}from"./index-BralHDLg.js";e.registerPlugin(r);const i=()=>{const{pathname:t}=o();return s.useEffect(()=>{window.scrollTo({top:0,left:0,behavior:"instant"}),requestAnimationFrame(()=>{r.refresh(!0)})},[t]),null};export{i as default};

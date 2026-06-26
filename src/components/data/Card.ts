@@ -29,6 +29,13 @@ export const services = [
         icon: "🎯",
         route: "/web"
     },
+    // {
+    //     title: "Facebook Ads",
+    //     image: facebook,
+    //     description: "Generate leads and sales through data driven social advertising.",
+    //     icon: "✨",
+    //     route: "/facebook"
+    // },
     {
         title: "Google Ads",
         image: google,
@@ -36,20 +43,13 @@ export const services = [
         icon: "💻",
         route: "/google"
     },
-    {
-        title: "Facebook Ads",
-        image: facebook,
-        description: "Generate leads and sales through data driven social advertising.",
-        icon: "✨",
-        route: "/facebook"
-    },
-    {
-        title: "Linkdin Ads",
-        image: linkdin,
-        description: "Connect with decision makers and grow your professional network.",
-        icon: "📈",
-        route: "/linkdin"
-    },
+    // {
+    //     title: "Linkdin Ads",
+    //     image: linkdin,
+    //     description: "Connect with decision makers and grow your professional network.",
+    //     icon: "📈",
+    //     route: "/linkdin"
+    // },
     {
         title: "SEO Optimization",
         image: seo,

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import Image from "../../img/img6.png";
+import Image from "../../img/card/brand strategy 1.jpg.jpeg";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

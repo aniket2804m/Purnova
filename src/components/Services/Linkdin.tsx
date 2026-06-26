@@ -4,6 +4,7 @@ import Overview from "../../components/Brand/Overview";
 import Process from "../../components/Home/Process";
 import Faq from "../../components/Brand/Faq";
 import Testimonials from "../../components/Home/Testimonials";
+import Work from "../../components/Work/Work";
 
 const Linkdin = () => {
   return (
@@ -11,6 +12,7 @@ const Linkdin = () => {
       
       <Hero />
       <Overview />
+      <Work />
       <Process />
       <Testimonials />
       <Faq />

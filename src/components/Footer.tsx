@@ -10,6 +10,7 @@ import {
   Facebook,
   Instagram,
   Linkedin,
+  Youtube,
   Mail,
   Phone,
   MapPin,
@@ -118,6 +119,13 @@ const Footer = () => {
                 href="#"
                 className="p-3 rounded-xl bg-neutral-800/10 border border-neutral-400/20 text-black hover:bg-black hover:text-yellow-400 hover:scale-110 transition flex items-center justify-center shadow-sm"
               >
+                <Youtube size={18} />
+              </a>
+
+              <a
+                href="#"
+                className="p-3 rounded-xl bg-neutral-800/10 border border-neutral-400/20 text-black hover:bg-black hover:text-yellow-400 hover:scale-110 transition flex items-center justify-center shadow-sm"
+              >
                 <Linkedin size={18} />
               </a>
             </div>
@@ -159,18 +167,21 @@ const Footer = () => {
 
            <ul className="space-y-3 text-black/80 font-bold">
   {[
+    { name: "Brand Strategy", path: "/brand" },
+    { name: "Performance Marketing", path: "/perform" },
+    { name: "Website Development", path: "/web" },
+    { name: "Google Ads", path: "/google" },
+    { name: "Facebook Ads", path: "/facebook" },
+    { name: "Linkdin Ads", path: "/linkdin" },
     { name: "SEO Optimization", path: "/seo" },
     { name: "Social Media Marketing", path: "/social" },
-    { name: "Google Ads", path: "/google" },
-    { name: "Meta Ads", path: "/meta" },
-    { name: "Website Development", path: "/web" },
-    { name: "Brand Strategy", path: "/brand" },
   ].map((service) => (
     <li key={service.name}>
       <Link
         to={service.path}
-        className="hover:text-amber-700 transition cursor-pointer"
+       className="flex items-center gap-2 text-black/80 font-bold hover:text-amber-700 transition"
       >
+        <ArrowUpRight size={14} className="text-amber-600" />
         {service.name}
       </Link>
     </li>

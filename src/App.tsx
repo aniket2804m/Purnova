@@ -92,7 +92,7 @@ const App = () => {
               <Route path="/brand" element={<Brand />} />
               <Route path="/perform" element={<Performance />} />
               <Route path="/web" element={<Web />} />
-              <Route path="/ads" element={<AdsCard />} />
+              <Route path="/google" element={<Google />} />
               <Route path="/facebook" element={<Facebook />} />
               <Route path="/linkdin" element={<Linkdin />} />
               <Route path="/seo" element={<Seo />} />

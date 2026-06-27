@@ -32,7 +32,7 @@ export const services = [
         image: google,
         description: "Reach customers at the right moment with targeted Google campaigns.",
         icon: "💻",
-        route: "/ads"
+        route: "/google"
     },
     {
         title: "SEO Optimization",

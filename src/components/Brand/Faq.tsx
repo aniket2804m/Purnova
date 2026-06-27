@@ -9,7 +9,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="relative overflow-hidden py-24 bg-white text-neutral-900">
+    <section className="relative overflow-hidden py-10 bg-white text-neutral-900">
       {/* Dotted pattern background overlay */}
       <div className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-60" />
       

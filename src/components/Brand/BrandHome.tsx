@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Image from "../../img/card/brand strategy 1.jpg.jpeg";
+
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +14,8 @@ export default function BrandHome() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
   const shapesRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -269,7 +273,7 @@ export default function BrandHome() {
               className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
               {/* Primary Button */}
-              <motion.button
+              {/* <motion.button
                 // variants={buttonVariants}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
@@ -277,7 +281,7 @@ export default function BrandHome() {
               >
                 Get Started
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </motion.button>
+              </motion.button> */}
 
               {/* Secondary Button */}
               <motion.button
@@ -285,6 +289,7 @@ export default function BrandHome() {
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 className="w-full sm:w-auto rounded-full border border-neutral-300 text-black hover:border-black font-bold px-8 py-4 transition-all duration-300 flex items-center justify-center"
+                onClick={() => navigate("/contact")}
               >
                 Book a Consultation
               </motion.button>

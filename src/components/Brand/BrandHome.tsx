@@ -6,7 +6,6 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Image from "../../img/card/brand strategy 1.jpg.jpeg";
 
-
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,7 +128,7 @@ export default function BrandHome() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white text-black py-16 sm:py-24 lg:py-32 flex items-center min-h-[90dvh]"
+      className="relative overflow-hidden bg-white text-black py-32 sm:py-32 lg:py-32 flex items-center min-h-[90dvh]"
     >
       {/* Background Subtle Gradients & Blobs */}
       <div className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />

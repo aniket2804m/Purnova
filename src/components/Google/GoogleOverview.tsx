@@ -40,18 +40,8 @@ const services = [
     icon: "📲",
   },
   {
-    title: "Audience Strategy",
-    desc: "We build audience architecture that layers intent, behaviour, and demographics into precise targeting segments. First-party data, Customer Match, and custom intent audiences designed so your ads reach people predisposed to buy, not just people who exist.",
-    icon: "👥",
-  },
-  {
-    title: "Attribution Setup",
-    desc: "We build attribution systems that tell you exactly which touchpoints drive revenue not just which ones drive clicks. GA4, Google Tag Manager, conversion tracking, and server-side setup that gives your data integrity and your decisions confidence.",
-    icon: "📝",
-  },
-  {
     title: "ROI Reporting",
-    desc: "We build reporting frameworks that translate campaign data into business decisions. Not vanity metrics. Not agency scorecards. Clear visibility into cost per acquisition, revenue attribution, and where the next rupee should go.. First-party data, Customer Match, and custom intent audiences designed so your ads reach people predisposed to buy, not just people who exist.",
+    desc: "We build reporting frameworks that translate campaign data into business decisions. Not vanity metrics. Not agency scorecards. Clear visibility into cost per acquisition, revenue attribution, and where the next rupee should go.. First-party data, Customer Match",
     icon: "📊",
   },
 ];
@@ -148,7 +138,7 @@ export default function Overview() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-20 grid gap-2 sm:grid-cols-2 xl:grid-cols-5"
+          className="mt-20 grid gap-2 sm:grid-cols-2 xl:grid-cols-4"
         >
           {services.map((service, index) => (
             <motion.div
@@ -162,7 +152,7 @@ export default function Overview() {
                 duration: 0.4,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="service-card group relative overflow-hidden rounded-[2rem] border border-neutral-200/40 bg-white/30 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.03)] backdrop-blur-lg transition-all duration-500 hover:border-amber-500/30 hover:bg-white/60 hover:shadow-[0_20px_40px_rgba(245,158,11,0.06)]"
+              className="service-card group relative overflow-hidden rounded-[2rem] border border-neutral-200/40 bg-white/30 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.03)] backdrop-blur-lg transition-all duration-500 hover:border-amber-500/30 hover:bg-white/60 hover:shadow-[0_20px_40px_rgba(245,158,11,0.06)] select-none"
             >
               {/* Golden Hover Aura */}
               <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 pointer-events-none">
@@ -180,7 +170,7 @@ export default function Overview() {
                   {service.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-neutral-600 font-medium">
+                <p className="text-sm leading-relaxed text-amber-950 font-medium">
                   {service.desc}
                 </p>
 

@@ -48,6 +48,8 @@ const Terms = lazy(() => import("@/pages/Terms"));
 
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 
+const AdsCard = lazy(() => import("@/components/Card/AdsCard"));
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -90,7 +92,7 @@ const App = () => {
               <Route path="/brand" element={<Brand />} />
               <Route path="/perform" element={<Performance />} />
               <Route path="/web" element={<Web />} />
-              <Route path="/google" element={<Google />} />
+              <Route path="/ads" element={<AdsCard />} />
               <Route path="/facebook" element={<Facebook />} />
               <Route path="/linkdin" element={<Linkdin />} />
               <Route path="/seo" element={<Seo />} />

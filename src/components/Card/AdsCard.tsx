@@ -31,80 +31,80 @@ const servicesData: ServiceItem[] = [
     title: "Search Ads",
     description: "Be the answer when the question is asked.",
     icon: Search,
-    gridLg: "lg:col-start-1 lg:row-start-1",
-    gridMd: "md:col-start-1 md:row-start-1",
+    gridLg: "lg:col-start-2 lg:row-start-1", // Row 1, Col 2
+    gridMd: "md:col-start-1 md:row-start-1", // Row 1, Col 1
   },
   {
     id: "02",
     title: "Performance Max",
     description: "One campaign. Every channel. Zero wasted reach.",
     icon: Zap,
-    gridLg: "lg:col-start-2 lg:row-start-1",
-    gridMd: "md:col-start-2 md:row-start-1",
+    gridLg: "lg:col-start-3 lg:row-start-1", // Row 1, Col 3
+    gridMd: "md:col-start-2 md:row-start-1", // Row 1, Col 2
   },
   {
     id: "03",
     title: "YouTube Ads",
     description: "The brands people remember are the ones they've watched.",
     icon: Youtube,
-    gridLg: "lg:col-start-3 lg:row-start-1",
-    gridMd: "md:col-start-3 md:row-start-1",
+    gridLg: "lg:col-start-4 lg:row-start-1", // Row 1, Col 4
+    gridMd: "md:col-start-3 md:row-start-1", // Row 1, Col 3
   },
   {
     id: "04",
     title: "Display Network",
     description: "Stay visible long after the first impression.",
     icon: Layers,
-    gridLg: "lg:col-start-4 lg:row-start-1",
-    gridMd: "md:col-start-1 md:row-start-2",
+    gridLg: "lg:col-start-1 lg:row-start-2", // Row 2, Col 1 (Left far)
+    gridMd: "md:col-start-1 md:row-start-2", // Row 2, Col 1
   },
   {
     id: "05",
     title: "Shopping Ads",
     description: "Put your product in front of someone already looking to buy it.",
     icon: ShoppingBag,
-    gridLg: "lg:col-start-5 lg:row-start-1",
-    gridMd: "md:col-start-3 md:row-start-2",
+    gridLg: "lg:col-start-2 lg:row-start-2", // Row 2, Col 2 (Left adjacent)
+    gridMd: "md:col-start-3 md:row-start-2", // Row 2, Col 3
   },
   {
     id: "06",
     title: "Retargeting",
     description: "Most buyers don't convert on the first visit. We bring them back.",
     icon: RefreshCw,
-    gridLg: "lg:col-start-1 lg:row-start-3",
-    gridMd: "md:col-start-1 md:row-start-3",
+    gridLg: "lg:col-start-4 lg:row-start-2", // Row 2, Col 4 (Right adjacent)
+    gridMd: "md:col-start-1 md:row-start-3", // Row 3, Col 1
   },
   {
     id: "07",
     title: "Conversion Optimisation",
     description: "Traffic without conversion is just an expensive audience.",
     icon: TrendingUp,
-    gridLg: "lg:col-start-2 lg:row-start-3",
-    gridMd: "md:col-start-2 md:row-start-3",
+    gridLg: "lg:col-start-5 lg:row-start-2", // Row 2, Col 5 (Right far)
+    gridMd: "md:col-start-2 md:row-start-3", // Row 3, Col 2
   },
   {
     id: "08",
     title: "Audience Strategy",
     description: "Who you reach matters more than how many you reach.",
     icon: Users,
-    gridLg: "lg:col-start-3 lg:row-start-3",
-    gridMd: "md:col-start-3 md:row-start-3",
+    gridLg: "lg:col-start-2 lg:row-start-3", // Row 3, Col 2
+    gridMd: "md:col-start-3 md:row-start-3", // Row 3, Col 3
   },
   {
     id: "09",
     title: "Attribution Setup",
     description: "You can't optimise what you can't measure accurately.",
     icon: GitMerge,
-    gridLg: "lg:col-start-4 lg:row-start-3",
-    gridMd: "md:col-start-1 md:row-start-4",
+    gridLg: "lg:col-start-3 lg:row-start-3", // Row 3, Col 3
+    gridMd: "md:col-start-1 md:row-start-4", // Row 4, Col 1
   },
   {
     id: "10",
     title: "ROI Reporting",
     description: "Numbers without context are just noise.",
     icon: BarChart3,
-    gridLg: "lg:col-start-5 lg:row-start-3",
-    gridMd: "md:col-start-3 md:row-start-4",
+    gridLg: "lg:col-start-4 lg:row-start-3", // Row 3, Col 4
+    gridMd: "md:col-start-3 md:row-start-4", // Row 4, Col 3
   },
 ];
 
@@ -133,29 +133,29 @@ const SubCard = ({
     <div
       ref={cardRef}
       style={{ perspective: 1000 }}
-      className={`relative w-full h-[180px] transition-all duration-300 ${
+      className={`relative w-full h-[160px] transition-all duration-300 ${
         isExpanded ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-0 pointer-events-none"
       }`}
     >
       {/* Golden Glow Behind on Hover */}
       <motion.div
-        className="absolute -inset-2 rounded-[2rem] bg-gradient-to-r from-amber-500/10 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl pointer-events-none"
+        className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-amber-500/10 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl pointer-events-none"
       />
 
       <motion.div
         onMouseMove={handleMouseMove}
-        whileHover={{ y: -6, scale: 1.02 }}
+        whileHover={{ y: -5, scale: 1.02 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        className="group relative h-full w-full rounded-[2rem] p-[1.5px] bg-neutral-900/50 border border-neutral-800/80 backdrop-blur-md overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-amber-500/35 hover:bg-neutral-900/80 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+        className="group relative h-full w-full rounded-2xl p-[1.5px] bg-neutral-950/95 border border-neutral-800/80 backdrop-blur-md overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 hover:bg-black shadow-[0_6px_30px_rgba(0,0,0,0.5)]"
       >
-        {/* Mouse Tracking Metallic Shine overlay */}
+        {/* Mouse Tracking Subtle Gold Shine overlay */}
         <motion.div
-          className="pointer-events-none absolute -inset-px rounded-[2rem] opacity-0 group-hover:opacity-100 transition duration-300 z-10"
+          className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 z-10"
           style={{
             background: useMotionTemplate`
               radial-gradient(
                 120px circle at ${mouseX}px ${mouseY}px,
-                rgba(245, 158, 11, 0.08),
+                rgba(245, 158, 11, 0.1),
                 transparent 85%
               )
             `,
@@ -163,32 +163,32 @@ const SubCard = ({
         />
 
         {/* Card Content */}
-        <div className="relative z-20 p-6 flex flex-col justify-between h-full">
+        <div className="relative z-20 p-5 flex flex-col justify-between h-full">
           <div>
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-3">
               {/* Gold Number */}
-              <span className="text-xs font-mono font-bold text-amber-500/80 tracking-wider">
+              <span className="text-xs font-mono font-bold text-amber-500 tracking-wider">
                 {service.id}
               </span>
               {/* Premium Icon Container */}
-              <div className="h-9 w-9 flex items-center justify-center rounded-xl bg-neutral-950/60 border border-neutral-800 group-hover:border-amber-500/30 group-hover:bg-amber-500/5 text-amber-500 transition-all duration-300">
-                <IconComponent className="h-4.5 w-4.5" />
+              <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-neutral-900 border border-neutral-800 group-hover:border-amber-500/30 group-hover:bg-amber-500/5 text-amber-500 transition-all duration-300">
+                <IconComponent className="h-4 w-4" />
               </div>
             </div>
 
             {/* Title */}
-            <h4 className="text-base font-bold text-neutral-100 font-display group-hover:text-amber-400 transition-colors duration-300 mb-1.5">
+            <h4 className="text-sm font-bold text-neutral-100 font-display group-hover:text-amber-400 transition-colors duration-300 mb-1">
               {service.title}
             </h4>
 
             {/* Description */}
-            <p className="text-xs text-neutral-400 leading-relaxed group-hover:text-neutral-200 transition-colors duration-300">
+            <p className="text-[11px] text-neutral-400 leading-relaxed group-hover:text-neutral-200 transition-colors duration-300 line-clamp-2">
               {service.description}
             </p>
           </div>
 
           {/* Action indicator */}
-          <div className="mt-3 flex items-center gap-1.5 text-[10px] font-bold text-neutral-500 uppercase tracking-widest group-hover:text-amber-500 transition-colors duration-300 self-end">
+          <div className="mt-2 flex items-center gap-1 text-[9px] font-bold text-neutral-500 uppercase tracking-widest group-hover:text-amber-500 transition-colors duration-300 self-end">
             Explore <ArrowUpRight className="h-3 w-3" />
           </div>
         </div>
@@ -220,36 +220,36 @@ const CenterCard = ({
     <motion.div
       ref={cardRef}
       style={{ perspective: 1000 }}
-      animate={isExpanded ? { y: 0 } : { y: [-6, 6, -6] }}
+      animate={isExpanded ? { y: 0 } : { y: [-5, 5, -5] }}
       transition={isExpanded ? { duration: 0.3 } : { duration: 5, repeat: Infinity, ease: "easeInOut" }}
       onClick={onClick}
-      className="relative w-full h-[220px] md:h-[240px] z-30 cursor-pointer lg:col-start-3 lg:row-start-2 md:col-start-2 md:row-start-2 col-start-1 row-start-6"
+      className="relative w-full h-[200px] lg:h-[220px] z-30 cursor-pointer lg:col-start-3 lg:row-start-2 md:col-start-2 md:row-start-2 col-start-1 row-start-6"
     >
       {/* Luxury Golden Glow behind center card */}
       <div 
-        className={`absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-amber-500 to-yellow-600 opacity-20 blur-2xl transition-all duration-1000 pointer-events-none ${
-          isExpanded ? "scale-110 opacity-30 animate-pulse" : "scale-100 opacity-20"
+        className={`absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-500 to-yellow-600 opacity-10 blur-xl transition-all duration-1000 pointer-events-none ${
+          isExpanded ? "scale-105 opacity-15 animate-pulse" : "scale-100 opacity-10"
         }`} 
       />
 
       <motion.div
         onMouseMove={handleMouseMove}
-        whileHover={{ scale: 1.03 }}
+        whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className={`group relative h-full w-full rounded-[2.5rem] p-[1.5px] backdrop-blur-lg overflow-hidden flex flex-col justify-between transition-all duration-500 border ${
+        className={`group relative h-full w-full rounded-3xl p-[1px] backdrop-blur-lg overflow-hidden flex flex-col justify-between transition-all duration-500 border ${
           isExpanded 
-            ? "bg-neutral-900/90 border-amber-500 shadow-[0_0_50px_rgba(245,158,11,0.25)]" 
-            : "bg-black/80 border-amber-500/40 hover:border-amber-500/80 shadow-[0_0_30px_rgba(0,0,0,0.8)]"
+            ? "bg-white/95 border-amber-500 shadow-[0_15px_40px_rgba(245,158,11,0.12)]" 
+            : "bg-white border-amber-500/25 hover:border-amber-500/60 shadow-[0_10px_30px_rgba(245,158,11,0.05)]"
         }`}
       >
         {/* Dynamic metallic cursor tracking shine */}
         <motion.div
-          className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition duration-300 z-10"
+          className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition duration-300 z-10"
           style={{
             background: useMotionTemplate`
               radial-gradient(
-                180px circle at ${mouseX}px ${mouseY}px,
-                rgba(255, 215, 0, 0.12),
+                150px circle at ${mouseX}px ${mouseY}px,
+                rgba(245, 158, 11, 0.08),
                 transparent 80%
               )
             `,
@@ -257,14 +257,14 @@ const CenterCard = ({
         />
 
         {/* Ambient Pulsing Glow inside Card */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.05),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.03),transparent_60%)] pointer-events-none" />
 
-        <div className="relative z-20 p-8 flex flex-col justify-between h-full items-center text-center">
+        <div className="relative z-20 p-5 flex flex-col justify-between h-full items-center text-center">
           {/* Logo / Icon Area */}
           <div className="flex flex-col items-center">
             {/* Premium Gold Google Ads SVG Logo */}
             <svg 
-              className={`w-12 h-12 mb-3 transition-transform duration-500 ${isExpanded ? "scale-105" : "group-hover:scale-105"}`} 
+              className={`w-10 h-10 mb-1.5 transition-transform duration-500 ${isExpanded ? "scale-105" : "group-hover:scale-105"}`} 
               viewBox="0 0 48 48" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
@@ -275,8 +275,8 @@ const CenterCard = ({
                   <stop offset="100%" stopColor="#FFA751" />
                 </linearGradient>
                 <linearGradient id="gold-ads-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FFFFFF" />
-                  <stop offset="100%" stopColor="#F59E0B" />
+                  <stop offset="0%" stopColor="#FFA751" />
+                  <stop offset="100%" stopColor="#D97706" />
                 </linearGradient>
               </defs>
               {/* Blue diagonal bar equivalent in gold */}
@@ -286,26 +286,26 @@ const CenterCard = ({
             </svg>
             
             {/* Subtitle */}
-            <span className="text-[10px] font-extrabold tracking-[0.25em] text-amber-500 uppercase font-mono">
+            <span className="text-[9px] font-extrabold tracking-[0.2em] text-amber-600 uppercase font-mono">
               Google Ads Core
             </span>
           </div>
 
           {/* Heading */}
-          <div className="my-2">
-            <h3 className="text-2xl font-black tracking-tight text-white font-display">
+          <div className="my-1">
+            <h3 className="text-xl font-black tracking-tight text-neutral-900 font-display">
               Google Ads
             </h3>
-            <p className="text-[11px] text-neutral-400 mt-1 max-w-[220px]">
+            <p className="text-[10px] text-neutral-550 mt-0.5 max-w-[200px]">
               {isExpanded ? "Active ecosystem showcase" : "Supercharge your business reach"}
             </p>
           </div>
 
           {/* Expand/Collapse Interaction Pill */}
-          <div className={`px-4 py-1.5 rounded-full border text-[9px] font-extrabold tracking-widest uppercase transition-all duration-300 ${
+          <div className={`px-4 py-1 rounded-full border text-[8px] font-extrabold tracking-widest uppercase transition-all duration-300 ${
             isExpanded 
-              ? "bg-amber-500 text-black border-amber-400 font-bold scale-95 shadow-md shadow-amber-500/20" 
-              : "bg-neutral-900 text-amber-500 border-neutral-800 group-hover:border-amber-500/40 group-hover:bg-amber-500/5 shadow-inner"
+              ? "bg-amber-500 text-white border-amber-400 font-bold scale-95 shadow-md shadow-amber-500/20" 
+              : "bg-neutral-50 text-amber-600 border-neutral-200 group-hover:border-amber-500/30 group-hover:bg-amber-500/5 shadow-sm"
           }`}>
             {isExpanded ? "Click to Collapse" : "Hover or Click to Expand"}
           </div>
@@ -457,53 +457,56 @@ export default function AdsCard() {
       ref={containerRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full bg-[#050505] text-neutral-100 py-24 md:py-32 overflow-hidden flex flex-col items-center justify-center min-h-[820px] lg:min-h-[920px] select-none"
+      className="relative w-full bg-white text-neutral-900 py-12 lg:py-6 overflow-hidden flex flex-col items-center justify-center lg:h-screen lg:max-h-screen select-none"
     >
-      {/* Luxury Background Overlay: Dotted Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1.2px,transparent_1.2px)] [background-size:24px_24px] pointer-events-none z-0" />
+      {/* Luxury Background Overlay: Light Dotted Grid */}
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-70 pointer-events-none z-0" />
 
       {/* Luxury Soft Golden Ambient Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[550px] w-[550px] rounded-full bg-amber-500/5 blur-[130px] pointer-events-none z-0" />
-      <div className="absolute -top-40 -left-40 h-[450px] w-[450px] rounded-full bg-amber-600/5 blur-[120px] pointer-events-none z-0" />
-      <div className="absolute -bottom-40 -right-40 h-[450px] w-[450px] rounded-full bg-yellow-500/5 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[550px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none z-0" />
+      <div className="absolute -top-40 -left-40 h-[400px] w-[400px] rounded-full bg-amber-500/[0.03] blur-[100px] pointer-events-none z-0" />
+      <div className="absolute -bottom-40 -right-40 h-[400px] w-[400px] rounded-full bg-yellow-500/[0.03] blur-[100px] pointer-events-none z-0" />
 
       {/* Floating Micro Gold Particles (Micro-animations) */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 rounded-full bg-amber-500/20 blur-[0.5px] pointer-events-none hidden lg:block"
+          className="absolute w-1 h-1 rounded-full bg-amber-500/15 blur-[0.5px] pointer-events-none hidden lg:block"
           style={{
             top: `${15 + i * 14}%`,
             left: `${8 + (i % 2 === 0 ? Math.random() * 5 : 78 + Math.random() * 5)}%`,
           }}
           animate={{
-            y: [-30, 30, -30],
-            x: [-15, 15, -15],
-            opacity: [0.15, 0.45, 0.15],
-            scale: [0.85, 1.25, 0.85],
+            y: [-25, 25, -25],
+            x: [-12, 12, -12],
+            opacity: [0.1, 0.35, 0.1],
+            scale: [0.9, 1.2, 0.9],
           }}
           transition={{
-            duration: 7 + i * 2.5,
+            duration: 8 + i * 2,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
       ))}
 
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col justify-center h-full">
         {/* Header Section */}
+        <div className="mx-auto max-w-3xl text-center mb-10 lg:mb-6">
+          
+        </div>
 
         {/* Dynamic Cards Container */}
         <div className={`relative w-full flex items-center justify-center transition-all duration-700 ${
-          isRendered ? "min-h-[580px] lg:min-h-[660px]" : "min-h-[250px]"
+          isRendered ? "min-h-[520px] lg:min-h-[580px]" : "min-h-[220px]"
         }`}>
           {isRendered ? (
-            /* Expanded Layout: Symmetrical Grid */
+            /* Expanded Layout: Symmetrical Grid (3 Rows, 5 Columns on Desktop) */
             <div 
-              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 w-full max-w-6xl items-center justify-items-center relative z-10 transition-all duration-700"
+              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5 w-full max-w-7xl items-center justify-items-center relative z-10 transition-all duration-700"
             >
-              {/* Row 1 - Cards 01 to 05 */}
-              {servicesData.slice(0, 5).map((service) => (
+              {/* Row 1 - Cards 01 to 03 */}
+              {servicesData.slice(0, 3).map((service) => (
                 <div 
                   key={service.id} 
                   className={`w-full ${service.gridLg} ${service.gridMd}`}
@@ -516,15 +519,43 @@ export default function AdsCard() {
                 </div>
               ))}
 
-              {/* Center Card - Always remains in the middle */}
+              {/* Row 2 - Left Adjacent Cards (04 & 05) */}
+              {servicesData.slice(3, 5).map((service) => (
+                <div 
+                  key={service.id} 
+                  className={`w-full ${service.gridLg} ${service.gridMd}`}
+                >
+                  <SubCard 
+                    service={service} 
+                    isExpanded={isExpanded} 
+                    cardRef={(el) => (cardRefs.current[service.id] = el)}
+                  />
+                </div>
+              ))}
+
+              {/* Center Card - Always remains in the middle of Row 2 */}
               <CenterCard 
                 isExpanded={isExpanded} 
                 onClick={handleCenterClick} 
                 cardRef={(el) => (cardRefs.current["center"] = el)}
               />
 
-              {/* Row 2 - Cards 06 to 10 */}
-              {servicesData.slice(5).map((service) => (
+              {/* Row 2 - Right Adjacent Cards (06 & 07) */}
+              {servicesData.slice(5, 7).map((service) => (
+                <div 
+                  key={service.id} 
+                  className={`w-full ${service.gridLg} ${service.gridMd}`}
+                >
+                  <SubCard 
+                    service={service} 
+                    isExpanded={isExpanded} 
+                    cardRef={(el) => (cardRefs.current[service.id] = el)}
+                  />
+                </div>
+              ))}
+
+              {/* Row 3 - Cards 08 to 10 */}
+              {servicesData.slice(7).map((service) => (
                 <div 
                   key={service.id} 
                   className={`w-full ${service.gridLg} ${service.gridMd}`}

@@ -40,7 +40,13 @@ const Linkdin = lazy(() => import("@/components/Services/Linkdin"));
 
 const Web = lazy(() => import("@/components/Services/Website"));
 
-const Performance = lazy(() => import("@/components/Services/Performance"))
+const Performance = lazy(() => import("@/components/Services/Performance"));
+
+const Privacy = lazy(() => import("@/pages/Privacy"));
+
+const Terms = lazy(() => import("@/pages/Terms"));
+
+const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 
 const queryClient = new QueryClient();
 
@@ -83,12 +89,16 @@ const App = () => {
 
               <Route path="/brand" element={<Brand />} />
               <Route path="/perform" element={<Performance />} />
-              <Route path="/web" element={<Website />} />
+              <Route path="/web" element={<Web />} />
               <Route path="/google" element={<Google />} />
               <Route path="/facebook" element={<Facebook />} />
               <Route path="/linkdin" element={<Linkdin />} />
               <Route path="/seo" element={<Seo />} />
               <Route path="/social" element={<Social />} />
+
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/cookie" element={<CookiePolicy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

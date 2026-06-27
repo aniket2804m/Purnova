@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../img/logo.png";
 
@@ -24,6 +24,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
   
   // CTA Hover Mouse Coordinates
   const ctaMouseX = useMotionValue(0);
@@ -88,6 +90,8 @@ const Footer = () => {
               <img
           src={logo}
           alt="logo"
+          loading="lazy"
+          decoding="async"
           className="w-60 h-50 object-cover object-center opacity-95 rounded-md mb-4"
         />
               <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
@@ -261,6 +265,7 @@ const Footer = () => {
                 ? "bg-yellow-400 text-black hover:bg-white border border-yellow-500/20"
                 : "bg-black text-white hover:bg-yellow-400 hover:text-black"
             }`}
+            onClick={() => navigate("/contact")}
           >
             Get Free Consultation
           </motion.button>
@@ -273,10 +278,18 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-6 text-sm text-black/70 font-semibold">
-            <a href="#" className="hover:text-amber-700 transition">Privacy Policy</a>
-            <a href="#" className="hover:text-amber-700 transition">Terms & Conditions</a>
-            <a href="#" className="hover:text-amber-700 transition">Cookie Policy</a>
-          </div>
+  <Link to="/privacy" className="hover:text-amber-700 transition">
+    Privacy Policy
+  </Link>
+
+  <Link to="/terms" className="hover:text-amber-700 transition">
+    Terms & Conditions
+  </Link>
+
+  <Link to="/cookie" className="hover:text-amber-700 transition">
+    Cookie Policy
+  </Link>
+</div>
         </div>
       </div>
     </footer>

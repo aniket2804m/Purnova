@@ -62,6 +62,8 @@ function LaptopMockup({ project, index, onClick }: { project: typeof projects[0]
             <img 
               src={project.image} 
               alt={project.title} 
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain object-top select-none pointer-events-none" 
             />
             {/* Screen Glass Reflection Overlay */}
@@ -337,7 +339,7 @@ export default function Work() {
       >
       {/* Header Info */}
       <div className="relative z-50 text-center select-none px-4">
-        <p className="uppercase tracking-[4px] text-zinc-400 text-[50px] md:text-xs mt-10 mb-10">
+        <p className="uppercase tracking-[4px] text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-6 md:mt-10 mb-1 md:mb-5">
           Featured Work
         </p>
         <h2 className="text-2xl md:text-3xl font-black text-white mt-5 mb-5 bg-gradient-to-r from-zinc-300 via-white to-zinc-400 bg-clip-text text-transparent">

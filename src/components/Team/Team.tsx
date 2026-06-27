@@ -393,6 +393,8 @@ const Team = () => {
           <motion.img
             src={img1}
             alt="Purnova Team"
+            loading="lazy"
+            decoding="async"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
@@ -449,6 +451,8 @@ const Team = () => {
           <img
             src={fullscreenImage}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="max-w-full max-h-full object-contain"
           />
         </div>
@@ -534,6 +538,8 @@ onMouseLeave={() => {
   key={hovered ? member.hoverImage : member.image}
   src={hovered ? member.hoverImage : member.image}
   alt={member.name}
+  loading="lazy"
+  decoding="async"
   className="
     absolute
     bottom-0

@@ -4,7 +4,6 @@ import { X, Calendar } from "lucide-react";
 import img1 from "../../img/role/rushi sir (1).png";
 import img2 from "../../img/role/manager.png";
 import img3 from "../../img/role/saurabh sir.png";
-import img4 from "../../img/role/avinash.png";
 
 export default function StrategyPopup() {
   const [showPopup, setShowPopup] = useState(false);
@@ -78,6 +77,8 @@ export default function StrategyPopup() {
       key={index}
       src={img}
       alt={`User ${index + 1}`}
+      loading="lazy"
+      decoding="async"
       className="
         w-10 h-10
         sm:w-12 sm:h-12

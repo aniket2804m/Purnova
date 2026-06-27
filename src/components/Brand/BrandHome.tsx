@@ -163,6 +163,8 @@ export default function BrandHome() {
                   <img
                     src={Image}
                     alt="Brand Strategy Illustration"
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-contain transform transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 via-transparent to-transparent opacity-80" />

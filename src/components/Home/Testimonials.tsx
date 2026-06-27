@@ -157,6 +157,8 @@ const Testimonials = () => {
                     <img
                       src={item.image}
                       alt={item.name}
+                      loading="lazy"
+                      decoding="async"
                       className={`h-14 w-14 rounded-full object-cover shadow-md transition-all duration-300 ${
                         isActive ? "ring-2 ring-yellow-400 scale-105" : "ring-2 ring-amber-500/30"
                       }`}

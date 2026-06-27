@@ -108,7 +108,7 @@ const Count = () => {
   }, []);
 
   return (
-    <div id="count" ref={containerRef} className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-white">
+    <div id="count" ref={containerRef} className="relative overflow-hidden py-8 px-5 md:px-10 lg:px-20 bg-white">
       {/* Background Image & Light Yellow Glow Blend */}
       <div className="absolute inset-0 -z-10">
         <img

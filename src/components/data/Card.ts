@@ -30,25 +30,11 @@ export const services = [
         route: "/web"
     },
     // {
-    //     title: "Facebook Ads",
-    //     image: facebook,
-    //     description: "Generate leads and sales through data driven social advertising.",
-    //     icon: "✨",
-    //     route: "/facebook"
-    // },
-    {
-        title: "Google Ads",
-        image: google,
-        description: "Reach customers at the right moment with targeted Google campaigns.",
-        icon: "💻",
-        route: "/google"
-    },
-    // {
-    //     title: "Linkdin Ads",
-    //     image: linkdin,
-    //     description: "Connect with decision makers and grow your professional network.",
-    //     icon: "📈",
-    //     route: "/linkdin"
+    //     title: "Google Ads",
+    //     image: google,
+    //     description: "Reach customers at the right moment with targeted Google campaigns.",
+    //     icon: "💻",
+    //     route: "/google"
     // },
     {
         title: "SEO Optimization",

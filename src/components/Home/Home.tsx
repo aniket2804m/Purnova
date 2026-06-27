@@ -332,7 +332,7 @@ const Home = () => {
       </section>
 
       {/* SECTION 2: White Background, Natural content-based height, Scroll-triggered */}
-      <section className="relative bg-white py-16 md:py-24 px-4 w-full flex items-center justify-center overflow-hidden border-t border-slate-100">
+      <section className="relative bg-white py-10 md:py-24 px-4 w-full flex items-center justify-center overflow-hidden border-t border-slate-100">
         
         {/* Subtle grid background lines for premium feel */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-80 -z-10 pointer-events-none" />

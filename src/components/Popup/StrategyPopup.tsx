@@ -19,7 +19,7 @@ export default function StrategyPopup() {
     const timer = setTimeout(() => {
       setShowPopup(true);
       setShown((prev) => ({ ...prev, start: true }));
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

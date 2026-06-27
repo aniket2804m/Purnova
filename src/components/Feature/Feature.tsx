@@ -15,14 +15,11 @@ const Feature = () => {
     <section className="bg-black py-[30px] overflow-hidden relative">
       <div className="mb-[10px] text-center">
         <div className="w-full">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <h1
             className="text-[2rem] font-extrabold font-display text-white tracking-[-0.02em]"
           >
             Trusted by Brands
-          </motion.h1>
+          </h1>
         </div>
       </div>
 
@@ -65,8 +62,10 @@ const Feature = () => {
               >
                 <img
                   src={brand.image}
+                  loading="lazy"
+                  decoding="async"
                   alt={`Brand ${index + 1}`}
-                  className="w-auto h-auto max-w-[130px] max-h-[42px] md:max-w-[190px] md:max-h-[80px] object-contain object-center transition-all duration-500 ease-out [transform:translateZ(20px)] block group-hover:[transform:translateZ(35px)_scale(1.05)] group-hover:filter group-hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.45)] group-hover:drop-shadow-[0_0_12px_hsl(var(--secondary)/0.25)]"
+                  className="w-auto h-auto max-w-[130px] max-h-[42px] md:max-w-[190px] md:max-h-[80px] object-contain object-center transition-all duration-500 ease-out [transform:translateZ(20px)] block group-hover:[transform:translateZ(35px)_scale(1.05)] group-hover:filter group-hover:drop-shadow-[0_0_12px_hsl(var(--secondary)/0.25)]"
                 />
               </a>
             </motion.div>

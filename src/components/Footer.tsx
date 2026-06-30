@@ -69,7 +69,7 @@ const Footer = () => {
   return (
     <footer ref={footerRef} className="relative overflow-hidden border-t border-neutral-300/40 bg-white py-20 px-5 md:px-10 lg:px-20">
       {/* Background Image & Light Yellow Glow Blend */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0">
         <img
           src={bgImg2}
           alt="Background Image"
@@ -202,17 +202,17 @@ const Footer = () => {
             <div className="space-y-4 text-black/80 font-bold">
               <div className="flex gap-3 items-center">
                 <Mail className="w-5 h-5 text-amber-600" />
-                <span>info@purnovadigital.com</span>
+                <span>Purnovaaa@gmail.com</span>
               </div>
 
               <div className="flex gap-3 items-center">
                 <Phone className="w-5 h-5 text-amber-600" />
-                <span>+91 98765 43210</span>
+                <span>+91 83900 25023</span>
               </div>
 
               <div className="flex gap-3 items-center">
-                <MapPin className="w-5 h-5 text-amber-600" />
-                <span>Pune, Maharashtra, India</span>
+                <MapPin className="w-20 h-20 text-amber-600" />
+                <span>Address: 602, D Wing, Swami Chaya Apartments, Lane, DP Rd, opp. Sainath Khanawal, Sridhar Colony, Karvenagar, Pune,</span>
               </div>
             </div>
           </div>

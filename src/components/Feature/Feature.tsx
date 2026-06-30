@@ -12,18 +12,18 @@ const Feature = () => {
   const CARD_WIDTH = 210;
 
   return (
-    <section className="bg-black py-[30px] overflow-hidden relative">
-      <div className="mb-[10px] text-center">
+    <section className="bg-white py-[50px] overflow-hidden relative">
+      <div className=" text-center">
         <div className="w-full">
           <h1
-            className="text-[2rem] font-extrabold font-display text-white tracking-[-0.02em]"
+            className="text-yellow-500 text-[2rem] font-extrabold font-display tracking-[-0.02em] mb-5"
           >
             Trusted by Brands
           </h1>
         </div>
       </div>
 
-      <div className="w-full py-[10px] [perspective:1500px]">
+      <div className="w-full py-[20px] [perspective:1700px]">
         <motion.div
           className="flex gap-[30px] p-[10px]"
           animate={isPaused ? "paused" : "animate"}
@@ -47,7 +47,15 @@ const Feature = () => {
           {infiniteBrands.map((brand, index) => (
             <motion.div
               key={index}
-              className="group flex-shrink-0 w-[150px] flex-[0_0_150px] h-[60px] md:flex-[0_0_160px] md:w-[160px] md:h-[100px] lg:flex-[0_0_179px] lg:w-[259px] lg:h-[80px] border-[1.5px] border-primary/10 rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] [transform-style:preserve-3d] cursor-pointer shadow-[0_8px_25px_-5px_rgba(0,0,0,0.1),0_4px_10px_-5px_rgba(0,0,0,0.04)] hover:bg-white hover:border-primary hover:shadow-[0_0_20px_hsl(var(--primary)/0.3),0_10px_30px_-5px_hsl(var(--primary)/0.2)]"
+              className="group flex-shrink-0
+w-[120px] h-[120px]
+md:w-[140px] md:h-[140px]
+lg:w-[160px] lg:h-[160px]
+rounded-full
+border-[1.5px] border-primary/10
+flex items-center justify-center
+bg-yellow-400
+overflow-hidden"
               whileHover={{
                 scale: 1.05,
                 rotateY: 15,
@@ -60,13 +68,23 @@ const Feature = () => {
                 rel="noopener noreferrer"
                 className="w-full h-full flex items-center justify-center overflow-hidden"
               >
-                <img
-                  src={brand.image}
-                  loading="lazy"
-                  decoding="async"
-                  alt={`Brand ${index + 1}`}
-                  className="w-auto h-auto max-w-[130px] max-h-[42px] md:max-w-[190px] md:max-h-[80px] object-contain object-center transition-all duration-500 ease-out [transform:translateZ(20px)] block group-hover:[transform:translateZ(35px)_scale(1.05)] group-hover:filter group-hover:drop-shadow-[0_0_12px_hsl(var(--secondary)/0.25)]"
-                />
+                <div className="w-[120px] h-[120px] flex items-center justify-center">
+  <img
+    src={brand.image}
+    loading="lazy"
+    decoding="async"
+    alt={`Brand ${index + 1}`}
+    className="
+      max-w-full
+      max-h-full
+      object-contain
+      transition-all
+      duration-500
+      ease-out
+      group-hover:scale-105
+    "
+  />
+</div>
               </a>
             </motion.div>
           ))}

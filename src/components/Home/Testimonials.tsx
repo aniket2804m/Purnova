@@ -60,7 +60,7 @@ const Testimonials = () => {
   return (
     <section className="relative overflow-hidden py-10 px-5 md:px-10 lg:px-20 bg-white">
       {/* Background Image & Light Yellow Glow Blend */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 -z-10">
         <img
           src={bgImg2}
           alt="Background Image"

@@ -13,13 +13,12 @@ const Hero = () => {
   return (
     <>
             <Home />
-            {/* <VideoSection /> */}
             <Count />
             <Feature />
-            <Card />
-    
             <Process />
+            <Card />
             <CaseStudy />
+            
             <Testimonials />
     </>
   );

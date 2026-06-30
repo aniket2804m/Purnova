@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 // Background Image import
-import bgImg2 from "../../img/bgImg1.png";
+import bgImg2 from "../../img/background.png";
 
 const caseStudies = [
   {
@@ -65,7 +65,7 @@ const CaseStudy = () => {
   return (
     <section className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-white">
       {/* Background Image & Light Yellow Glow Blend */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0">
         <img
           src={bgImg2}
           alt="Background Image"

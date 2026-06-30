@@ -50,6 +50,10 @@ const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 
 const AdsCard = lazy(() => import("@/components/Card/AdsCard"));
 
+const BushareCase = lazy(() => import("@/components/CaseStudy/BushareCase"));
+const CaseStudy = lazy(() => import("@/components/Home/CaseStudy"));
+const Punevoice = lazy(() => import("@/components/CaseStudy/PuneVoicesCase"));
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -101,6 +105,10 @@ const App = () => {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookie" element={<CookiePolicy />} />
+
+              <Route path="/bushare" element={<BushareCase />} />
+              <Route path="/pune" element={<Punevoice />} />
+              <Route path="/case" element={<CaseStudy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

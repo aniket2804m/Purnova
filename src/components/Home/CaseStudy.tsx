@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"
 
 // Background Image import
-import bgImg2 from "../../img/background.png";
+import bgImg2 from "../../img/bgImg1.png";
 
 const caseStudies = [
   {
@@ -10,35 +11,30 @@ const caseStudies = [
   industry: "Podcast & Digital Media",
   title: "Pune Voices",
   challenge:
-    "Despite having valuable content and a passionate vision, Pune Voices lacked a defined niche, strong brand identity, consistent social media strategy, and a personal brand for the host, making audience growth difficult.",
+    "Despite having valuable content and a passionate vision, Pune Voices lacked a defined niche, strong brand identity, consistent social media strategy.",
   solution:
-    "Conducted a complete content and competitor audit, defined a clear civic-focused niche, redesigned the visual identity, implemented a structured content distribution system across platforms, and built the host's personal brand alongside the podcast.",
+    "Conducted a complete content and competitor audit, defined a clear civic-focused niche, redesigned the visual identity.",
   results: [
     "+300% Social Reach Growth",
     "2x Weekly Content Publishing",
-    "Defined Niche & Positioning",
-    "Active Host Personal Brand",
-    "Higher Audience Engagement",
+  
   ],
+  route: "/pune"
 },
   {
   id: 2,
   industry: "Fashion & Apparel",
   title: "Bushare",
   challenge:
-    "Bushare had a strong product but lacked brand identity, website performance, audience engagement, and a reliable marketing system. Low conversion rates, failed ad campaigns, and no retention strategy made growth unpredictable.",
+    "Bushare had a strong product but lacked brand identity, website performance, audience engagement, and a reliable marketing system.",
   solution:
-    "Redefined the brand positioning, rebuilt the Shopify store for performance and SEO, established a content marketing system, launched data-driven Meta Ads campaigns, and implemented email, WhatsApp, and cart recovery automation.",
+    "Redefined the brand positioning, rebuilt the Shopify store for performance and SEO, established a content marketing system.",
   results: [
     "3.4x Revenue Growth",
     "+218% Organic Traffic",
-    "3.8x Paid ROAS",
-    "+11.4K New Followers",
-    "6,200+ Email Subscribers",
-    "2.9% Conversion Rate",
-    "22% Cart Recovery Rate",
-    "38 Page-1 Keywords",
+   
   ],
+  route: "/bushare"
 },
   {
     id: 3,
@@ -54,18 +50,19 @@ const caseStudies = [
       "+85% Website Engagement",
       "4.5x Return on Investment",
     ],
+    route: "/bushare"
   },
 ];
 
 const CaseStudy = () => {
   const [activeId, setActiveId] = useState(1);
 
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   return (
     <section className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-white">
       {/* Background Image & Light Yellow Glow Blend */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 -z-10">
         <img
           src={bgImg2}
           alt="Background Image"
@@ -141,17 +138,11 @@ const CaseStudy = () => {
                     }`}>
                       Challenge
                     </h4>
-                   <p
-  className={`transition-colors duration-300 leading-relaxed ${
-    isActive
-      ? "text-white font-medium opacity-90"
-      : "text-black font-semibold opacity-85"
-  }`}
->
-  {expandedCard === study.id
-    ? study.challenge
-    : `${study.challenge.slice(0, 100)}...`}
-</p>
+                    <p className={`transition-colors duration-300 leading-relaxed ${
+                      isActive ? "text-white font-medium opacity-90" : "text-black font-semibold opacity-85"
+                    }`}>
+                      {study.challenge}
+                    </p>
                   </div>
 
                   {/* Solution */}
@@ -161,17 +152,11 @@ const CaseStudy = () => {
                     }`}>
                       Solution
                     </h4>
-                   <p
-  className={`transition-colors duration-300 leading-relaxed ${
-    isActive
-      ? "text-white font-medium opacity-90"
-      : "text-black font-semibold opacity-85"
-  }`}
->
-  {expandedCard === study.id
-    ? study.solution
-    : `${study.solution.slice(0, 100)}...`}
-</p>
+                    <p className={`transition-colors duration-300 leading-relaxed ${
+                      isActive ? "text-white font-medium opacity-90" : "text-black font-semibold opacity-85"
+                    }`}>
+                      {study.solution}
+                    </p>
                   </div>
                 </div>
 
@@ -184,39 +169,33 @@ const CaseStudy = () => {
                   </h4>
 
                   <div className="flex flex-wrap gap-2.5">
-  {(expandedCard === study.id
-    ? study.results
-    : study.results.slice(0, 3)
-  ).map((result, index) => (
-    <span
-      key={index}
-      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-300 border ${
-        isActive
-          ? "bg-yellow-400 text-black border-yellow-500/20"
-          : "bg-black text-white border-yellow-500/20"
-      }`}
-    >
-      {result}
-    </span>
-  ))}
-</div>
+                    {study.results.map((result, index) => (
+                      <span
+                        key={index}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-300 border ${
+                          isActive
+                            ? "bg-yellow-400 text-black border-yellow-500/20"
+                            : "bg-black text-white border-yellow-500/20"
+                        }`}
+                      >
+                        {result}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <button
-  onClick={(e) => {
-    e.stopPropagation();
-    setExpandedCard(
-      expandedCard === study.id ? null : study.id
-    );
-  }}
-  className={`mt-5 w-full rounded-xl py-3 font-bold transition-all duration-300 ${
-    isActive
-      ? "bg-yellow-400 text-black hover:bg-yellow-300"
-      : "bg-black text-white hover:bg-neutral-800"
-  }`}
->
-  {expandedCard === study.id ? "Show Less" : "Show More"}
-</button>
+                <div className="mt-6">
+    <button
+      className={`w-full py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
+        isActive
+          ? "bg-yellow-400 text-black hover:bg-yellow-300"
+          : "bg-black text-white hover:bg-neutral-800"
+      }`}
+      onClick={() => navigate(study.route)}
+    >
+      Explore Case Study →
+    </button>
+  </div>
 
                 {/* Ambient glow inside active card */}
                 {isActive && (

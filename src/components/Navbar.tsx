@@ -17,6 +17,7 @@ import logo from "../img/logo.png";
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/card" },
+  { label: "CaseStudy", href: "/case" },
   { label: " Purnovians", href: "/team" },
   { label: "Our Work", href: "/work" },
   { label: "Contact", href: "/contact" },
@@ -31,8 +32,12 @@ const servicesDropdown = [
   { label: "Linkdin Ads", href: "/linkdin" },
   { label: "SEO Optimization", href: "/seo" },
   { label: "Social Media Marketing", href: "/social" },
-  
-  
+];
+
+const casestudyDropdown = [
+  { label: "Bushare CaseStudy", href: "/bushare" },
+  { label: "PuneVoice", href: "/pune" },
+
 ];
 
 const Navbar = () => {
@@ -42,6 +47,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [casestudyOpen, setCasestudyOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -184,6 +190,76 @@ const Navbar = () => {
     </div>
   );
 }
+
+// casestudy
+ if (link.label === "CaseStudy") {
+
+              const isActive = location.pathname === link.href;
+  return (
+    <div
+  key={link.href}
+  className="relative"
+  onMouseEnter={() => setCasestudyOpen(true)}
+  onMouseLeave={() => setCasestudyOpen(false)}
+>
+      <Link
+        to={link.href}
+       className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-full flex items-center ${
+                    isActive ? "text-yellow-600" : "text-neutral-700 hover:text-black"
+                  }`}
+                  onMouseEnter={() => setHoveredPath(link.href)}
+                  onMouseLeave={() => setHoveredPath(null)}
+      >
+        Services {casestudyOpen ? "▼" : "▲"}
+
+        {isActive && (
+                    <motion.span
+                      layoutId="active-dot"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                    />
+                  )}
+      </Link>
+
+      <div
+  className={`absolute top-full left-0 mt-2
+    w-72 bg-slate-500 rounded-2xl shadow-xl
+    border border-neutral-200
+    transition-all duration-300 z-50 ${
+      casestudyOpen
+        ? "opacity-100 visible"
+        : "opacity-0 invisible"
+    }`}
+>
+        {casestudyDropdown.map((service) => (
+          <Link
+  key={service.href}
+  to={service.href}
+  onClick={() => setCasestudyOpen(false)}
+  className="
+    block px-5 py-3
+    hover:bg-yellow-50
+    hover:text-yellow-600
+    transition
+  "
+>
+            {service.label}
+
+            {isActive && (
+                    <motion.span
+                      layoutId="active-dot"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                    />
+                  )}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Nav Link
               const isActive = location.pathname === link.href;
               return (
                 <Link
@@ -347,6 +423,60 @@ if (link.label === "Services") {
     </div>
   );
 }
+
+
+if (link.label === "CaseStudy") {
+
+  const isActive = location.pathname === link.href;
+
+  return (
+    <div key={link.href}>
+     <button
+  onClick={() => setCasestudyOpen(!casestudyOpen)}
+  className="
+    w-full flex items-center justify-between
+    px-4 py-3 rounded-xl hover:bg-slate-300
+  "
+>
+  <div className="flex items-center gap-4">
+    <Briefcase className="w-5 h-5 text-black" />
+    <span className="font-semibold text-black">
+      CaseStudy
+    </span>
+  </div>
+
+  <span className="text-black">{casestudyOpen ? "▼" : "▲"}</span>
+</button>
+
+      {casestudyOpen && (
+        <div className="ml-4 mt-2 flex flex-col">
+          {casestudyDropdown.map((service) => (
+            <Link
+              key={service.href}
+              to={service.href}
+              onClick={() => {
+                setMobileOpen(false);
+                setCasestudyOpen(false);
+              }}
+             className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${
+                        isActive
+                          ? "bg-yellow-500/10 text-yellow-600 border border-yellow-500/20"
+                          : "text-neutral-700 hover:text-black hover:bg-yellow-600 border border-transparent"
+                      }`}
+            >
+              {service.label}
+              {isActive && (
+                        <span className="ml-auto w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,1)]" />
+                      )}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Nav Link
                 const isActive = location.pathname === link.href;
 
                 // Pick corresponding icon

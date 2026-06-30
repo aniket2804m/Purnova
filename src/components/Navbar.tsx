@@ -210,7 +210,7 @@ const Navbar = () => {
                   onMouseEnter={() => setHoveredPath(link.href)}
                   onMouseLeave={() => setHoveredPath(null)}
       >
-        Services {casestudyOpen ? "▼" : "▲"}
+        CaseStudy {casestudyOpen ? "▼" : "▲"}
 
         {isActive && (
                     <motion.span

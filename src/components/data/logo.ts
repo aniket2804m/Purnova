@@ -1,8 +1,6 @@
 import img1 from "../../img/logo/Copy of Upscale logo.png";
 import img2 from "../../img/logo/Copy of Logo Pune voice 5.png";
 import img3 from "../../img/logo/Vaichal vastu.png";
-// import img4 from "../../img/logo/urban logo-01.png";
-// import img5 from "../../img/logo/1000275112.png";
 import img6 from "../../img/logo/Copy of TheWordSmiths_Logo_final_v1-01.png";
 import img7 from "../../img/logo/freepik__background__73525 (1).png";
 import img8 from "../../img/logo/tyb logo Updated (1).png";
@@ -14,9 +12,7 @@ import img13 from "../../img/logo/Asset 2.png";
 import img14 from "../../img/logo/3.png";
 import img15 from "../../img/logo/Copy of Untitled-1.png";
 import img16 from "../../img/logo/Jivastro 22-01 copy LOGO.png";
-// import img17 from "../../img/logo/1000275112.png";
 import img18 from "../../img/logo/Gentle hair wig logo 4.png";
-
 import img19 from "../../img/logo/FINAL final.png"
 import img20 from "../../img/logo/Dr Auto Logo.png"
 import img21 from "../../img/logo/COSMICGANGES Logo.png"
@@ -75,7 +71,6 @@ export const brands = [
     image: img26,
     link: "https://www.instagram.com/sadgee_masale/?hl=en",
   },
-  
   {
     image: img6,
     link: "https://facebook.com",
@@ -117,7 +112,6 @@ export const brands = [
     image: img16,
     link: "https://linkedin.com",
   },
-  
   {
     image: img18,
     link: "https://linkedin.com",

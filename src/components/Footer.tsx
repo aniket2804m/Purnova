@@ -17,7 +17,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-import bgImg2 from "../img/bgImg1.png";
+import bgImg2 from "../img/background.png";
 
 // Register GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -175,8 +175,8 @@ const Footer = () => {
     { name: "Performance Marketing", path: "/perform" },
     { name: "Website Development", path: "/web" },
     { name: "Google Ads", path: "/google" },
-    { name: "Facebook Ads", path: "/facebook" },
-    { name: "Linkdin Ads", path: "/linkdin" },
+    { name: "Video Creation", path: "/facebook" },
+    { name: "Content Creation", path: "/linkdin" },
     { name: "SEO Optimization", path: "/seo" },
     { name: "Social Media Marketing", path: "/social" },
   ].map((service) => (

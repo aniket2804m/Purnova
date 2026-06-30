@@ -28,8 +28,8 @@ const servicesDropdown = [
   { label: "Performance Marketing", href: "/perform" },
   { label: "Website Development", href: "/web" },
   { label: "Google Ads", href: "/google" },
-  { label: "Facebook Ads", href: "/facebook" },
-  { label: "Linkdin Ads", href: "/linkdin" },
+  { label: "Video Creation", href: "/facebook" },
+  { label: "Content Creation", href: "/linkdin" },
   { label: "SEO Optimization", href: "/seo" },
   { label: "Social Media Marketing", href: "/social" },
 ];

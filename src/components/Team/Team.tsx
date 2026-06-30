@@ -221,15 +221,13 @@ const Team = () => {
 
 
 <div
-  ref={shootersRef}
+  // ref={shootersRef}
   className="mb-5 py-3 px-5 sm:px-6 md:px-8 lg:px-0"
 >
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
 
-    {/* LEFT */}
-
     <motion.div
-      className="shooters-left text-center lg:text-left lg:pl-16 md:pl-8"
+      className=" text-center lg:text-left lg:pl-16 md:pl-8"
       initial={{ x: -100, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
@@ -273,10 +271,8 @@ const Team = () => {
       </motion.h2>
     </motion.div>
 
-    {/* RIGHT */}
-
     <motion.div
-      className="shooters-right relative z-30 lg:ml-[-105px]"
+      className=" relative z-30 lg:ml-[-105px]"
       initial={{ x: 100, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}

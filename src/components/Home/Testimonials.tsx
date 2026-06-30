@@ -3,7 +3,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Background Image import
-import bgImg2 from "../../img/bgImg1.png";
+import bgImg2 from "../../img/background.png";
 
 // Real client/team images from src/img/Imgh
 import TejasImg from "../../img/Imgh/Tejas.jpg.jpeg";
@@ -60,11 +60,13 @@ const Testimonials = () => {
   return (
     <section className="relative overflow-hidden py-10 px-5 md:px-10 lg:px-20 bg-white">
       {/* Background Image & Light Yellow Glow Blend */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0">
         <img
           src={bgImg2}
           alt="Background Image"
-          className="w-full h-full object-cover object-center opacity-95"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-white/30"></div>
       </div>

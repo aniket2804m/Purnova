@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import bgImg2 from "../img/bgImg1.png";
+import bgImg2 from "../img/background.png";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -110,7 +110,7 @@ const Count = () => {
   return (
     <div id="count" ref={containerRef} className="relative overflow-hidden py-8 px-5 md:px-10 lg:px-20 bg-white">
       {/* Background Image & Light Yellow Glow Blend */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0">
         <img
           src={bgImg2}
           alt="Background Image"

@@ -22,41 +22,49 @@ import hoverImg8 from "../../img/Imgh/Anushka.jpg.jpeg";
 export const roles = [
   {
     title: "Founder & Performance Strategist",
+    name: "Rushikesh Hande",
     image: Img1,
     hoverImage: hoverImg1,
   },
   {
     title: "Digital Growth Manager",
+    name:"Saurabh Borawakey",
     image: Img2,
     hoverImage: hoverImg2,
   },
   {
     title: "Brand Architect",
+    name:"Pallavi Vishwas",
     image: Img3,
     hoverImage: hoverImg3,
   },
   {
     title: "Web Developer",
+    name:"Avinash Barodiya",
     image: Img4,
     hoverImage: hoverImg4,
   },
   {
     title: "Visual Storyteller",
+    name:"Tejas Kumbhar",
     image: Img5,
     hoverImage: hoverImg5,
   },
   {
     title: "Video Editor",
+    name:"Ritesh Dharne",
     image: Img6,
     hoverImage: hoverImg6,
   },
   {
     title: "Graphic Designer",
+    name:"Rutuja Pawar",
     image: Img7,
     hoverImage: hoverImg7,
   },
   {
     title: "Content Architect",
+    name:"Anushka Shirole",
     image: Img8,
     hoverImage: hoverImg8,
   },

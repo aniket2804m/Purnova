@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -138,7 +137,7 @@ export default function Overview() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-20 grid gap-2 sm:grid-cols-2 xl:grid-cols-4"
+          className="mt-20 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
         >
           {services.map((service, index) => (
             <motion.div
@@ -162,15 +161,15 @@ export default function Overview() {
 
               <div className="relative z-10">
                 {/* Golden Icon Container */}
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-amber-500/20 bg-amber-500/10 text-2xl shadow-[0_8px_20px_rgba(245,158,11,0.03)] transition-all duration-500 group-hover:border-amber-500/40 group-hover:bg-gradient-to-br group-hover:from-amber-500/10 group-hover:to-yellow-500/10 group-hover:scale-105">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 backdrop-blur-md bg-black text-yellow-400 border border-yellow-500/30 shadow-md group-hover:bg-yellow-400 group-hover:text-black group-hover:border-yellow-500/20 group-hover:shadow-lg group-hover:shadow-yellow-400/20">
                   {service.icon}
                 </div>
 
-                <h3 className="mb-3 text-lg font-bold text-neutral-800 font-outfit tracking-wide group-hover:text-amber-600 transition-colors duration-300">
+                <h3 className="mb-3 text-xl font-bold text-neutral-800 font-display tracking-wide group-hover:text-amber-600 transition-colors duration-300">
                   {service.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-amber-950 font-medium">
+                <p className="mb-6 text-sm leading-relaxed text-neutral-600 font-medium">
                   {service.desc}
                 </p>
 

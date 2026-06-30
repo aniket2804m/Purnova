@@ -13,37 +13,58 @@ const Home = () => {
 
   const [currentRole, setCurrentRole] = useState(0);
   const [displayText, setDisplayText] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [hovered, setHovered] = useState(false);
 
-  // Typing effect logic (identical to original)
+  // Unified typing effect logic for both Role Title and Name
   useEffect(() => {
     if (isHovered) return;
 
     const role = roles[currentRole].title;
+    const name = roles[currentRole].name;
+
+    let delay = isDeleting ? 40 : 80;
+    const isFullyTyped = displayText.length === role.length && displayName.length === name.length;
+    if (!isDeleting && isFullyTyped) {
+      delay = 2000;
+    }
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        if (displayText.length < role.length) {
-          setDisplayText(role.slice(0, displayText.length + 1));
+        if (!isFullyTyped) {
+          if (displayText.length < role.length) {
+            setDisplayText(role.slice(0, displayText.length + 1));
+          }
+          if (displayName.length < name.length) {
+            setDisplayName(name.slice(0, displayName.length + 1));
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          setIsDeleting(true);
         }
       } else {
-        if (displayText.length > 0) {
-          setDisplayText(displayText.slice(0, -1));
+        const hasText = displayText.length > 0;
+        const hasName = displayName.length > 0;
+
+        if (hasText || hasName) {
+          if (hasText) {
+            setDisplayText(displayText.slice(0, -1));
+          }
+          if (hasName) {
+            setDisplayName(displayName.slice(0, -1));
+          }
         } else {
           setIsDeleting(false);
           setCurrentRole((prev) => (prev + 1) % roles.length);
         }
       }
-    }, isDeleting ? 40 : 80);
+    }, delay);
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentRole, isHovered]);
+  }, [displayText, displayName, isDeleting, currentRole, isHovered]);
 
   return (
     <div className="w-full overflow-x-hidden">
@@ -351,19 +372,22 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10"
           >
-            {/* Typing text displaying roles */}
-            <span
-              className="text-2xl md:text-3xl font-extrabold bg-neutral-900 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(234,179,8,0.2)] text-center sm:text-left min-w-[280px]"
-            >
-              {displayText}
-              <span className="animate-pulse text-yellow-500">|</span>
-            </span>
+            {/* Typing text displaying roles & names */}
+            <div className="flex flex-col text-center sm:text-left min-w-[280px]">
+              <span className="text-2xl md:text-3xl font-extrabold bg-neutral-900 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+                {displayText}
+                <span className="animate-pulse text-yellow-500">|</span>
+              </span>
+              <span className="text-lg md:text-xl text-center font-medium text-neutral-500 mt-2">
+                {displayName}
+              </span>
+            </div>
 
             {/* Circular Team Avatar Image */}
             <div className="relative flex-shrink-0 group">
               
               {/* Glowing animated background boundary ring around circular image */}
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-yellow-500 via-indigo-500 to-pink-500 opacity-70 group-hover:opacity-100 transition-opacity animate-pulse blur-[2px]" />
+              <div className="absolute -inset-1 rounded-full bg-yellow-300 opacity-70 group-hover:opacity-100 transition-opacity animate-pulse blur-[2px]" />
               
               <AnimatePresence mode="wait">
                 <motion.img

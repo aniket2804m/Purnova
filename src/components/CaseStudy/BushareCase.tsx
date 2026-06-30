@@ -305,18 +305,9 @@ const BushareCase: React.FC = () => {
       />
 
       {/* ============================== HERO ============================== */}
-      <section className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-5 text-center sm:px-8">
+      <section className="relative flex min-h-[70svh] w-full flex-col items-center justify-center overflow-hidden text-center sm:px-8">
         <ThreeHero />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black via-black/80 to-black" />
-
-        <motion.span
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-4 inline-block rounded-full border border-[#D4AF37]/40 bg-white/5 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-[#F5C518] backdrop-blur-sm sm:text-xs"
-        >
-          Case Study · Korean Fashion · India
-        </motion.span>
 
         <h1
           ref={heroTitleRef}
@@ -335,38 +326,22 @@ const BushareCase: React.FC = () => {
           <span className="bg-gradient-to-r from-[#F5C518] to-[#D4AF37] bg-clip-text font-semibold text-transparent">
             recognised Korean fashion label
           </span>{" "}
-          with a full digital growth engine — in 14 months.
+          with a full digital growth engine in 14 months.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.4 }}
-          className="mt-12 flex flex-col items-center gap-2"
-        >
-          <div className="h-10 w-6 rounded-full border-2 border-white/30 p-1">
-            <motion.div
-              animate={{ y: [0, 14, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-              className="h-2 w-2 rounded-full bg-[#F5C518]"
-            />
-          </div>
-          <span className="text-[10px] uppercase tracking-widest text-white/40">
-            Scroll
-          </span>
-        </motion.div>
+       
       </section>
 
       {/* ============================ THE BRAND ============================ */}
-      <section className="gsap-fade-section mx-auto max-w-5xl px-5 py-20 sm:px-8 sm:py-28">
-        <span className="text-xs uppercase tracking-[0.3em] text-[#F5C518]">
+      <section className="gsap-fade-section mx-auto text-center max-w-5xl px-5 py-5 sm:px-8 sm:py-5">
+        <span className="text-3xl text-center uppercase tracking-[0.3em] text-[#F5C518]">
           The Brand
         </span>
         <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
           A niche product. No audience. No system.
         </h2>
         <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-[#D4AF37] to-transparent" />
-        <p className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="mt-6 text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
           Bushare sells Korean-inspired clothing to young, urban Indians aged
           18–32. The aesthetic was strong. The product was real. But when
           they came to us, almost nobody knew they existed.
@@ -374,9 +349,9 @@ const BushareCase: React.FC = () => {
       </section>
 
       {/* =========================== THE PROBLEM ============================ */}
-      <section className="gsap-fade-section bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
+      <section className="gsap-fade-section text-center bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#B8860B]">
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#B8860B]">
             The Problem
           </span>
           <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-5xl">
@@ -402,30 +377,30 @@ const BushareCase: React.FC = () => {
             ))}
           </ul>
 
-          <p className="mt-10 text-base font-medium italic text-black/60 sm:text-lg">
+          <p className="mt-10 text-base text-center font-medium italic text-black/60 sm:text-lg">
             Every rupee spent on marketing was a shot in the dark.
           </p>
         </div>
       </section>
 
       {/* ============================ WHAT WE DID ============================ */}
-      <section className="gsap-fade-section bg-black px-5 py-20 sm:px-8 sm:py-28">
+      <section className="gsap-fade-section text-center bg-black px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#F5C518]">
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
             What We Did
           </span>
           <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
             Brand first. Scale second.
           </h2>
           <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-[#D4AF37] to-transparent" />
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
+          <p className="mt-6 text-base leading-relaxed text-white/70 sm:text-lg">
             Most agencies would have turned on ads immediately. We didn't. We
-            fixed the foundation — brand, website, content system — then
+            fixed the foundation brand, website, content system then
             activated paid media.
           </p>
 
           {/* Timeline */}
-          <div className="relative mt-14 space-y-6">
+          <div className="relative text-center mt-14 space-y-6">
             <div className="absolute left-[15px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[#F5C518] via-[#D4AF37]/50 to-transparent sm:block" />
             {TIMELINE.map((step, i) => (
               <motion.button
@@ -478,7 +453,7 @@ const BushareCase: React.FC = () => {
       <section className="gsap-fade-section relative overflow-hidden bg-gradient-to-b from-black to-[#0A0A0A] px-5 py-20 sm:px-8 sm:py-28">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#F5C518]/10 blur-[120px]" />
         <div className="relative mx-auto max-w-5xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#F5C518]">
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
             The Results
           </span>
           <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
@@ -497,13 +472,13 @@ const BushareCase: React.FC = () => {
       {/* ============================== THE SHIFT ============================== */}
       <section className="gsap-fade-section bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#B8860B]">
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#B8860B]">
             The Shift
           </span>
           <p className="mt-6 text-balance font-serif text-2xl font-medium leading-relaxed sm:text-3xl">
             Bushare went from unpredictable revenue to a self-running growth
             system. Organic search, social content, paid ads, and email
-            automation now work together — each layer feeding the next.
+            automation now work together each layer feeding the next.
           </p>
           <p className="mt-6 text-base text-black/60 sm:text-lg">
             The brand has an identity. Customers come back without being
@@ -526,24 +501,18 @@ const BushareCase: React.FC = () => {
             &ldquo;
           </span>
           <p className="-mt-6 text-balance font-serif text-xl italic leading-relaxed text-white sm:text-3xl">
-            I thought good clothes would sell themselves. They don&apos;t —
+            I thought good clothes would sell themselves. They don&apos;t 
             not without the right brand and systems. Fourteen months later, I
             have a business that runs with structure and a brand people
             actually recognise.
           </p>
-          <p className="mt-8 text-sm uppercase tracking-[0.3em] text-[#F5C518]">
-            — Founder, Bushare
+          <p className="mt-8 text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+             Founder, Bushare
           </p>
         </motion.div>
       </section>
 
-      {/* ============================== FOOTER ============================== */}
-      <footer className="flex flex-col items-center justify-between gap-4 border-t border-white/10 bg-[#0A0A0A] px-5 py-8 text-center text-xs text-white/40 sm:flex-row sm:px-8 sm:text-left">
-        <span>Your Agency Name</span>
-        <span className="tracking-widest text-[#D4AF37]/70">
-          CONFIDENTIAL CASE STUDY
-        </span>
-      </footer>
+     
     </div>
   );
 };

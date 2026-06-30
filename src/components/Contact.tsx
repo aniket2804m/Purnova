@@ -43,10 +43,10 @@ const Contact = () => {
   };
 
   const contactLinks = [
-    { icon: Mail, label: "Email", href: "mailto:suryawanshianiket7576@gmail.com", text: "suryawanshianiket7576@gmail.com" },
-    { icon: Phone, label: "Phone", href: "tel:+919307736352", text: "+91 9307736352" },
-    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919307736352", text: "Chat on WhatsApp" },
-    { icon: MapPin, label: "Location", href: "#", text: "Pune, India" },
+    { icon: Mail, label: "Email", href: "mailto:Purnovaaa@gmail.com", text: "Purnovaaa@gmail.com" },
+    { icon: Phone, label: "Phone", href: "tel:+918390025023", text: "+91 83900 25023" },
+    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/91839025023", text: "Chat on WhatsApp" },
+    { icon: MapPin, label: "Location", href: "https://maps.app.goo.gl/ni1Votk8grV3SUHg8", text: "Address: 602, D Wing, Swami Chaya Apartments, Lane, DP Rd, opp. Sainath Khanawal, Sridhar Colony, Karvenagar, Pune," },
   ];
 
   // GSAP animations for Header, Left links, and Right Form
@@ -136,10 +136,10 @@ const Contact = () => {
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading Section */}
         <div className="contact-header text-center mb-16 opacity-0">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md mb-6">
+          {/* <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
             Get in Touch
-          </span>
+          </span> */}
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
             Let's{" "}
@@ -152,7 +152,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column: Info & Links */}
           <div className="space-y-4">
-            <p className="contact-link-item text-black font-bold text-lg opacity-90 mb-4 opacity-0">
+            <p className="contact-link-item text-black font-bold text-lg opacity-90 mb-4">
               Interested in collaborating on AI projects, have a question, or just want to say hello? I'd love to hear from you.
             </p>
 

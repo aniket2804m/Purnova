@@ -55,7 +55,7 @@ const caseStudies = [
 ];
 
 const CaseStudy = () => {
-  const [activeId, setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   const navigate = useNavigate();
 
@@ -78,10 +78,7 @@ const CaseStudy = () => {
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading Section */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
-            Success Stories
-          </span>
+  
 
           <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
             Case Studies That{" "}
@@ -103,7 +100,7 @@ const CaseStudy = () => {
             return (
               <motion.div
                 key={study.id}
-                onMouseEnter={() => setActiveId(study.id)}
+                // onMouseEnter={() => setActiveId(study.id)}
                 onClick={() => setActiveId(study.id)}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

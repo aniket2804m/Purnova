@@ -309,18 +309,11 @@ const PuneVoicesCase: React.FC = () => {
       />
 
       {/* ============================== HERO ============================== */}
-      <section className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-5 text-center sm:px-8">
+      <section className="relative flex min-h-[80vh] mt-10 w-full flex-col items-center justify-center overflow-hidden px-5 text-center sm:px-5">
         <ThreeHero />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black via-black/80 to-black" />
 
-        <motion.span
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-4 inline-block rounded-full border border-[#D4AF37]/40 bg-white/5 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-[#F5C518] backdrop-blur-sm sm:text-xs"
-        >
-          Case Study
-        </motion.span>
+       
 
         <h1
           ref={heroTitleRef}
@@ -370,35 +363,33 @@ const PuneVoicesCase: React.FC = () => {
           transition={{ duration: 1, delay: 1.6 }}
           className="mt-12 flex flex-col items-center gap-2"
         >
-          <div className="h-10 w-6 rounded-full border-2 border-white/30 p-1">
+          {/* <div className="h-10 w-6 rounded-full border-2 border-white/30 p-1">
             <motion.div
               animate={{ y: [0, 14, 0] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
               className="h-2 w-2 rounded-full bg-[#F5C518]"
             />
-          </div>
-          <span className="text-[10px] uppercase tracking-widest text-white/40">
-            Scroll
-          </span>
+          </div> */}
+         
         </motion.div>
       </section>
 
       {/* ========================= 01 · CLIENT OVERVIEW ========================= */}
-      <section className="gsap-fade-section mx-auto max-w-5xl px-5 py-20 sm:px-8 sm:py-28">
-        <span className="text-xs uppercase tracking-[0.3em] text-[#F5C518]">
-          01 · Client Overview
+      <section className="gsap-fade-section text-center mx-auto max-w-5xl px-5 py-5 sm:px-8 sm:py-5">
+        <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+         Client Overview
         </span>
         <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
           Pune Has a Problem. Now It Has a Podcast.
         </h2>
         <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-[#D4AF37] to-transparent" />
-        <p className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="mt-6 text-pretty text-center text-base leading-relaxed text-white/70 sm:text-lg">
           Pune Voices is a podcast built around one idea: Punekars deserve a
           serious platform for the issues that shape their city. Not
           lifestyle content, not national news — civic problems, urban
           identity, and real local conversation.
         </p>
-        <p className="mt-4 max-w-3xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="mt-4 text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
           Purnova has managed Pune Voices end-to-end for over two years —
           brand, content, social media, and the host's personal presence.
           This is how a promising idea became a recognised name.
@@ -406,21 +397,21 @@ const PuneVoicesCase: React.FC = () => {
       </section>
 
       {/* ========================== 02 · THE CHALLENGE =========================== */}
-      <section className="gsap-fade-section bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
-        <div className="mx-auto max-w-5xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#B8860B]">
-            02 · The Challenge
+      <section className="gsap-fade-section bg-white text-center px-5 py-20 text-black sm:px-8 sm:py-28">
+        <div className="mx-auto text-center max-w-5xl">
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#B8860B]">
+            The Challenge
           </span>
-          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-5xl">
+          <h2 className="mt-4 font-serif text-3xl text-center font-bold leading-tight sm:text-5xl">
             Good Content. Wrong Direction.
           </h2>
           <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-black to-transparent" />
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 sm:text-lg">
+          <p className="mt-6 text-base text-center leading-relaxed text-black/70 sm:text-lg">
             The passion was real. The effort was consistent. But without a
             clear identity, even good content stays invisible.
           </p>
-          <p className="mt-4 max-w-3xl font-serif text-lg italic leading-relaxed text-black/80 sm:text-xl">
+          <p className="mt-4 font-serif text-lg italic leading-relaxed text-black/80 sm:text-xl">
             The podcast had a voice. It just didn't know who it was speaking
             to.
           </p>
@@ -450,10 +441,10 @@ const PuneVoicesCase: React.FC = () => {
       </section>
 
       {/* ====================== 03 · STRATEGY & EXECUTION ======================= */}
-      <section className="gsap-fade-section bg-black px-5 py-20 sm:px-8 sm:py-28">
+      <section className="gsap-fade-section text-center bg-black px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#F5C518]">
-            03 · Strategy &amp; Execution
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+            Strategy &amp; Execution
           </span>
           <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
             Three Phases. One Clear Build.
@@ -508,11 +499,11 @@ const PuneVoicesCase: React.FC = () => {
       </section>
 
       {/* ========================== 04 · KEY OUTCOMES =========================== */}
-      <section className="gsap-fade-section relative overflow-hidden bg-gradient-to-b from-black to-[#0A0A0A] px-5 py-20 sm:px-8 sm:py-28">
+      <section className="gsap-fade-section text-center relative overflow-hidden bg-gradient-to-b from-black to-[#0A0A0A] px-5 py-20 sm:px-8 sm:py-28">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#F5C518]/10 blur-[120px]" />
         <div className="relative mx-auto max-w-5xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#F5C518]">
-            04 · Key Outcomes
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+            Key Outcomes
           </span>
           <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
             What 24 Months of Consistent Work Looks Like.
@@ -536,8 +527,8 @@ const PuneVoicesCase: React.FC = () => {
       {/* ========================= 05 · BUSINESS IMPACT ========================== */}
       <section className="gsap-fade-section bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#B8860B]">
-            05 · Business Impact
+          <span className="text-3xl uppercase tracking-[0.3em] text-[#B8860B]">
+            Business Impact
           </span>
           <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-5xl">
             Beyond the Numbers.
@@ -564,8 +555,8 @@ const PuneVoicesCase: React.FC = () => {
       {/* ============================== QUOTE ============================== */}
       <section className="gsap-fade-section relative overflow-hidden bg-black px-5 py-24 text-center sm:px-8 sm:py-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.12),transparent_60%)]" />
-        <span className="relative text-xs uppercase tracking-[0.3em] text-[#F5C518]">
-          06 · Client Testimonial
+        <span className="relative text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+         Client Testimonial
         </span>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -592,13 +583,7 @@ const PuneVoicesCase: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* ============================== FOOTER ============================== */}
-      <footer className="flex flex-col items-center justify-between gap-4 border-t border-white/10 bg-[#0A0A0A] px-5 py-8 text-center text-xs text-white/40 sm:flex-row sm:px-8 sm:text-left">
-        <span>Prepared by Purnova</span>
-        <span className="tracking-widest text-[#D4AF37]/70">
-          CONFIDENTIAL · 2024–2026
-        </span>
-      </footer>
+     
     </div>
   );
 };

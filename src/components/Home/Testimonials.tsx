@@ -78,10 +78,10 @@ const Testimonials = () => {
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading Section */}
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md">
+          {/* <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md">
             <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
             Client Testimonials
-          </span>
+          </span> */}
 
           <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
             Trusted By Businesses{" "}

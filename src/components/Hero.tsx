@@ -5,7 +5,7 @@ import Feature from "./Feature/Feature";
 import Card from "./Card/Card";
 import Process from "../components/Home/Process";
 import CaseStudy from "../components/Home/CaseStudy";
-import Testimonials from "../components/Home/Testimonials";
+import Happy from "./Happy/Happy";
 // import AdsCard from "../components/Card/AdsCard";
 
 const Hero = () => {
@@ -19,7 +19,7 @@ const Hero = () => {
             <Card />
             <CaseStudy />
             
-            <Testimonials />
+            <Happy />
     </>
   );
 };

@@ -77,7 +77,7 @@ const CaseStudy = () => {
                 <img
                   src={study.image}
                   alt={study.title}
-                  className="w-full h-[280px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-[280px] object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 

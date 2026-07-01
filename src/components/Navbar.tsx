@@ -94,12 +94,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full pointer-events-none font-montserrat">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`w-full pointer-events-auto transition-all duration-300 ease-in-out border-b bg-white border-neutral-200/80 ${
+        className={`w-full pointer-events-auto transition-all duration-300 ease-in-out border-b bg-[#0A0A0A]/95 border-[#C9A84C]/15 ${
           scrolled
             ? "py-3 shadow-md"
             : "py-5"
@@ -115,9 +115,9 @@ const Navbar = () => {
             <img
               src={logo}
               alt="PURNOVA Logo"
-              className="w-35 h-12 object-contain transition-all duration-300 group-hover:scale-105 px-3 py-1.5 rounded-xl shadow-sm"
+              className="w-35 h-12 object-contain transition-all duration-300 group-hover:scale-105 px-3 py-1.5 rounded-none bg-transparent"
             />
-            <div className="absolute -inset-2 bg-yellow-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-full -z-10" />
+            <div className="absolute -inset-2 bg-[#C9A84C]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-none -z-10" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -136,8 +136,8 @@ const Navbar = () => {
 >
       <Link
         to={link.href}
-       className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-full flex items-center ${
-                    isActive ? "text-yellow-600" : "text-neutral-700 hover:text-black"
+       className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-none flex items-center ${
+                    isActive ? "text-[#C9A84C]" : "text-[#F5F0E8]/85 hover:text-[#C9A84C]"
                   }`}
                   onMouseEnter={() => setHoveredPath(link.href)}
                   onMouseLeave={() => setHoveredPath(null)}
@@ -147,7 +147,7 @@ const Navbar = () => {
         {isActive && (
                     <motion.span
                       layoutId="active-dot"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.8)]"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -155,8 +155,8 @@ const Navbar = () => {
 
       <div
   className={`absolute top-full left-0 mt-2
-    w-72 bg-slate-500 rounded-2xl shadow-xl
-    border border-neutral-200
+    w-72 bg-[#1A1A1A] rounded-none shadow-xl
+    border border-[#C9A84C]/15
     transition-all duration-300 z-50 ${
       servicesOpen
         ? "opacity-100 visible"
@@ -170,8 +170,9 @@ const Navbar = () => {
   onClick={() => setServicesOpen(false)}
   className="
     block px-5 py-3
-    hover:bg-yellow-50
-    hover:text-yellow-600
+    text-[#F5F0E8]
+    hover:bg-[#C9A84C]/10
+    hover:text-[#C9A84C]
     transition
   "
 >
@@ -180,7 +181,7 @@ const Navbar = () => {
             {isActive && (
                     <motion.span
                       layoutId="active-dot"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.8)]"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -204,8 +205,8 @@ const Navbar = () => {
 >
       <Link
         to={link.href}
-       className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-full flex items-center ${
-                    isActive ? "text-yellow-600" : "text-neutral-700 hover:text-black"
+       className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-none flex items-center ${
+                    isActive ? "text-[#C9A84C]" : "text-[#F5F0E8]/85 hover:text-[#C9A84C]"
                   }`}
                   onMouseEnter={() => setHoveredPath(link.href)}
                   onMouseLeave={() => setHoveredPath(null)}
@@ -215,7 +216,7 @@ const Navbar = () => {
         {isActive && (
                     <motion.span
                       layoutId="active-dot"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.8)]"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -223,8 +224,8 @@ const Navbar = () => {
 
       <div
   className={`absolute top-full left-0 mt-2
-    w-72 bg-slate-500 rounded-2xl shadow-xl
-    border border-neutral-200
+    w-72 bg-[#1A1A1A] rounded-none shadow-xl
+    border border-[#C9A84C]/15
     transition-all duration-300 z-50 ${
       casestudyOpen
         ? "opacity-100 visible"
@@ -238,8 +239,9 @@ const Navbar = () => {
   onClick={() => setCasestudyOpen(false)}
   className="
     block px-5 py-3
-    hover:bg-yellow-50
-    hover:text-yellow-600
+    text-[#F5F0E8]
+    hover:bg-[#C9A84C]/10
+    hover:text-[#C9A84C]
     transition
   "
 >
@@ -248,7 +250,7 @@ const Navbar = () => {
             {isActive && (
                     <motion.span
                       layoutId="active-dot"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.8)]"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -265,8 +267,8 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-full flex items-center ${
-                    isActive ? "text-yellow-600" : "text-neutral-700 hover:text-black"
+                  className={`relative px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-none flex items-center ${
+                    isActive ? "text-[#C9A84C]" : "text-[#F5F0E8]/85 hover:text-[#C9A84C]"
                   }`}
                   onMouseEnter={() => setHoveredPath(link.href)}
                   onMouseLeave={() => setHoveredPath(null)}
@@ -275,7 +277,7 @@ const Navbar = () => {
                   {hoveredPath === link.href && (
                     <motion.span
                       layoutId="hovered-pill"
-                      className="absolute inset-0 bg-yellow-500/10 rounded-full -z-10"
+                      className="absolute inset-0 bg-[#C9A84C]/10 rounded-none -z-10"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -286,7 +288,7 @@ const Navbar = () => {
                   {isActive && (
                     <motion.span
                       layoutId="active-dot"
-                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.8)]"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,0.8)]"
                       transition={{ type: "spring", stiffness: 350, damping: 25 }}
                     />
                   )}
@@ -300,11 +302,11 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
               <Button
                 asChild
-                className="rounded-full bg-neutral-950 text-white hover:bg-yellow-500 hover:text-neutral-950 font-bold px-6 border-none hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all duration-300 group/btn"
+                className="rounded-none bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] font-montserrat font-semibold px-6 border-none transition-all duration-300"
               >
                 <Link to="/contact" className="flex items-center gap-2">
                   Book a Call
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
             </motion.div>
@@ -313,10 +315,10 @@ const Navbar = () => {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-full hover:bg-neutral-100 transition-colors relative flex items-center justify-center w-10 h-10 border border-neutral-200 bg-white"
+            className="lg:hidden p-2 rounded-none hover:bg-[#1A1A1A] transition-colors relative flex items-center justify-center w-10 h-10 border border-[#C9A84C]/25 bg-[#0A0A0A]"
             aria-label="Toggle Menu"
           >
-            <svg width="18" height="18" viewBox="0 0 23 23" className="text-neutral-900">
+            <svg width="18" height="18" viewBox="0 0 23 23" className="text-[#F5F0E8]">
               <motion.path
                 fill="transparent"
                 strokeWidth="2.5"
@@ -367,7 +369,7 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="absolute top-[calc(100%+8px)] left-4 right-4 bg-white/95 border border-neutral-200/80 backdrop-blur-2xl p-5 rounded-2xl shadow-lg lg:hidden flex flex-col gap-4 pointer-events-auto"
+            className="absolute top-[calc(100%+8px)] left-4 right-4 bg-[#0A0A0A]/95 border border-[#C9A84C]/15 backdrop-blur-2xl p-5 rounded-none shadow-lg lg:hidden flex flex-col gap-4 pointer-events-auto"
           >
             <div className="flex flex-col gap-1.5">
               {navLinks.map((link) => {
@@ -383,17 +385,17 @@ if (link.label === "Services") {
   onClick={() => setServicesOpen(!servicesOpen)}
   className="
     w-full flex items-center justify-between
-    px-4 py-3 rounded-xl hover:bg-slate-300
+    px-4 py-3 rounded-none hover:bg-[#1A1A1A] border border-[#C9A84C]/15 text-[#F5F0E8]
   "
 >
   <div className="flex items-center gap-4">
-    <Briefcase className="w-5 h-5 text-black" />
-    <span className="font-semibold text-black">
+    <Briefcase className="w-5 h-5 text-[#C9A84C]" />
+    <span className="font-semibold text-[#F5F0E8]">
       Services 
     </span>
   </div>
 
-  <span className="text-black">{servicesOpen ? "▼" : "▲"}</span>
+  <span className="text-[#F5F0E8]">{servicesOpen ? "▼" : "▲"}</span>
 </button>
 
       {servicesOpen && (
@@ -406,15 +408,15 @@ if (link.label === "Services") {
                 setMobileOpen(false);
                 setServicesOpen(false);
               }}
-             className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${
+             className={`flex items-center gap-4 px-4 py-3.5 rounded-none transition-all duration-300 ${
                         isActive
-                          ? "bg-yellow-500/10 text-yellow-600 border border-yellow-500/20"
-                          : "text-neutral-700 hover:text-black hover:bg-yellow-600 border border-transparent"
+                          ? "bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20"
+                          : "text-[#F5F0E8] hover:text-[#C9A84C] hover:bg-[#C9A84C]/10 border border-transparent"
                       }`}
             >
               {service.label}
               {isActive && (
-                        <span className="ml-auto w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,1)]" />
+                        <span className="ml-auto w-2 h-2 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,1)]" />
                       )}
             </Link>
           ))}
@@ -435,17 +437,17 @@ if (link.label === "CaseStudy") {
   onClick={() => setCasestudyOpen(!casestudyOpen)}
   className="
     w-full flex items-center justify-between
-    px-4 py-3 rounded-xl hover:bg-slate-300
+    px-4 py-3 rounded-none hover:bg-[#1A1A1A] border border-[#C9A84C]/15 text-[#F5F0E8]
   "
 >
   <div className="flex items-center gap-4">
-    <Briefcase className="w-5 h-5 text-black" />
-    <span className="font-semibold text-black">
+    <Briefcase className="w-5 h-5 text-[#C9A84C]" />
+    <span className="font-semibold text-[#F5F0E8]">
       CaseStudy
     </span>
   </div>
 
-  <span className="text-black">{casestudyOpen ? "▼" : "▲"}</span>
+  <span className="text-[#F5F0E8]">{casestudyOpen ? "▼" : "▲"}</span>
 </button>
 
       {casestudyOpen && (
@@ -458,15 +460,15 @@ if (link.label === "CaseStudy") {
                 setMobileOpen(false);
                 setCasestudyOpen(false);
               }}
-             className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${
+             className={`flex items-center gap-4 px-4 py-3.5 rounded-none transition-all duration-300 ${
                         isActive
-                          ? "bg-yellow-500/10 text-yellow-600 border border-yellow-500/20"
-                          : "text-neutral-700 hover:text-black hover:bg-yellow-600 border border-transparent"
+                          ? "bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20"
+                          : "text-[#F5F0E8] hover:text-[#C9A84C] hover:bg-[#C9A84C]/10 border border-transparent"
                       }`}
             >
               {service.label}
               {isActive && (
-                        <span className="ml-auto w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,1)]" />
+                        <span className="ml-auto w-2 h-2 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,1)]" />
                       )}
             </Link>
           ))}
@@ -492,16 +494,16 @@ if (link.label === "CaseStudy") {
                     <Link
                       to={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${
+                      className={`flex items-center gap-4 px-4 py-3.5 rounded-none transition-all duration-300 ${
                         isActive
-                          ? "bg-yellow-500/10 text-yellow-600 border border-yellow-500/20"
-                          : "text-neutral-700 hover:text-black hover:bg-neutral-100 border border-transparent"
+                          ? "bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20"
+                          : "text-[#F5F0E8] hover:text-[#C9A84C] hover:bg-[#1A1A1A] border border-transparent"
                       }`}
                     >
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-5 h-5 text-[#C9A84C]" />
                       <span className="font-semibold text-base">{link.label}</span>
                       {isActive && (
-                        <span className="ml-auto w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,1)]" />
+                        <span className="ml-auto w-2 h-2 rounded-none bg-[#C9A84C] shadow-[0_0_8px_rgba(201,168,76,1)]" />
                       )}
                     </Link>
                   </motion.div>
@@ -509,13 +511,13 @@ if (link.label === "CaseStudy") {
               })}
             </div>
 
-            <motion.div variants={itemVariants} className="pt-3 border-t border-neutral-100">
+            <motion.div variants={itemVariants} className="pt-3 border-t border-[#C9A84C]/10">
               <Button
                 asChild
-                className="w-full rounded-xl bg-neutral-950 text-white font-bold py-6 hover:bg-yellow-500 hover:text-neutral-950 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300"
+                className="w-full rounded-none bg-[#C9A84C] text-[#0A0A0A] font-montserrat font-semibold py-6 hover:bg-[#F5F0E8] hover:text-[#0A0A0A]"
               >
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2">
-                  Get Started
+                  Book a Call
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>

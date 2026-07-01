@@ -128,18 +128,18 @@ export default function BrandHome() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white text-black py-32 sm:py-32 lg:py-32 flex items-center min-h-[90dvh]"
+      className="relative overflow-hidden bg-[#0A0A0A] text-[#F5F0E8] py-32 sm:py-32 lg:py-32 flex items-center min-h-[90dvh] font-montserrat"
     >
       {/* Background Subtle Gradients & Blobs */}
-      <div className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
-      <div className="absolute top-10 right-1/4 h-80 w-80 rounded-full bg-yellow-200/20 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 h-[450px] w-[450px] rounded-full bg-amber-100/30 blur-[150px] pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(#C9A84C_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-10" />
+      <div className="absolute top-10 right-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/4 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 h-[450px] w-[450px] rounded-none bg-[#C9A84C]/2 blur-[150px] pointer-events-none" />
 
       {/* Parallax Background Shapes (Controlled by GSAP ScrollTrigger) */}
       <div ref={shapesRef} className="absolute inset-0 pointer-events-none -z-10">
-        <div className="parallax-shape absolute top-24 left-12 w-8 h-8 rounded-lg bg-yellow-400/25 rotate-12 blur-[1px]" />
-        <div className="parallax-shape absolute bottom-32 right-16 w-12 h-12 rounded-full border border-yellow-300/30" />
-        <div className="parallax-shape absolute top-1/2 left-[45%] w-6 h-6 rounded-md bg-amber-500/10 -rotate-45" />
+        <div className="parallax-shape absolute top-24 left-12 w-8 h-8 rounded-none bg-[#C9A84C]/20 rotate-12 blur-[1px]" />
+        <div className="parallax-shape absolute bottom-32 right-16 w-12 h-12 rounded-none border border-[#C9A84C]/10" />
+        <div className="parallax-shape absolute top-1/2 left-[45%] w-6 h-6 rounded-none bg-[#C9A84C]/5 -rotate-45" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-16 relative z-10">
@@ -151,18 +151,17 @@ export default function BrandHome() {
             {/* Main Floating Wrapper */}
             <motion.div
               ref={imageWrapperRef}
-              // variants={imageContainerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               className="relative w-full max-w-[290px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[460px] xl:max-w-[500px] aspect-square group"
             >
-              {/* Premium Animated Gradient Border & Glow Container */}
-              <div className="absolute -inset-1 rounded-[40%_60%_50%_50%/50%_40%_65%_45%] bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 opacity-80 blur-[2px] transition duration-1000 group-hover:opacity-100" />
+              {/* Premium Animated Gold Border & Glow Container */}
+              <div className="absolute -inset-1 rounded-none bg-gradient-to-r from-[#C9A84C] via-[#C9A84C]/80 to-[#C9A84C] opacity-80 blur-[2px] transition duration-1000 group-hover:opacity-100" />
               
               {/* Image Inner Holder with Glassmorphism shadow */}
-              <div className="relative h-full w-full overflow-hidden rounded-[40%_60%_50%_50%/50%_40%_65%_45%] border- border-white/20 p-2 shadow-2xl transition-all duration-700">
-                <div className="relative h-full w-full overflow-hidden rounded-[40%_60%_50%_50%/50%_40%_65%_45%]">
+              <div className="relative h-full w-full overflow-hidden rounded-none border border-[#C9A84C]/20 p-2 bg-[#101010]/80 shadow-2xl transition-all duration-700">
+                <div className="relative h-full w-full overflow-hidden rounded-none">
                   <img
                     src={Image}
                     alt="Brand Strategy Illustration"
@@ -178,14 +177,14 @@ export default function BrandHome() {
               <motion.div
                 animate={{ y: [0, -12, 0], x: [0, 8, 0] }}
                 transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 p-3.5 bg-white/75 backdrop-blur-md border border-neutral-200/50 rounded-2xl shadow-xl z-20 flex items-center gap-3"
+                className="absolute -top-6 -right-6 p-3.5 bg-[#101010]/95 backdrop-blur-md border border-[#C9A84C]/20 rounded-none shadow-xl z-20 flex items-center gap-3"
               >
-                <div className="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-600">
+                <div className="w-8 h-8 rounded-none bg-[#C9A84C]/10 flex items-center justify-center text-[#C9A84C]">
                   <Sparkles className="w-4 h-4" />
                 </div>
-                <div className="text-left">
-                  <span className="block text-[10px] uppercase tracking-wider text-neutral-400 font-bold">Positioning</span>
-                  <span className="block text-xs font-black text-black">Brand Authority</span>
+                <div className="text-left font-montserrat">
+                  <span className="block text-[9px] uppercase tracking-wider text-[#F5F0E8]/40 font-semibold">Positioning</span>
+                  <span className="block text-xs font-semibold text-[#F5F0E8]">Brand Authority</span>
                 </div>
               </motion.div>
 
@@ -193,14 +192,14 @@ export default function BrandHome() {
               <motion.div
                 animate={{ y: [0, 15, 0], x: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-6 -left-6 p-3.5 bg-white/75 backdrop-blur-md border border-neutral-200/50 rounded-2xl shadow-xl z-20 flex items-center gap-3"
+                className="absolute -bottom-6 -left-6 p-3.5 bg-[#101010]/95 backdrop-blur-md border border-[#C9A84C]/20 rounded-none shadow-xl z-20 flex items-center gap-3"
               >
-                <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center text-white text-xs font-black">
+                <div className="w-8 h-8 rounded-none bg-[#0A0A0A] border border-[#C9A84C]/10 flex items-center justify-center text-[#C9A84C] text-xs font-bold font-cinzel">
                   5X
                 </div>
-                <div className="text-left">
-                  <span className="block text-[10px] uppercase tracking-wider text-neutral-400 font-bold">Average ROI</span>
-                  <span className="block text-xs font-black text-black">Market Presence</span>
+                <div className="text-left font-montserrat">
+                  <span className="block text-[9px] uppercase tracking-wider text-[#F5F0E8]/40 font-semibold">Average ROI</span>
+                  <span className="block text-xs font-semibold text-[#F5F0E8]">Market Presence</span>
                 </div>
               </motion.div>
 
@@ -208,7 +207,7 @@ export default function BrandHome() {
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-2 h-2 rounded-full bg-yellow-500/80 blur-[0.5px] pointer-events-none"
+                  className="absolute w-2 h-2 rounded-none bg-[#C9A84C]/60 blur-[0.5px] pointer-events-none"
                   style={{
                     top: `${15 + Math.random() * 70}%`,
                     left: `${10 + Math.random() * 80}%`,
@@ -240,54 +239,38 @@ export default function BrandHome() {
           >
             {/* Small Label */}
             <motion.div
-              // variants={labelVariants}
-              className="inline-flex items-center gap-2 rounded-full border border-yellow-500/30 bg-yellow-500/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-yellow-600 uppercase tracking-wider"
+              className="inline-flex items-center gap-2 rounded-none border border-[#C9A84C]/30 bg-[#C9A84C]/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#C9A84C] uppercase tracking-wider font-montserrat"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-yellow-500 animate-pulse"></span>
+              <span className="h-1.5 w-1.5 rounded-none bg-[#C9A84C] animate-pulse"></span>
               Brand Strategy Services
             </motion.div>
 
             {/* Heading */}
             <motion.h1
-              // variants={headingVariants}
-              className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold text-black leading-[1.1] font-display"
+              className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-[#F5F0E8] leading-[1.15] font-cinzel tracking-wide"
             >
               Build a Brand That{" "}
-              <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent font-black">
+              <span className="text-[#C9A84C]">
                 People Remember
               </span>
             </motion.h1>
 
             {/* Description */}
             <motion.p
-              // variants={paragraphVariants}
-              className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-neutral-600 font-medium"
+              className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-[#F5F0E8]/75 font-light"
             >
               Your brand is more than a logo—it's the perception, emotion, and experience people associate with your business. We help businesses create a clear, compelling, and consistent brand strategy that drives growth and builds customer trust.
             </motion.p>
 
             {/* Buttons */}
             <motion.div
-              // variants={paragraphVariants}
               className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
-              {/* Primary Button */}
-              {/* <motion.button
-                // variants={buttonVariants}
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-yellow-500 hover:text-black font-bold px-8 py-4 shadow-lg shadow-black/10 hover:shadow-yellow-500/20 transition-all duration-300 flex items-center justify-center gap-2 group"
-              >
-                Get Started
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </motion.button> */}
-
               {/* Secondary Button */}
               <motion.button
-                // variants={buttonVariants}
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                className="w-full sm:w-auto rounded-full border border-neutral-300 text-black hover:border-black font-bold px-8 py-4 transition-all duration-300 flex items-center justify-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full sm:w-auto rounded-none bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] hover:text-[#0A0A0A] font-bold px-8 py-4 transition-all duration-300 flex items-center justify-center border border-[#C9A84C]/20 uppercase tracking-widest text-sm"
                 onClick={() => navigate("/contact")}
               >
                 Book a Consultation

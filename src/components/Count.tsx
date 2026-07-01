@@ -108,40 +108,36 @@ const Count = () => {
   }, []);
 
   return (
-    <div id="count" ref={containerRef} className="relative overflow-hidden py-8 px-5 md:px-10 lg:px-20 bg-white">
-      {/* Background Image & Light Yellow Glow Blend */}
+    <div id="count" ref={containerRef} className="relative overflow-hidden py-16 px-5 md:px-10 lg:px-20 bg-[#0A0A0A] border-t border-[#C9A84C]/15">
+      {/* Background Image & Dark Glow Blend */}
       <div className="absolute inset-0">
         <img
           src={bgImg2}
           alt="Background Image"
-          className="w-full h-full object-cover object-center opacity-95"
+          className="w-full h-full object-cover object-center opacity-10"
         />
-        <div className="absolute inset-0 bg-white/30"></div>
+        <div className="absolute inset-0 bg-black/90"></div>
       </div>
 
       {/* Decorative Golden / Yellow Radial Glows for premium depth */}
-      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-full bg-yellow-400/25 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-amber-500/20 blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/2 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Header Section */}
         <div className="count-header text-center mb-16 opacity-0">
-        
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
-            
-            <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
-            Why Choose Purnova ?
-            </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F0E8] font-cinzel tracking-wide">
+            Why Choose <span className="text-[#C9A84C]">Purnova ?</span>
           </h2>
         </div>
 
         {/* Text descriptions */}
         <div className="max-w-5xl mx-auto text-center mb-16 space-y-6">
-          <p className="count-para text-black font-extrabold text-lg sm:text-xl lg:text-2xl leading-relaxed opacity-95">
-            "Purnova Where the most ambitious brands come to become unforgettable."
+          <p className="count-para text-[#F5F0E8] font-cinzel font-semibold text-lg sm:text-xl lg:text-2xl leading-relaxed">
+            "Purnova: Where the most ambitious brands come to become unforgettable."
           </p>
 
-          <p className="count-para text-black font-bold text-sm sm:text-base lg:text-lg leading-relaxed opacity-85">
+          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-4xl mx-auto">
             We don’t look at your business as a checklist of deliverables; we see it as an unfolding legacy. We take the raw, powerful architecture of what you’ve built and breathe an undeniable, modern force into it aligning your strategy, your creative, and your scale until they command the entire landscape.
             The era of merely competing is over. It is time to occupy the space only you can inhabit.
             Stop chasing the market. Become the standard.
@@ -155,27 +151,23 @@ const Count = () => {
             return (
               <motion.div
                 key={index}
-                className={`count-card group relative overflow-hidden rounded-3xl p-8 text-center transition-all duration-500 cursor-pointer select-none border opacity-0 ${
+                className={`count-card group relative overflow-hidden rounded-none p-8 text-center transition-all duration-500 cursor-pointer select-none border opacity-0 ${
                   isHovered
-                    ? "bg-neutral-900/60 border-yellow-500 shadow-[0_20px_50px_rgba(234,179,8,0.25)] backdrop-blur-lg scale-[1.05] z-10"
-                    : "bg-neutral-800/10 border-neutral-400/20 backdrop-blur-md scale-100 hover:bg-neutral-800/15"
+                    ? "bg-[#101010] border-[#C9A84C] shadow-[0_15px_40px_rgba(201,168,76,0.1)] backdrop-blur-lg scale-[1.05] z-10"
+                    : "bg-[#101010] border-[#C9A84C]/15 backdrop-blur-md scale-100"
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Large Background Suffix */}
-                <div className={`absolute -bottom-6 right-2 text-8xl font-black transition-colors duration-500 opacity-10 pointer-events-none select-none ${
-                  isHovered ? "text-yellow-400/25" : "text-black/10"
+                <div className={`absolute -bottom-6 right-2 text-8xl font-black transition-colors duration-500 pointer-events-none select-none ${
+                  isHovered ? "text-[#C9A84C]/15" : "text-[#C9A84C]/5"
                 }`}>
                   {item.suffix}
                 </div>
 
-                <h3 className={`text-3xl sm:text-4xl md:text-5xl font-black mb-4 transition-all duration-300 ${
-                  isHovered
-                    ? "text-yellow-400"
-                    : "bg-gradient-to-r from-yellow-600 via-amber-600 to-yellow-500 bg-clip-text text-transparent"
-                }`}>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-cinzel font-bold mb-4 text-[#00A878]">
                   <CountUp
                     end={item.number}
                     duration={3}
@@ -185,21 +177,17 @@ const Count = () => {
                   />
                 </h3>
 
-                <p className={`text-lg sm:text-xl font-extrabold mb-1 transition-colors duration-300 ${
-                  isHovered ? "text-white" : "text-black"
-                }`}>
+                <p className="text-base sm:text-lg font-cinzel font-bold mb-1 text-[#F5F0E8] group-hover:text-[#C9A84C] transition-colors duration-300">
                   {item.title}
                 </p>
 
-                <p className={`text-sm font-semibold transition-colors duration-300 ${
-                  isHovered ? "text-yellow-300/90" : "text-black/70"
-                }`}>
+                <p className="text-xs font-montserrat text-[#F5F0E8]/50">
                   {item.subtitle}
                 </p>
 
                 {/* Ambient internal light */}
                 {isHovered && (
-                  <div className="absolute inset-0 opacity-100 transition duration-500 pointer-events-none bg-gradient-to-br from-yellow-500/5 via-transparent to-amber-500/5" />
+                  <div className="absolute inset-0 opacity-100 transition duration-500 pointer-events-none bg-gradient-to-br from-[#C9A84C]/5 via-transparent to-transparent" />
                 )}
               </motion.div>
             );

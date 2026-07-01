@@ -51,23 +51,23 @@ export default function StrategyPopup() {
   if (!showPopup) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 sm:p-6 font-montserrat">
       {/* Popup */}
-      <div className="relative w-full max-w-[95%] sm:max-w-xl lg:max-w-2xl rounded-2xl lg:rounded-3xl bg-black border-4 border-black shadow-2xl px-5 py-8 sm:px-8 sm:py-10">
+      <div className="relative w-full max-w-[95%] sm:max-w-xl lg:max-w-2xl rounded-none bg-[#0A0A0A] border-2 border-[#C9A84C] shadow-2xl px-5 py-8 sm:px-8 sm:py-10">
 
         {/* Close Button */}
         <button
           onClick={() => setShowPopup(false)}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-white hover:text-yellow-300 transition"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-[#F5F0E8] hover:text-[#C9A84C] transition"
         >
           <X className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
 
         {/* Heading */}
-        <h2 className="text-center font-bold leading-tight text-2xl sm:text-3xl lg:text-4xl">
+        <h2 className="text-center font-bold font-cinzel leading-tight text-2xl sm:text-3xl lg:text-4xl text-[#F5F0E8]">
           Talk to a Growth Expert at
           <br />
-          <span className="text-yellow-300">Purnova</span>
+          <span className="text-[#C9A84C] font-semibold">Purnova</span>
         </h2>
 
         {/* Team Images */}
@@ -85,9 +85,9 @@ export default function StrategyPopup() {
         md:w-14 md:h-14
         lg:w-16 lg:h-16
         xl:w-20 xl:h-20
-        rounded-full
-        border-2 border-yellow-300
-        bg-white
+        rounded-none
+        border-2 border-[#C9A84C]
+        bg-[#0A0A0A]
         object-contain
       "
     />
@@ -95,13 +95,13 @@ export default function StrategyPopup() {
 </div>
 
         {/* Description */}
-        <p className="text-center text-yellow-200 mt-5 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed">
+        <p className="text-center font-light text-[#F5F0E8]/85 mt-5 sm:mt-6 text-sm sm:text-base lg:text-lg leading-relaxed">
           Book strategy call and get clarity on your
           marketing, branding & growth roadmap.
         </p>
 
         {/* Features */}
-        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-3 sm:gap-5 lg:gap-6 mt-6 sm:mt-8 text-sm sm:text-base lg:text-lg font-medium text-center">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-3 sm:gap-5 lg:gap-6 mt-6 sm:mt-8 text-sm sm:text-base lg:text-lg font-medium text-center text-[#F5F0E8]/90">
           <div>✅ No spam</div>
           <div>✅ No sales pressure</div>
           <div>✅ Just actionable insights</div>
@@ -113,7 +113,7 @@ export default function StrategyPopup() {
             href="https://calendly.com/your-link"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border-2 border-black bg-yellow-300 text-black hover:bg-yellow-400 transition px-5 py-3 sm:px-7 lg:px-8 text-sm sm:text-base lg:text-xl font-semibold"
+            className="flex items-center gap-2 rounded-none border border-[#0A0A0A]/10 bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] hover:text-[#0A0A0A] transition px-5 py-3 sm:px-7 lg:px-8 text-sm sm:text-base lg:text-xl font-semibold uppercase tracking-wider text-xs"
           >
             <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
             Book Strategy Call ↗

@@ -124,7 +124,7 @@ export default function Work() {
 
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const sectionHeight = vh - 80;
+    const sectionHeight = vh - 220;
     
     const cardWidth = Math.max(280, Math.min(vw * 0.75, (sectionHeight * 0.52 - 30) * 1.6, 850));
     const spacing = cardWidth * 0.42;
@@ -194,8 +194,8 @@ export default function Work() {
       const borderEl = card.querySelector(".laptop-screen-border");
       if (borderEl) {
         gsap.set(borderEl, {
-          borderColor: `rgba(251, 191, 36, ${borderGlow})`,
-          boxShadow: `0 0 ${20 * borderGlow}px rgba(251, 191, 36, ${0.35 * borderGlow})`,
+          borderColor: `rgba(201, 168, 76, ${borderGlow})`,
+          boxShadow: `0 0 ${20 * borderGlow}px rgba(201, 168, 76, ${0.35 * borderGlow})`,
         });
       }
     });
@@ -315,27 +315,27 @@ export default function Work() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden bg-black"
+      className="relative w-full h-screen overflow-hidden bg-[#0A0A0A] font-montserrat"
     >
       <div
         ref={pinContainerRef}
-        className="relative w-full h-full flex flex-col justify-between py-4 md:py-6 px-4 md:px-8 bg-black"
+        className="relative w-full h-full flex flex-col justify-between py-4 md:py-6 px-4 md:px-8 bg-[#0A0A0A]"
         onWheel={handleWheel}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Header Info */}
-        <div className="relative z-40 text-center select-none px-4">
-          <p className="uppercase tracking-[4px] text-yellow-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 md:mt-6 mb-1">
+        {/* Header Info - Added padding-top pt-24 to push it down below fixed Navbar */}
+        <div className="relative z-[45] text-center select-none px-4 pt-24 sm:pt-28">
+          <p className="uppercase tracking-[6px] text-[#C9A84C] font-cinzel font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-1">
             Featured Work
           </p>
-          <h2 className="text-2xl md:text-3xl font-black text-white mt-1 md:mt-3 mb-2 md:mb-4 bg-gradient-to-r from-zinc-300 via-white to-zinc-400 bg-clip-text text-transparent">
+          <h2 className="text-2xl md:text-3xl font-bold font-cinzel text-[#F5F0E8] mt-1 md:mt-3 mb-2 md:mb-4">
             {projects[activeIndex].title}
           </h2>
         </div>
 
         {/* Radial Background Light Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.06),transparent_65%)] pointer-events-none mt-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,168,76,0.04),transparent_65%)] pointer-events-none mt-10" />
 
         {/* Coverflow Carousel Wrapper */}
         <div className="relative w-full flex-grow flex items-center justify-center perspective-[2000px] transform-style-[preserve-3d] mt-2 mb-2">
@@ -350,33 +350,33 @@ export default function Work() {
         </div>
 
         {/* Bottom Controls / Indicator bar */}
-        <div className="relative z-40 flex flex-col items-center gap-4 px-20 mt-2">
+        <div className="relative z-40 flex flex-col items-center gap-4 px-20 mt-2 pb-6 sm:pb-8 font-montserrat">
           {/* Navigation Arrows & Index details */}
-          <div className="flex items-center gap-6 bg-zinc-900/60 border border-zinc-800/80 px-4 py-2 rounded-full backdrop-blur-md shadow-lg select-none">
+          <div className="flex items-center gap-6 bg-[#101010]/85 border border-[#C9A84C]/25 px-5 py-2.5 rounded-none backdrop-blur-md shadow-lg select-none">
             <button 
               onClick={handlePrev} 
               disabled={activeIndex === 0}
-              className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-zinc-800 hover:border-zinc-500 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-zinc-700 transition-colors text-white"
+              className="w-8 h-8 rounded-none border border-[#C9A84C]/20 hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 flex items-center justify-center disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-[#C9A84C]/20 transition-all duration-300 text-[#F5F0E8]"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-4 h-4 text-[#F5F0E8]" />
             </button>
             
-            <div className="text-[10px] md:text-xs text-zinc-300 font-mono tracking-widest uppercase">
-              Project <span className="text-[#fbbf24] font-bold">{activeIndex + 1}</span> of {projects.length}
+            <div className="text-[10px] md:text-xs text-[#F5F0E8]/80 font-mono tracking-widest uppercase font-semibold">
+              Project <span className="text-[#C9A84C] font-bold">{activeIndex + 1}</span> of {projects.length}
             </div>
 
             <button 
               onClick={handleNext} 
               disabled={activeIndex === projects.length - 1}
-              className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-zinc-800 hover:border-zinc-500 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-zinc-700 transition-colors text-white"
+              className="w-8 h-8 rounded-none border border-[#C9A84C]/20 hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 flex items-center justify-center disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-[#C9A84C]/20 transition-all duration-300 text-[#F5F0E8]"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4 text-[#F5F0E8]" />
             </button>
           </div>
 
           {/* Scroll helper tag */}
-          <div className="flex items-center gap-1.5 text-zinc-500 text-[9px] uppercase tracking-[2px] animate-pulse">
-            <MousePointer className="w-3 h-3 text-[#fbbf24]" />
+          <div className="flex items-center gap-1.5 text-[#F5F0E8]/50 text-[9px] uppercase tracking-[2px] animate-pulse">
+            <MousePointer className="w-3 h-3 text-[#C9A84C]" />
             <span>Scroll to cycle projects</span>
           </div>
         </div>

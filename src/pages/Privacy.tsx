@@ -111,9 +111,9 @@ const Privacy = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans pb-24">
-      {/* Decorative top accent gradient */}
-      <div className="h-2 w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600"></div>
+    <div className="min-h-screen bg-[#0A0A0A] text-[#F5F0E8] font-montserrat pb-24">
+      {/* Decorative top accent line */}
+      <div className="h-[2px] w-full bg-[#C9A84C]"></div>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 md:px-8">
@@ -121,14 +121,14 @@ const Privacy = () => {
           {/* Back Button */}
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-yellow-600 mb-8 transition-colors duration-300"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#F5F0E8]/50 hover:text-[#C9A84C] mb-8 transition-colors duration-300"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-700 font-bold text-xs uppercase tracking-wider mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-[#C9A84C]/10 border border-[#C9A84C]/20 text-[#C9A84C] font-bold text-xs uppercase tracking-wider mb-6">
             <ShieldCheck className="w-3.5 h-3.5" />
             Privacy Documents
           </div>
@@ -137,19 +137,19 @@ const Privacy = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-extrabold tracking-tight leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-bold font-cinzel text-[#F5F0E8] tracking-wide leading-tight"
           >
-            Privacy <span className="text-yellow-500">Policy</span>
+            Privacy <span className="text-[#C9A84C]">Policy</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-6 max-w-6xl text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed"
+            className="mt-6 max-w-6xl text-base sm:text-lg md:text-xl text-[#F5F0E8]/70 font-light leading-relaxed"
           >
             At{" "}
-            <span className="font-bold text-yellow-600">
+            <span className="font-semibold text-[#C9A84C]">
               Purnova Digital Marketing
             </span>
             , we respect your privacy and are committed to protecting your personal information.
@@ -163,8 +163,8 @@ const Privacy = () => {
           
           {/* Table of Contents - Desktop Sticky Sidebar */}
           <div className="hidden lg:block lg:col-span-1">
-            <div className="sticky top-28 p-6 bg-neutral-50 rounded-2xl border border-neutral-100 shadow-sm space-y-5">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+            <div className="sticky top-28 p-6 bg-[#101010] rounded-none border border-[#C9A84C]/15 shadow-sm space-y-5">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-[#F5F0E8]/40">
                 Table of Contents
               </h3>
               <nav className="flex flex-col gap-1">
@@ -172,10 +172,10 @@ const Privacy = () => {
                   <button
                     key={index}
                     onClick={() => handleScrollToSection(index)}
-                    className={`text-left text-sm font-semibold py-2 px-3 rounded-lg transition-all duration-300 ${
+                    className={`text-left text-sm font-semibold py-2 px-3 rounded-none transition-all duration-300 ${
                       activeSection === index
-                        ? "text-yellow-600 bg-yellow-500/10 font-bold border-l-4 border-yellow-500 pl-3"
-                        : "text-neutral-500 hover:text-black hover:bg-neutral-100/70 border-l border-neutral-200 pl-3"
+                        ? "text-[#C9A84C] bg-[#C9A84C]/10 font-bold border-l-4 border-[#C9A84C] pl-3"
+                        : "text-[#F5F0E8]/50 hover:text-[#F5F0E8] hover:bg-[#101010]/80 border-l border-[#C9A84C]/20 pl-3"
                     }`}
                   >
                     {item.title}
@@ -186,15 +186,15 @@ const Privacy = () => {
           </div>
 
           {/* Table of Contents - Mobile Horizontal Scroll Bar (Sticky) */}
-          <div className="lg:hidden sticky top-20 z-30 bg-white/90 backdrop-blur-md py-4 border-b border-neutral-100 flex gap-2 overflow-x-auto scrollbar-none px-4 -mx-4 mb-8">
+          <div className="lg:hidden sticky top-20 z-30 bg-[#0A0A0A]/90 backdrop-blur-md py-4 border-b border-[#C9A84C]/10 flex gap-2 overflow-x-auto scrollbar-none px-4 -mx-4 mb-8">
             {sections.map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleScrollToSection(index)}
-                className={`flex-shrink-0 text-xs font-bold px-4 py-2.5 rounded-full border transition-all duration-300 ${
+                className={`flex-shrink-0 text-xs font-bold px-4 py-2.5 rounded-none border transition-all duration-300 ${
                   activeSection === index
-                    ? "bg-black text-yellow-400 border-black shadow-md scale-105"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                    ? "bg-[#C9A84C] text-[#0A0A0A] border-[#C9A84C] shadow-md scale-105"
+                    : "bg-[#101010] text-[#F5F0E8]/70 border-[#C9A84C]/15 hover:border-[#C9A84C]/30"
                 }`}
               >
                 {item.title}
@@ -211,49 +211,49 @@ const Privacy = () => {
                 ref={(el) => {
                   sectionsRef.current[index] = el;
                 }}
-                className="group rounded-3xl border border-neutral-200 bg-black p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-500 hover:border-yellow-500/50 hover:shadow-2xl"
+                className="group rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-500 hover:border-[#C9A84C]/45 hover:shadow-2xl"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 font-bold text-sm">
+                  <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-[#C9A84C]/10 border border-[#C9A84C]/20 text-[#C9A84C] font-bold text-sm">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-yellow-400 mb-4 tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl font-bold font-cinzel text-[#C9A84C] mb-4 tracking-tight">
                       {item.title}
                     </h2>
-                    <p className="text-base sm:text-lg leading-relaxed text-neutral-300 font-medium">
+                    <p className="text-base sm:text-lg leading-relaxed text-[#F5F0E8]/75 font-light">
                       {item.content}
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-8 h-1 w-0 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-700 group-hover:w-full"></div>
+                <div className="mt-8 h-[1px] w-0 bg-gradient-to-r from-[#C9A84C] to-[#C9A84C] transition-all duration-700 group-hover:w-full"></div>
               </div>
             ))}
 
             {/* Contact Section (Embedded cleanly in Content Area) */}
-            <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 md:p-10 shadow-lg mt-12 text-center">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-yellow-400 mb-4">
+            <div className="rounded-none bg-[#101010]/80 border border-[#C9A84C]/15 p-6 sm:p-8 md:p-10 shadow-lg mt-12 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold font-cinzel text-[#C9A84C] mb-4">
                 Contact Us
               </h2>
-              <p className="text-base sm:text-lg leading-relaxed text-neutral-300 max-w-xl mx-auto mb-8">
+              <p className="text-base sm:text-lg leading-relaxed text-[#F5F0E8]/75 font-light max-w-xl mx-auto mb-8">
                 If you have any questions regarding this Privacy Policy, please contact Purnova Digital Marketing.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 font-montserrat">
                 <a
                   href="mailto:info@purnovadigital.com"
-                  className="flex items-center gap-3 bg-white text-black px-6 py-4 rounded-xl font-bold shadow-md hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full sm:w-auto justify-center"
+                  className="flex items-center gap-3 bg-white text-black px-6 py-4 rounded-none font-bold shadow-md hover:bg-[#C9A84C] hover:text-[#0A0A0A] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full sm:w-auto justify-center border border-[#C9A84C]/20"
                 >
-                  <Mail className="w-5 h-5 text-yellow-600" />
+                  <Mail className="w-5 h-5 text-[#C9A84C] group-hover:text-[#0A0A0A]" />
                   info@purnovadigital.com
                 </a>
 
                 <a
-                  href="tel:+919876543210"
-                  className="flex items-center gap-3 bg-yellow-500 text-black px-6 py-4 rounded-xl font-bold shadow-md hover:bg-yellow-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full sm:w-auto justify-center"
+                  href="tel:+918390025023"
+                  className="flex items-center gap-3 bg-[#C9A84C] text-[#0A0A0A] px-6 py-4 rounded-none font-bold shadow-md hover:bg-[#F5F0E8] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full sm:w-auto justify-center border border-[#C9A84C]/20"
                 >
                   <Phone className="w-5 h-5" />
-                  +91 98765 43210
+                  +91 83900 25023
                 </a>
               </div>
             </div>

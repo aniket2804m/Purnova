@@ -34,32 +34,29 @@ const CaseStudy = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-white">
+    <section id="results" className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-[#0A0A0A] border-t border-[#C9A84C]/10">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <img
           src={bgImg2}
           alt="Background"
-          className="w-full h-full object-cover object-center opacity-95"
+          className="w-full h-full object-cover object-center opacity-10"
         />
-        <div className="absolute inset-0 bg-white/30" />
+        <div className="absolute inset-0 bg-black/90" />
       </div>
 
       {/* Decorative Glow Effects */}
-      <div className="absolute top-10 right-1/4 h-80 w-80 rounded-full bg-yellow-400/25 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 h-80 w-80 rounded-full bg-amber-500/20 blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 right-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/2 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-black tracking-tight">
-            Case Studies That{" "}
-            <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
-              Drive Results
-            </span>
+          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold font-cinzel text-[#F5F0E8] tracking-wide">
+            Case Studies That <span className="text-[#C9A84C]">Drive Results</span>
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-black font-bold text-base md:text-lg opacity-90">
+          <p className="mt-6 max-w-3xl mx-auto font-montserrat text-sm sm:text-base text-[#F5F0E8]/70 leading-relaxed">
             Discover how our digital marketing strategies helped businesses
             increase traffic, generate leads, and achieve measurable growth.
           </p>
@@ -73,7 +70,7 @@ const CaseStudy = () => {
               onClick={() => navigate(study.route)}
               className="group cursor-pointer"
             >
-              <div className="overflow-hidden rounded-3xl border border-neutral-300 bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="overflow-hidden rounded-none border border-[#C9A84C]/15 bg-[#101010] shadow-lg transition-all duration-300 hover:border-[#C9A84C]/60 hover:-translate-y-2">
                 <img
                   src={study.image}
                   alt={study.title}
@@ -81,7 +78,7 @@ const CaseStudy = () => {
                 />
               </div>
 
-              <h3 className="mt-4 text-black text-2xl font-semibold">
+              <h3 className="mt-4 text-[#F5F0E8] text-xl font-cinzel font-semibold group-hover:text-[#C9A84C] transition-colors duration-300">
                 {study.title}
               </h3>
             </div>
@@ -90,32 +87,32 @@ const CaseStudy = () => {
 
         {/* Stats Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
+            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
               120+
             </h3>
-            <p className="text-black font-bold mt-2">Projects Delivered</p>
+            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Projects Delivered</p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
+            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
               95%
             </h3>
-            <p className="text-black font-bold mt-2">Client Retention</p>
+            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Client Retention</p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
+            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
               5M+
             </h3>
-            <p className="text-black font-bold mt-2">Monthly Reach</p>
+            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Monthly Reach</p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
+            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
               ₹10Cr+
             </h3>
-            <p className="text-black font-bold mt-2">Revenue Generated</p>
+            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Revenue Generated</p>
           </div>
         </div>
       </div>

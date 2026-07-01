@@ -118,49 +118,44 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contact" className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-white" ref={sectionRef}>
-      {/* Background Image & Light Yellow Glow Blend */}
+    <section id="contact" className="relative overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-[#0A0A0A] border-t border-[#C9A84C]/10 font-montserrat" ref={sectionRef}>
+      {/* Background Image & Dark Glow Blend */}
       <div className="absolute inset-0 -z-10">
         <img
           src={bgImg2}
           alt="Background Image"
-          className="w-full h-full object-cover object-center opacity-95"
+          className="w-full h-full object-cover object-center opacity-10"
         />
-        <div className="absolute inset-0 bg-white/30"></div>
+        <div className="absolute inset-0 bg-[#0A0A0A]/95 backdrop-blur-sm"></div>
       </div>
 
       {/* Decorative Golden / Yellow Radial Glows for premium depth */}
-      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-full bg-yellow-400/25 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-amber-500/20 blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/4 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/2 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading Section */}
         <div className="contact-header text-center mb-16 opacity-0">
-          {/* <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
-            Get in Touch
-          </span> */}
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F0E8] font-cinzel tracking-wide leading-tight">
             Let's{" "}
-            <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
+            <span className="text-[#C9A84C]">
               Connect
             </span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start font-montserrat">
           {/* Left Column: Info & Links */}
           <div className="space-y-4">
-            <p className="contact-link-item text-black font-bold text-lg opacity-90 mb-4">
-              Interested in collaborating on AI projects, have a question, or just want to say hello? I'd love to hear from you.
+            <p className="contact-link-item text-[#F5F0E8]/85 font-light text-base leading-relaxed mb-4">
+              Interested in collaborating, have a question, or want to schedule a strategy session? We'd love to hear from you.
             </p>
 
             {/* Resume helper box */}
-            <div className="contact-link-item flex items-center gap-3 mb-6 p-4 rounded-xl bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md opacity-0">
-              <FileText className="w-5 h-5 text-amber-600 shrink-0" />
-              <p className="text-sm text-black font-semibold">
-                Looking for ? <span className="text-amber-700 underline cursor-pointer">Drop a message</span> and I'll share it with you!
+            <div className="contact-link-item flex items-center gap-3 mb-6 p-4 rounded-none bg-[#101010]/60 border border-[#C9A84C]/15 backdrop-blur-md opacity-0">
+              <FileText className="w-5 h-5 text-[#C9A84C] shrink-0" />
+              <p className="text-sm text-[#F5F0E8]/90 font-light">
+                Looking for details? <span className="text-[#C9A84C] underline cursor-pointer">Drop a message</span> and we'll share it with you!
               </p>
             </div>
 
@@ -170,14 +165,14 @@ const Contact = () => {
                 href={item.href}
                 target={item.href !== "#" ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="contact-link-item flex items-center gap-4 bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md rounded-2xl p-4 hover:bg-neutral-900/60 hover:border-yellow-500 hover:shadow-[0_10px_30px_rgba(234,179,8,0.15)] transition-all duration-300 group opacity-0"
+                className="contact-link-item flex items-center gap-4 bg-[#101010]/40 border border-[#C9A84C]/10 backdrop-blur-md rounded-none p-4 hover:bg-[#101010]/90 hover:border-[#C9A84C] hover:shadow-[0_10px_30px_rgba(201,168,76,0.1)] transition-all duration-300 group opacity-0"
               >
-                <div className="p-3 rounded-xl bg-black text-yellow-400 group-hover:bg-yellow-400 group-hover:text-black transition-all duration-300 shadow-md">
+                <div className="p-3 rounded-none bg-[#0A0A0A] text-[#C9A84C] group-hover:bg-[#C9A84C] group-hover:text-[#0A0A0A] transition-all duration-300 shadow-md border border-[#C9A84C]/10">
                   <item.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-black/60 font-bold group-hover:text-yellow-400/80 transition-colors duration-300">{item.label}</p>
-                  <p className="text-sm text-black font-extrabold group-hover:text-white transition-colors duration-300">{item.text}</p>
+                  <p className="text-xs text-[#F5F0E8]/50 font-medium group-hover:text-[#C9A84C] transition-colors duration-300">{item.label}</p>
+                  <p className="text-sm text-[#F5F0E8] font-semibold group-hover:text-white transition-colors duration-300">{item.text}</p>
                 </div>
               </a>
             ))}
@@ -186,13 +181,13 @@ const Contact = () => {
           {/* Right Column: Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="form-container-card bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md rounded-3xl p-8 space-y-6 hover:bg-neutral-800/15 hover:shadow-lg transition-all duration-500 opacity-0"
+            className="form-container-card bg-[#101010]/60 border border-[#C9A84C]/15 backdrop-blur-md rounded-none p-8 space-y-6 hover:bg-[#101010]/80 transition-all duration-500 opacity-0"
           >
             <Input
               placeholder="Your Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="bg-white/50 border-neutral-400/30 text-black placeholder:text-black/45 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 rounded-2xl py-6 font-bold shadow-sm"
+              className="bg-[#0A0A0A]/80 border-[#C9A84C]/20 text-[#F5F0E8] placeholder:text-[#F5F0E8]/40 focus-visible:border-[#C9A84C] focus-visible:ring-1 focus-visible:ring-[#C9A84C] rounded-none py-6 font-light shadow-sm"
               maxLength={100}
             />
             <Input
@@ -200,14 +195,14 @@ const Contact = () => {
               placeholder="Your Email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="bg-white/50 border-neutral-400/30 text-black placeholder:text-black/45 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 rounded-2xl py-6 font-bold shadow-sm"
+              className="bg-[#0A0A0A]/80 border-[#C9A84C]/20 text-[#F5F0E8] placeholder:text-[#F5F0E8]/40 focus-visible:border-[#C9A84C] focus-visible:ring-1 focus-visible:ring-[#C9A84C] rounded-none py-6 font-light shadow-sm"
               maxLength={255}
             />
             <Textarea
               placeholder="Your Message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="bg-white/50 border-neutral-400/30 text-black placeholder:text-black/45 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 rounded-2xl font-bold min-h-[140px] shadow-sm"
+              className="bg-[#0A0A0A]/80 border-[#C9A84C]/20 text-[#F5F0E8] placeholder:text-[#F5F0E8]/40 focus-visible:border-[#C9A84C] focus-visible:ring-1 focus-visible:ring-[#C9A84C] rounded-none font-light min-h-[140px] shadow-sm"
               maxLength={1000}
             />
 
@@ -216,7 +211,7 @@ const Contact = () => {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={sending}
-              className="w-full bg-black text-white hover:bg-yellow-400 hover:text-black py-4 rounded-2xl font-bold text-base flex gap-2 items-center justify-center transition-all duration-300 border border-yellow-500/20 shadow-md disabled:opacity-50"
+              className="w-full bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] hover:text-[#0A0A0A] py-4 rounded-none font-semibold font-montserrat tracking-widest uppercase text-sm flex gap-2 items-center justify-center transition-all duration-300 border border-[#C9A84C]/20 shadow-md disabled:opacity-50"
             >
               <Send className="w-5 h-5" />
               {sending ? "Sending..." : "Send Message"}

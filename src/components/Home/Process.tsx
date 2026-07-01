@@ -34,7 +34,7 @@ const Process = () => {
   };
 
   return (
-   <div ref={containerRef} className="relative h-[500vh] md:h-[400vh] w-full">
+   <div ref={containerRef} className="relative h-[500vh] md:h-[400vh] w-full border-t border-[#C9A84C]/10 bg-[#0A0A0A]">
       {/* Sticky viewport wrapper - stays fixed on screen during the scroll track */}
       <div className="sticky top-0 left-0 h-screen w-full overflow-hidden">
 
@@ -45,11 +45,11 @@ const Process = () => {
       alt="Background"
       loading="lazy"
       decoding="async"
-      className="w-full h-full object-cover object-center"
+      className="w-full h-full object-cover object-center opacity-10"
     />
 
-    {/* Optional Overlay */}
-    <div className="absolute inset-0 bg-white/5"></div>
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-black/95"></div>
   </div>
       
         
@@ -86,16 +86,17 @@ const Process = () => {
               lg:w-28 lg:h-28
               xl:w-32 xl:h-32
               object-contain
+              filter brightness-[0.9]
             "
           />
         </div>
       </div>
 
-      <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-neutral-900 mb-4 sm:mb-6">
+      <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-cinzel text-[#C9A84C] mb-4 sm:mb-6 tracking-wide">
         {step.title}
-      </h2>
+      </h3>
 
-      <p className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+      <p className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl font-montserrat text-[#F5F0E8]/75 leading-relaxed">
         {step.description}
       </p>
     </motion.div>
@@ -114,7 +115,7 @@ const Process = () => {
         onClick={() => handleDotClick(i)}
         animate={{
           width: isActive ? 50 : 16,
-          backgroundColor: isActive ? "#f59e0b" : "#d1d5db",
+          backgroundColor: isActive ? "#C9A84C" : "rgba(201,168,76,0.2)",
         }}
         transition={{
           type: "spring",
@@ -123,7 +124,7 @@ const Process = () => {
         }}
         className="
           h-2
-          rounded-full
+          rounded-none
           cursor-pointer
         "
       />

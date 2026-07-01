@@ -12,14 +12,14 @@ const Feature = () => {
   const CARD_WIDTH = 210;
 
   return (
-    <section className="bg-white py-[50px] overflow-hidden relative">
-      <div className=" text-center">
+    <section className="bg-[#1A1A1A] py-[50px] overflow-hidden relative border-t border-[#C9A84C]/10">
+      <div className="text-center">
         <div className="w-full">
-          <h1
-            className="text-yellow-500 text-[2rem] font-extrabold font-display tracking-[-0.02em] mb-5"
+          <h2
+            className="text-[#C9A84C] text-[1.75rem] font-bold font-cinzel tracking-wider mb-5 uppercase"
           >
             Trusted by Brands
-          </h1>
+          </h2>
         </div>
       </div>
 
@@ -51,15 +51,16 @@ const Feature = () => {
 w-[120px] h-[120px]
 md:w-[140px] md:h-[140px]
 lg:w-[160px] lg:h-[160px]
-rounded-full
-border-[1.5px] border-primary/10
+rounded-none
+border
+border-[#C9A84C]/25
 flex items-center justify-center
-bg-yellow-400
+bg-[#0A0A0A]
 overflow-hidden"
               whileHover={{
                 scale: 1.05,
-                rotateY: 15,
-                rotateX: 5,
+                borderColor: "rgba(201, 168, 76, 0.8)",
+                boxShadow: "0 0 15px rgba(201, 168, 76, 0.15)"
               }}
             >
               <a
@@ -68,23 +69,20 @@ overflow-hidden"
                 rel="noopener noreferrer"
                 className="w-full h-full flex items-center justify-center overflow-hidden"
               >
-                <div className="w-[120px] h-[120px] flex items-center justify-center">
-  <img
-    src={brand.image}
-    loading="lazy"
-    decoding="async"
-    alt={`Brand ${index + 1}`}
-    className="
-      max-w-full
-      max-h-full
-      object-contain
-      transition-all
-      duration-500
-      ease-out
-      group-hover:scale-105
-    "
-  />
-</div>
+                <div className="w-[120px] h-[120px] flex items-center justify-center p-4">
+                  <img
+                    src={brand.image}
+                    loading="lazy"
+                    decoding="async"
+                    alt={`Brand ${index + 1}`}
+                    className="
+                      max-w-full
+                      max-h-full
+                      object-contain
+                      filter brightness-[0.9] hover:brightness-[1] transition-all duration-300
+                    "
+                  />
+                </div>
               </a>
             </motion.div>
           ))}

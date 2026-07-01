@@ -67,15 +67,7 @@ const Team = () => {
 
 
 
-  useEffect(() => {
-    gsap.from(".team-card", {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
-  }, []);
+
 
   const teamMembers = [
     {
@@ -203,9 +195,13 @@ const Team = () => {
   return (
     <div
       ref={sectionRef}
-      className="py-20 bg-[#f5f5f5]"
+      className="py-20 bg-[#0A0A0A] border-t border-[#C9A84C]/10 text-[#F5F0E8] relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-5">
+      {/* Subtle Gold Radial Glows for premium depth */}
+      <div className="absolute top-40 left-1/4 w-96 h-96 bg-[#C9A84C]/3 rounded-none blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-40 right-1/4 w-96 h-96 bg-[#C9A84C]/2 rounded-none blur-[150px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-5 z-10">
        <motion.h2
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +210,7 @@ const Team = () => {
     duration: 0.8,
     ease: "easeOut",
   }}
-  className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5"
+  className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-[#C9A84C] font-cinzel mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5 tracking-wide"
 >
   Meet The Purnovians
 </motion.h2>
@@ -224,7 +220,7 @@ const Team = () => {
   // ref={shootersRef}
   className="mb-5 py-3 px-5 sm:px-6 md:px-8 lg:px-0"
 >
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center font-montserrat">
 
     <motion.div
       className=" text-center lg:text-left lg:pl-16 md:pl-8"
@@ -240,7 +236,7 @@ const Team = () => {
           duration: 5,
           type: "spring",
         }}
-        className="text-[#f5c400] text-3xl sm:text-4xl font-black leading-none"
+        className="text-[#C9A84C] text-3xl sm:text-4xl font-black leading-none"
       >
         😎
       </motion.h3>
@@ -249,7 +245,7 @@ const Team = () => {
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 2 }}
-        className="mt-3 text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight lg:leading-[0.95]"
+        className="mt-3 text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-cinzel text-[#F5F0E8] leading-tight lg:leading-[0.95]"
       >
         Faces Behind
         <br />
@@ -265,7 +261,7 @@ const Team = () => {
               repeat: Infinity,
               duration: 3,
             }}
-            className="absolute -bottom-2 md:-bottom-3 left-0 h-2 bg-[#f5c400]"
+            className="absolute -bottom-2 md:-bottom-3 left-0 h-1.5 bg-[#C9A84C]"
           />
         </span>
       </motion.h2>
@@ -291,9 +287,9 @@ const Team = () => {
           sm:text-lg
           md:text-xl
           lg:text-2xl
-          text-black
+          text-[#F5F0E8]/75
           leading-relaxed
-          font-medium
+          font-light
           ml-0
           md:ml-0
           lg:-ml-24
@@ -304,7 +300,7 @@ const Team = () => {
         Meet the{" "}
 
         <span
-          className="relative inline-block md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#f5c400] cursor-pointer"
+          className="relative inline-block md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#C9A84C] cursor-pointer"
           onMouseEnter={() => setShowPurnovaImg(true)}
           onMouseLeave={() => setShowPurnovaImg(false)}
         >
@@ -318,7 +314,7 @@ const Team = () => {
               repeat: Infinity,
               duration: 2,
             }}
-            className="absolute inset-0 blur-xl rounded-full -z-10"
+            className="absolute inset-0 blur-xl rounded-none -z-10"
           />
         </span>
 
@@ -335,10 +331,11 @@ const Team = () => {
    
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
-          {teamMembers.map((member) => (
+          {teamMembers.map((member, index) => (
             <TeamCard 
               key={member.id} 
               member={member} 
+              index={index}
               setFullscreenImage={setFullscreenImage} 
             />
           ))}
@@ -365,11 +362,10 @@ const Team = () => {
           max-h-[1000px]
           p-[3px]
           overflow-hidden
-          rounded-xl
-          md:rounded-2xl
+          rounded-none
           shadow-2xl
           border
-          border-white/5
+          border-[#C9A84C]/20
           flex
           items-center
           justify-center
@@ -380,12 +376,12 @@ const Team = () => {
           className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
           style={{
             background:
-              "conic-gradient(from 0deg, transparent 30%, #ffffff 45%, #d4af37 55%, #eab308 65%, transparent 80%)",
+              "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
           }}
         />
 
         {/* Team Image */}
-        <div className="relative z-10 w-full h-full bg-[#0a0a0a] rounded-[10px] md:rounded-[13px] overflow-hidden flex items-center justify-center">
+        <div className="relative z-10 w-full h-full bg-[#0a0a0a] rounded-none overflow-hidden flex items-center justify-center">
           <motion.img
             src={img1}
             alt="Purnova Team"
@@ -429,7 +425,7 @@ const Team = () => {
           w-full
           max-w-[1400px]
           h-[90vh]
-          rounded-xl
+          rounded-none
           overflow-hidden
           p-[3px]
         "
@@ -439,11 +435,11 @@ const Team = () => {
           className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
           style={{
             background:
-              "conic-gradient(from 0deg, transparent 30%, #ffffff 45%, #d4af37 55%, #eab308 65%, transparent 80%)",
+              "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
           }}
         />
 
-        <div className="relative w-full h-full rounded-xl bg-black flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-full rounded-none bg-black flex items-center justify-center overflow-hidden">
           <img
             src={fullscreenImage}
             alt=""
@@ -455,7 +451,7 @@ const Team = () => {
 
         <button
           onClick={() => setFullscreenImage(null)}
-          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 hover:bg-white/40 text-white text-3xl leading-none"
+          className="absolute top-4 right-4 w-10 h-10 rounded-none bg-[#C9A84C]/20 hover:bg-[#C9A84C]/45 text-[#F5F0E8] text-3xl leading-none flex items-center justify-center border border-[#C9A84C]/30"
         >
           ×
         </button>
@@ -480,10 +476,11 @@ interface TeamMember {
 
 interface TeamCardProps {
   member: TeamMember;
+  index: number;
   setFullscreenImage: (img: string | null) => void;
 }
 
-const TeamCard = ({ member, setFullscreenImage }: TeamCardProps) => {
+const TeamCard = ({ member, index, setFullscreenImage }: TeamCardProps) => {
   const [hovered, setHovered] = useState(false);
   const [showMore, setShowMore] = useState(false);;
 
@@ -503,7 +500,11 @@ useEffect(() => {
 
   return (
    <motion.div
-  className="team-card bg-white overflow-hidden"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: (index % 3) * 0.15, ease: "easeOut" }}
+  className="team-card bg-[#101010] border border-[#C9A84C]/15 rounded-none overflow-hidden transition-all duration-300 hover:border-[#C9A84C]/60"
   whileHover={{ y: -8 }}
   onClick={() => {
     if (window.innerWidth < 768) {
@@ -514,7 +515,7 @@ useEffect(() => {
       {/* Image Section */}
 
       <div
-        className="relative bg-black h-[320px] flex justify-center items-center overflow-hidden"
+        className="relative bg-[#0A0A0A] h-[320px] flex justify-center items-center overflow-hidden"
        onMouseEnter={() => {
   setHovered(true);
 }}
@@ -523,9 +524,9 @@ onMouseLeave={() => {
   setHovered(false);
 }}
       >
-        {/* Yellow Circle */}
+        {/* Gold Frame Backdrop */}
 
-        <div className="absolute w-[250px] h-[250px] rounded-full bg-yellow-400 top-5" />
+        <div className="absolute w-[230px] h-[230px] rounded-non top-8" />
 
         {/* Image */}
 
@@ -564,15 +565,15 @@ onMouseLeave={() => {
       {/* Content */}
 
       <div className="p-6">
-        <h3 className="text-3xl font-extrabold text-black tracking-tight">
+        <h3 className="text-2xl font-bold text-[#F5F0E8] font-cinzel tracking-wide">
   {member.name}
 </h3>
 
-        <p className="text-gray-500 text-sm mb-4 font-bold">
+        <p className="text-[#C9A84C]/85 text-xs tracking-wider uppercase mb-4 font-semibold font-montserrat">
           {member.role}
         </p>
 
-        <p className="text-gray-700">
+        <p className="text-[#F5F0E8]/70 font-montserrat font-light text-sm leading-relaxed min-h-[48px]">
           {member.shortDesc}
         </p>
 
@@ -596,7 +597,7 @@ onMouseLeave={() => {
               }}
               className="overflow-hidden"
             >
-              <p className="mt-4 text-gray-600">
+              <p className="mt-4 text-[#F5F0E8]/60 font-montserrat font-light text-sm leading-relaxed">
                 {member.fullDesc}
               </p>
             </motion.div>
@@ -607,7 +608,7 @@ onMouseLeave={() => {
           onClick={() =>
             setShowMore(!showMore)
           }
-          className="mt-8 w-full border-2 border-black rounded-xl py-3 text-blue-600 font-bold hover:bg-black hover:text-white transition-all duration-300"
+          className="mt-8 w-full border border-[#C9A84C]/45 rounded-none py-3 text-[#F5F0E8] hover:bg-[#C9A84C] hover:text-[#0A0A0A] font-montserrat font-semibold transition-all duration-300 uppercase tracking-widest text-xs"
         >
           {showMore ? "Close" : "Next"}
         </button>

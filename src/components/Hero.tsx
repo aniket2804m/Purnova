@@ -6,7 +6,7 @@ import Card from "./Card/Card";
 import Process from "../components/Home/Process";
 import CaseStudy from "../components/Home/CaseStudy";
 import Happy from "./Happy/Happy";
-// import AdsCard from "../components/Card/AdsCard";
+import Testimonials from "../components/Home/Testimonials";
 
 const Hero = () => {
 
@@ -18,7 +18,7 @@ const Hero = () => {
             <Process />
             <Card />
             <CaseStudy />
-            
+            <Testimonials />
             <Happy />
     </>
   );

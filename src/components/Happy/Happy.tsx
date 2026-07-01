@@ -71,24 +71,24 @@ const Happy = () => {
   }, [isPlaying]);
 
   return (
-    <section className="bg-black py-20 px-5 md:px-10 lg:px-20 text-white text-center">
+    <section className="bg-[#0A0A0A] py-20 px-5 md:px-10 lg:px-20 text-[#F5F0E8] text-center border-t border-[#C9A84C]/10">
       {/* Title */}
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
-        Happy Customers
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-cinzel text-[#F5F0E8] tracking-wide">
+        Happy <span className="text-[#C9A84C]">Customers</span>
       </h2>
 
       {/* Brand Pills */}
-      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-10 mb-14 max-w-5xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-10 mb-14 max-w-5xl mx-auto font-montserrat">
         {brands.map((brand, index) => {
           const isActive = index === activeIndex;
           return (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`px-5 py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 transform active:scale-95 border ${
+              className={`px-5 py-3 rounded-none font-bold text-xs tracking-widest uppercase transition-all duration-300 transform active:scale-95 border ${
                 isActive
-                  ? "bg-yellow-500 text-black border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)]"
-                  : "bg-[#111] text-white border-yellow-500/30 hover:border-yellow-400 hover:text-yellow-400"
+                  ? "bg-[#C9A84C] text-[#0A0A0A] border-[#C9A84C] shadow-[0_4px_15px_rgba(201,168,76,0.25)]"
+                  : "bg-[#101010] text-[#F5F0E8] border-[#C9A84C]/15 hover:border-[#C9A84C] hover:text-[#C9A84C]"
               }`}
             >
               {brand.name}
@@ -98,11 +98,11 @@ const Happy = () => {
       </div>
 
       {/* Main Card */}
-      <div className="max-w-5xl mx-auto rounded-[32px] overflow-hidden bg-[#151515] border border-yellow-500/20 shadow-[0_0_50px_rgba(234,179,8,0.05)] flex flex-col md:flex-row items-stretch min-h-[350px] md:min-h-[480px]">
-        {/* Left Column Accent (Golden Text Panel) */}
-        <div className="w-full md:w-[35%] bg-gradient-to-br from-yellow-500 via-amber-500 to-yellow-600 p-8 md:p-12 flex items-center justify-center text-left">
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black leading-tight uppercase font-display select-none">
-            Our Customers Love Us Because.....
+      <div className="max-w-5xl mx-auto rounded-none overflow-hidden bg-[#101010] border border-[#C9A84C]/15 shadow-[0_10px_50px_rgba(0,0,0,0.8)] flex flex-col md:flex-row items-stretch min-h-[350px] md:min-h-[480px]">
+        {/* Left Column Accent (Deep Charcoal Panel) */}
+        <div className="w-full md:w-[35%] bg-[#1A1A1A] border-r border-[#C9A84C]/15 p-8 md:p-12 flex items-center justify-center text-left">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#C9A84C] font-cinzel leading-tight uppercase tracking-wider select-none">
+            Our Customers Love Us Because...
           </h3>
         </div>
 
@@ -122,16 +122,16 @@ const Happy = () => {
               />
 
               {/* Dark Overlay Mask */}
-              <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/30" />
+              <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/35" />
 
               {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <div className="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center bg-black/35 backdrop-blur-sm group-hover:scale-110 group-hover:border-yellow-400 group-hover:bg-yellow-500/10 transition-all duration-300 shadow-lg">
-                  <Play className="fill-white text-white group-hover:text-yellow-400 group-hover:fill-yellow-400 ml-1 transition-colors duration-300" size={32} />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 font-montserrat">
+                <div className="w-20 h-20 rounded-none border-2 border-[#C9A84C]/45 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:scale-105 group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/10 transition-all duration-300 shadow-lg">
+                  <Play className="fill-[#C9A84C] text-[#C9A84C] ml-1" size={28} />
                 </div>
                 
-                <span className="text-xl sm:text-2xl font-extrabold text-yellow-400 tracking-wider drop-shadow-md select-none mt-2 group-hover:text-yellow-300 transition-colors duration-300">
-                  CLICK HERE TO FIND OUT
+                <span className="text-lg sm:text-xl font-bold text-[#C9A84C] tracking-widest uppercase select-none mt-2 group-hover:text-[#F5F0E8] transition-colors duration-300">
+                  FIND OUT WHY
                 </span>
               </div>
             </div>

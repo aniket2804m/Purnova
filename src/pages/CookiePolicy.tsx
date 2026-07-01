@@ -116,9 +116,9 @@ const CookiePolicy = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans pb-24">
-      {/* Decorative top accent gradient */}
-      <div className="h-2 w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600"></div>
+    <div className="min-h-screen bg-[#0A0A0A] text-[#F5F0E8] font-montserrat pb-24">
+      {/* Decorative top accent line */}
+      <div className="h-[2px] w-full bg-[#C9A84C]"></div>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 md:px-8">
@@ -126,14 +126,14 @@ const CookiePolicy = () => {
           {/* Back Button */}
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-yellow-600 mb-8 transition-colors duration-300"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#F5F0E8]/50 hover:text-[#C9A84C] mb-8 transition-colors duration-300"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-700 font-bold text-xs uppercase tracking-wider mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-[#C9A84C]/10 border border-[#C9A84C]/20 text-[#C9A84C] font-bold text-xs uppercase tracking-wider mb-6">
             <Cookie className="w-3.5 h-3.5" />
             Privacy Documents
           </div>
@@ -142,19 +142,19 @@ const CookiePolicy = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-extrabold tracking-tight leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-bold font-cinzel text-[#F5F0E8] tracking-wide leading-tight"
           >
-            Cookie <span className="text-yellow-500">Policy</span>
+            Cookie <span className="text-[#C9A84C]">Policy</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-6 max-w-6xl text-base sm:text-lg md:text-xl text-center text-gray-600 leading-relaxed"
+            className="mt-6 max-w-6xl text-base sm:text-lg md:text-xl text-center text-[#F5F0E8]/70 font-light leading-relaxed"
           >
             This Cookie Policy explains how{" "}
-            <span className="font-bold text-yellow-600">
+            <span className="font-semibold text-[#C9A84C]">
               Purnova Digital Marketing
             </span>{" "}
             uses cookies and similar technologies to improve your browsing
@@ -169,8 +169,8 @@ const CookiePolicy = () => {
           
           {/* Table of Contents - Desktop Sticky Sidebar */}
           <div className="hidden lg:block lg:col-span-1">
-            <div className="sticky top-28 p-6 bg-neutral-50 rounded-2xl border border-neutral-100 shadow-sm space-y-5">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+            <div className="sticky top-28 p-6 bg-[#101010] rounded-none border border-[#C9A84C]/15 shadow-sm space-y-5">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-[#F5F0E8]/40">
                 Table of Contents
               </h3>
               <nav className="flex flex-col gap-1">
@@ -178,10 +178,10 @@ const CookiePolicy = () => {
                   <button
                     key={index}
                     onClick={() => handleScrollToSection(index)}
-                    className={`text-left text-sm font-semibold py-2 px-3 rounded-lg transition-all duration-300 ${
+                    className={`text-left text-sm font-semibold py-2 px-3 rounded-none transition-all duration-300 ${
                       activeSection === index
-                        ? "text-yellow-600 bg-yellow-500/10 font-bold border-l-4 border-yellow-500 pl-3"
-                        : "text-neutral-500 hover:text-black hover:bg-neutral-100/70 border-l border-neutral-200 pl-3"
+                        ? "text-[#C9A84C] bg-[#C9A84C]/10 font-bold border-l-4 border-[#C9A84C] pl-3"
+                        : "text-[#F5F0E8]/50 hover:text-[#F5F0E8] hover:bg-[#101010]/80 border-l border-[#C9A84C]/20 pl-3"
                     }`}
                   >
                     {item.title}
@@ -192,15 +192,15 @@ const CookiePolicy = () => {
           </div>
 
           {/* Table of Contents - Mobile Horizontal Scroll Bar (Sticky) */}
-          <div className="lg:hidden sticky top-20 z-30 bg-white/90 backdrop-blur-md py-4 border-b border-neutral-100 flex gap-2 overflow-x-auto scrollbar-none px-4 -mx-4 mb-8">
+          <div className="lg:hidden sticky top-20 z-30 bg-[#0A0A0A]/90 backdrop-blur-md py-4 border-b border-[#C9A84C]/10 flex gap-2 overflow-x-auto scrollbar-none px-4 -mx-4 mb-8">
             {cookieSections.map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleScrollToSection(index)}
-                className={`flex-shrink-0 text-xs font-bold px-4 py-2.5 rounded-full border transition-all duration-300 ${
+                className={`flex-shrink-0 text-xs font-bold px-4 py-2.5 rounded-none border transition-all duration-300 ${
                   activeSection === index
-                    ? "bg-black text-yellow-400 border-black shadow-md scale-105"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                    ? "bg-[#C9A84C] text-[#0A0A0A] border-[#C9A84C] shadow-md scale-105"
+                    : "bg-[#101010] text-[#F5F0E8]/70 border-[#C9A84C]/15 hover:border-[#C9A84C]/30"
                 }`}
               >
                 {item.title}
@@ -217,32 +217,32 @@ const CookiePolicy = () => {
                 ref={(el) => {
                   sectionsRef.current[index] = el;
                 }}
-                className="group rounded-3xl border border-neutral-200 bg-black p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-500 hover:border-yellow-500/50 hover:shadow-2xl"
+                className="group rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-500 hover:border-[#C9A84C]/45 hover:shadow-2xl"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 font-bold text-sm">
+                  <span className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-none bg-[#C9A84C]/10 border border-[#C9A84C]/20 text-[#C9A84C] font-bold text-sm">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-yellow-400 mb-4 tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl font-bold font-cinzel text-[#C9A84C] mb-4 tracking-tight">
                       {item.title}
                     </h2>
-                    <p className="text-base sm:text-lg leading-relaxed text-neutral-300 font-medium">
+                    <p className="text-base sm:text-lg leading-relaxed text-[#F5F0E8]/75 font-light">
                       {item.content}
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-8 h-1 w-0 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-700 group-hover:w-full"></div>
+                <div className="mt-8 h-[1px] w-0 bg-gradient-to-r from-[#C9A84C] to-[#C9A84C] transition-all duration-700 group-hover:w-full"></div>
               </div>
             ))}
 
             {/* Consent Section (Embedded cleanly in Content Area) */}
-            <div className="rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-8 md:p-10 shadow-lg text-center mt-12">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-yellow-400 mb-4">
+            <div className="rounded-none bg-[#101010]/80 border border-[#C9A84C]/15 p-6 sm:p-8 md:p-10 shadow-lg text-center mt-12">
+              <h2 className="text-2xl sm:text-3xl font-bold font-cinzel text-[#C9A84C] mb-4">
                 Your Consent
               </h2>
-              <p className="text-base sm:text-lg leading-relaxed text-neutral-300 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg leading-relaxed text-[#F5F0E8]/75 font-light max-w-2xl mx-auto">
                 By continuing to use our website, you consent to the use of cookies
                 in accordance with this Cookie Policy. You may withdraw your consent
                 at any time by adjusting your browser settings.

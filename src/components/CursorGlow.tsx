@@ -53,11 +53,11 @@ const CursorGlow = () => {
         >
           <div
             style={{
-              width: 6,
-              height: 6,
-              background: "#FFD700",
-              borderRadius: "50%",
-              boxShadow: "0 0 10px #FFD700, 0 0 20px #FFC107",
+              width: 5,
+              height: 5,
+              background: "#C9A84C",
+              borderRadius: "0%",
+              boxShadow: "0 0 8px #C9A84C, 0 0 15px #C9A84C",
             }}
           />
         </motion.div>

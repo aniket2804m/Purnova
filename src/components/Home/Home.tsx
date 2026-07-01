@@ -118,13 +118,13 @@ const Home = () => {
               }
             }}
           >
-            <div className="relative w-[90vw] h-[80vh] sm:w-[500px] sm:h-[700px] md:w-[700px] md:h-[800px] lg:w-[900px] lg:h-[550px] xl:w-[1200px] xl:h-[700px] p-[3px] overflow-hidden rounded-[24px] shadow-2xl flex items-center justify-center border border-white/10">
+            <div className="relative w-[90vw] h-[80vh] sm:w-[500px] sm:h-[700px] md:w-[700px] md:h-[800px] lg:w-[900px] lg:h-[550px] xl:w-[1200px] xl:h-[700px] p-[3px] overflow-hidden rounded-none shadow-2xl flex items-center justify-center border border-[#C9A84C]/20">
               <div className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
                 style={{
-                  background: "conic-gradient(from 0deg, transparent 30%, #ffffff 45%, #d4af37 55%, #eab308 65%, transparent 80%)",
+                  background: "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
                 }}
               />
-              <div className="relative w-full h-full bg-[#0a0a0a] rounded-[21px] overflow-hidden flex items-center justify-center z-10">
+              <div className="relative w-full h-full bg-[#0a0a0a] rounded-none overflow-hidden flex items-center justify-center z-10">
                 <motion.img
                   src={roles[currentRole].hoverImage || roles[currentRole].image}
                   loading="lazy"
@@ -135,10 +135,10 @@ const Home = () => {
                     scale: 1, 
                     opacity: 1,
                     filter: [
-                      "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))",
-                      "drop-shadow(0 0 35px rgba(212, 175, 55, 0.8))",
-                      "drop-shadow(0 0 20px rgba(234, 179, 8, 0.7))",
-                      "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))"
+                      "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))",
+                      "drop-shadow(0 0 35px rgba(201, 168, 76, 0.7))",
+                      "drop-shadow(0 0 20px rgba(201, 168, 76, 0.5))",
+                      "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))"
                     ]
                   }}
                   exit={{ scale: 0.8, opacity: 0 }}
@@ -175,28 +175,28 @@ const Home = () => {
             decoding="async"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/5"></div>
+          <div className="absolute inset-0 bg-black/90"></div>
         </motion.div>
 
         {/* Cinematic light streaks / floating particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.1, 1], x: [0, 30, 0], y: [0, -20, 0] }}
+            animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.1, 1], x: [0, 30, 0], y: [0, -20, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-yellow-500/10 blur-[100px]"
+            className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-none bg-[#C9A84C]/5 blur-[100px]"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1], x: [0, -40, 0], y: [0, 30, 0] }}
+            animate={{ opacity: [0.1, 0.4, 0.1], scale: [1, 1.2, 1], x: [0, -40, 0], y: [0, 30, 0] }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-yellow-600/5 blur-[120px]"
+            className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-none bg-[#C9A84C]/3 blur-[120px]"
           />
           {/* Subtle floating particles (small light circles) */}
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1.5 h-1.5 bg-yellow-500/30 rounded-full blur-[0.5px]"
+              className="absolute w-1.5 h-1.5 bg-[#C9A84C]/30 rounded-none blur-[0.5px]"
               style={{
                 top: `${20 + Math.random() * 60}%`,
                 left: `${10 + Math.random() * 80}%`,
@@ -218,7 +218,7 @@ const Home = () => {
         </div>
 
         {/* Content */}
-       <div className="relative z-10 text-center text-black w-full px-4 sm:px-6 lg:px-10 mx-auto flex flex-col justify-center items-center h-full pt-20">
+       <div className="relative z-10 text-center text-[#F5F0E8] w-full px-4 sm:px-6 lg:px-10 mx-auto flex flex-col justify-center items-center h-full pt-20">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -231,7 +231,7 @@ const Home = () => {
                 },
               },
             }}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center font-montserrat"
           >
             <motion.h1
               variants={{
@@ -262,13 +262,14 @@ const Home = () => {
                 }
               }}
               whileHover={{
-                scale: 1.08,
-                textShadow: "0 0 30px rgba(59,130,246,0.8)",
+                scale: 1.02,
+                textShadow: "0 0 30px rgba(201,168,76,0.6)",
               }}
               className="
-    font-extrabold
-    text-black
+    font-cinzel
+    text-[#C9A84C]
     leading-none
+    tracking-[0.1em]
 
     text-5xl
     sm:text-6xl
@@ -292,10 +293,10 @@ const Home = () => {
     },
   }}
   className="
-    text-black
+    text-[#F5F0E8]
     uppercase
-    font-normal
-    tracking-[0.30em]
+    font-cormorant
+    tracking-[0.25em]
     mt-6
     text-sm
     sm:text-base
@@ -305,7 +306,7 @@ const Home = () => {
     2xl:text-4xl
   "
 >
-  Where Brands Become <span className="font-extrabold">Legends</span>
+  Where Brands Become <span className="font-light italic text-[#C9A84C]">Legends</span>
 </motion.p>
 
 <motion.p
@@ -319,9 +320,10 @@ const Home = () => {
     },
   }}
   className="
-    text-black
-    font-display
-    leading-[1.5]
+    text-[#F5F0E8]/75
+    font-montserrat
+    font-light
+    leading-[1.7]
     text-center
     mx-auto
     mt-8
@@ -334,12 +336,12 @@ const Home = () => {
     xl:max-w-[1250px]
     2xl:max-w-[1450px]
 
-    text-lg
-    sm:text-xl
-    md:text-2xl
-    lg:text-3xl
-    xl:text-4xl
-    2xl:text-5xl
+    text-base
+    sm:text-lg
+    md:text-xl
+    lg:text-2xl
+    xl:text-3xl
+    2xl:text-4xl
 
     px-4
     sm:px-6
@@ -356,11 +358,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 2: White Background, Natural content-based height, Scroll-triggered */}
-      <section className="relative bg-white py-10 md:py-24 px-4 w-full flex items-center justify-center overflow-hidden border-t border-slate-100">
+      {/* SECTION 2: Deep Charcoal Background, Natural content-based height, Scroll-triggered */}
+      <section className="relative bg-[#1A1A1A] py-16 md:py-24 px-4 w-full flex items-center justify-center overflow-hidden border-t border-[#C9A84C]/10 text-[#F5F0E8]">
         
         {/* Subtle grid background lines for premium feel */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-80 -z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(201,168,76,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(201,168,76,0.08)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-80 -z-10 pointer-events-none" />
 
         <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16">
 
@@ -370,15 +372,15 @@ const Home = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10 font-montserrat"
           >
             {/* Typing text displaying roles & names */}
             <div className="flex flex-col text-center sm:text-left min-w-[280px]">
-              <span className="text-2xl md:text-3xl font-extrabold bg-neutral-900 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+              <span className="text-2xl md:text-3xl font-cinzel font-bold text-[#C9A84C] drop-shadow-[0_0_15px_rgba(201,168,76,0.2)]">
                 {displayText}
-                <span className="animate-pulse text-yellow-500">|</span>
+                <span className="animate-pulse text-[#C9A84C]">|</span>
               </span>
-              <span className="text-lg md:text-xl text-center font-medium text-neutral-500 mt-2">
+              <span className="text-lg md:text-xl text-center sm:text-left font-medium text-[#F5F0E8]/70 mt-2 font-montserrat">
                 {displayName}
               </span>
             </div>
@@ -387,7 +389,7 @@ const Home = () => {
             <div className="relative flex-shrink-0 group">
               
               {/* Glowing animated background boundary ring around circular image */}
-              <div className="absolute -inset-1 rounded-full bg-yellow-300 opacity-70 group-hover:opacity-100 transition-opacity animate-pulse blur-[2px]" />
+              <div className="absolute -inset-1 bg-[#C9A84C] opacity-30 group-hover:opacity-100 transition-opacity animate-pulse blur-[2px]" />
               
               <AnimatePresence mode="wait">
                 <motion.img
@@ -405,7 +407,7 @@ const Home = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.25 }}
                   whileHover={{ scale: 1.15 }}
-                  className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] object-contain cursor-pointer rounded-full border-4 border-white bg-white relative z-10 shadow-lg"
+                  className="w-[180px] h-[180px] md:w-[200px] md:h-[200px] object-contain cursor-pointer border-4 border-[#C9A84C] bg-[#0A0A0A] relative z-10 shadow-lg"
                   onMouseEnter={() => {
                     if (window.innerWidth >= 1024) {
                       setHovered(true);

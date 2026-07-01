@@ -197,13 +197,13 @@ const StatCard: React.FC<{ value: string; label: string; index: number }> = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.6, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-    className="group relative overflow-hidden rounded-2xl border border-[#D4AF37]/30 bg-black p-5 sm:p-6"
+    className="group relative overflow-hidden rounded-none border border-[#C9A84C]/15 bg-[#101010]/80 p-5 sm:p-6 hover:border-[#C9A84C] transition-all duration-300"
   >
-    <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br from-[#F5C518] to-[#D4AF37] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30" />
-    <p className="bg-gradient-to-r from-[#F5C518] to-[#D4AF37] bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
+    <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-none bg-[#C9A84C]/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30" />
+    <p className="text-3xl font-bold tracking-tight text-[#00A878] sm:text-4xl font-montserrat">
       {value}
     </p>
-    <p className="mt-2 text-xs uppercase tracking-widest text-white/60 sm:text-sm">
+    <p className="mt-2 text-xs uppercase tracking-widest text-[#F5F0E8]/60 sm:text-sm font-montserrat font-medium">
       {label}
     </p>
   </motion.div>
@@ -296,22 +296,22 @@ const BushareCase: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen w-full overflow-x-hidden bg-[#0A0A0A] font-sans text-white selection:bg-[#F5C518] selection:text-black"
+      className="relative min-h-screen w-full overflow-x-hidden bg-[#0A0A0A] font-montserrat text-[#F5F0E8] selection:bg-[#C9A84C] selection:text-[#0A0A0A]"
     >
       {/* Scroll progress bar */}
       <motion.div
-        className="fixed left-0 top-0 z-50 h-[3px] origin-left bg-gradient-to-r from-[#F5C518] via-[#D4AF37] to-[#F5C518]"
+        className="fixed left-0 top-0 z-50 h-[3px] origin-left bg-gradient-to-r from-[#C9A84C] via-[#C9A84C]/80 to-[#C9A84C]"
         style={{ width: progressWidth }}
       />
 
       {/* ============================== HERO ============================== */}
       <section className="relative flex min-h-[70svh] w-full flex-col items-center justify-center overflow-hidden text-center sm:px-8">
         <ThreeHero />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black via-black/80 to-black" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/85 to-[#0A0A0A]" />
 
         <h1
           ref={heroTitleRef}
-          className="max-w-5xl text-balance font-serif text-5xl font-bold leading-[1.05] tracking-tight text-white [perspective:600px] sm:text-7xl md:text-8xl"
+          className="max-w-5xl text-balance font-cinzel text-5xl font-bold leading-[1.05] tracking-tight text-[#F5F0E8] [perspective:600px] sm:text-7xl md:text-8xl"
         >
           {splitChars("Bushare")}
         </h1>
@@ -320,44 +320,41 @@ const BushareCase: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-6 max-w-2xl text-balance text-base text-white/70 sm:text-lg md:text-xl"
+          className="mt-6 max-w-2xl text-balance text-base text-[#F5F0E8]/70 sm:text-lg md:text-xl font-light"
         >
           How a zero-visibility clothing brand became a{" "}
-          <span className="bg-gradient-to-r from-[#F5C518] to-[#D4AF37] bg-clip-text font-semibold text-transparent">
+          <span className="text-[#C9A84C] font-semibold">
             recognised Korean fashion label
           </span>{" "}
           with a full digital growth engine in 14 months.
         </motion.p>
-
-       
       </section>
 
       {/* ============================ THE BRAND ============================ */}
-      <section className="gsap-fade-section mx-auto text-center max-w-5xl px-5 py-5 sm:px-8 sm:py-5">
-        <span className="text-3xl text-center uppercase tracking-[0.3em] text-[#F5C518]">
+      <section className="gsap-fade-section mx-auto text-center max-w-5xl px-5 py-5 sm:px-8 sm:py-5 border-t border-[#C9A84C]/10">
+        <span className="text-2xl text-center uppercase tracking-[0.25em] text-[#C9A84C] font-cinzel font-semibold">
           The Brand
         </span>
-        <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
+        <h2 className="mt-4 font-cinzel text-3xl font-bold leading-tight text-[#F5F0E8] sm:text-5xl">
           A niche product. No audience. No system.
         </h2>
-        <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-[#D4AF37] to-transparent" />
-        <p className="mt-6 text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
+        <div className="gsap-line mt-6 h-[1px] w-full bg-gradient-to-r from-[#C9A84C]/30 to-transparent" />
+        <p className="mt-6 text-pretty text-base leading-relaxed text-[#F5F0E8]/70 sm:text-lg font-light">
           Bushare sells Korean-inspired clothing to young, urban Indians aged
-          18–32. The aesthetic was strong. The product was real. But when
-          they came to us, almost nobody knew they existed.
+          18–32. The aesthetic was strong. The product was real. We helped build their digital market presence.
         </p>
       </section>
 
       {/* =========================== THE PROBLEM ============================ */}
-      <section className="gsap-fade-section text-center bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
+      <section className="gsap-fade-section text-center bg-[#101010] px-5 py-20 text-[#F5F0E8] sm:px-8 sm:py-28 border-y border-[#C9A84C]/15">
         <div className="mx-auto max-w-5xl">
-          <span className="text-3xl uppercase tracking-[0.3em] text-[#B8860B]">
+          <span className="text-2xl uppercase tracking-[0.25em] text-[#C9A84C] font-cinzel font-semibold">
             The Problem
           </span>
-          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight sm:text-5xl">
+          <h2 className="mt-4 font-cinzel text-3xl font-bold leading-tight sm:text-5xl text-[#F5F0E8]">
             Good product. Zero infrastructure.
           </h2>
-          <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-black to-transparent" />
+          <div className="gsap-line mt-6 h-[1px] w-full bg-gradient-to-r from-[#C9A84C]/30 to-transparent" />
 
           <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {PROBLEMS.map((p, i) => (
@@ -367,33 +364,33 @@ const BushareCase: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex items-start gap-3 rounded-xl border border-black/10 bg-black/[0.02] p-4"
+                className="flex items-start gap-3 rounded-none border border-[#C9A84C]/15 bg-[#0A0A0A]/60 p-4"
               >
-                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-gradient-to-br from-[#F5C518] to-[#D4AF37]" />
-                <span className="text-sm leading-relaxed text-black/80 sm:text-base">
+                <span className="mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-none bg-[#C9A84C]" />
+                <span className="text-sm leading-relaxed text-[#F5F0E8]/80 sm:text-base font-light text-left">
                   {p}
                 </span>
               </motion.li>
             ))}
           </ul>
 
-          <p className="mt-10 text-base text-center font-medium italic text-black/60 sm:text-lg">
+          <p className="mt-10 text-base text-center font-medium italic text-[#F5F0E8]/60 sm:text-lg">
             Every rupee spent on marketing was a shot in the dark.
           </p>
         </div>
       </section>
 
       {/* ============================ WHAT WE DID ============================ */}
-      <section className="gsap-fade-section text-center bg-black px-5 py-20 sm:px-8 sm:py-28">
+      <section className="gsap-fade-section text-center bg-[#0A0A0A] px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-5xl">
-          <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+          <span className="text-2xl uppercase tracking-[0.25em] text-[#C9A84C] font-cinzel font-semibold">
             What We Did
           </span>
-          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
+          <h2 className="mt-4 font-cinzel text-3xl font-bold leading-tight text-[#F5F0E8] sm:text-5xl">
             Brand first. Scale second.
           </h2>
-          <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-[#D4AF37] to-transparent" />
-          <p className="mt-6 text-base leading-relaxed text-white/70 sm:text-lg">
+          <div className="gsap-line mt-6 h-[1px] w-full bg-gradient-to-r from-[#C9A84C]/30 to-transparent" />
+          <p className="mt-6 text-base leading-relaxed text-[#F5F0E8]/70 sm:text-lg font-light">
             Most agencies would have turned on ads immediately. We didn't. We
             fixed the foundation brand, website, content system then
             activated paid media.
@@ -401,7 +398,7 @@ const BushareCase: React.FC = () => {
 
           {/* Timeline */}
           <div className="relative text-center mt-14 space-y-6">
-            <div className="absolute left-[15px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[#F5C518] via-[#D4AF37]/50 to-transparent sm:block" />
+            <div className="absolute left-[15px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-[#C9A84C] via-[#C9A84C]/30 to-transparent sm:block" />
             {TIMELINE.map((step, i) => (
               <motion.button
                 key={step.title}
@@ -411,22 +408,22 @@ const BushareCase: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative flex w-full items-start gap-4 rounded-xl p-3 text-left transition-colors hover:bg-white/[0.03] sm:gap-6 sm:p-4"
+                className="relative flex w-full items-start gap-4 rounded-none p-3 text-left transition-colors hover:bg-[#101010]/80 sm:gap-6 sm:p-4"
               >
                 <span
-                  className={`relative z-10 mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-xs font-bold transition-colors ${
+                  className={`relative z-10 mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-none border text-xs font-bold transition-colors ${
                     activeStep === i
-                      ? "border-[#F5C518] bg-gradient-to-br from-[#F5C518] to-[#D4AF37] text-black"
-                      : "border-white/20 bg-black text-white/50"
+                      ? "border-[#C9A84C] bg-[#C9A84C] text-[#0A0A0A]"
+                      : "border-[#C9A84C]/20 bg-[#0A0A0A] text-[#F5F0E8]/50"
                   }`}
                 >
                   {i + 1}
                 </span>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-[#F5C518]">
+                  <p className="text-xs uppercase tracking-widest text-[#C9A84C] font-semibold">
                     {step.range}
                   </p>
-                  <p className="mt-1 text-lg font-semibold text-white sm:text-xl">
+                  <p className="mt-1 text-lg font-semibold text-[#F5F0E8] sm:text-xl font-cinzel">
                     {step.title}
                   </p>
                   <AnimatePresence>
@@ -436,7 +433,7 @@ const BushareCase: React.FC = () => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-2 overflow-hidden text-sm text-white/60 sm:text-base"
+                        className="mt-2 overflow-hidden text-sm text-[#F5F0E8]/70 sm:text-base font-light"
                       >
                         {step.detail}
                       </motion.p>
@@ -450,16 +447,16 @@ const BushareCase: React.FC = () => {
       </section>
 
       {/* ============================ THE RESULTS ============================ */}
-      <section className="gsap-fade-section relative overflow-hidden bg-gradient-to-b from-black to-[#0A0A0A] px-5 py-20 sm:px-8 sm:py-28">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#F5C518]/10 blur-[120px]" />
+      <section className="gsap-fade-section relative overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#101010] px-5 py-20 sm:px-8 sm:py-28 border-t border-[#C9A84C]/10">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-none bg-[#C9A84C]/3 blur-[120px]" />
         <div className="relative mx-auto max-w-5xl">
-          <span className="text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+          <span className="text-2xl uppercase tracking-[0.25em] text-[#C9A84C] font-cinzel font-semibold">
             The Results
           </span>
-          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-white sm:text-5xl">
+          <h2 className="mt-4 font-cinzel text-3xl font-bold leading-tight text-[#F5F0E8] sm:text-5xl">
             14 months. One brand. Measurable growth.
           </h2>
-          <div className="gsap-line mt-6 h-px w-full bg-gradient-to-r from-[#D4AF37] to-transparent" />
+          <div className="gsap-line mt-6 h-[1px] w-full bg-gradient-to-r from-[#C9A84C]/30 to-transparent" />
 
           <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-5">
             {STATS.map((s, i) => (
@@ -470,49 +467,43 @@ const BushareCase: React.FC = () => {
       </section>
 
       {/* ============================== THE SHIFT ============================== */}
-      <section className="gsap-fade-section bg-white px-5 py-20 text-black sm:px-8 sm:py-28">
+      <section className="gsap-fade-section bg-[#101010] px-5 py-20 text-[#F5F0E8] sm:px-8 sm:py-28 border-y border-[#C9A84C]/15">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="text-3xl uppercase tracking-[0.3em] text-[#B8860B]">
+          <span className="text-2xl uppercase tracking-[0.25em] text-[#C9A84C] font-cinzel font-semibold">
             The Shift
           </span>
-          <p className="mt-6 text-balance font-serif text-2xl font-medium leading-relaxed sm:text-3xl">
+          <p className="mt-6 text-balance font-cinzel text-xl font-semibold leading-relaxed sm:text-3xl text-[#F5F0E8]">
             Bushare went from unpredictable revenue to a self-running growth
             system. Organic search, social content, paid ads, and email
             automation now work together each layer feeding the next.
           </p>
-          <p className="mt-6 text-base text-black/60 sm:text-lg">
-            The brand has an identity. Customers come back without being
-            chased.
+          <p className="mt-6 text-base text-[#F5F0E8]/60 sm:text-lg font-light">
+            The brand has an identity. Customers come back without being chased.
           </p>
         </div>
       </section>
 
       {/* ============================== QUOTE ============================== */}
-      <section className="gsap-fade-section relative overflow-hidden bg-black px-5 py-24 text-center sm:px-8 sm:py-32">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.12),transparent_60%)]" />
+      <section className="gsap-fade-section relative overflow-hidden bg-[#0A0A0A] px-5 py-24 text-center sm:px-8 sm:py-32">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,168,76,0.06),transparent_60%)]" />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative mx-auto max-w-3xl"
+          className="relative mx-auto max-w-3xl animate-fade-in"
         >
-          <span className="font-serif text-6xl leading-none text-[#D4AF37]/60 sm:text-8xl">
+          <span className="font-cinzel text-6xl leading-none text-[#C9A84C]/30 sm:text-8xl select-none">
             &ldquo;
           </span>
-          <p className="-mt-6 text-balance font-serif text-xl italic leading-relaxed text-white sm:text-3xl">
-            I thought good clothes would sell themselves. They don&apos;t 
-            not without the right brand and systems. Fourteen months later, I
-            have a business that runs with structure and a brand people
-            actually recognise.
+          <p className="-mt-6 text-balance font-cinzel text-xl italic leading-relaxed text-[#F5F0E8] sm:text-3xl">
+            I thought good clothes would sell themselves. They don't — not without the right brand and systems. Fourteen months later, I have a business that runs with structure and a brand people actually recognise.
           </p>
-          <p className="mt-8 text-3xl uppercase tracking-[0.3em] text-[#F5C518]">
+          <p className="mt-8 text-2xl uppercase tracking-[0.2em] text-[#C9A84C] font-cinzel font-semibold">
              Founder, Bushare
           </p>
         </motion.div>
       </section>
-
-     
     </div>
   );
 };

@@ -30,7 +30,7 @@ const TilesComponent = ({
             key={index}
             initial={{ backgroundColor: "transparent" }}
             whileHover={{
-              backgroundColor: isEven ? "#FFFF00" : "#ffffff",
+              backgroundColor: isEven ? "#C9A84C" : "rgba(201, 168, 76, 0.3)",
               transition: { duration: 0 },
             }}
             transition={{ duration: 0.5 }}

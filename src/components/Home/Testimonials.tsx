@@ -58,39 +58,34 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="relative overflow-hidden py-10 px-5 md:px-10 lg:px-20 bg-white">
-      {/* Background Image & Light Yellow Glow Blend */}
+    <section className="relative overflow-hidden py-20 px-5 md:px-10 lg:px-20 bg-[#0A0A0A] border-t border-[#C9A84C]/10 font-montserrat">
+      {/* Background Image & Dark Glow Blend */}
       <div className="absolute inset-0 -z-10">
         <img
           src={bgImg2}
           alt="Background Image"
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center opacity-10"
         />
-        <div className="absolute inset-0 bg-white/30"></div>
+        <div className="absolute inset-0 bg-[#0A0A0A]/95 backdrop-blur-sm"></div>
       </div>
 
       {/* Decorative Golden / Yellow Radial Glows for premium depth */}
-      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-full bg-yellow-400/25 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-full bg-amber-500/20 blur-[120px] pointer-events-none" />
+      <div className="absolute top-10 left-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 h-80 w-80 rounded-none bg-[#C9A84C]/2 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading Section */}
         <div className="text-center mb-16">
-          {/* <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/40 bg-black text-white text-xs font-semibold tracking-widest uppercase shadow-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
-            Client Testimonials
-          </span> */}
-
-          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-black font-display tracking-tight">
+          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F0E8] font-cinzel tracking-wide leading-tight">
             Trusted By Businesses{" "}
-            <span className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 bg-clip-text text-transparent">
+            <span className="text-[#C9A84C]">
               That Want Results
             </span>
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-black font-bold text-base md:text-lg opacity-90">
+          <p className="mt-6 max-w-3xl mx-auto text-[#F5F0E8]/70 font-light text-base md:text-lg leading-relaxed">
             Real feedback from clients who partnered with us to scale their
             business, increase revenue, and build a stronger digital presence.
           </p>
@@ -115,15 +110,15 @@ const Testimonials = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`group relative overflow-hidden rounded-3xl p-8 transition-all duration-500 cursor-pointer select-none flex flex-col justify-between ${
+                className={`group relative overflow-hidden rounded-none p-8 transition-all duration-500 cursor-pointer select-none flex flex-col justify-between ${
                   isActive
-                    ? "bg-neutral-900/60 border-2 border-yellow-500 shadow-[0_20px_50px_rgba(234,179,8,0.25)] backdrop-blur-lg scale-[1.03] z-10"
-                    : "bg-neutral-800/10 border border-neutral-400/20 backdrop-blur-md opacity-70 md:opacity-85 scale-100 hover:opacity-100 hover:bg-neutral-800/15"
+                    ? "bg-[#101010] border-2 border-[#C9A84C] shadow-[0_20px_50px_rgba(201,168,76,0.15)] backdrop-blur-lg scale-[1.03] z-10"
+                    : "bg-[#101010]/40 border border-[#C9A84C]/10 backdrop-blur-md opacity-60 md:opacity-80 scale-100 hover:opacity-100 hover:bg-[#101010]/60 hover:border-[#C9A84C]/30"
                 } ${isActive ? "block" : "hidden md:flex"}`}
               >
                 {/* Quote Icon */}
                 <div className={`absolute top-4 right-6 text-7xl font-bold font-serif leading-none transition-colors duration-300 ${
-                  isActive ? "text-yellow-400/15" : "text-black/5"
+                  isActive ? "text-[#C9A84C]/10" : "text-[#F5F0E8]/3"
                 }`}>
                   “
                 </div>
@@ -137,23 +132,23 @@ const Testimonials = () => {
                         size={18}
                         className={`transition-colors duration-300 ${
                           isActive 
-                            ? "fill-yellow-400 text-yellow-400" 
-                            : "fill-amber-500 text-amber-500"
+                            ? "fill-[#C9A84C] text-[#C9A84C]" 
+                            : "fill-[#C9A84C]/60 text-[#C9A84C]/60"
                         }`}
                       />
                     ))}
                   </div>
 
                   {/* Review Text */}
-                  <p className={`leading-relaxed mb-8 text-base transition-colors duration-300 ${
-                    isActive ? "text-white font-medium" : "text-black font-semibold opacity-95"
+                  <p className={`leading-relaxed mb-8 text-base font-light transition-colors duration-300 ${
+                    isActive ? "text-[#F5F0E8]" : "text-[#F5F0E8]/70"
                   }`}>
                     "{item.review}"
                   </p>
                 </div>
 
                 {/* Client Profile Details */}
-                <div className="flex items-center gap-4 mt-auto">
+                <div className="flex items-center gap-4 mt-auto font-montserrat">
                   {/* Image Avatar with fallback */}
                   {item.image ? (
                     <img
@@ -161,15 +156,15 @@ const Testimonials = () => {
                       alt={item.name}
                       loading="lazy"
                       decoding="async"
-                      className={`h-14 w-14 rounded-full object-cover shadow-md transition-all duration-300 ${
-                        isActive ? "ring-2 ring-yellow-400 scale-105" : "ring-2 ring-amber-500/30"
+                      className={`h-14 w-14 rounded-none object-cover shadow-md transition-all duration-300 ${
+                        isActive ? "ring-2 ring-[#C9A84C] scale-105" : "ring-2 ring-[#C9A84C]/30"
                       }`}
                     />
                   ) : (
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-full font-extrabold text-lg shadow-sm transition-all duration-300 ${
+                    <div className={`flex h-14 w-14 items-center justify-center rounded-none font-bold text-lg shadow-sm transition-all duration-300 ${
                       isActive 
-                        ? "bg-yellow-400 text-black" 
-                        : "bg-black text-white"
+                        ? "bg-[#C9A84C] text-[#0A0A0A]" 
+                        : "bg-[#101010] text-[#F5F0E8]"
                     }`}>
                       {item.name
                         .split(" ")
@@ -179,13 +174,13 @@ const Testimonials = () => {
                   )}
 
                   <div>
-                    <h4 className={`font-extrabold transition-colors duration-300 ${
-                      isActive ? "text-amber-400" : "text-black"
+                    <h4 className={`font-bold font-cinzel transition-colors duration-300 ${
+                      isActive ? "text-[#C9A84C]" : "text-[#F5F0E8]/90"
                     }`}>
                       {item.name}
                     </h4>
-                    <p className={`text-sm font-semibold transition-colors duration-300 ${
-                      isActive ? "text-yellow-300" : "text-amber-700"
+                    <p className={`text-xs uppercase tracking-wider transition-colors duration-300 ${
+                      isActive ? "text-[#F5F0E8]/90" : "text-[#C9A84C]/75"
                     }`}>
                       {item.company}
                     </p>
@@ -194,7 +189,7 @@ const Testimonials = () => {
 
                 {/* Ambient glow inside active card */}
                 {isActive && (
-                  <div className="absolute inset-0 opacity-100 transition duration-500 pointer-events-none bg-gradient-to-br from-yellow-500/10 via-transparent to-amber-500/5" />
+                  <div className="absolute inset-0 opacity-100 transition duration-500 pointer-events-none bg-gradient-to-br from-[#C9A84C]/8 via-transparent to-[#C9A84C]/3" />
                 )}
               </motion.div>
             );
@@ -205,7 +200,7 @@ const Testimonials = () => {
         <div className="flex items-center justify-center gap-6 mt-12">
           <button
             onClick={handlePrev}
-            className="p-3 rounded-full bg-black text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 border border-yellow-500/30 shadow-md active:scale-95 flex items-center justify-center"
+            className="p-3 rounded-none bg-[#0A0A0A] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0A0A0A] transition-all duration-300 border border-[#C9A84C]/40 shadow-md active:scale-95 flex items-center justify-center"
             aria-label="Previous Testimonial"
           >
             <ChevronLeft size={20} />
@@ -220,10 +215,10 @@ const Testimonials = () => {
                   key={i}
                   animate={{
                     width: isActive ? 28 : 10,
-                    backgroundColor: isActive ? "#eab308" : "#000000" // Yellow when active, black when inactive
+                    backgroundColor: isActive ? "#C9A84C" : "#1A1A1A"
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="h-2.5 rounded-full cursor-pointer border border-yellow-500/20"
+                  className="h-2 rounded-none cursor-pointer border border-[#C9A84C]/20"
                   onClick={() => {
                     setActiveIndex(i);
                     setIsAutoPlaying(false);
@@ -235,7 +230,7 @@ const Testimonials = () => {
 
           <button
             onClick={handleNext}
-            className="p-3 rounded-full bg-black text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 border border-yellow-500/30 shadow-md active:scale-95 flex items-center justify-center"
+            className="p-3 rounded-none bg-[#0A0A0A] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0A0A0A] transition-all duration-300 border border-[#C9A84C]/40 shadow-md active:scale-95 flex items-center justify-center"
             aria-label="Next Testimonial"
           >
             <ChevronRight size={20} />
@@ -243,33 +238,33 @@ const Testimonials = () => {
         </div>
 
         {/* Bottom Metrics statistics */}
-        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-display">
+        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 font-montserrat">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
+            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
               120+
             </h3>
-            <p className="text-black font-bold mt-2">Happy Clients</p>
+            <p className="text-[#F5F0E8]/80 font-light mt-2">Happy Clients</p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-display">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
+            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
               95%
             </h3>
-            <p className="text-black font-bold mt-2">Retention Rate</p>
+            <p className="text-[#F5F0E8]/80 font-light mt-2">Retention Rate</p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-display">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
+            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
               5M+
             </h3>
-            <p className="text-black font-bold mt-2">Monthly Reach</p>
+            <p className="text-[#F5F0E8]/80 font-light mt-2">Monthly Reach</p>
           </div>
 
-          <div className="rounded-2xl border border-neutral-400/20 bg-neutral-800/10 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-amber-500 to-yellow-600 bg-clip-text text-transparent font-display">
+          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
+            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
               4.9/5
             </h3>
-            <p className="text-black font-bold mt-2">Average Rating</p>
+            <p className="text-[#F5F0E8]/80 font-light mt-2">Average Rating</p>
           </div>
         </div>
       </div>

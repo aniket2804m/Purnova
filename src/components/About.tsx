@@ -40,14 +40,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-28 overflow-hidden bg-black text-white"
+      className="relative py-28 overflow-hidden bg-[#0A0A0A] text-[#F5F0E8] font-montserrat border-t border-[#C9A84C]/10"
     >
-      {/* Background Effects (Yellow & Amber Warm Glows) */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-amber-500/10 blur-[120px] pointer-events-none" />
+      {/* Background Effects (Royal Gold Glows) */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-[#C9A84C]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#C9A84C]/3 blur-[120px] pointer-events-none" />
 
       {/* Interactive Background Grid */}
-      <div className="absolute inset-0 z-0 opacity-40 overflow-hidden flex justify-center items-center">
+      <div className="absolute inset-0 z-0 opacity-20 overflow-hidden flex justify-center items-center">
         <Tiles rows={50} cols={40} />
       </div>
 
@@ -61,23 +61,19 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-20 pointer-events-auto"
         >
-          <span className="text-yellow-500 uppercase tracking-[0.3em] text-sm font-semibold">
+          <span className="text-[#C9A84C] uppercase tracking-[0.25em] text-sm font-semibold font-montserrat">
             About Purnova Digital
           </span>
 
-          <h2 className="text-4xl md:text-6xl font-bold mt-4 text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mt-4 text-[#F5F0E8] font-cinzel tracking-wide leading-tight">
             Transforming Brands Into
-            <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
-              {" "}
+            <span className="block mt-2 text-[#C9A84C]">
               Digital Success Stories
             </span>
           </h2>
 
-          <p className="max-w-3xl mx-auto mt-6 text-lg text-zinc-400">
-            At Purnova Digital, we help businesses grow through strategic
-            digital marketing, SEO, social media management, performance
-            advertising, and branding solutions that deliver measurable
-            results.
+          <p className="max-w-3xl mx-auto mt-6 text-base md:text-lg text-[#F5F0E8]/70 leading-relaxed font-light">
+            At Purnova Digital, we help businesses grow through strategic digital marketing, SEO, social media management, performance advertising, and branding solutions that deliver measurable results.
           </p>
         </motion.div>
 
@@ -95,15 +91,15 @@ const About = () => {
             <div className="relative">
 
               {/* 3D Golden Circle */}
-              <div className="w-[320px] h-[320px] mx-auto rounded-full bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 p-1">
-  <div className="w-full h-full rounded-full bg-yellow overflow-hidden">
-    <img
-      src={myImage} // kiwa tumcha image path
-      alt="Service"
-      className="w-full h-full object-contain rounded-full"
-    />
-  </div>
-</div>
+              <div className="w-[320px] h-[320px] mx-auto rounded-full bg-gradient-to-br from-[#C9A84C] via-[#C9A84C]/50 to-[#C9A84C] p-1 shadow-lg shadow-[#C9A84C]/10">
+                <div className="w-full h-full rounded-full bg-[#0A0A0A] overflow-hidden flex items-center justify-center">
+                  <img
+                    src={myImage}
+                    alt="Purnova Logo"
+                    className="w-full h-full object-contain rounded-full"
+                  />
+                </div>
+              </div>
 
               {/* Floating Golden Cards */}
               <motion.div
@@ -112,7 +108,7 @@ const About = () => {
                   duration: 3,
                   repeat: Infinity,
                 }}
-                className="absolute top-10 -left-8 bg-black/60 border border-yellow-500/30 backdrop-blur-xl p-4 rounded-xl text-white font-medium shadow-[0_0_15px_rgba(245,196,0,0.15)]"
+                className="absolute top-10 -left-8 bg-[#101010]/95 border border-[#C9A84C]/30 backdrop-blur-xl p-4 rounded-none text-[#F5F0E8] font-medium shadow-[0_10px_25px_rgba(201,168,76,0.15)] font-cinzel text-xs tracking-widest uppercase"
               >
                 🚀 Growth Marketing
               </motion.div>
@@ -123,7 +119,7 @@ const About = () => {
                   duration: 4,
                   repeat: Infinity,
                 }}
-                className="absolute bottom-10 -right-8 bg-black/60 border border-yellow-500/30 backdrop-blur-xl p-4 rounded-xl text-white font-medium shadow-[0_0_15px_rgba(245,196,0,0.15)]"
+                className="absolute bottom-10 -right-8 bg-[#101010]/95 border border-[#C9A84C]/30 backdrop-blur-xl p-4 rounded-none text-[#F5F0E8] font-medium shadow-[0_10px_25px_rgba(201,168,76,0.15)] font-cinzel text-xs tracking-widest uppercase"
               >
                 📈 ROI Focused
               </motion.div>
@@ -138,41 +134,37 @@ const About = () => {
             viewport={{ once: true }}
             className="pointer-events-auto"
           >
-            <h3 className="text-3xl font-bold mb-6 text-white">
+            <h3 className="text-3xl font-bold mb-6 text-[#F5F0E8] font-cinzel tracking-wide">
               Driving Growth Through Innovation
             </h3>
 
-            <p className="text-zinc-400 mb-6 leading-relaxed">
-              We combine creativity, technology, and data-driven strategies
-              to help businesses establish a powerful digital presence.
-              Our team specializes in SEO, Social Media Marketing,
-              Performance Ads, Website Development, and Brand Building.
+            <p className="text-[#F5F0E8]/70 mb-6 leading-relaxed font-light">
+              We combine creativity, technology, and data-driven strategies to help businesses establish a powerful digital presence. Our team specializes in SEO, Social Media Marketing, Performance Ads, Website Development, and Brand Building.
             </p>
 
-            <p className="text-zinc-400 leading-relaxed">
-              Every campaign is designed to maximize engagement, generate
-              quality leads, and deliver sustainable business growth.
+            <p className="text-[#F5F0E8]/70 leading-relaxed font-light">
+              Every campaign is designed to maximize engagement, generate quality leads, and deliver sustainable business growth.
             </p>
 
             {/* Features list in dark/yellow/golden theme */}
-            <div className="mt-10 space-y-4">
+            <div className="mt-10 space-y-4 font-montserrat">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
                   whileHover={{
-                    scale: 1.03,
-                    rotateX: 3,
+                    scale: 1.02,
+                    y: -2,
                   }}
-                  className="bg-black/40 border border-white/5 hover:border-yellow-500/40 rounded-2xl p-5 flex gap-4 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md hover:shadow-[0_0_20px_rgba(245,196,0,0.1)]"
+                  className="bg-[#101010]/60 border border-[#C9A84C]/10 hover:border-[#C9A84C] rounded-none p-5 flex gap-4 transition-all duration-300 shadow-md backdrop-blur-md hover:shadow-[0_10px_30px_rgba(201,168,76,0.08)]"
                 >
-                  <feature.icon className="w-10 h-10 text-yellow-500" />
+                  <feature.icon className="w-8 h-8 text-[#C9A84C] flex-shrink-0" />
 
                   <div>
-                    <h4 className="font-bold text-lg text-white">
+                    <h4 className="font-semibold text-lg text-[#F5F0E8] font-cinzel tracking-wide">
                       {feature.title}
                     </h4>
 
-                    <p className="text-zinc-400 mt-1 text-sm">
+                    <p className="text-[#F5F0E8]/60 mt-1 text-sm font-light">
                       {feature.desc}
                     </p>
                   </div>
@@ -183,34 +175,34 @@ const About = () => {
         </div>
 
         {/* Stats Section with yellow/gold highlights and hover glow */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 pointer-events-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 pointer-events-auto font-montserrat">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               whileHover={{
-                scale: 1.05,
-                y: -8,
+                scale: 1.03,
+                y: -6,
               }}
               className="
                 backdrop-blur-xl
-                bg-black/40
-                border border-white/10 hover:border-yellow-500/50
-                rounded-3xl
+                bg-[#101010]/60
+                border border-[#C9A84C]/10 hover:border-[#C9A84C]
+                rounded-none
                 p-8
                 text-center
-                shadow-xl
+                shadow-lg
                 transition-all
                 duration-300
-                hover:shadow-[0_0_30px_-5px_rgba(245,196,0,0.2)]
+                hover:shadow-[0_15px_35px_rgba(201,168,76,0.1)]
               "
             >
-              <stat.icon className="w-10 h-10 mx-auto mb-4 text-yellow-500" />
+              <stat.icon className="w-8 h-8 mx-auto mb-4 text-[#C9A84C]" />
 
-              <h3 className="text-4xl font-extrabold bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
+              <h3 className="text-4xl font-bold text-[#00A878]">
                 {stat.value}
               </h3>
 
-              <p className="text-zinc-400 mt-2 font-medium">
+              <p className="text-[#F5F0E8]/70 mt-2 text-sm font-medium">
                 {stat.label}
               </p>
             </motion.div>

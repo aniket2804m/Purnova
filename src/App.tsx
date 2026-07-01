@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import NotFound from "./pages/NotFound";
 import Website from "@/components/Services/Website";
@@ -42,13 +42,20 @@ const Abouts = lazy(() => import("@/components/Abouts"));
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+const RouteChangeLoader = ({ setIsLoading }: { setIsLoading: (loading: boolean) => void }) => {
+  const location = useLocation();
 
   useEffect(() => {
+    setIsLoading(true);
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
-  }, []);
+  }, [location.pathname, setIsLoading]);
+
+  return null;
+};
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
     const handleCopy = (e: ClipboardEvent) => {
@@ -87,6 +94,7 @@ const App = () => {
         <Sonner />
 
         <BrowserRouter>
+          <RouteChangeLoader setIsLoading={setIsLoading} />
           <LoadingScreen isLoading={isLoading} />
           <ScrollToTop />
           <CursorGlow />

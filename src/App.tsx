@@ -21,35 +21,20 @@ const CursorGlow = lazy(() => import("@/components/CursorGlow"));
 const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
 const Work = lazy(() => import("@/components/Work/Work"));
 const Card = lazy(() => import("@/components/Card/Card"));
-
 const Brand = lazy(() => import("@/components/Services/Brand"));
-
 const Team = lazy(() => import("@/components/Team/Team"));
-
 const StrategyPopup = lazy(() => import("@/components/Popup/StrategyPopup"));
-
 const Seo = lazy(() => import("@/components/Services/Seo"));
-
 const Social = lazy(() => import("@/components/Services/Social"));
-
 const Google = lazy(() => import("@/components/Services/Google"));
-
 const Facebook = lazy(() => import("@/components/Services/Facebook"));
-
 const Linkdin = lazy(() => import("@/components/Services/Linkdin"));
-
 const Web = lazy(() => import("@/components/Services/Website"));
-
 const Performance = lazy(() => import("@/components/Services/Performance"));
-
 const Privacy = lazy(() => import("@/pages/Privacy"));
-
 const Terms = lazy(() => import("@/pages/Terms"));
-
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
-
 const AdsCard = lazy(() => import("@/components/Card/AdsCard"));
-
 const BushareCase = lazy(() => import("@/components/CaseStudy/BushareCase"));
 const CaseStudy = lazy(() => import("@/components/Home/CaseStudy"));
 const Punevoice = lazy(() => import("@/components/CaseStudy/PuneVoicesCase"));
@@ -71,10 +56,10 @@ const App = () => {
       alert("⚠️ Please don't copy content.");
     };
 
-    const handleContextMenu = (e: MouseEvent) => {
-      e.preventDefault();
-      alert("⚠️ Right click is disabled.");
-    };
+    // const handleContextMenu = (e: MouseEvent) => {
+    //   e.preventDefault();
+    //   alert("⚠️ Right click is disabled.");
+    // };
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
@@ -84,16 +69,17 @@ const App = () => {
     };
 
     document.addEventListener("copy", handleCopy);
-    document.addEventListener("contextmenu", handleContextMenu);
+    // document.addEventListener("contextmenu", handleContextMenu);
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("copy", handleCopy);
-      document.removeEventListener("contextmenu", handleContextMenu);
+      // document.removeEventListener("contextmenu", handleContextMenu);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-
+  
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import bgImg2 from "../../img/bgImg1.png";
 
 // Case Study Images
-import puneImg from "../../img/background 2.png";
-import bushareImg from "../../img/background 2.png";
+import puneImg from "../../img/logo/Copy of Logo Pune voice 5.png";
+import bushareImg from "../../img/logo/FINAL final.png";
 import clinicImg from "../../img/background 2.png";
 
 const caseStudies = [

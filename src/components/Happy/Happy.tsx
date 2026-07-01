@@ -5,9 +5,9 @@ import { Play } from "lucide-react";
 import brandVideo from "../../img/video.mp4";
 
 // Poster images imports
-import orthosquarePoster from "../../img/role/saurabh sir.png";
-import aaryakPoster from "../../img/role/tejaa.png";
-import insanePoster from "../../img/role/aniket (1).png";
+import punevoice from "../../img/logo/Copy of Logo Pune voice 5.png";
+import bushare from "../../img/logo/FINAL final.png";
+import wada from "../../img/logo/vada.png";
 import mitraPoster from "../../img/role/rutu.png";
 import unimaxPoster from "../../img/role/pratap.png";
 import btrackPoster from "../../img/role/ritesh.png";
@@ -15,17 +15,17 @@ import btrackPoster from "../../img/role/ritesh.png";
 const brands = [
   {
     name: "Pune Voice",
-    poster: orthosquarePoster,
+    poster: punevoice,
     video: brandVideo,
   },
   {
     name: "Bushare",
-    poster: aaryakPoster,
+    poster: bushare,
     video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   },
   {
     name: "Hotel Wada",
-    poster: insanePoster,
+    poster: wada,
     video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
   },
   {
@@ -85,10 +85,10 @@ const Happy = () => {
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`px-5 py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 transform active:scale-95 ${
+              className={`px-5 py-3 rounded-full font-bold text-sm sm:text-base transition-all duration-300 transform active:scale-95 border ${
                 isActive
-                  ? "bg-[#007aff] text-white shadow-[0_4px_20px_rgba(0,122,255,0.4)]"
-                  : "bg-[#f95707] text-white hover:bg-[#ff691e]"
+                  ? "bg-yellow-500 text-black border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+                  : "bg-[#111] text-white border-yellow-500/30 hover:border-yellow-400 hover:text-yellow-400"
               }`}
             >
               {brand.name}
@@ -98,10 +98,10 @@ const Happy = () => {
       </div>
 
       {/* Main Card */}
-      <div className="max-w-5xl mx-auto rounded-[32px] overflow-hidden bg-[#151515] border border-neutral-800 shadow-2xl flex flex-col md:flex-row items-stretch min-h-[350px] md:min-h-[480px]">
-        {/* Left Column Accent (Blue Text Panel) */}
-        <div className="w-full md:w-[35%] bg-[#007aff] p-8 md:p-12 flex items-center justify-center text-left">
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight uppercase font-display select-none">
+      <div className="max-w-5xl mx-auto rounded-[32px] overflow-hidden bg-[#151515] border border-yellow-500/20 shadow-[0_0_50px_rgba(234,179,8,0.05)] flex flex-col md:flex-row items-stretch min-h-[350px] md:min-h-[480px]">
+        {/* Left Column Accent (Golden Text Panel) */}
+        <div className="w-full md:w-[35%] bg-gradient-to-br from-yellow-500 via-amber-500 to-yellow-600 p-8 md:p-12 flex items-center justify-center text-left">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black leading-tight uppercase font-display select-none">
             Our Customers Love Us Because.....
           </h3>
         </div>
@@ -118,7 +118,7 @@ const Happy = () => {
               <img
                 src={brands[activeIndex].poster}
                 alt={`${brands[activeIndex].name} poster`}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* Dark Overlay Mask */}
@@ -126,11 +126,11 @@ const Happy = () => {
 
               {/* Play Button Overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <div className="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center bg-black/35 backdrop-blur-sm group-hover:scale-110 transition-all duration-300 shadow-lg">
-                  <Play className="fill-white text-white ml-1" size={32} />
+                <div className="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center bg-black/35 backdrop-blur-sm group-hover:scale-110 group-hover:border-yellow-400 group-hover:bg-yellow-500/10 transition-all duration-300 shadow-lg">
+                  <Play className="fill-white text-white group-hover:text-yellow-400 group-hover:fill-yellow-400 ml-1 transition-colors duration-300" size={32} />
                 </div>
                 
-                <span className="text-xl sm:text-2xl font-extrabold text-[#f95707] tracking-wider drop-shadow-md select-none mt-2 group-hover:text-white transition-colors duration-300">
+                <span className="text-xl sm:text-2xl font-extrabold text-yellow-400 tracking-wider drop-shadow-md select-none mt-2 group-hover:text-yellow-300 transition-colors duration-300">
                   CLICK HERE TO FIND OUT
                 </span>
               </div>

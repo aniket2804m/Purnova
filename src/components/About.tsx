@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { Tiles } from "./Tiles";
 
+import myImage from "../img/logo.png";
+
 const stats = [
   { icon: Users, value: "500+", label: "Happy Clients" },
   { icon: TrendingUp, value: "10M+", label: "Leads Generated" },
@@ -93,11 +95,15 @@ const About = () => {
             <div className="relative">
 
               {/* 3D Golden Circle */}
-              <div className="w-[320px] h-[320px] mx-auto rounded-full bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 p-1 animate-pulse">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center backdrop-blur-xl">
-                  <TrendingUp className="w-24 h-24 text-yellow-400" />
-                </div>
-              </div>
+              <div className="w-[320px] h-[320px] mx-auto rounded-full bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 p-1">
+  <div className="w-full h-full rounded-full bg-yellow overflow-hidden">
+    <img
+      src={myImage} // kiwa tumcha image path
+      alt="Service"
+      className="w-full h-full object-contain rounded-full"
+    />
+  </div>
+</div>
 
               {/* Floating Golden Cards */}
               <motion.div

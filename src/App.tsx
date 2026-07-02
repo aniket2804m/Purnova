@@ -40,6 +40,7 @@ const BushareCase = lazy(() => import("@/components/CaseStudy/BushareCase"));
 const CaseStudy = lazy(() => import("@/components/Home/CaseStudy"));
 const Punevoice = lazy(() => import("@/components/CaseStudy/PuneVoicesCase"));
 const Abouts = lazy(() => import("@/components/Abouts"));
+const Client = lazy(() => import("@/components/Clients"));
 
 const queryClient = new QueryClient();
 
@@ -140,6 +141,7 @@ const App = () => {
               <Route path="/team" element={<Team />} />
               <Route path="/work" element={<Work />} />
               <Route path="/card" element={<Card />} />
+              <Route path="/clients" element={<Client />} />
 
               <Route path="/brand" element={<Brand />} />
               <Route path="/perform" element={<Performance />} />

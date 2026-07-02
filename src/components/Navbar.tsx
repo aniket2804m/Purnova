@@ -19,7 +19,7 @@ const navLinks = [
   { label: "Services", href: "/card" },
   { label: "CaseStudy", href: "/case" },
   { label: " Purnovians", href: "/team" },
-  { label: "Client", href: "/work" },
+  { label: "Client", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
 

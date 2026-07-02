@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -221,52 +221,55 @@ function ClientCard({
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onOpen(client)}
-      className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111] cursor-pointer ${
-        client.featured ? "row-span-2" : ""
-      }`}
+      className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111] cursor-pointer group"
       style={{
-        boxShadow: hovered ? `0 0 40px -8px ${CATEGORY_GLOW[client.category]}` : "none",
-        transition: "box-shadow 0.4s ease",
+        boxShadow: hovered ? `0 0 40px -8px ${CATEGORY_GLOW[client.category] || "rgba(212,175,55,0.15)"}` : "none",
+        transition: "box-shadow 0.4s ease, border-color 0.3s ease",
+        borderColor: hovered ? "rgba(242,201,76,0.3)" : "rgba(255,255,255,0.1)"
       }}
     >
       {/* top media area */}
       <div className={`relative w-full ${client.featured ? "h-56" : "h-36"} bg-[#181818] flex items-center justify-center overflow-hidden`}>
-        {client.logo && !imgError ? (
-          <motion.img
-            layoutId={`logo-${client.id}`}
-            src={client.logo}
-            alt={`${client.name} logo`}
-            onError={() => setImgError(true)}
-            className="max-h-16 object-contain opacity-90"
-          />
-        ) : (
-          <div className="w-12 h-12 rounded-full border border-[#f2c94c]/40 flex items-center justify-center text-[#f2c94c] font-serif text-lg">
-            {initials}
-          </div>
-        )}
+        
+        {/* The logo/avatar container that moves on hover */}
+        <div className={`transition-all duration-300 flex items-center justify-center ${hovered ? "scale-75 -translate-y-6 opacity-40 blur-[0.5px]" : "scale-100 translate-y-0"}`}>
+          {client.logo && !imgError ? (
+            <motion.img
+              layoutId={`logo-${client.id}`}
+              src={client.logo}
+              alt={`${client.name} logo`}
+              onError={() => setImgError(true)}
+              className="max-h-16 max-w-[80%] object-contain opacity-90"
+            />
+          ) : (
+            <div className="w-12 h-12 rounded-full border border-[#f2c94c]/40 flex items-center justify-center text-[#f2c94c] font-serif text-lg">
+              {initials}
+            </div>
+          )}
+        </div>
 
         {/* result badge, top right */}
-        {client.result && (
+        {client.result && !hovered && (
           <span className="absolute top-3 right-3 text-[10px] tracking-wide uppercase bg-black/60 border border-[#f2c94c]/30 text-[#f2c94c] rounded-full px-2.5 py-1">
             {client.result}
           </span>
         )}
 
-        {/* hover overlay: services + testimonial + CTA */}
+        {/* hover overlay: services + CTA */}
         <AnimatePresence>
           {hovered && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.25 }}
-              className="absolute inset-0 bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center gap-3 px-4 text-center"
+              className="absolute inset-0 bg-black/30 flex flex-col items-center justify-end pb-4 gap-2.5 px-4 text-center pointer-events-none"
             >
               <div className="flex flex-wrap justify-center gap-1.5">
-                {client.services.map((s) => (
+                {client.services.slice(0, 2).map((s) => (
                   <span
                     key={s}
-                    className="text-[10px] uppercase tracking-wide border border-[#f2c94c]/40 text-[#f2c94c] rounded-full px-2.5 py-1"
+                    className="text-[9px] uppercase tracking-wider border border-[#f2c94c]/40 bg-black/80 text-[#f2c94c] rounded-full px-2.5 py-0.5"
                   >
                     {s}
                   </span>
@@ -274,10 +277,10 @@ function ClientCard({
               </div>
 
               {client.testimonial && (
-                <p className="text-xs italic text-white/70 max-w-[85%]">"{client.testimonial}"</p>
+                <p className="text-[10px] italic text-white/70 max-w-[90%] line-clamp-1">"{client.testimonial}"</p>
               )}
 
-              <span className="mt-1 text-[11px] uppercase tracking-wider text-[#f2c94c] border-b border-[#f2c94c]/60 pb-0.5">
+              <span className="text-[10px] uppercase tracking-wider text-[#f2c94c] border-b border-[#f2c94c]/60 pb-0.5">
                 {client.caseStudy ? "View Case Study →" : "Click to View →"}
               </span>
             </motion.div>
@@ -286,8 +289,8 @@ function ClientCard({
       </div>
 
       {/* footer info */}
-      <div className="p-4">
-        <h3 className="font-serif text-lg text-white">{client.name}</h3>
+      <div className="p-4 border-t border-white/5">
+        <h3 className="font-serif text-lg text-white group-hover:text-[#f2c94c] transition-colors duration-300">{client.name}</h3>
         <p className="text-xs text-white/40 mt-0.5">{client.handle}</p>
       </div>
     </motion.div>
@@ -295,17 +298,141 @@ function ClientCard({
 }
 
 /* ------------------------------------------------------------------ */
+/*  CLIENT STATS HELPERS & DATA                                       */
+/* ------------------------------------------------------------------ */
+
+interface StatCard {
+  label: string;
+  value: string;
+}
+
+function getClientStats(client: Client): StatCard[] {
+  const statsMap: Record<Category, StatCard[]> = {
+    "Media": [
+      { label: "Reach Growth", value: "+220%" },
+      { label: "Video Views", value: "+1.2M" },
+      { label: "Engagement", value: "+4.5%" }
+    ],
+    "Food & Beverage": [
+      { label: "Sales Growth", value: "+180%" },
+      { label: "D2C Orders", value: "+65%" },
+      { label: "Repeat Buyers", value: "+120%" }
+    ],
+    "Education": [
+      { label: "Enrollments", value: "+310" },
+      { label: "Course Reach", value: "+150%" },
+      { label: "Completion Rate", value: "92%" }
+    ],
+    "Technology": [
+      { label: "Organic Traffic", value: "+3x" },
+      { label: "Leads Generated", value: "+150%" },
+      { label: "Load Speed", value: "-60%" }
+    ],
+    "Healthcare": [
+      { label: "Bookings", value: "+55%" },
+      { label: "Patient Reach", value: "+2.4x" },
+      { label: "Inquiries", value: "+80%" }
+    ],
+    "Personal Brands": [
+      { label: "Followers", value: "+2.4x" },
+      { label: "Engagement", value: "+3.1x" },
+      { label: "Monthly Views", value: "+500K" }
+    ],
+    "Hospitality": [
+      { label: "Direct Bookings", value: "+45%" },
+      { label: "Local SEO Click", value: "+150%" },
+      { label: "Avg Reviews", value: "4.8★" }
+    ],
+    "Events": [
+      { label: "Inquiries", value: "+75%" },
+      { label: "Attendance", value: "+40%" },
+      { label: "Social Buzz", value: "+3x" }
+    ],
+    "Fashion": [
+      { label: "Store Sales", value: "+180%" },
+      { label: "Conversion Rate", value: "+2.4x" },
+      { label: "Return Customer", value: "35%" }
+    ],
+    "Automotive": [
+      { label: "Video Views", value: "+90K" },
+      { label: "Sales Leads", value: "+80%" },
+      { label: "Ad Click Rate", value: "4.2%" }
+    ],
+    "Real Estate": [
+      { label: "Qualified Leads", value: "+40/mo" },
+      { label: "Conversion", value: "+2.8x" },
+      { label: "Site Visits", value: "+110%" }
+    ]
+  };
+
+  const defaultStats = statsMap[client.category] || [
+    { label: "Growth", value: "+45%" },
+    { label: "Engagement", value: "+2.5x" },
+    { label: "Brand Value", value: "Premium" }
+  ];
+
+  if (client.result) {
+    const parts = client.result.split(" ");
+    if (parts.length >= 2) {
+      const val = parts[0];
+      const lbl = parts.slice(1).join(" ");
+      return [
+        { label: lbl, value: val },
+        defaultStats[1],
+        defaultStats[2]
+      ];
+    } else {
+      return [
+        { label: "Total Growth", value: client.result },
+        defaultStats[1],
+        defaultStats[2]
+      ];
+    }
+  }
+  
+  return defaultStats;
+}
+
+/* ------------------------------------------------------------------ */
 /*  CLIENT MODAL — opens on card click, shows image + full content     */
 /* ------------------------------------------------------------------ */
 
 function ClientModal({ client, onClose }: { client: Client; onClose: () => void }) {
-  const [imgError, setImgError] = useState(false);
+  const [coverError, setCoverError] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+  
   const coverSrc = client.cover || client.logo;
   const initials = client.name
     .split(" ")
     .map((w) => w[0])
     .slice(0, 2)
     .join("");
+
+  // Framer Motion 3D Parallax Tilt variables
+  const logoBoxRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Smooth spring configuration
+  const springConfig = { damping: 20, stiffness: 200, mass: 0.5 };
+  const springRotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [15, -15]), springConfig);
+  const springRotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-15, 15]), springConfig);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!logoBoxRef.current) return;
+    const rect = logoBoxRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const xVal = (e.clientX - rect.left) / width - 0.5;
+    const yVal = (e.clientY - rect.top) / height - 0.5;
+    mouseX.set(xVal);
+    mouseY.set(yVal);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -317,103 +444,235 @@ function ClientModal({ client, onClose }: { client: Client; onClose: () => void 
     };
   }, [onClose]);
 
+  // Framer Motion Staggered Children Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 25,
+        stiffness: 220,
+      },
+    },
+  };
+
+  const stats = getClientStats(client);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md px-4"
       onClick={onClose}
     >
       <motion.div
         layoutId={`card-${client.id}`}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#111111]"
+        className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#111111]"
       >
+        {/* Corner Accent Marks ("L" shaped borders for premium certificate/badge feel) */}
+        <div className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-[#f2c94c]/60 pointer-events-none rounded-tl-md z-20" />
+        <div className="absolute top-4 right-4 w-5 h-5 border-t-2 border-r-2 border-[#f2c94c]/60 pointer-events-none rounded-tr-md z-20" />
+        <div className="absolute bottom-4 left-4 w-5 h-5 border-b-2 border-l-2 border-[#f2c94c]/60 pointer-events-none rounded-bl-md z-20" />
+        <div className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-[#f2c94c]/60 pointer-events-none rounded-br-md z-20" />
+
         {/* close button */}
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 border border-white/15 text-white/70 hover:text-[#f2c94c] hover:border-[#f2c94c]/50 transition-colors flex items-center justify-center"
+          className="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-black/60 border border-white/15 text-white/70 hover:text-[#f2c94c] hover:border-[#f2c94c]/50 transition-colors flex items-center justify-center"
         >
           ✕
         </button>
 
-        {/* image / cover */}
-        <div className="relative w-full h-64 bg-[#181818] flex items-center justify-center overflow-hidden">
-          {coverSrc && !imgError ? (
-            <motion.img
-              layoutId={`logo-${client.id}`}
-              src={coverSrc}
-              alt={`${client.name} cover`}
-              onError={() => setImgError(true)}
-              className="w-full h-full object-contain"
-            />
-          ) : (
-            <div className="w-20 h-20 rounded-full border border-[#f2c94c]/40 flex items-center justify-center text-[#f2c94c] font-serif text-3xl">
-              {initials}
+        {/* Ambient Glowing Header & Interactive Logo Box */}
+        <div className="relative w-full h-64 bg-[#111111] bg-[radial-gradient(circle_at_center,rgba(242,201,76,0.18)_0%,rgba(17,17,17,0)_70%)] flex items-center justify-center overflow-hidden border-b border-white/5">
+          
+          {/* Blurred cover photo background context */}
+          {coverSrc && !coverError && (
+            <div className="absolute inset-0 opacity-[0.08] filter blur-md overflow-hidden pointer-events-none">
+              <img
+                src={coverSrc}
+                alt=""
+                onError={() => setCoverError(true)}
+                className="w-full h-full object-cover scale-110"
+              />
             </div>
           )}
-          {client.result && (
-            <span className="absolute bottom-4 right-4 text-xs uppercase tracking-wide bg-black/70 border border-[#f2c94c]/40 text-[#f2c94c] rounded-full px-3 py-1.5">
-              {client.result}
-            </span>
-          )}
+
+          {/* Glowing particle background behind logo box */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-60">
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-[#f2c94c]/40 rounded-full"
+                style={{
+                  left: `${15 + (i * 12 + Math.random() * 8)}%`,
+                  top: `${20 + (i * 8 + Math.random() * 12)}%`,
+                }}
+                animate={{
+                  y: [0, -25, 0],
+                  x: [0, Math.random() * 16 - 8, 0],
+                  opacity: [0.2, 0.8, 0.2],
+                  scale: [0.8, 1.2, 0.8],
+                }}
+                transition={{
+                  duration: 4 + Math.random() * 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.4,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Interactive Logo Box with 3D Parallax Tilt and Rotating Border */}
+          <div className="relative z-10 flex items-center justify-center">
+            <motion.div
+              ref={logoBoxRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                rotateX: springRotateX,
+                rotateY: springRotateY,
+                transformStyle: "preserve-3d",
+                perspective: 1000,
+              }}
+              className="relative w-36 h-36 rounded-3xl bg-black/70 border border-white/10 backdrop-blur-md flex items-center justify-center p-5 shadow-2xl cursor-grab active:cursor-grabbing"
+            >
+              {/* Rotating Gold Border Ring */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+                <div 
+                  className="absolute -inset-[50%] bg-[conic-gradient(from_0deg,#f2c94c_0%,transparent_30%,#f2c94c_50%,transparent_80%,#f2c94c_100%)] opacity-70 animate-spin"
+                  style={{ animationDuration: '8s' }}
+                />
+                {/* Inner mask to keep border thin and clean */}
+                <div className="absolute inset-[2.5px] bg-[#111111] rounded-[21.5px]" />
+              </div>
+
+              {/* Logo inside */}
+              <div 
+                className="relative z-10 flex items-center justify-center w-full h-full"
+                style={{ transform: "translateZ(20px)" }}
+              >
+                {client.logo && !logoError ? (
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    onError={() => setLogoError(true)}
+                    className="max-h-20 max-w-full object-contain filter drop-shadow-[0_2px_8px_rgba(242,201,76,0.25)]"
+                  />
+                ) : (
+                  <div className="font-serif text-4xl text-[#f2c94c] tracking-wider select-none font-bold">
+                    {initials}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* content */}
-        <div className="p-6 md:p-8">
-          <span className="text-[11px] uppercase tracking-widest text-[#f2c94c]/80">
-            {client.category}
-          </span>
-          <h2 className="font-serif text-3xl mt-1 text-white">{client.name}</h2>
-          <p className="text-sm text-white/40 mt-1">{client.handle}</p>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="p-6 md:p-8"
+        >
+          {/* category badge */}
+          <motion.div variants={itemVariants}>
+            <span className="text-[11px] uppercase tracking-widest text-[#f2c94c] font-semibold bg-[#f2c94c]/10 rounded-full px-3 py-1">
+              {client.category}
+            </span>
+          </motion.div>
 
-          {/* services */}
-          <div className="flex flex-wrap gap-2 mt-5">
+          {/* title and handle */}
+          <motion.div variants={itemVariants} className="mt-4">
+            <h2 className="font-serif text-3xl text-white font-bold">{client.name}</h2>
+            <p className="text-sm text-white/40 mt-1">{client.handle}</p>
+          </motion.div>
+
+          {/* services chips */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mt-5">
             {client.services.map((s) => (
               <span
                 key={s}
-                className="text-[11px] uppercase tracking-wide border border-[#f2c94c]/40 text-[#f2c94c] rounded-full px-3 py-1.5"
+                className="text-[10px] uppercase tracking-wide border border-[#f2c94c]/30 bg-[#f2c94c]/5 text-[#f2c94c] rounded-full px-3 py-1 hover:border-[#f2c94c]/60 transition-colors duration-300"
               >
                 {s}
               </span>
             ))}
-          </div>
+          </motion.div>
+
+          {/* Multiple Result Stat Cards Grid */}
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-3 my-6">
+            {stats.map((stat, sIdx) => (
+              <div 
+                key={sIdx} 
+                className="bg-white/[0.02] border border-white/5 rounded-xl p-3 text-center relative overflow-hidden group/stat hover:border-[#f2c94c]/30 hover:bg-[#f2c94c]/[0.01] transition-all duration-300"
+              >
+                <div className="text-xl md:text-2xl font-serif text-[#f2c94c] font-bold">
+                  {stat.value}
+                </div>
+                <div className="text-[9px] md:text-[10px] uppercase tracking-wider text-white/50 mt-1 font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Gold Gradient Divider Line */}
+          <motion.div variants={itemVariants} className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#f2c94c]/25 to-transparent my-6" />
 
           {/* description / content */}
           {client.description && (
-            <p className="mt-6 text-sm leading-relaxed text-white/70">{client.description}</p>
+            <motion.p variants={itemVariants} className="text-sm leading-relaxed text-white/70">
+              {client.description}
+            </motion.p>
           )}
 
           {/* testimonial */}
           {client.testimonial && (
-            <blockquote className="mt-6 border-l-2 border-[#f2c94c]/50 pl-4 text-sm italic text-white/60">
+            <motion.blockquote variants={itemVariants} className="mt-6 border-l-2 border-[#f2c94c]/50 pl-4 text-sm italic text-white/60 bg-white/[0.01] py-2 pr-2 rounded-r-md">
               "{client.testimonial}"
-            </blockquote>
+            </motion.blockquote>
           )}
 
           {/* actions */}
-          <div className="flex flex-wrap gap-3 mt-8">
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mt-8">
             <a
               href={`https://instagram.com/${client.handle.replace("@", "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs uppercase tracking-widest border border-[#f2c94c] text-[#f2c94c] rounded-full px-6 py-2.5 hover:bg-[#f2c94c] hover:text-black transition-colors"
+              className="text-xs uppercase tracking-widest border border-[#f2c94c] text-[#f2c94c] rounded-full px-6 py-2.5 hover:bg-[#f2c94c] hover:text-black transition-all duration-300 font-semibold"
             >
               Visit Instagram
             </a>
             {client.caseStudy && (
               <button
                 onClick={() => console.log(`navigate to /case-studies/${client.id}`)}
-                className="text-xs uppercase tracking-widest border border-white/20 text-white/70 rounded-full px-6 py-2.5 hover:border-white hover:text-white transition-colors"
+                className="text-xs uppercase tracking-widest border border-white/20 text-white/70 rounded-full px-6 py-2.5 hover:border-white hover:text-white transition-all duration-300 font-semibold"
               >
                 Full Case Study
               </button>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

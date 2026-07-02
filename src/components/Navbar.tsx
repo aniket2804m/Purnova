@@ -19,7 +19,7 @@ const navLinks = [
   { label: "Services", href: "/card" },
   { label: "CaseStudy", href: "/case" },
   { label: " Purnovians", href: "/team" },
-  { label: "Our Work", href: "/work" },
+  { label: "Client", href: "/work" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -485,7 +485,7 @@ if (link.label === "CaseStudy") {
                 const Icon =
   link.label === "About" ? Info :
   link.label === "Services" ? Briefcase :
-  link.label === "Our Work" ? FolderOpen :
+  link.label === "Client" ? FolderOpen :
   link.label === " Purnovians" ? Users :
   PhoneCall;
 

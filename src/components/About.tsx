@@ -1,216 +1,416 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  TrendingUp,
-  Users,
   Target,
-  Award,
-  Globe,
+  TrendingUp,
   BarChart3,
+  Globe,
+  Users,
+  Award,
 } from "lucide-react";
-import { Tiles } from "./Tiles";
 
 import myImage from "../img/logo.png";
+import { ScrollReveal } from "./ScrollProgress";
+import founderImage from "../img/role/rushi sir (1).png";
 
-const stats = [
-  { icon: Users, value: "500+", label: "Happy Clients" },
-  { icon: TrendingUp, value: "10M+", label: "Leads Generated" },
-  { icon: Award, value: "7+", label: "Years Experience" },
-  { icon: Globe, value: "50+", label: "Brands Scaled" },
-];
-
-const features = [
+const services = [
   {
-    icon: Target,
+    number: "01",
     title: "Performance Marketing",
     desc: "ROI-focused campaigns that drive measurable growth.",
   },
   {
-    icon: BarChart3,
+    number: "02",
     title: "SEO Optimization",
     desc: "Increase visibility and dominate search rankings.",
   },
   {
-    icon: TrendingUp,
+    number: "03",
     title: "Lead Generation",
     desc: "Convert visitors into qualified customers.",
   },
+  {
+    number: "04",
+    title: "Website Development",
+    desc: "Websites that turn visitors into customers.",
+  },
+  {
+    number: "05",
+    title: "Brand Strategy",
+    desc: "Build memorable brands that stand apart.",
+  },
 ];
 
-const About = () => {
+const stats = [
+  {
+    icon: Users,
+    value: "500+",
+    label: "Happy Clients",
+  },
+  {
+    icon: TrendingUp,
+    value: "10M+",
+    label: "Leads Generated",
+  },
+  {
+    icon: Award,
+    value: "7+",
+    label: "Years Experience",
+  },
+  {
+    icon: Globe,
+    value: "50+",
+    label: "Brands Scaled",
+  },
+];
+
+export default function About() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
+  const circleRotate = useTransform(scrollYProgress, [0, 1], [0, 220]);
+  const circleScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.93, 1.05, 0.93]);
+  const floatY1 = useTransform(scrollYProgress, [0, 1], [-25, 25]);
+  const floatY2 = useTransform(scrollYProgress, [0, 1], [25, -25]);
+
   return (
     <section
+      ref={containerRef}
       id="about"
-      className="relative py-28 overflow-hidden bg-[#0A0A0A] text-[#F5F0E8] font-montserrat border-t border-[#C9A84C]/10"
+      className="bg-[#050505] text-[#F5F0E8] overflow-hidden"
     >
-      {/* Background Effects (Royal Gold Glows) */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#C9A84C]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#C9A84C]/3 blur-[120px] pointer-events-none" />
+      {/* HERO */}
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080808] to-black" />
 
-      {/* Interactive Background Grid */}
-      <div className="absolute inset-0 z-0 opacity-20 overflow-hidden flex justify-center items-center">
-        <Tiles rows={50} cols={40} />
+        <div className="relative z-10 text-center max-w-5xl">
+          <ScrollReveal variant="fade-down" delay={0.1}>
+            <span className="uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
+              About Purnova
+            </span>
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-down" delay={0.2}>
+            <h1 className="mt-5 text-3xl sm:text-4xl md:text-7xl font-cinzel leading-tight">
+              Transforming Brands.
+              <br />
+              Creating Digital
+              <br />
+              <span className="italic text-[#C9A84C]">
+                Success Stories.
+              </span>
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-up" delay={0.35}>
+            <p className="max-w-2xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-light text-base md:text-lg">
+              We help businesses grow through strategic marketing,
+              SEO, branding, performance advertising and digital
+              experiences designed for measurable results.
+            </p>
+          </ScrollReveal>
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pointer-events-none">
-
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mb-20 pointer-events-auto"
-        >
-          <span className="text-[#C9A84C] uppercase tracking-[0.25em] text-sm font-semibold font-montserrat">
-            About Purnova Digital
-          </span>
-
-          <h2 className="text-4xl md:text-6xl font-bold mt-4 text-[#F5F0E8] font-cinzel tracking-wide leading-tight">
-            Transforming Brands Into
-            <span className="block mt-2 text-[#C9A84C]">
-              Digital Success Stories
-            </span>
-          </h2>
-
-          <p className="max-w-3xl mx-auto mt-6 text-base md:text-lg text-[#F5F0E8]/70 leading-relaxed font-light">
-            At Purnova Digital, we help businesses grow through strategic digital marketing, SEO, social media management, performance advertising, and branding solutions that deliver measurable results.
-          </p>
-        </motion.div>
-
-        {/* Main Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="pointer-events-auto"
-          >
-            <div className="relative">
-
-              {/* 3D Golden Circle */}
-              <div className="w-[320px] h-[320px] mx-auto rounded-full bg-gradient-to-br from-[#C9A84C] via-[#C9A84C]/50 to-[#C9A84C] p-1 shadow-lg shadow-[#C9A84C]/10">
-                <div className="w-full h-full rounded-full bg-[#0A0A0A] overflow-hidden flex items-center justify-center">
-                  <img
-                    src={myImage}
-                    alt="Purnova Logo"
-                    className="w-full h-full object-contain rounded-full"
-                  />
-                </div>
-              </div>
-
-              {/* Floating Golden Cards */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                }}
-                className="absolute top-10 -left-8 bg-[#101010]/95 border border-[#C9A84C]/30 backdrop-blur-xl p-4 rounded-none text-[#F5F0E8] font-medium shadow-[0_10px_25px_rgba(201,168,76,0.15)] font-cinzel text-xs tracking-widest uppercase"
-              >
-                🚀 Growth Marketing
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                }}
-                className="absolute bottom-10 -right-8 bg-[#101010]/95 border border-[#C9A84C]/30 backdrop-blur-xl p-4 rounded-none text-[#F5F0E8] font-medium shadow-[0_10px_25px_rgba(201,168,76,0.15)] font-cinzel text-xs tracking-widest uppercase"
-              >
-                📈 ROI Focused
-              </motion.div>
+      {/* OUR STORY */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-32 border-t border-[#C9A84C]/10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
+          <ScrollReveal variant="fade-right" delay={0.15}>
+            <div>
+              <h2 className="text-[#C9A84C] text-4xl sm:text-5xl md:text-7xl font-cinzel leading-none">
+                OUR
+                <br />
+                STORY
+              </h2>
             </div>
-          </motion.div>
+          </ScrollReveal>
 
-          {/* Right Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="pointer-events-auto"
-          >
-            <h3 className="text-3xl font-bold mb-6 text-[#F5F0E8] font-cinzel tracking-wide">
-              Driving Growth Through Innovation
-            </h3>
+          <ScrollReveal variant="fade-left" delay={0.2}>
+            <div className="space-y-8 text-[#F5F0E8]/75 text-lg leading-relaxed font-light font-montserrat">
+              <p>
+                Look closely at the night sky.
+              </p>
 
-            <p className="text-[#F5F0E8]/70 mb-6 leading-relaxed font-light">
-              We combine creativity, technology, and data-driven strategies to help businesses establish a powerful digital presence. Our team specializes in SEO, Social Media Marketing, Performance Ads, Website Development, and Brand Building.
-            </p>
+              <p>
+                The brightest stars are not born from stillness. They are born from collision, pressure, transformation, and the courage to shine despite the darkness around them.
+              </p>
 
-            <p className="text-[#F5F0E8]/70 leading-relaxed font-light">
-              Every campaign is designed to maximize engagement, generate quality leads, and deliver sustainable business growth.
-            </p>
+              <p>
+                PURNOVA was born the same way.
+              </p>
 
-            {/* Features list in dark/yellow/golden theme */}
-            <div className="mt-10 space-y-4 font-montserrat">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    scale: 1.02,
-                    y: -2,
-                  }}
-                  className="bg-[#101010]/60 border border-[#C9A84C]/10 hover:border-[#C9A84C] rounded-none p-5 flex gap-4 transition-all duration-300 shadow-md backdrop-blur-md hover:shadow-[0_10px_30px_rgba(201,168,76,0.08)]"
-                >
-                  <feature.icon className="w-8 h-8 text-[#C9A84C] flex-shrink-0" />
+              <p>
+                What appeared to be an ending became the beginning of something stronger — a clearer vision, a sharper purpose, and a relentless commitment to creating work that leaves a mark.
+              </p>
 
-                  <div>
-                    <h4 className="font-semibold text-lg text-[#F5F0E8] font-cinzel tracking-wide">
-                      {feature.title}
+              <p>We believe that every remarkable brand begins with a moment of change. A moment when ordinary is no longer enough. A moment when growth demands reinvention. A moment when ambition refuses to stay hidden.</p>
+
+              <p>That belief became PURNOVA.</p>
+
+              <p>Today, we help businesses transform their potential into presence, their ideas into identity, and their vision into impact.</p>
+
+              <p>We combine strategy, design, storytelling, technology, and performance to create brands that don't simply exist—they endure.</p>
+
+              <p>Because in a world crowded with noise, visibility is no longer enough.</p>
+              <p className="text-[#C9A84C] font-medium font-cinzel tracking-wider uppercase text-base">
+                Some brands exist. The rare ones lead.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </div>
+
+      {/* FOUNDER SECTION */}
+      <section className="relative py-16 md:py-32 bg-[#0A0A0A] overflow-hidden border-t border-[#C9A84C]/10">
+        {/* Glow Effects */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#C9A84C]/5 blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C9A84C]/5 blur-[150px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* LEFT CONTENT */}
+            <ScrollReveal variant="fade-right" delay={0.15}>
+              <div className="flex justify-center">
+                <div className="relative">
+                  {/* Gold Border */}
+                  <div className="absolute inset-0 rounded-[30px] bg-gradient-to-br from-[#C9A84C] via-transparent to-[#C9A84C] blur-xl opacity-40" />
+
+                  <div className="relative border border-[#C9A84C]/30 p-3 rounded-[30px] bg-[#0A0A0A]">
+                    <img
+                      src={founderImage}
+                      alt="Founder"
+                      className="
+                        w-full
+                        max-w-[320px]
+                        sm:max-w-[420px]
+                        aspect-[4/5]
+                        h-auto
+                        object-cover
+                        rounded-[24px]
+                      "
+                    />
+                  </div>
+
+                  {/* Floating Badge */}
+                  <motion.div
+                    style={{ y: floatY1 }}
+                    className="
+                      absolute
+                      -bottom-6
+                      left-4
+                      sm:-left-6
+                      bg-[#0D0D0D]
+                      border
+                      border-[#C9A84C]/30
+                      px-6
+                      py-4
+                      backdrop-blur-xl
+                      rounded-none
+                      shadow-xl
+                    "
+                  >
+                    <h4 className="text-[#C9A84C] font-semibold font-cinzel tracking-wider">
+                      7+ Years
                     </h4>
 
-                    <p className="text-[#F5F0E8]/60 mt-1 text-sm font-light">
-                      {feature.desc}
+                    <p className="text-[#F5F0E8]/60 text-sm">
+                      Industry Experience
                     </p>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* RIGHT IMAGE */}
+            <ScrollReveal variant="fade-left" delay={0.2}>
+              <div>
+                <span className="uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
+                  Founder & Visionary
+                </span>
+
+                <h2 className="mt-5 text-4xl sm:text-5xl md:text-7xl font-cinzel leading-tight text-[#F5F0E8]">
+                  Meet The
+                  <br />
+                  Founder
+                </h2>
+
+                <div className="w-20 h-[2px] bg-[#C9A84C] my-8" />
+
+                <h3 className="text-2xl sm:text-3xl font-cinzel text-[#C9A84C]">
+                  Rushikesh Hande
+                </h3>
+
+                <p className="mt-6 text-[#F5F0E8]/70 leading-relaxed text-base sm:text-lg font-light font-montserrat">
+                  At Purnova Digital, our vision has always been simple:
+                  help ambitious businesses build a brand that people
+                  remember.
+                </p>
+
+                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-light font-montserrat">
+                  Founded with a passion for strategy, creativity and
+                  measurable growth, Purnova has evolved into a digital
+                  growth partner for businesses looking to dominate
+                  their market.
+                </p>
+
+                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-light font-montserrat">
+                  Every campaign, every design, and every strategy is
+                  built around one goal — creating meaningful business
+                  growth while building a powerful brand presence.
+                </p>
+
+                {/* Signature Quote */}
+                <div className="mt-10 border-l-2 border-[#C9A84C] pl-6 font-cinzel">
+                  <p className="italic text-lg sm:text-xl md:text-2xl text-[#F5F0E8]">
+                    "Great brands aren't built by chance.
+                    They're built by vision, execution,
+                    and relentless consistency."
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* IMAGE + CONTENT */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 border-t border-[#C9A84C]/10 font-montserrat">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <ScrollReveal variant="fade-right" delay={0.2}>
+            <motion.div
+              // style={{ rotate: circleRotate, scale: circleScale }}
+            >
+              <div className="rounded-full border border-[#C9A84C]/30 p-2 sm:p-3 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] mx-auto">
+                <img
+                  src={myImage}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full rounded-full object-contain bg-black"
+                />
+              </div>
+            </motion.div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.2}>
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-cinzel leading-tight text-[#F5F0E8]">
+                Where Ambitious Brands
+                <br />
+                Become Unforgettable
+              </h2>
+
+              <div className="w-20 h-[2px] bg-[#C9A84C] my-8" />
+
+              <p className="text-[#F5F0E8]/70 leading-relaxed font-light text-base md:text-lg">
+                Every strategy we develop, every identity we design,
+                and every experience we create is built to move your
+                brand from recognition to remembrance.
+              </p>
             </div>
-          </motion.div>
+          </ScrollReveal>
         </div>
 
-        {/* Stats Section with yellow/gold highlights and hover glow */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 pointer-events-auto font-montserrat">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              whileHover={{
-                scale: 1.03,
-                y: -6,
-              }}
-              className="
-                backdrop-blur-xl
-                bg-[#101010]/60
-                border border-[#C9A84C]/10 hover:border-[#C9A84C]
-                rounded-none
-                p-8
-                text-center
-                shadow-lg
-                transition-all
-                duration-300
-                hover:shadow-[0_15px_35px_rgba(201,168,76,0.1)]
-              "
-            >
-              <stat.icon className="w-8 h-8 mx-auto mb-4 text-[#C9A84C]" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 md:mt-24">
+          {stats.map((stat, i) => (
+            <ScrollReveal key={i} variant="scale-up" delay={0.08 * i}>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="border border-[#C9A84C]/20 p-4 sm:p-6 rounded-none bg-[#101010]/30 hover:border-[#C9A84C] transition-all duration-300 shadow-md"
+              >
+                <stat.icon className="text-[#C9A84C] mb-4 w-6 h-6 sm:w-8 sm:h-8" />
 
-              <h3 className="text-4xl font-bold text-[#00A878]">
-                {stat.value}
-              </h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-[#00A878]">
+                  {stat.value}
+                </h3>
 
-              <p className="text-[#F5F0E8]/70 mt-2 text-sm font-medium">
-                {stat.label}
-              </p>
-            </motion.div>
+                <p className="text-xs sm:text-sm text-[#F5F0E8]/60 mt-1 font-medium">
+                  {stat.label}
+                </p>
+              </motion.div>
+            </ScrollReveal>
           ))}
+        </div>
+      </div>
+
+      {/* BIG STATEMENT */}
+      <div className="py-20 md:py-40 px-4 sm:px-6 text-center border-t border-[#C9A84C]/10 bg-[#0A0A0A] relative">
+        <ScrollReveal variant="fade-up" delay={0.15}>
+          <h2 className="font-cinzel text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-6xl mx-auto leading-tight text-[#F5F0E8] font-bold">
+            CREATIVITY WITHOUT PURPOSE IS NOISE.
+            <br className="hidden sm:inline" />
+            STRATEGY WITHOUT EXECUTION IS THEORY.
+          </h2>
+
+          <p className="mt-8 text-[#F5F0E8]/70 text-sm sm:text-base md:text-lg font-light font-montserrat">
+            Great brands are built where vision,
+            creativity and performance meet.
+          </p>
+        </ScrollReveal>
+      </div>
+
+      {/* SERVICES */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 border-t border-[#C9A84C]/10 font-montserrat">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+          {services.map((service, idx) => (
+            <ScrollReveal key={service.number} variant="fade-up" delay={0.08 * idx}>
+              <motion.div
+                whileHover={{
+                  y: -8,
+                  borderColor: "#C9A84C",
+                }}
+                className="border border-[#C9A84C]/20 p-6 sm:p-8 min-h-[220px] bg-[#101010]/30 transition-all duration-300 rounded-none hover:shadow-[0_10px_30px_rgba(201,168,76,0.08)]"
+              >
+                <span className="text-[#C9A84C] text-2xl font-cinzel font-bold">
+                  {service.number}
+                </span>
+
+                <h3 className="mt-5 font-semibold text-lg font-cinzel text-[#F5F0E8]">
+                  {service.title}
+                </h3>
+
+                <p className="mt-4 text-sm text-[#F5F0E8]/60 font-light leading-relaxed">
+                  {service.desc}
+                </p>
+              </motion.div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="relative py-20 md:py-40 px-4 sm:px-6 text-center overflow-hidden border-t border-[#C9A84C]/10 bg-[#0A0A0A]">
+        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,#C9A84C_0%,transparent_70%)] pointer-events-none" />
+
+        <div className="relative z-10 font-montserrat">
+          <ScrollReveal variant="flip-up" delay={0.15}>
+            <h2 className="font-cinzel text-2xl sm:text-4xl md:text-6xl italic max-w-5xl mx-auto text-[#F5F0E8] leading-tight">
+              "STOP CHASING THE MARKET.
+              <br className="hidden sm:inline" />
+              BECOME THE STANDARD."
+            </h2>
+
+            <p className="mt-8 text-[#F5F0E8]/70 max-w-2xl mx-auto font-light text-sm sm:text-base md:text-lg">
+              The future belongs to brands brave enough
+              to build something unforgettable.
+            </p>
+
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 20px rgba(201, 168, 76, 0.4)",
+              }}
+              className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
+            >
+              Start Your Brand Journey
+            </motion.button>
+          </ScrollReveal>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

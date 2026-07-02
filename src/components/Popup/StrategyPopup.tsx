@@ -15,6 +15,28 @@ export default function StrategyPopup() {
   });
 
   useEffect(() => {
+  if (showPopup) {
+    const scrollY = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, scrollY);
+    };
+  }
+}, [showPopup]);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
       setShown((prev) => ({ ...prev, start: true }));
@@ -113,7 +135,7 @@ export default function StrategyPopup() {
             href="https://calendly.com/your-link"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-none border border-[#0A0A0A]/10 bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] hover:text-[#0A0A0A] transition px-5 py-3 sm:px-7 lg:px-8 text-sm sm:text-base lg:text-xl font-semibold uppercase tracking-wider text-xs"
+            className="flex items-center gap-2 rounded-none border border-[#0A0A0A]/10 bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] hover:text-[#0A0A0A] transition px-5 py-3 sm:px-7 lg:px-8 sm:text-base lg:text-xl font-semibold uppercase tracking-wider text-xs"
           >
             <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
             Book Strategy Call ↗

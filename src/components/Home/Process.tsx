@@ -59,17 +59,24 @@ const Process = () => {
           
         {steps.map((step, index) => {
   const isActive = activeStep === index;
+  const isPast = index < activeStep;
+  const isFuture = index > activeStep;
+
+  let yVal = 0;
+  if (isPast) yVal = -50;
+  if (isFuture) yVal = 50;
 
   return (
     <motion.div
       key={index}
-      initial={{ opacity: 0, scale: 0.95, y: 40 }}
-      animate={
-        isActive
-          ? { opacity: 1, scale: 1, y: 0, pointerEvents: "auto" }
-          : { opacity: 0, scale: 0.95, y: -40, pointerEvents: "none" }
-      }
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={{ opacity: 0, scale: 0.95, y: 50 }}
+      animate={{
+        opacity: isActive ? 1 : 0,
+        scale: isActive ? 1 : 0.97,
+        y: yVal,
+        pointerEvents: isActive ? "auto" : "none"
+      }}
+      transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
       className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-20 text-center"
     >
       <div className="mb-4 sm:mb-6 md:mb-8 flex justify-center">

@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 import NotFound from "./pages/NotFound";
 import Website from "@/components/Services/Website";
@@ -56,36 +57,43 @@ const RouteChangeLoader = ({ setIsLoading }: { setIsLoading: (loading: boolean) 
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [warning, setWarning] = useState<string | null>(null);
 
-   useEffect(() => {
+  const triggerWarning = (msg: string) => {
+    setWarning(null);
+    setTimeout(() => {
+      setWarning(msg);
+    }, 10);
+  };
+
+  useEffect(() => {
+    if (warning) {
+      const timer = setTimeout(() => setWarning(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [warning]);
+
+  useEffect(() => {
     const handleCopy = (e: ClipboardEvent) => {
       e.preventDefault();
-      alert("⚠️ Please don't copy content.");
+      triggerWarning("Please don't copy content.");
     };
-
-    // const handleContextMenu = (e: MouseEvent) => {
-    //   e.preventDefault();
-    //   alert("⚠️ Right click is disabled.");
-    // };
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
         e.preventDefault();
-        alert("⚠️ Please don't copy content.");
+        triggerWarning("Please don't copy content.");
       }
     };
 
     document.addEventListener("copy", handleCopy);
-    // document.addEventListener("contextmenu", handleContextMenu);
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("copy", handleCopy);
-      // document.removeEventListener("contextmenu", handleContextMenu);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-  
   
   return (
     <QueryClientProvider client={queryClient}>
@@ -99,6 +107,21 @@ const App = () => {
           <ScrollToTop />
           <CursorGlow />
           <ScrollProgress />
+
+          <AnimatePresence>
+            {warning && (
+              <motion.div
+                initial={{ opacity: 0, y: -50, scale: 0.9, x: "-50%" }}
+                animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
+                exit={{ opacity: 0, y: -50, scale: 0.9, x: "-50%" }}
+                transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                className="fixed top-6 left-1/2 z-[99999] bg-[#0A0A0A] border border-[#C9A84C] px-6 py-4 shadow-[0_15px_40px_rgba(201,168,76,0.25)] rounded-none flex items-center gap-3 font-montserrat select-none"
+              >
+                <span className="text-[#C9A84C] font-semibold text-base">⚠️</span>
+                <span className="text-[#F5F0E8] font-cinzel text-xs tracking-wider uppercase font-semibold">{warning}</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <Suspense fallback={null}>
             <Navbar />

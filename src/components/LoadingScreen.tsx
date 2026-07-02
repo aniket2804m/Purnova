@@ -18,15 +18,16 @@ const LoadingScreen = ({ isLoading }: { isLoading: boolean }) => (
           className="text-center"
         >
           <motion.div
-            className="text-2xl md:text-4xl lg:text-5xl font-cinzel font-bold mb-5 flex gap-3.5 justify-center items-center select-none"
+            className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-cinzel font-bold mb-6 flex flex-col md:flex-row gap-2 md:gap-3.5 justify-center items-center select-none px-4"
             animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-[#C9A84C] tracking-wide">
+            <span className="text-[#C9A84C] tracking-wider uppercase">
               Purnova
-            </span>{" "}
-            <span className="text-[#F5F0E8] tracking-wide font-light">
-              Digital
+            </span>
+            <span className="hidden md:inline text-[#C9A84C]/50 font-light">|</span>
+            <span className="text-[#F5F0E8] tracking-widest font-light text-xs sm:text-sm md:text-lg lg:text-xl uppercase">
+              Luxury Digital Marketing Agency
             </span>
           </motion.div>
           

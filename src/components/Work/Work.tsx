@@ -54,7 +54,10 @@ function LaptopMockup({ project, index, onClick }: { project: typeof projects[0]
       onClick={onClick}
     >
       {/* Screen Lid */}
-      <div className="relative w-full aspect-[16/10] bg-[#1d1e22] rounded-t-[18px] p-2 border-2 border-[#2b2c30] shadow-2xl laptop-screen-border z-10 flex flex-col justify-between">
+      <div 
+        className="laptop-screen-lid relative w-full aspect-[16/10] bg-[#1d1e22] rounded-t-[18px] p-2 border-2 border-[#2b2c30] shadow-2xl laptop-screen-border z-10 flex flex-col justify-between"
+        style={{ transformStyle: "preserve-3d", transformOrigin: "bottom center" }}
+      >
         {/* Bezel */}
         <div className="w-full h-full bg-black rounded-[8px] p-[6px] relative overflow-hidden flex flex-col justify-between">
           {/* Inner Display Area (Contains Website Screenshot Image) */}
@@ -64,7 +67,7 @@ function LaptopMockup({ project, index, onClick }: { project: typeof projects[0]
               alt={project.title} 
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-contain object-top select-none pointer-events-none" 
+              className="laptop-screen-image w-full h-full object-contain object-top select-none pointer-events-none" 
             />
             {/* Screen Glass Reflection Overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/3 to-white/8 pointer-events-none z-25" />
@@ -190,6 +193,24 @@ export default function Work() {
         opacity: opacity,
         transformPerspective: 1500,
       });
+
+      // 3D Screen Lid Hinge open/close and Parallax shifts
+      const lidEl = card.querySelector(".laptop-screen-lid");
+      if (lidEl) {
+        const lidRotX = Math.min(65, absDiff * 65);
+        gsap.set(lidEl, {
+          rotationX: -lidRotX,
+          transformPerspective: 1000,
+          transformOrigin: "bottom center",
+        });
+      }
+
+      const imgEl = card.querySelector(".laptop-screen-image");
+      if (imgEl) {
+        gsap.set(imgEl, {
+          xPercent: diff * -12,
+        });
+      }
 
       const borderEl = card.querySelector(".laptop-screen-border");
       if (borderEl) {

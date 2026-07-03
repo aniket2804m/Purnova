@@ -30,7 +30,7 @@ const Hero = () => {
         <Card />
       </ScrollReveal>
       
-      <ScrollReveal variant="rotate-in" delay={0.2}>
+      <ScrollReveal variant="zoom-out" delay={0.2}>
         <CaseStudy />
       </ScrollReveal>
       

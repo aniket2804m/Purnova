@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Play } from "lucide-react";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Video import
 import brandVideo from "../../img/video.mp4";
@@ -50,6 +51,26 @@ const Happy = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    if (!isAutoPlaying || isPlaying) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % brands.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, isPlaying]);
+
+  const handleNext = () => {
+    setIsAutoPlaying(false);
+    setActiveIndex((prev) => (prev + 1) % brands.length);
+  };
+
+  const handlePrev = () => {
+    setIsAutoPlaying(false);
+    setActiveIndex((prev) => (prev - 1 + brands.length) % brands.length);
+  };
+
   // If active brand changes, reset the video player state
   useEffect(() => {
     setIsPlaying(false);
@@ -84,7 +105,10 @@ const Happy = () => {
           return (
             <button
               key={index}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => {
+                setActiveIndex(index);
+                setIsAutoPlaying(false);
+              }}
               className={`px-5 py-3 rounded-none font-bold text-xs tracking-widest uppercase transition-all duration-300 transform active:scale-95 border ${
                 isActive
                   ? "bg-[#C9A84C] text-[#0A0A0A] border-[#C9A84C] shadow-[0_4px_15px_rgba(201,168,76,0.25)]"
@@ -147,7 +171,52 @@ const Happy = () => {
             />
           )}
         </div>
+
+       
       </div>
+
+      <div>
+        <div className="flex items-center justify-center gap-6 mt-12">
+          <button
+            onClick={handlePrev}
+            className="p-3 rounded-none bg-[#0A0A0A] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0A0A0A] transition-all duration-300 border border-[#C9A84C]/40 shadow-md active:scale-95 flex items-center justify-center"
+            aria-label="Previous Testimonial"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          
+          {/* Progress Indicators */}
+          <div className="flex items-center gap-2.5">
+            {brands.map((_, i) => {
+              const isActive = activeIndex === i;
+              return (
+                <motion.div
+                  key={i}
+                  animate={{
+                    width: isActive ? 28 : 10,
+                    backgroundColor: isActive ? "#C9A84C" : "#1A1A1A"
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="h-2 rounded-none cursor-pointer border border-[#C9A84C]/20"
+                  onClick={() => {
+                    setActiveIndex(i);
+                    setIsAutoPlaying(false);
+                  }}
+                />
+              );
+            })}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="p-3 rounded-none bg-[#0A0A0A] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0A0A0A] transition-all duration-300 border border-[#C9A84C]/40 shadow-md active:scale-95 flex items-center justify-center"
+            aria-label="Next Testimonial"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+        </div>
+        
     </section>
   );
 };

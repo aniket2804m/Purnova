@@ -66,6 +66,9 @@ interface Client {
 }
 
 const CLIENTS: Client[] = [
+  { id: "hotelwada", name: "Hotel Wada", handle: "@hotelwada", category: "Hospitality", services: ["Booking Site", "Local SEO"] },
+  { id: "drauto", name: "DR Auto", handle: "@_the_dr_auto_", category: "Automotive", services: ["Reels", "Content Calendar"], result: "+90K Views" },
+  { id: "punevoices", name: "Pune Voices", handle: "@punevoices", category: "Media", services: ["Podcast Branding", "Reels", "Editing"], result: "+220% Reach", testimonial: "Every episode now looks and feels premium.", caseStudy: true, featured: true },
   {
     id: "bushare",
     name: "Bushare",
@@ -81,6 +84,13 @@ const CLIENTS: Client[] = [
     caseStudy: true,
     featured: true,
   },
+   { id: "importexport",
+     name: "Import Export", 
+     handle: "@import.export.federation", 
+     category: "Technology", 
+     services: ["Full Website"] },
+
+    { id: "savaniee", name: "Savaniee", handle: "@savanieeravindrra", category: "Personal Brands", services: ["Personal Branding", "Reels"], result: "+3.1x Engagement" },
   {
     id: "upscale",
     name: "Upscale",
@@ -94,17 +104,18 @@ const CLIENTS: Client[] = [
     description:
       "A personal styling brand looking to grow a consistent, recognisable presence. We built out a content system and visual identity that made every post feel like part of one story.",
   },
-  { id: "drauto", name: "DR Auto", handle: "@_the_dr_auto_", category: "Automotive", services: ["Reels", "Content Calendar"], result: "+90K Views" },
+  { id: "shrisamarth", name: "Shri Samarth", handle: "@shrisamarthakrupa", category: "Real Estate", services: ["Brochure Site"] },
+  
   { id: "cosmicganges", name: "Cosmic Ganges", handle: "@cosmicganges", category: "Technology", services: ["Full Website", "SEO"], result: "+3x Organic Traffic" },
   { id: "eatrightup", name: "Eat Right Up", handle: "@eatrightup", category: "Food & Beverage", services: ["Menu Design", "Reels"], result: "+65% Orders" },
   { id: "delightevents", name: "Delight Events", handle: "@delight_event_decor", category: "Events", services: ["Portfolio Site", "Photography"] },
   { id: "sadgeemasale", name: "Sadgee Masale", handle: "@sadgee_masale", category: "Food & Beverage", services: ["Packaging", "D2C Site"], result: "+120% Repeat Buyers" },
-  { id: "hotelwada", name: "Hotel Wada", handle: "@hotelwada", category: "Hospitality", services: ["Booking Site", "Local SEO"] },
+  
   { id: "vaichalgroup", name: "Vaichal Group", handle: "@vaichalgroup", category: "Real Estate", services: ["Landing Page", "Lead Funnel"], result: "+40 Qualified Leads/mo" },
-  { id: "shrisamarth", name: "Shri Samarth", handle: "@shrisamarthakrupa", category: "Real Estate", services: ["Brochure Site"] },
-  { id: "punevoices", name: "Pune Voices", handle: "@punevoices", category: "Media", services: ["Podcast Branding", "Reels", "Editing"], result: "+220% Reach", testimonial: "Every episode now looks and feels premium.", caseStudy: true, featured: true },
+  
+  
   { id: "importexport", name: "Import Export", handle: "@import.export.federation", category: "Technology", services: ["Full Website"] },
-  { id: "savaniee", name: "Savaniee", handle: "@savanieeravindrra", category: "Personal Brands", services: ["Personal Branding", "Reels"], result: "+3.1x Engagement" },
+ 
   { id: "varadvinayak", name: "Varad Vinayak", handle: "@varadvinayak", category: "Real Estate", services: ["Landing Page"] },
   { id: "siraa", name: "Siraa", handle: "@houseofsiraa", category: "Fashion", services: ["Lookbook Site", "Reels"] },
   { id: "urbaned", name: "Urban Ed", handle: "@urban_education_official", category: "Education", services: ["Course Platform", "SEO"], result: "+310 Enrollments" },

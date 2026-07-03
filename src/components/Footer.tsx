@@ -112,7 +112,7 @@ const Footer = () => {
               {/* LinkedIn - Highlighted in Emerald Green as key channel */}
               <a
                 href="#"
-                className="w-10 h-10 border border-[#00A878]/30 bg-[#0A0A0A] text-[#00A878] hover:text-[#C9A84C] hover:border-[#C9A84C] hover:scale-105 transition flex items-center justify-center rounded-none shadow-sm"
+                className="w-10 h-10 border border-[#C9A84C]/20 bg-[#0A0A0A] text-[#F5F0E8] hover:text-[#C9A84C] hover:border-[#C9A84C] hover:scale-105 transition flex items-center justify-center rounded-none shadow-sm"
               >
                 <Linkedin size={16} />
               </a>

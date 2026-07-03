@@ -51,7 +51,7 @@ const Card = () => {
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 mb-20 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold font-cinzel text-[#F5F0E8]">
+        <h2 className="text-4xl mt-10 md:text-6xl font-bold font-cinzel text-[#F5F0E8]">
           Our <span className="text-[#C9A84C]">Services</span>
         </h2>
 

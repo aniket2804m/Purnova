@@ -54,7 +54,7 @@ const stats = [
   },
   {
     icon: Award,
-    value: "7+",
+    value: "3+",
     label: "Years Experience",
   },
   {
@@ -196,32 +196,7 @@ export default function About() {
                     />
                   </div>
 
-                  {/* Floating Badge */}
-                  <motion.div
-                    style={{ y: floatY1 }}
-                    className="
-                      absolute
-                      -bottom-6
-                      left-4
-                      sm:-left-6
-                      bg-[#0D0D0D]
-                      border
-                      border-[#C9A84C]/30
-                      px-6
-                      py-4
-                      backdrop-blur-xl
-                      rounded-none
-                      shadow-xl
-                    "
-                  >
-                    <h4 className="text-[#C9A84C] font-semibold font-cinzel tracking-wider">
-                      7+ Years
-                    </h4>
-
-                    <p className="text-[#F5F0E8]/60 text-sm">
-                      Industry Experience
-                    </p>
-                  </motion.div>
+                 
                 </div>
               </div>
             </ScrollReveal>
@@ -281,21 +256,6 @@ export default function About() {
       {/* IMAGE + CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 border-t border-[#C9A84C]/10 font-montserrat">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <ScrollReveal variant="fade-right" delay={0.2}>
-            <motion.div
-              // style={{ rotate: circleRotate, scale: circleScale }}
-            >
-              <div className="rounded-full border border-[#C9A84C]/30 p-2 sm:p-3 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] mx-auto">
-                <img
-                  src={myImage}
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full rounded-full object-contain bg-black"
-                />
-              </div>
-            </motion.div>
-          </ScrollReveal>
-
           <ScrollReveal variant="fade-left" delay={0.2}>
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-cinzel leading-tight text-[#F5F0E8]">
@@ -313,6 +273,23 @@ export default function About() {
               </p>
             </div>
           </ScrollReveal>
+
+          <ScrollReveal variant="fade-right" delay={0.2}>
+            <motion.div
+              // style={{ rotate: circleRotate, scale: circleScale }}
+            >
+              <div className="rounded-full p-2 sm:p-3 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] mx-auto">
+                <img
+                  src={myImage}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full rounded-full object-contain bg-black"
+                />
+              </div>
+            </motion.div>
+          </ScrollReveal>
+
+          
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 md:mt-24">

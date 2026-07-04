@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 // logos
@@ -56,7 +55,9 @@ type Category =
   | "Interior Design"
   | "Spiritual & Wellness"
   | "Import & Export Business"
-  | "Travel & Tourism";
+  | "Travel & Tourism"
+  | "Fitness"
+  | "Beauty";
 
 interface Client {
   id: string;
@@ -70,13 +71,15 @@ interface Client {
   testimonial?: string;
   description?: string; // short paragraph shown inside the modal
   caseStudy?: boolean;
+  caseStudyRoute?: string;
   featured?: boolean;
+  // route: string;
 }
 
 const CLIENTS: Client[] = [
   {
   id: "hotelwada",
-  name: "Hotel Wada",
+  name: "Hotel Wada Pashan",
   handle: "@hotelwada",
   category: "Hotels & Restaurants",
   services: ["Booking Website", "Local SEO"],
@@ -138,6 +141,7 @@ const CLIENTS: Client[] = [
       "Bushare, a Korean fashion label entering the Indian market, needed a storefront that felt as premium as the product. We rebuilt their site from scratch with a fast checkout flow and a matching reel strategy that carried the same visual language across Instagram.",
     caseStudy: true,
     featured: true,
+    caseStudyRoute: "/bushare",
 },
 
 {
@@ -227,7 +231,7 @@ const CLIENTS: Client[] = [
 
 {
   id: "hotelwada Katraj",
-  name: "Hotel Wada",
+  name: "Hotel Wada Katraj",
   handle: "@hotelwada",
   category: "Hotels & Restaurants",
   services: ["Booking Website", "Local SEO"],
@@ -603,7 +607,7 @@ const CLIENTS: Client[] = [
   id: "saffron",
   name: "Saffron",
   handle: "@saffron",
-  category: "Fashion",
+  category: "Beauty",
   logo: img10,
   cover: img10,
   services: ["Web Design", "E-commerce", "Reels"],
@@ -631,7 +635,75 @@ const CLIENTS: Client[] = [
     "Akshay Caterings wanted a modern digital portfolio that highlighted its catering expertise and event experiences. Purnova designed a visually appealing portfolio website with high-quality food and event photography, service showcases, and an easy inquiry system. The result was a stronger brand identity, increased customer confidence, and more inquiries for weddings, corporate events, and special occasions.",
   caseStudy: true,
   featured: true,
-}
+},
+
+{
+  id: "punetrading",
+  name: "Pune Trading",
+  handle: "@punetrading",
+  category: "Education",
+  services: ["Course Platform", "SEO"],
+  result: "+310 Enrollments",
+  logo: img14,
+  cover: img14,
+  testimonial:
+    "Purnova built a professional learning platform that made it easier for students to enroll and access our trading courses.",
+  description:
+    "Pune Trading wanted to create a modern online platform for aspiring traders to learn through structured courses and educational content. Purnova designed and developed a responsive course platform with seamless navigation, optimized the website for search engines, and created a user-friendly learning experience. The result was increased online visibility, stronger student engagement, and over 310 successful course enrollments.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "tyb",
+  name: "TYB",
+  handle: "@tyb",
+  category: "Fitness",
+  services: ["Website", "SEO"],
+  result: "+3.2x Membership Inquiries",
+  logo: img8,
+  cover: img8,
+  testimonial:
+    "Purnova created a powerful online presence that helped us attract more fitness enthusiasts and grow our community.",
+  description:
+    "TYB wanted a modern fitness website that reflected its commitment to health, strength, and transformation. Purnova designed and developed a responsive, high-performance website with a seamless user experience, optimized it for search engines, and created a strong digital presence. The result was increased online visibility, higher membership inquiries, and stronger engagement with potential clients looking for fitness coaching and training programs.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "gentalhair",
+  name: "Gental Hair",
+  handle: "@gentalhair",
+  category: "Beauty",
+  logo: img18,
+  cover: img18,
+  services: ["Website", "E-commerce", "Social Media"],
+  result: "+180% Sales",
+  testimonial:
+    "Purnova helped us build a premium beauty brand with a modern online store and a strong social media presence that increased customer trust and sales.",
+  description:
+    "Gental Hair wanted to establish a premium digital presence for its hair care and beauty products. Purnova designed and developed a fast, mobile-friendly e-commerce website with a seamless shopping experience, while creating engaging social media content that highlighted product benefits and customer transformations. The result was stronger brand recognition, higher customer engagement, and a 180% increase in online sales.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "zistral",
+  name: "Zistral",
+  handle: "@zistral_oral_care",
+  category: "Products",
+  services: ["D2C Website", "Packaging"],
+  result: "+2x Repeat Orders",
+  logo: img31,
+  cover: img31,
+  testimonial:
+    "The new packaging and online store gave our products a premium feel and improved customer loyalty.",
+  description:
+    "Zistral Oral Care partnered with Purnova to refresh its packaging and launch a high-performing D2C website. The cohesive branding and seamless shopping experience increased customer confidence and doubled repeat orders.",
+  caseStudy: true,
+ featured: true,
+},
 
 ];
 
@@ -651,6 +723,8 @@ const CATEGORIES: (Category | "All")[] = [
   "Spiritual & Wellness",
   "Import & Export Business",
   "Travel & Tourism",
+  "Fitness",
+  "Beauty",
 ];
 
 const STATS = [
@@ -679,6 +753,8 @@ const CATEGORY_GLOW: Record<string, string> = {
   "Spiritual & Wellness": "rgba(212,175,55,0.16)",
   "Import & Export Business": "rgba(212,175,55,0.16)",
   "Travel & Tourism": "rgba(212,175,55,0.16)",
+  "Fitness": "rgba(212,175,55,0.16)",
+  "Beauty": "rgba(212,175,55,0.16)"
 };
 
 /* ------------------------------------------------------------------ */
@@ -791,7 +867,7 @@ function ClientCard({
           )}
         </div>
 
-        {/* result badge, top right */}
+        {/* result badge, top right     */}
         {client.result && !hovered && (
           <span className="absolute top-3 right-3 text-[10px] tracking-wide uppercase bg-black/60 border border-[#f2c94c]/30 text-[#f2c94c] rounded-full px-2.5 py-1">
             {client.result}
@@ -924,6 +1000,18 @@ function getClientStats(client: Client): StatCard[] {
   { label: "Journeys Curated", value: "500+" },
   { label: "Traveler Community", value: "6K+" },
   { label: "Repeat Travelers", value: "85%" }
+],
+
+"Fitness": [
+  { label: "Fitness Brands", value: "+45" },
+  { label: "Client Satisfaction", value: "99%" },
+  { label: "Membership Growth", value: "+2.8x" }
+],
+
+"Beauty": [
+  { label: "Beauty Brands", value: "+40" },
+  { label: "Client Satisfaction", value: "99%" },
+  { label: "Appointment Growth", value: "+3.1x" }
 ],
   };
 

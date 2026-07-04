@@ -7,12 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ------------------------------------------------------------------ */
-/*  DATA                                                               */
-/*  Swap logo: null -> render initials avatar. Swap logo: "/path.png"  */
-/*  -> render actual image.                                            */
-/* ------------------------------------------------------------------ */
-
+// logos
 import img1 from "../img/logo/Copy of Upscale logo.png";
 import img2 from "../img/logo/Copy of Logo Pune voice 5.png";
 import img3 from "../img/logo/Vaichal vastu.png";
@@ -36,6 +31,7 @@ import img23 from "../img/logo/delight.png"
 import img24 from "../img/logo/Ashi.png"
 import img25 from "../img/logo/siraa.jpeg"
 import img26 from "../img/logo/LOGO (1).png"
+import img27 from "../img/logo/sanvee.png"
 
 type Category =
   | "Media"
@@ -66,22 +62,57 @@ interface Client {
 }
 
 const CLIENTS: Client[] = [
-  { id: "hotelwada", 
-    name: "Hotel Wada", 
-    handle: "@hotelwada", 
-    category: "Hospitality", 
-    services: ["Booking Site", "Local SEO"] },
-  { id: "drauto", 
-    name: "DR Auto", handle: "@_the_dr_auto_", category: "Automotive", services: ["Reels", "Content Calendar"], result: "+90K Views" },
-  { id: "punevoices", 
-    name: "Pune Voices", 
-    handle: "@punevoices", 
-    category: "Media", 
-    services: ["Podcast Branding", "Reels", "Editing"], 
-    result: "+220% Reach", 
-    testimonial: "Every episode now looks and feels premium.", 
-    caseStudy: true, featured: true },
   {
+  id: "hotelwada",
+  name: "Hotel Wada",
+  handle: "@hotelwada",
+  category: "Hospitality",
+  services: ["Booking Website", "Local SEO"],
+  result: "81.3K Followers",
+  logo: img11,
+  cover: img11,
+  testimonial:
+    "Purnova transformed our online presence. Our bookings increased significantly, and guests now find us much more easily online.",
+  description:
+    "Hotel Wada wanted a modern digital presence that reflected its warm hospitality and authentic experience. Purnova designed a high-performance booking website with a seamless reservation process, optimized it for local SEO, and improved its visibility on Google. The result was a faster booking experience, stronger local reach, and a noticeable increase in direct customer inquiries and reservations.",
+  caseStudy: true,
+  featured: true,
+},
+{
+  id: "drauto",
+  name: "DR Auto",
+  handle: "@_the_dr_auto_",
+  category: "Automotive",
+  services: ["Reels", "Content Calendar"],
+  result: "+4.4M Views",
+  logo: img20,
+  cover: img20,
+  testimonial:
+    "Purnova helped us create engaging automotive content that boosted our online visibility and brought more customers to our workshop.",
+  description:
+    "DR Auto wanted to grow its presence on social media and showcase its expertise in the automotive industry. Purnova developed a strategic content calendar and produced high-quality, engaging reels that highlighted services, customer transformations, and expert tips. The consistent content strategy increased brand awareness, generated over 4.4M views, and helped attract more inquiries from potential customers.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "punevoices",
+  name: "Pune Voices",
+  handle: "@punevoices",
+  category: "Media",
+  services: ["Podcast Branding", "Reels", "Editing"],
+  result: "+220% Reach",
+  logo: img2,
+  cover: img2,
+  testimonial:
+    "Every episode now looks and feels premium. Purnova gave our podcast a professional identity that truly stands out.",
+  description:
+    "Pune Voices wanted to build a strong and recognizable podcast brand across digital platforms. Purnova crafted a complete visual identity, designed engaging episode creatives, produced high-quality short-form reels, and delivered professional video editing for every release. This consistent branding and content strategy increased audience engagement, expanded reach by over 220%, and helped establish Pune Voices as a premium podcast brand.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
     id: "bushare",
     name: "Bushare",
     handle: "@buybushare",
@@ -90,49 +121,300 @@ const CLIENTS: Client[] = [
     cover: "/covers/bushare-cover.jpg",
     services: ["Web Design", "E-commerce", "Reels"],
     result: "+180% Sales",
-    testimonial: "Purnova rebuilt our store and sales doubled in 8 weeks.",
+    testimonial: "Purnova rebuilt and sales doubled in 8 weeks.",
     description:
       "Bushare, a Korean fashion label entering the Indian market, needed a storefront that felt as premium as the product. We rebuilt their site from scratch with a fast checkout flow and a matching reel strategy that carried the same visual language across Instagram.",
     caseStudy: true,
     featured: true,
-  },
-   { id: "importexport",
-     name: "Import Export", 
-     handle: "@import.export.federation", 
-     category: "Technology", 
-     services: ["Full Website"] },
+},
 
-    { id: "savaniee", name: "Savaniee", handle: "@savanieeravindrra", category: "Personal Brands", services: ["Personal Branding", "Reels"], result: "+3.1x Engagement" },
+{
+  id: "importexport",
+  name: "Import Export",
+  handle: "@import.export.federation",
+  category: "Technology",
+  services: ["Full Website"],
+  result: "Modern Business Presence",
+  logo: img9,
+  cover: img9,
+  testimonial:
+    "Purnova delivered a professional website that perfectly represents our organization and makes it easier for businesses to connect with us.",
+  description:
+    "The Import Export Federation needed a modern, responsive website to showcase its services, industry initiatives, and business network. Purnova designed and developed a fast, user-friendly website with a clean interface, intuitive navigation, and mobile-first performance. The new platform strengthened the federation's digital presence, improved credibility, and provided businesses with an easier way to explore services and connect with the organization.",
+  caseStudy: true,
+  featured: true,
+},
+
   {
-    id: "upscale",
-    name: "Upscale",
-    handle: "@salmanshaikh_upscale",
-    category: "Personal Brands",
-    logo: img1,
-    cover: null,
-    services: ["Branding", "Social Media"],
-    result: "+2.4x Followers",
-    testimonial: "They understood the brand voice instantly.",
-    description:
-      "A personal styling brand looking to grow a consistent, recognisable presence. We built out a content system and visual identity that made every post feel like part of one story.",
-  },
-  { id: "shrisamarth", name: "Shri Samarth", handle: "@shrisamarthakrupa", category: "Real Estate", services: ["Brochure Site"] },
+  id: "savaniee",
+  name: "Savaniee",
+  handle: "@savanieeravindrra",
+  category: "Personal Brands",
+  services: ["Personal Branding", "Reels"],
+  result: "+3.1x Engagement",
+  logo: img27,
+  cover: img27,
+  testimonial:
+    "Purnova helped me build a personal brand that feels authentic, professional, and engaging. My audience interaction has grown significantly.",
+  description:
+    "Savaniee wanted to establish a memorable personal brand and create content that genuinely connected with her audience. Purnova developed a cohesive branding strategy, produced engaging short-form reels, and maintained a consistent visual identity across social platforms. The result was stronger audience engagement, improved brand recognition, and a 3.1x increase in overall engagement.",
+  caseStudy: true,
+  featured: true,
+},
+
+ {
+  id: "sonaleek",
+  name: "Sonalee K",
+  handle: "@sonalee16988",
+  category: "Personal Brands",
+  services: ["Personal Branding"],
+  result: "Stronger Personal Presence",
+  logo: img16,
+  cover: img16,
+  testimonial:
+    "Purnova helped me create a professional personal brand that truly reflects who I am and connects with my audience.",
+  description:
+    "Sonalee K wanted to build a strong and authentic personal brand that would stand out across digital platforms. Purnova crafted a unique brand identity, refined the visual style, and developed a consistent content strategy to showcase her personality and expertise. The result was a polished online presence, increased audience trust, and a brand that leaves a lasting impression.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "upscale",
+  name: "Upscale",
+  handle: "@salmanshaikh_upscale",
+  category: "Personal Brands",
+  logo: img1,
+  cover: img1,
+  services: ["Branding", "Social Media"],
+  result: "+2.4x Followers",
+  testimonial:
+    "Purnova understood our brand vision from day one. Every piece of content now feels premium, consistent, and true to our identity.",
+  description:
+    "Upscale, a personal styling and fashion brand, wanted to establish a distinctive and memorable presence on social media. Purnova developed a cohesive brand identity, defined a consistent visual language, and implemented a strategic content system that reflected the brand's personality across every platform. The result was a stronger online presence, a 2.4x increase in followers, and a recognizable brand that continues to engage and grow its audience.",
+  caseStudy: true,
+  featured: true,
+},
+
+  {
+  id: "shrisamarth",
+  name: "Shri Samarth",
+  handle: "@shrisamarthakrupa",
+  category: "Food & Beverage",
+  services: ["Brochure Website"],
+  result: "Professional Online Presence",
+  logo: img10,
+  cover: img10,
+  testimonial:
+    "Purnova created a modern website that showcases our projects beautifully and makes it easier for customers to connect with us.",
+  description:
+    "Shri Samarth wanted a professional brochure website to present its real estate projects with clarity and credibility. Purnova designed a responsive, visually appealing website featuring project highlights, amenities, location details, and easy inquiry options. The result was a strong digital presence that builds trust, enhances the customer experience, and helps generate quality leads for the business.",
+  caseStudy: true,
+  featured: true,
+},
   
-  { id: "cosmicganges", name: "Cosmic Ganges", handle: "@cosmicganges", category: "Technology", services: ["Full Website", "SEO"], result: "+3x Organic Traffic" },
-  { id: "eatrightup", name: "Eat Right Up", handle: "@eatrightup", category: "Food & Beverage", services: ["Menu Design", "Reels"], result: "+65% Orders" },
-  { id: "delightevents", name: "Delight Events", handle: "@delight_event_decor", category: "Events", services: ["Portfolio Site", "Photography"] },
-  { id: "sadgeemasale", name: "Sadgee Masale", handle: "@sadgee_masale", category: "Food & Beverage", services: ["Packaging", "D2C Site"], result: "+120% Repeat Buyers" },
-  { id: "vaichalgroup", name: "Vaichal Group", handle: "@vaichalgroup", category: "Real Estate", services: ["Landing Page", "Lead Funnel"], result: "+40 Qualified Leads/mo" },
-  { id: "importexport", name: "Import Export", handle: "@import.export.federation", category: "Technology", services: ["Full Website"] },
-  { id: "varadvinayak", name: "Varad Vinayak", handle: "@varadvinayak", category: "Real Estate", services: ["Landing Page"] },
-  { id: "siraa", name: "Siraa", handle: "@houseofsiraa", category: "Fashion", services: ["Lookbook Site", "Reels"] },
-  { id: "urbaned", name: "Urban Ed", handle: "@urban_education_official", category: "Education", services: ["Course Platform", "SEO"], result: "+310 Enrollments" },
-  { id: "aashiskool", name: "Aashi Skool", handle: "@aashiforestskool", category: "Education", services: ["Website", "Admissions Funnel"] },
-  { id: "glamowell", name: "Glamowell", handle: "@glamowellofficial", category: "Personal Brands", services: ["Social Media", "Reels"] },
-  { id: "sonaleek", name: "Sonalee K", handle: "@sonalee16988", category: "Personal Brands", services: ["Personal Branding"] },
-  { id: "smilesworld", name: "SmilesWorld", handle: "@smilesworld10", category: "Healthcare", services: ["Clinic Website", "Local SEO"], result: "+55% Bookings" },
-  { id: "akshaycatering", name: "Akshay Catering", handle: "@caterersakshay", category: "Food & Beverage", services: ["Menu Site", "Reels"] },
-  { id: "zistral", name: "Zistral", handle: "@zistral_oral_care", category: "Healthcare", services: ["D2C Site", "Packaging"], result: "+2x Repeat Orders" },
+  {
+  id: "cosmicganges",
+  name: "Cosmic Ganges",
+  handle: "@cosmicganges",
+  category: "Technology",
+  services: ["Full Website", "SEO"],
+  result: "+3x Organic Traffic",
+  logo: img18,
+  cover: img18,
+  testimonial:
+    "Purnova built a fast, modern website and an SEO strategy that significantly improved our online visibility and organic growth.",
+  description:
+    "Cosmic Ganges needed a high-performance website that reflected its technology-driven vision while attracting more organic traffic. Purnova designed and developed a responsive, SEO-optimized website with clean architecture, fast loading speeds, and a seamless user experience. Alongside technical and on-page SEO, we improved search visibility, resulting in a 3x increase in organic traffic and a stronger digital presence.",
+  caseStudy: true,
+  featured: true,
+},
+ {
+  id: "eatrightup",
+  name: "Eat Right Up",
+  handle: "@eatrightup",
+  category: "Food & Beverage",
+  services: ["Menu Design", "Reels"],
+  result: "+65% Orders",
+  logo: img19,
+  cover: img19,
+  testimonial:
+    "Purnova transformed our brand with creative menus and engaging content that brought in more customers.",
+  description:
+    "Eat Right Up wanted to increase online orders and build a stronger food brand. Purnova designed premium menu creatives, produced engaging reels, and created a consistent social media strategy that highlighted the brand's offerings. The campaign resulted in a 65% increase in orders and improved customer engagement.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "delightevents",
+  name: "Delight Events",
+  handle: "@delight_event_decor",
+  category: "Events",
+  services: ["Portfolio Website", "Photography"],
+  result: "Premium Brand Presence",
+  logo: img20,
+  cover: img20,
+  testimonial:
+    "Our website now perfectly showcases our work and helps clients trust our brand before they even contact us.",
+  description:
+    "Delight Events needed a modern portfolio website to showcase event decorations and photography. Purnova designed a visually rich website with stunning galleries and smooth navigation, helping the brand present its work professionally and attract more event inquiries.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "sadgeemasale",
+  name: "Sadgee Masale",
+  handle: "@sadgee_masale",
+  category: "Food & Beverage",
+  services: ["Packaging", "D2C Website"],
+  result: "+120% Repeat Buyers",
+  logo: img21,
+  cover: img21,
+  testimonial:
+    "The new packaging and website completely elevated our brand and customer experience.",
+  description:
+    "Sadgee Masale wanted to modernize its spice brand for direct-to-consumer sales. Purnova designed attractive packaging and developed a fast, user-friendly D2C website that strengthened customer trust and increased repeat purchases by 120%.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "vaichalgroup",
+  name: "Vaichal Group",
+  handle: "@vaichalgroup",
+  category: "Real Estate",
+  services: ["Landing Page", "Lead Funnel"],
+  result: "+40 Qualified Leads/mo",
+  logo: img22,
+  cover: img22,
+  testimonial:
+    "Purnova built a lead generation system that consistently brings us high-quality inquiries every month.",
+  description:
+    "Vaichal Group required a high-converting landing page to generate real estate leads. Purnova designed an optimized landing page with persuasive content and an effective lead funnel, resulting in more than 40 qualified leads every month.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "varadvinayak",
+  name: "Varad Vinayak",
+  handle: "@varadvinayak",
+  category: "Real Estate",
+  services: ["Landing Page"],
+  result: "Higher Lead Conversion",
+  logo: img23,
+  cover: img23,
+  testimonial:
+    "The landing page looks professional and has significantly improved our customer inquiries.",
+  description:
+    "Varad Vinayak wanted a focused landing page to promote its real estate projects. Purnova designed a modern, conversion-focused page with clear project information and inquiry forms, helping the brand generate more qualified leads.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "siraa",
+  name: "Siraa",
+  handle: "@houseofsiraa",
+  category: "Fashion",
+  services: ["Lookbook Website", "Reels"],
+  result: "+2.8x Brand Engagement",
+  logo: img24,
+  cover: img24,
+  testimonial:
+    "Purnova helped us create a premium fashion experience both on our website and social media.",
+  description:
+    "House of Siraa wanted a stylish digital identity that reflected its fashion collections. Purnova created a modern lookbook website and engaging reels that showcased the brand's aesthetic, resulting in stronger engagement and better customer interaction.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "urbaned",
+  name: "Urban Ed",
+  handle: "@urban_education_official",
+  category: "Education",
+  services: ["Course Platform", "SEO"],
+  result: "+310 Enrollments",
+  logo: img25,
+  cover: img25,
+  testimonial:
+    "Our online learning platform is now faster, easier to use, and brings in more students every month.",
+  description:
+    "Urban Ed partnered with Purnova to build a scalable course platform and improve search visibility. Through a user-friendly learning experience and SEO optimization, the platform achieved over 310 student enrollments and stronger organic growth.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "aashiskool",
+  name: "Aashi Skool",
+  handle: "@aashiforestskool",
+  category: "Education",
+  services: ["Website", "Admissions Funnel"],
+  result: "Higher Admission Inquiries",
+  logo: img26,
+  cover: img26,
+  testimonial:
+    "The admissions process became much smoother after launching our new website.",
+  description:
+    "Aashi Skool wanted a modern website that simplified admissions and showcased its educational philosophy. Purnova developed a responsive website with a streamlined admissions funnel, making it easier for parents to explore programs and submit inquiries.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "glamowell",
+  name: "Glamowell",
+  handle: "@glamowellofficial",
+  category: "Personal Brands",
+  services: ["Social Media", "Reels"],
+  result: "+2.5x Engagement",
+  logo: img27,
+  cover: img27,
+  testimonial:
+    "Our content now feels premium, consistent, and connects much better with our audience.",
+  description:
+    "Glamowell wanted to strengthen its digital presence through creative social media content. Purnova developed a content strategy and produced engaging reels that increased audience interaction, improved brand recognition, and delivered consistent growth.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "smilesworld",
+  name: "SmilesWorld",
+  handle: "@smilesworld10",
+  category: "Healthcare",
+  services: ["Clinic Website", "Local SEO"],
+  result: "+55% Bookings",
+  logo: img2,
+  cover: img2,
+  testimonial:
+    "Patients can now find us more easily online, and our appointment bookings have grown significantly.",
+  description:
+    "SmilesWorld needed a professional clinic website and stronger local visibility. Purnova developed a responsive website and implemented a comprehensive local SEO strategy, resulting in a 55% increase in appointment bookings and improved online trust.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "zistral",
+  name: "Zistral",
+  handle: "@zistral_oral_care",
+  category: "Healthcare",
+  services: ["D2C Website", "Packaging"],
+  result: "+2x Repeat Orders",
+  logo: img9,
+  cover: img9,
+  testimonial:
+    "The new packaging and online store gave our products a premium feel and improved customer loyalty.",
+  description:
+    "Zistral Oral Care partnered with Purnova to refresh its packaging and launch a high-performing D2C website. The cohesive branding and seamless shopping experience increased customer confidence and doubled repeat orders.",
+  caseStudy: true,
+ featured: true,
+},
 ];
 
 const CATEGORIES: (Category | "All")[] = [

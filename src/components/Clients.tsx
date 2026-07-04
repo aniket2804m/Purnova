@@ -32,12 +32,20 @@ import img24 from "../img/logo/Ashi.png"
 import img25 from "../img/logo/siraa.jpeg"
 import img26 from "../img/logo/LOGO (1).png"
 import img27 from "../img/logo/sanvee.png"
+import img28 from "../img/logo/Sonalee Kulkarni.png"
+import img29 from "../img/logo/Vard Vinayak.png"
+import img30 from "../img/logo/urban logo-01.png"
+import img31 from "../img/logo/zistral.png"
+import img32 from "../img/logo/ssk.png"
+import img33 from "../img/logo/logo.png"
+import img34 from "../img/logo/travchal.png"
+import img35 from "../img/logo/ketring.png"
+import img36 from "../img/logo/abhijeet.png"
 
 type Category =
   | "Media"
-  | "Health & Products"
+  | "Products"
   | "Education"
-  | "Technology"
   | "Healthcare"
   | "Personal Branding"
   | "Hotels & Restaurants"
@@ -168,17 +176,17 @@ const CLIENTS: Client[] = [
 
  {
   id: "sonaleek",
-  name: "Sonalee K",
+  name: "Sonalee Kulkarni",
   handle: "@sonalee16988",
   category: "Personal Branding",
   services: ["Personal Branding"],
   result: "Stronger Personal Presence",
-  logo: img16,
-  cover: img16,
+  logo: img28,
+  cover: img28,
   testimonial:
     "Purnova helped me create a professional personal brand that truly reflects who I am and connects with my audience.",
   description:
-    "Sonalee K wanted to build a strong and authentic personal brand that would stand out across digital platforms. Purnova crafted a unique brand identity, refined the visual style, and developed a consistent content strategy to showcase her personality and expertise. The result was a polished online presence, increased audience trust, and a brand that leaves a lasting impression.",
+    "Sonalee Kulkarni wanted to build a strong and authentic personal brand that would stand out across digital platforms. Purnova crafted a unique brand identity, refined the visual style, and developed a consistent content strategy to showcase her personality and expertise. The result was a polished online presence, increased audience trust, and a brand that leaves a lasting impression.",
   caseStudy: true,
   featured: true,
 },
@@ -204,11 +212,11 @@ const CLIENTS: Client[] = [
   id: "shrisamarth",
   name: "Shri Samarth",
   handle: "@shrisamarthakrupa",
-  category: "Health & Products",
+  category: "Products",
   services: ["Brochure Website"],
   result: "Professional Online Presence",
-  logo: img10,
-  cover: img10,
+  logo: img32,
+  cover: img32,
   testimonial:
     "Purnova created a modern website that showcases our projects beautifully and makes it easier for customers to connect with us.",
   description:
@@ -238,11 +246,11 @@ const CLIENTS: Client[] = [
   id: "eatrightup",
   name: "Eat Right Up",
   handle: "@eatrightup",
-  category: "Health & Products",
+  category: "Products",
   services: ["Menu Design", "Reels"],
   result: "+65% Orders",
-  logo: img19,
-  cover: img19,
+  logo: img22,
+  cover: img22,
   testimonial:
     "Purnova transformed our brand with creative menus and engaging content that brought in more customers.",
   description:
@@ -258,8 +266,8 @@ const CLIENTS: Client[] = [
   category: "Events",
   services: ["Portfolio Website", "Photography"],
   result: "Premium Brand Presence",
-  logo: img20,
-  cover: img20,
+  logo: img23,
+  cover: img23,
   testimonial:
     "Our website now perfectly showcases our work and helps clients trust our brand before they even contact us.",
   description:
@@ -272,11 +280,11 @@ const CLIENTS: Client[] = [
   id: "sadgeemasale",
   name: "Sadgee Masale",
   handle: "@sadgee_masale",
-  category: "Health & Products",
+  category: "Products",
   services: ["Packaging", "D2C Website"],
   result: "+120% Repeat Buyers",
-  logo: img21,
-  cover: img21,
+  logo: img26,
+  cover: img26,
   testimonial:
     "The new packaging and website completely elevated our brand and customer experience.",
   description:
@@ -292,8 +300,8 @@ const CLIENTS: Client[] = [
   category: "Real Estate",
   services: ["Landing Page", "Lead Funnel"],
   result: "+40 Qualified Leads/mo",
-  logo: img22,
-  cover: img22,
+  logo: img3,
+  cover: img3,
   testimonial:
     "Purnova built a lead generation system that consistently brings us high-quality inquiries every month.",
   description:
@@ -309,8 +317,8 @@ const CLIENTS: Client[] = [
   category: "Real Estate",
   services: ["Landing Page"],
   result: "Higher Lead Conversion",
-  logo: img23,
-  cover: img23,
+  logo: img29,
+  cover: img29,
   testimonial:
     "The landing page looks professional and has significantly improved our customer inquiries.",
   description:
@@ -326,8 +334,8 @@ const CLIENTS: Client[] = [
   category: "Fashion",
   services: ["Lookbook Website", "Reels"],
   result: "+2.8x Brand Engagement",
-  logo: img24,
-  cover: img24,
+  logo: img25,
+  cover: img25,
   testimonial:
     "Purnova helped us create a premium fashion experience both on our website and social media.",
   description:
@@ -343,8 +351,8 @@ const CLIENTS: Client[] = [
   category: "Education",
   services: ["Course Platform", "SEO"],
   result: "+310 Enrollments",
-  logo: img25,
-  cover: img25,
+  logo: img30,
+  cover: img30,
   testimonial:
     "Our online learning platform is now faster, easier to use, and brings in more students every month.",
   description:
@@ -360,8 +368,8 @@ const CLIENTS: Client[] = [
   category: "Education",
   services: ["Website", "Admissions Funnel"],
   result: "Higher Admission Inquiries",
-  logo: img26,
-  cover: img26,
+  logo: img24,
+  cover: img24,
   testimonial:
     "The admissions process became much smoother after launching our new website.",
   description:
@@ -377,8 +385,8 @@ const CLIENTS: Client[] = [
   category: "Spiritual & Wellness",
   services: ["Social Media", "Reels"],
   result: "+2.5x Engagement",
-  logo: img27,
-  cover: img27,
+  logo: img12,
+  cover: img12,
   testimonial:
     "Our content now feels premium, consistent, and connects much better with our audience.",
   description:
@@ -394,8 +402,8 @@ const CLIENTS: Client[] = [
   category: "Spiritual & Wellness",
   services: ["Social Media", "Reels"],
   result: "+2.5x Engagement",
-  logo: img27,
-  cover: img27,
+  logo: img16,
+  cover: img16,
   testimonial:
     "Purnova helped us create a meaningful digital presence that connects deeply with our community and strengthens our online identity.",
   description:
@@ -411,8 +419,8 @@ const CLIENTS: Client[] = [
   category: "Interior Design",
   services: ["Clinic Website", "Local SEO"],
   result: "+55% Bookings",
-  logo: img2,
-  cover: img2,
+  logo: img7,
+  cover: img7,
   testimonial:
     "Patients can now find us more easily online, and our appointment bookings have grown significantly.",
   description:
@@ -428,8 +436,8 @@ const CLIENTS: Client[] = [
   category: "Healthcare",
   services: ["D2C Website", "Packaging"],
   result: "+2x Repeat Orders",
-  logo: img9,
-  cover: img9,
+  logo: img31,
+  cover: img31,
   testimonial:
     "The new packaging and online store gave our products a premium feel and improved customer loyalty.",
   description:
@@ -445,8 +453,8 @@ const CLIENTS: Client[] = [
   category: "Hotels & Restaurants",
   services: ["Restaurant Website", "Local SEO"],
   result: "+72% Online Inquiries",
-  logo: img11,
-  cover: img11,
+  logo: img13,
+  cover: img13,
   testimonial:
     "Purnova helped us create a strong online presence that attracts more diners and makes it easier for customers to discover our restaurant.",
   description:
@@ -462,8 +470,8 @@ const CLIENTS: Client[] = [
   category: "Spiritual & Wellness",
   services: ["Social Media", "Reels"],
   result: "+2.5x Engagement",
-  logo: img27,
-  cover: img27,
+  logo: img21,
+  cover: img21,
   testimonial:
     "Purnova helped us build a calm, consistent, and meaningful digital presence that truly resonates with our audience.",
   description:
@@ -477,8 +485,8 @@ const CLIENTS: Client[] = [
   name: "Abhijit Shinde Export Mentor",
   handle: "@abhijitshinde.export",
   category: "Personal Branding",
-  logo: img1,
-  cover: img1,
+  logo: img36,
+  cover: img36,
   services: ["Personal Branding", "Social Media"],
   result: "+2.4x Followers",
   testimonial:
@@ -524,18 +532,18 @@ const CLIENTS: Client[] = [
 },
 
 {
-  id: "transcendenta",
-  name: "Transcendenta",
-  handle: "@transcendenta",
+  id: "transcendental",
+  name: "Transcendental",
+  handle: "@transcendental",
   category: "Education",
   services: ["Website", "Admissions Funnel"],
   result: "Higher Admission Inquiries",
-  logo: img26,
-  cover: img26,
+  logo: img33,
+  cover: img33,
   testimonial:
     "Purnova delivered a modern website that streamlined our admissions journey and created a professional first impression for prospective students.",
   description:
-    "Transcendenta wanted a powerful digital platform to showcase its educational programs and simplify the student admission process. Purnova designed and developed a responsive, user-friendly website with a seamless admissions funnel, making it easier for prospective students to explore courses, submit inquiries, and begin their enrollment journey. The result was a stronger online presence, improved user experience, and a noticeable increase in admission inquiries.",
+    "Transcendental wanted a powerful digital platform to showcase its educational programs and simplify the student admission process. Purnova designed and developed a responsive, user-friendly website with a seamless admissions funnel, making it easier for prospective students to explore courses, submit inquiries, and begin their enrollment journey. The result was a stronger online presence, improved user experience, and a noticeable increase in admission inquiries.",
   caseStudy: true,
   featured: true,
 },
@@ -564,8 +572,8 @@ const CLIENTS: Client[] = [
   category: "Travel & Tourism",
   services: ["Website", "Brand Identity", "Social Media"],
   result: "Stronger Brand Presence & More Travel Inquiries",
-  logo: img2,
-  cover: img2,
+  logo: img6,
+  cover: img6,
   testimonial:
     "Purnova helped us create a modern digital presence that reflects our passion for travel and connects us with more adventure seekers.",
   description:
@@ -581,8 +589,8 @@ const CLIENTS: Client[] = [
   category: "Travel & Tourism",
   services: ["Website", "Brand Identity", "Social Media"],
   result: "Stronger Brand Presence & More Travel Inquiries",
-  logo: img2,
-  cover: img2,
+  logo: img34,
+  cover: img34,
   testimonial:
     "Purnova helped us establish a vibrant digital identity that inspires travelers and generates quality travel inquiries.",
   description:
@@ -596,8 +604,8 @@ const CLIENTS: Client[] = [
   name: "Saffron",
   handle: "@saffron",
   category: "Fashion",
-  logo: img19,
-  cover: img19,
+  logo: img10,
+  cover: img10,
   services: ["Web Design", "E-commerce", "Reels"],
   result: "+180% Sales",
   testimonial:
@@ -615,8 +623,8 @@ const CLIENTS: Client[] = [
   category: "Events",
   services: ["Portfolio Website", "Photography"],
   result: "Premium Brand Presence",
-  logo: img20,
-  cover: img20,
+  logo: img35,
+  cover: img35,
   testimonial:
     "Purnova helped us showcase our catering services with a professional online presence that builds trust and attracts more event inquiries.",
   description:
@@ -630,9 +638,8 @@ const CLIENTS: Client[] = [
 const CATEGORIES: (Category | "All")[] = [
   "All",
   "Media",
-  "Health & Products",
+  "Products",
   "Education",
-  "Technology",
   "Healthcare",
   "Personal Branding",
   "Hotels & Restaurants",
@@ -662,7 +669,6 @@ const CATEGORY_GLOW: Record<string, string> = {
   "Food & Beverage": "rgba(212,175,55,0.14)",
   Education: "rgba(212,175,55,0.16)",
   Technology: "rgba(212,175,55,0.20)",
-  Healthcare: "rgba(212,175,55,0.16)",
   "Personal Brands": "rgba(212,175,55,0.14)",
   "Hotels & Restaurants": "rgba(212,175,55,0.14)",
   Events: "rgba(212,175,55,0.14)",
@@ -748,20 +754,38 @@ function ClientCard({
       }}
     >
       {/* top media area */}
-      <div className={`relative w-full ${client.featured ? "h-56" : "h-36"} bg-[#181818] flex items-center justify-center overflow-hidden`}>
+      <div className={`relative w-full ${client.featured ? "h-64" : "h-44"} bg-[#181818] flex items-center justify-center overflow-hidden`}>
         
+        {/* Cover image background context */}
+        {client.cover ? (
+          <img
+            src={client.cover}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-20 transition-all duration-500 group-hover:scale-105 group-hover:opacity-30"
+          />
+        ) : client.logo ? (
+          <img
+            src={client.logo}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-15 filter blur-[2px] transition-all duration-500 group-hover:scale-105"
+          />
+        ) : null}
+
+        {/* Dark overlay to ensure logo visibility */}
+        <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
+
         {/* The logo/avatar container that moves on hover */}
-        <div className={`transition-all duration-300 flex items-center justify-center ${hovered ? "scale-75 -translate-y-6 opacity-40 blur-[0.5px]" : "scale-100 translate-y-0"}`}>
+        <div className={`relative z-10 w-full h-full flex items-center justify-center p-6 transition-all duration-300 ${hovered ? "scale-75 -translate-y-4 opacity-50" : "scale-100 translate-y-0"}`}>
           {client.logo && !imgError ? (
             <motion.img
               layoutId={`logo-${client.id}`}
               src={client.logo}
               alt={`${client.name} logo`}
               onError={() => setImgError(true)}
-              className="max-h-16 max-w-[80%] object-contain opacity-90"
+              className={`${client.featured ? "max-h-28" : "max-h-20"} max-w-full object-contain opacity-95 filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
             />
           ) : (
-            <div className="w-12 h-12 rounded-full border border-[#f2c94c]/40 flex items-center justify-center text-[#f2c94c] font-serif text-lg">
+            <div className={`${client.featured ? "w-20 h-20 text-3xl" : "w-16 h-16 text-2xl"} rounded-full border border-[#f2c94c]/40 flex items-center justify-center text-[#f2c94c] font-serif`}>
               {initials}
             </div>
           )}
@@ -832,7 +856,7 @@ function getClientStats(client: Client): StatCard[] {
       { label: "Video Views", value: "+1.2M" },
       { label: "Engagement", value: "+4.5%" }
     ],
-    "Health & Products": [
+    "Products": [
       { label: "Sales Growth", value: "+180%" },
       { label: "D2C Orders", value: "+65%" },
       { label: "Repeat Buyers", value: "+120%" }
@@ -842,11 +866,7 @@ function getClientStats(client: Client): StatCard[] {
       { label: "Course Reach", value: "+150%" },
       { label: "Completion Rate", value: "92%" }
     ],
-    "Technology": [
-      { label: "Organic Traffic", value: "+3x" },
-      { label: "Leads Generated", value: "+150%" },
-      { label: "Load Speed", value: "-60%" }
-    ],
+    
     "Healthcare": [
       { label: "Bookings", value: "+55%" },
       { label: "Patient Reach", value: "+2.4x" },

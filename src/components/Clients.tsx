@@ -130,7 +130,7 @@ const CLIENTS: Client[] = [
     handle: "@buybushare",
     category: "Fashion",
     logo: img19,
-    cover: "/covers/bushare-cover.jpg",
+    cover: img19,
     services: ["Web Design", "E-commerce", "Reels"],
     result: "+180% Sales",
     testimonial: "Purnova rebuilt and sales doubled in 8 weeks.",

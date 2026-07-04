@@ -434,7 +434,7 @@ const CLIENTS: Client[] = [
 },
 
 {
-  id: "zistral",
+  id: "zistral1",
   name: "Zistral",
   handle: "@zistral_oral_care",
   category: "Healthcare",

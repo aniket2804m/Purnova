@@ -35,16 +35,20 @@ import img27 from "../img/logo/sanvee.png"
 
 type Category =
   | "Media"
-  | "Food & Beverage"
+  | "Health & Products"
   | "Education"
   | "Technology"
   | "Healthcare"
-  | "Personal Brands"
-  | "Hospitality"
+  | "Personal Branding"
+  | "Hotels & Restaurants"
   | "Events"
   | "Fashion"
   | "Automotive"
-  | "Real Estate";
+  | "Real Estate"
+  | "Interior Design"
+  | "Spiritual & Wellness"
+  | "Import & Export Business"
+  | "Travel & Tourism";
 
 interface Client {
   id: string;
@@ -66,7 +70,7 @@ const CLIENTS: Client[] = [
   id: "hotelwada",
   name: "Hotel Wada",
   handle: "@hotelwada",
-  category: "Hospitality",
+  category: "Hotels & Restaurants",
   services: ["Booking Website", "Local SEO"],
   result: "81.3K Followers",
   logo: img11,
@@ -132,7 +136,7 @@ const CLIENTS: Client[] = [
   id: "importexport",
   name: "Import Export",
   handle: "@import.export.federation",
-  category: "Technology",
+  category: "Import & Export Business",
   services: ["Full Website"],
   result: "Modern Business Presence",
   logo: img9,
@@ -149,7 +153,7 @@ const CLIENTS: Client[] = [
   id: "savaniee",
   name: "Savaniee",
   handle: "@savanieeravindrra",
-  category: "Personal Brands",
+  category: "Personal Branding",
   services: ["Personal Branding", "Reels"],
   result: "+3.1x Engagement",
   logo: img27,
@@ -166,7 +170,7 @@ const CLIENTS: Client[] = [
   id: "sonaleek",
   name: "Sonalee K",
   handle: "@sonalee16988",
-  category: "Personal Brands",
+  category: "Personal Branding",
   services: ["Personal Branding"],
   result: "Stronger Personal Presence",
   logo: img16,
@@ -180,10 +184,10 @@ const CLIENTS: Client[] = [
 },
 
 {
-  id: "upscale",
-  name: "Upscale",
+  id: "SalmanShaikhUpscale",
+  name: "Salman Shaikh Upscale",
   handle: "@salmanshaikh_upscale",
-  category: "Personal Brands",
+  category: "Personal Branding",
   logo: img1,
   cover: img1,
   services: ["Branding", "Social Media"],
@@ -200,7 +204,7 @@ const CLIENTS: Client[] = [
   id: "shrisamarth",
   name: "Shri Samarth",
   handle: "@shrisamarthakrupa",
-  category: "Food & Beverage",
+  category: "Health & Products",
   services: ["Brochure Website"],
   result: "Professional Online Presence",
   logo: img10,
@@ -212,28 +216,29 @@ const CLIENTS: Client[] = [
   caseStudy: true,
   featured: true,
 },
-  
-  {
-  id: "cosmicganges",
-  name: "Cosmic Ganges",
-  handle: "@cosmicganges",
-  category: "Technology",
-  services: ["Full Website", "SEO"],
-  result: "+3x Organic Traffic",
-  logo: img18,
-  cover: img18,
+
+{
+  id: "hotelwada Katraj",
+  name: "Hotel Wada",
+  handle: "@hotelwada",
+  category: "Hotels & Restaurants",
+  services: ["Booking Website", "Local SEO"],
+  result: "81.3K Followers",
+  logo: img11,
+  cover: img11,
   testimonial:
-    "Purnova built a fast, modern website and an SEO strategy that significantly improved our online visibility and organic growth.",
+    "Purnova transformed our online presence. Our bookings increased significantly, and guests now find us much more easily online.",
   description:
-    "Cosmic Ganges needed a high-performance website that reflected its technology-driven vision while attracting more organic traffic. Purnova designed and developed a responsive, SEO-optimized website with clean architecture, fast loading speeds, and a seamless user experience. Alongside technical and on-page SEO, we improved search visibility, resulting in a 3x increase in organic traffic and a stronger digital presence.",
+    "Hotel Wada wanted a modern digital presence that reflected its warm hospitality and authentic experience. Purnova designed a high-performance booking website with a seamless reservation process, optimized it for local SEO, and improved its visibility on Google. The result was a faster booking experience, stronger local reach, and a noticeable increase in direct customer inquiries and reservations.",
   caseStudy: true,
   featured: true,
 },
+
  {
   id: "eatrightup",
   name: "Eat Right Up",
   handle: "@eatrightup",
-  category: "Food & Beverage",
+  category: "Health & Products",
   services: ["Menu Design", "Reels"],
   result: "+65% Orders",
   logo: img19,
@@ -267,7 +272,7 @@ const CLIENTS: Client[] = [
   id: "sadgeemasale",
   name: "Sadgee Masale",
   handle: "@sadgee_masale",
-  category: "Food & Beverage",
+  category: "Health & Products",
   services: ["Packaging", "D2C Website"],
   result: "+120% Repeat Buyers",
   logo: img21,
@@ -369,7 +374,7 @@ const CLIENTS: Client[] = [
   id: "glamowell",
   name: "Glamowell",
   handle: "@glamowellofficial",
-  category: "Personal Brands",
+  category: "Spiritual & Wellness",
   services: ["Social Media", "Reels"],
   result: "+2.5x Engagement",
   logo: img27,
@@ -383,10 +388,27 @@ const CLIENTS: Client[] = [
 },
 
 {
-  id: "smilesworld",
-  name: "SmilesWorld",
-  handle: "@smilesworld10",
-  category: "Healthcare",
+  id: "jiivastro",
+  name: "Jiivastro Academy",
+  handle: "@jiivaastro_academy",
+  category: "Spiritual & Wellness",
+  services: ["Social Media", "Reels"],
+  result: "+2.5x Engagement",
+  logo: img27,
+  cover: img27,
+  testimonial:
+    "Purnova helped us create a meaningful digital presence that connects deeply with our community and strengthens our online identity.",
+  description:
+    "Jiivastro Academy wanted to expand its digital reach and share spiritual knowledge through engaging social media content. Purnova developed a strategic content plan, created visually appealing reels, and maintained a consistent brand identity across platforms. By combining educational storytelling with high-quality visuals, the brand experienced stronger audience engagement, improved visibility, and a growing community interested in astrology and spiritual learning.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "IROKO ",
+  name: "IROKO ",
+  handle: "@irokobydesignchords",
+  category: "Interior Design",
   services: ["Clinic Website", "Local SEO"],
   result: "+55% Bookings",
   logo: img2,
@@ -394,7 +416,7 @@ const CLIENTS: Client[] = [
   testimonial:
     "Patients can now find us more easily online, and our appointment bookings have grown significantly.",
   description:
-    "SmilesWorld needed a professional clinic website and stronger local visibility. Purnova developed a responsive website and implemented a comprehensive local SEO strategy, resulting in a 55% increase in appointment bookings and improved online trust.",
+    "IROKO  needed a professional clinic website and stronger local visibility. Purnova developed a responsive website and implemented a comprehensive local SEO strategy, resulting in a 55% increase in appointment bookings and improved online trust.",
   caseStudy: true,
   featured: true,
 },
@@ -415,21 +437,213 @@ const CLIENTS: Client[] = [
   caseStudy: true,
  featured: true,
 },
+
+{
+  id: "punerivillage",
+  name: "Puneri Village",
+  handle: "@punerivillage",
+  category: "Hotels & Restaurants",
+  services: ["Restaurant Website", "Local SEO"],
+  result: "+72% Online Inquiries",
+  logo: img11,
+  cover: img11,
+  testimonial:
+    "Purnova helped us create a strong online presence that attracts more diners and makes it easier for customers to discover our restaurant.",
+  description:
+    "Puneri Village wanted a modern digital identity that reflected its authentic Maharashtrian hospitality and dining experience. Purnova designed a fast, mobile-friendly restaurant website featuring the menu, gallery, location, and contact details, while implementing a Local SEO strategy to improve Google visibility. The result was increased online inquiries, stronger local reach, and more customers visiting the restaurant.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "cosmicganges",
+  name: "Cosmic Ganges",
+  handle: "@cosmicganges",
+  category: "Spiritual & Wellness",
+  services: ["Social Media", "Reels"],
+  result: "+2.5x Engagement",
+  logo: img27,
+  cover: img27,
+  testimonial:
+    "Purnova helped us build a calm, consistent, and meaningful digital presence that truly resonates with our audience.",
+  description:
+    "Cosmic Ganges wanted to inspire and connect with a wider audience through engaging spiritual content. Purnova developed a content strategy focused on storytelling, mindfulness, and visual consistency while creating high-quality reels and social media creatives. The result was stronger audience engagement, increased brand awareness, and a distinctive digital presence that reflects the brand's spiritual values.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "abhijitshinde",
+  name: "Abhijit Shinde Export Mentor",
+  handle: "@abhijitshinde.export",
+  category: "Personal Branding",
+  logo: img1,
+  cover: img1,
+  services: ["Personal Branding", "Social Media"],
+  result: "+2.4x Followers",
+  testimonial:
+    "Purnova helped me establish a professional digital presence that builds trust and positions me as an export industry mentor.",
+  description:
+    "Abhijit Shinde Export Mentor wanted to build a credible personal brand that inspires aspiring exporters and business professionals. Purnova developed a complete personal branding strategy, created a consistent visual identity, and managed high-quality social media content that showcased expertise, success stories, and educational insights. The result was stronger audience engagement, increased brand authority, and steady growth across digital platforms.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "drparachittypk",
+  name: "Dr Parachitty PK",
+  handle: "@dr.prachitipunde_official",
+  category: "Personal Branding",
+  logo: img1,
+  cover: img1,
+  services: ["Personal Branding", "Social Media"],
+  result: "+2.4x Followers",
+  testimonial:
+    "Purnova helped me build a trustworthy and professional digital identity that reflects my expertise and connects with the right audience.",
+  description:
+    "Dr. Parachitty PK wanted to establish a strong personal brand that showcased professional expertise while building trust with patients and followers. Purnova created a consistent personal branding strategy, developed high-quality social media content, and designed a cohesive visual identity across platforms. The result was improved audience engagement, stronger online credibility, and a growing digital presence that reflects the doctor's expertise and values.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "upscale",
+  name: "Upscale",
+  handle: "@salmanshaikh_upscale",
+  category: "Real Estate",
+  logo: img1,
+  cover: img1,
+  services: ["Branding", "Social Media"],
+  result: "+2.4x Followers",
+  testimonial:
+    "Purnova understood our brand vision from day one. Every piece of content now feels premium, consistent, and true to our identity.",
+  description:
+    "Upscale, a personal styling and fashion brand, wanted to establish a distinctive and memorable presence on social media. Purnova developed a cohesive brand identity, defined a consistent visual language, and implemented a strategic content system that reflected the brand's personality across every platform. The result was a stronger online presence, a 2.4x increase in followers, and a recognizable brand that continues to engage and grow its audience.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "transcendenta",
+  name: "Transcendenta",
+  handle: "@transcendenta",
+  category: "Education",
+  services: ["Website", "Admissions Funnel"],
+  result: "Higher Admission Inquiries",
+  logo: img26,
+  cover: img26,
+  testimonial:
+    "Purnova delivered a modern website that streamlined our admissions journey and created a professional first impression for prospective students.",
+  description:
+    "Transcendenta wanted a powerful digital platform to showcase its educational programs and simplify the student admission process. Purnova designed and developed a responsive, user-friendly website with a seamless admissions funnel, making it easier for prospective students to explore courses, submit inquiries, and begin their enrollment journey. The result was a stronger online presence, improved user experience, and a noticeable increase in admission inquiries.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "audiora",
+  name: "Audiora",
+  handle: "@audiora",
+  category: "Education",
+  services: ["Website", "Admissions Funnel"],
+  result: "Higher Admission Inquiries",
+  logo: img26,
+  cover: img26,
+  testimonial:
+    "Purnova created a professional digital experience that made it easier for students to discover our programs and begin their learning journey.",
+  description:
+    "Audiora wanted a modern educational platform that effectively showcased its courses while simplifying the admissions process. Purnova designed and developed a responsive, user-friendly website with an intuitive admissions funnel, clear course information, and optimized inquiry forms. The result was a stronger online presence, an improved user experience, and a significant increase in student inquiries and admissions.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "smilesworld",
+  name: "Smiles World",
+  handle: "@smilesworld10",
+  category: "Travel & Tourism",
+  services: ["Website", "Brand Identity", "Social Media"],
+  result: "Stronger Brand Presence & More Travel Inquiries",
+  logo: img2,
+  cover: img2,
+  testimonial:
+    "Purnova helped us create a modern digital presence that reflects our passion for travel and connects us with more adventure seekers.",
+  description:
+    "Smiles World wanted to build a memorable travel brand that inspires people to explore with confidence. Purnova designed a modern website, developed a distinctive brand identity, and created engaging social media content that showcased curated tours, women-only trips, community travel experiences, and personalized holiday packages. The result was a stronger digital presence, increased customer trust, and a steady rise in travel inquiries.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "traventureindia",
+  name: "Traventure India",
+  handle: "@traventureindia",
+  category: "Travel & Tourism",
+  services: ["Website", "Brand Identity", "Social Media"],
+  result: "Stronger Brand Presence & More Travel Inquiries",
+  logo: img2,
+  cover: img2,
+  testimonial:
+    "Purnova helped us establish a vibrant digital identity that inspires travelers and generates quality travel inquiries.",
+  description:
+    "Traventure India wanted to create a powerful online presence that showcased its unique travel experiences and adventure packages. Purnova designed a modern, responsive website, crafted a distinctive brand identity, and developed engaging social media content that highlighted destinations, curated itineraries, and unforgettable travel experiences. The result was increased brand visibility, stronger customer trust, and a consistent flow of travel inquiries.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "saffron",
+  name: "Saffron",
+  handle: "@saffron",
+  category: "Fashion",
+  logo: img19,
+  cover: img19,
+  services: ["Web Design", "E-commerce", "Reels"],
+  result: "+180% Sales",
+  testimonial:
+    "Purnova transformed our online store with a premium shopping experience and a content strategy that significantly boosted our sales.",
+  description:
+    "Saffron wanted to build a premium fashion brand with a seamless online shopping experience. Purnova designed and developed a modern e-commerce website with intuitive navigation, a fast checkout process, and a mobile-first user experience. Alongside the website, we created engaging Instagram reels and a consistent visual identity that strengthened the brand across digital platforms. The result was a 180% increase in sales, higher customer engagement, and a stronger online presence.",
+  caseStudy: true,
+  featured: true,
+},
+
+{
+  id: "akshaycaterings",
+  name: "Akshay Caterings",
+  handle: "@akshaycaterings",
+  category: "Events",
+  services: ["Portfolio Website", "Photography"],
+  result: "Premium Brand Presence",
+  logo: img20,
+  cover: img20,
+  testimonial:
+    "Purnova helped us showcase our catering services with a professional online presence that builds trust and attracts more event inquiries.",
+  description:
+    "Akshay Caterings wanted a modern digital portfolio that highlighted its catering expertise and event experiences. Purnova designed a visually appealing portfolio website with high-quality food and event photography, service showcases, and an easy inquiry system. The result was a stronger brand identity, increased customer confidence, and more inquiries for weddings, corporate events, and special occasions.",
+  caseStudy: true,
+  featured: true,
+}
+
 ];
 
 const CATEGORIES: (Category | "All")[] = [
   "All",
   "Media",
-  "Food & Beverage",
+  "Health & Products",
   "Education",
   "Technology",
   "Healthcare",
-  "Personal Brands",
-  "Hospitality",
+  "Personal Branding",
+  "Hotels & Restaurants",
   "Events",
   "Fashion",
   "Automotive",
   "Real Estate",
+  "Interior Design",
+  "Spiritual & Wellness",
+  "Import & Export Business",
+  "Travel & Tourism",
 ];
 
 const STATS = [
@@ -450,11 +664,15 @@ const CATEGORY_GLOW: Record<string, string> = {
   Technology: "rgba(212,175,55,0.20)",
   Healthcare: "rgba(212,175,55,0.16)",
   "Personal Brands": "rgba(212,175,55,0.14)",
-  Hospitality: "rgba(212,175,55,0.14)",
+  "Hotels & Restaurants": "rgba(212,175,55,0.14)",
   Events: "rgba(212,175,55,0.14)",
   Fashion: "rgba(212,175,55,0.18)",
   Automotive: "rgba(212,175,55,0.16)",
   "Real Estate": "rgba(212,175,55,0.14)",
+  "Interior Design": "rgba(212,175,55,0.16)",
+  "Spiritual & Wellness": "rgba(212,175,55,0.16)",
+  "Import & Export Business": "rgba(212,175,55,0.16)",
+  "Travel & Tourism": "rgba(212,175,55,0.16)",
 };
 
 /* ------------------------------------------------------------------ */
@@ -614,7 +832,7 @@ function getClientStats(client: Client): StatCard[] {
       { label: "Video Views", value: "+1.2M" },
       { label: "Engagement", value: "+4.5%" }
     ],
-    "Food & Beverage": [
+    "Health & Products": [
       { label: "Sales Growth", value: "+180%" },
       { label: "D2C Orders", value: "+65%" },
       { label: "Repeat Buyers", value: "+120%" }
@@ -634,12 +852,12 @@ function getClientStats(client: Client): StatCard[] {
       { label: "Patient Reach", value: "+2.4x" },
       { label: "Inquiries", value: "+80%" }
     ],
-    "Personal Brands": [
+    "Personal Branding": [
       { label: "Followers", value: "+2.4x" },
       { label: "Engagement", value: "+3.1x" },
       { label: "Monthly Views", value: "+500K" }
     ],
-    "Hospitality": [
+    "Hotels & Restaurants": [
       { label: "Direct Bookings", value: "+45%" },
       { label: "Local SEO Click", value: "+150%" },
       { label: "Avg Reviews", value: "4.8★" }
@@ -663,7 +881,30 @@ function getClientStats(client: Client): StatCard[] {
       { label: "Qualified Leads", value: "+40/mo" },
       { label: "Conversion", value: "+2.8x" },
       { label: "Site Visits", value: "+110%" }
-    ]
+    ],
+    
+    "Interior Design": [
+  { label: "Projects", value: "+50" },
+  { label: "Client Satisfaction", value: "98%" },
+  { label: "Lead Growth", value: "+2.5x" }
+],
+     "Spiritual & Wellness": [
+  { label: "Projects", value: "+50" },
+  { label: "Client Satisfaction", value: "98%" },
+  { label: "Lead Growth", value: "+2.5x" }
+],
+
+   "Import & Export Business": [
+  { label: "Projects", value: "+50" },
+  { label: "Client Satisfaction", value: "98%" },
+  { label: "Lead Growth", value: "+2.5x" }
+],
+
+"Travel & Tourism": [
+  { label: "Journeys Curated", value: "500+" },
+  { label: "Traveler Community", value: "6K+" },
+  { label: "Repeat Travelers", value: "85%" }
+],
   };
 
   const defaultStats = statsMap[client.category] || [
@@ -1004,7 +1245,9 @@ export default function Clients() {
       const matchesSearch =
         search.trim() === "" ||
         c.name.toLowerCase().includes(search.toLowerCase()) ||
-        c.category.toLowerCase().includes(search.toLowerCase());
+        c.handle.toLowerCase().includes(search.toLowerCase()) ||
+        c.category.toLowerCase().includes(search.toLowerCase()) ||
+        c.services.some((s) => s.toLowerCase().includes(search.toLowerCase()));
       return matchesCategory && matchesSearch;
     });
   }, [activeCategory, search]);
@@ -1085,16 +1328,24 @@ export default function Clients() {
         <input
           type="text"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            if (activeCategory !== "All") {
+              setActiveCategory("All");
+            }
+          }}
           placeholder="Search brands or industries..."
           className="w-full max-w-sm bg-[#111111] border border-white/15 rounded-full px-5 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#f2c94c]/60 transition-colors"
         />
 
-        <div className="flex flex-wrap justify-center gap-2 max-w-3xl">
+        <div className="flex flex-wrap justify-center gap-2 max-w-7xl">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => {
+                setActiveCategory(cat);
+                setSearch("");
+              }}
               className={`text-xs px-4 py-1.5 rounded-full border transition-colors ${
                 activeCategory === cat
                   ? "bg-[#f2c94c] text-black border-[#f2c94c]"
@@ -1109,7 +1360,7 @@ export default function Clients() {
       </section>
 
       {/* ---------------- GRID ---------------- */}
-      <section className="px-6 pb-20 max-w-6xl mx-auto">
+      <section className="px-6 pb-20 max-w-7xl mx-auto">
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-min"

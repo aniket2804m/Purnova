@@ -8,7 +8,8 @@ import {
   Users,
   PhoneCall,
   FolderOpen,
-  Briefcase
+  Briefcase,
+  Terminal
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -20,6 +21,7 @@ const navLinks = [
   { label: "CaseStudy", href: "/case" },
   { label: " Purnovians", href: "/team" },
   { label: "Client", href: "/clients" },
+  { label: "Lead Gen", href: "/lead-gen" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -487,6 +489,7 @@ if (link.label === "CaseStudy") {
   link.label === "Services" ? Briefcase :
   link.label === "Client" ? FolderOpen :
   link.label === " Purnovians" ? Users :
+  link.label === "Lead Gen" ? Terminal :
   PhoneCall;
 
                 return (
@@ -516,7 +519,7 @@ if (link.label === "CaseStudy") {
                 asChild
                 className="w-full rounded-none bg-[#C9A84C] text-[#0A0A0A] font-montserrat font-semibold py-6 hover:bg-[#F5F0E8] hover:text-[#0A0A0A]"
               >
-                <Link to="/contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2">
+                <Link to="/lead-gen" onClick={() => setMobileOpen(false)} className="flex items-center justify-center gap-2">
                   Book a Call
                   <ArrowRight className="w-5 h-5" />
                 </Link>

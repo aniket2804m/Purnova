@@ -340,13 +340,13 @@ export default function Work() {
     >
       <div
         ref={pinContainerRef}
-        className="relative w-full h-full flex flex-col justify-between py-4 md:py-6 px-4 md:px-8 bg-[#0A0A0A]"
+        className="relative w-full h-full flex flex-col justify-between md:py-6 px-4 md:px-8 bg-[#0A0A0A]"
         onWheel={handleWheel}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         {/* Header Info - Added padding-top pt-24 to push it down below fixed Navbar */}
-        <div className="relative z-[45] text-center select-none px-4 pt-24 sm:pt-28">
+        <div className="relative z-[45] text-center select-none">
           <p className="uppercase tracking-[6px] text-[#C9A84C] font-cinzel font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mt-2 mb-1">
             Featured Work
           </p>

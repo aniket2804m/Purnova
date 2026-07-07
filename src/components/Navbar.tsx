@@ -36,7 +36,7 @@ const servicesDropdown = [
 ];
 
 const casestudyDropdown = [
-  { label: "Bushare CaseStudy", href: "/bushare" },
+  { label: "Bushare", href: "/bushare" },
   { label: "PuneVoice", href: "/pune" },
 
 ];

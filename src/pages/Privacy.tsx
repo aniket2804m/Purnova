@@ -245,7 +245,7 @@ const Privacy = () => {
                   className="flex items-center gap-3 bg-white text-black px-6 py-4 rounded-none font-bold shadow-md hover:bg-[#C9A84C] hover:text-[#0A0A0A] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 w-full sm:w-auto justify-center border border-[#C9A84C]/20"
                 >
                   <Mail className="w-5 h-5 text-[#C9A84C] group-hover:text-[#0A0A0A]" />
-                  info@purnovadigital.com
+                  Purnovaaa@gmail.com
                 </a>
 
                 <a

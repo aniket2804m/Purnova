@@ -837,12 +837,14 @@ function ClientCard({
           <img
             src={client.cover}
             alt=""
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover opacity-20 transition-all duration-500 group-hover:scale-105 group-hover:opacity-30"
           />
         ) : client.logo ? (
           <img
             src={client.logo}
             alt=""
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover opacity-15 filter blur-[2px] transition-all duration-500 group-hover:scale-105"
           />
         ) : null}
@@ -857,6 +859,7 @@ function ClientCard({
               layoutId={`logo-${client.id}`}
               src={client.logo}
               alt={`${client.name} logo`}
+              loading="lazy"
               onError={() => setImgError(true)}
               className={`${client.featured ? "max-h-28" : "max-h-20"} max-w-full object-contain opacity-95 filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
             />
@@ -1159,6 +1162,7 @@ function ClientModal({ client, onClose }: { client: Client; onClose: () => void 
               <img
                 src={coverSrc}
                 alt=""
+                loading="lazy"
                 onError={() => setCoverError(true)}
                 className="w-full h-full object-cover scale-110"
               />

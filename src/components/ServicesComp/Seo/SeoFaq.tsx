@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { faqDataWebsiteDevelopment } from "../../data/faqData";
+import { faqDataSEO } from "../../data/faqData";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,7 +36,7 @@ const FAQ = () => {
 
         {/* Accordion Wrapper */}
         <div className="space-y-4 font-montserrat">
-          {faqDataWebsiteDevelopment.map((item, index) => (
+          {faqDataSEO.map((item, index) => (
             <div
               key={index}
               onClick={() => toggleFAQ(index)}

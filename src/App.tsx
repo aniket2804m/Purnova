@@ -41,7 +41,6 @@ const CaseStudy = lazy(() => import("@/components/Home/CaseStudy"));
 const Punevoice = lazy(() => import("@/components/CaseStudy/PuneVoicesCase"));
 const Abouts = lazy(() => import("@/components/Abouts"));
 const Client = lazy(() => import("@/components/Clients"));
-const LeadGenAgent = lazy(() => import("@/components/LeadGenAgent"));
 
 const queryClient = new QueryClient();
 
@@ -143,7 +142,6 @@ const App = () => {
               <Route path="/work" element={<Work />} />
               <Route path="/card" element={<Card />} />
               <Route path="/clients" element={<Client />} />
-              <Route path="/lead-gen" element={<LeadGenAgent />} />
 
               <Route path="/brand" element={<Brand />} />
               <Route path="/perform" element={<Performance />} />

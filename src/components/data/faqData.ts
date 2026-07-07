@@ -31,3 +31,36 @@ export const faqData = [
   },
  
 ];
+
+export const faqDataPerform = [
+  {
+    question: "What is Performance Marketing?",
+    answer:
+      "Performance Marketing is a results-driven digital marketing strategy where campaigns are optimized to achieve measurable outcomes such as leads, sales, website traffic, or conversions. Every campaign is tracked and refined using real-time performance data.",
+  },
+  {
+    question: "Which platforms do you use for Performance Marketing?",
+    answer:
+      "We create and manage campaigns across Google Ads, Meta Ads (Facebook & Instagram), LinkedIn Ads, YouTube Ads, and other digital advertising platforms based on your business goals and target audience.",
+  },
+  {
+    question: "How do you measure campaign success?",
+    answer:
+      "We monitor key performance indicators (KPIs) such as Return on Ad Spend (ROAS), Cost Per Lead (CPL), Cost Per Acquisition (CPA), Click-Through Rate (CTR), conversion rate, and overall revenue generated from campaigns.",
+  },
+  {
+    question: "Can Performance Marketing help increase sales?",
+    answer:
+      "Yes. Our campaigns are designed to attract high-intent audiences, generate qualified leads, and maximize conversions through continuous optimization, audience targeting, and data-driven decision making.",
+  },
+  {
+    question: "How long does it take to see results?",
+    answer:
+      "Initial performance data is typically available within the first few days of launching a campaign. Meaningful improvements and consistent results generally develop over the first 30 to 90 days as campaigns are optimized.",
+  },
+  {
+    question: "Do you provide campaign reports?",
+    answer:
+      "Yes. We provide transparent performance reports that include campaign insights, audience behavior, ad spend, conversions, ROI, and actionable recommendations to improve future performance.",
+  },
+];

@@ -21,7 +21,6 @@ const navLinks = [
   { label: "CaseStudy", href: "/case" },
   { label: " Purnovians", href: "/team" },
   { label: "Client", href: "/clients" },
-  { label: "Lead Gen", href: "/lead-gen" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -489,7 +488,6 @@ if (link.label === "CaseStudy") {
   link.label === "Services" ? Briefcase :
   link.label === "Client" ? FolderOpen :
   link.label === " Purnovians" ? Users :
-  link.label === "Lead Gen" ? Terminal :
   PhoneCall;
 
                 return (

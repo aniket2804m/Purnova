@@ -12,30 +12,30 @@ const Card = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const cards = gsap.utils.toArray(".stack-card");
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".stack-card");
 
-    cards.forEach((card: any, index) => {
-      gsap.to(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: () => window.innerWidth < 768 ? "top 80px" : "top 120px",
-          endTrigger: containerRef.current,
-          end: "bottom bottom",
-          scrub: true,
-        },
-        scale: 0.85,
-        y: () => window.innerWidth < 768 ? -75 : -150,
-        opacity: 0.5,
-        transformOrigin: "top center",
-        ease: "none",
+      cards.forEach((card: any, index) => {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: () => window.innerWidth < 768 ? "top 80px" : "top 120px",
+            endTrigger: containerRef.current,
+            end: "bottom bottom",
+            scrub: true,
+          },
+          scale: 0.85,
+          y: () => window.innerWidth < 768 ? -75 : -150,
+          opacity: 0.5,
+          transformOrigin: "top center",
+          ease: "none",
+        });
       });
-    });
 
-    ScrollTrigger.refresh();
+      ScrollTrigger.refresh();
+    }, containerRef);
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (

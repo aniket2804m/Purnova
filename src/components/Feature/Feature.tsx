@@ -67,7 +67,7 @@ overflow-hidden"
                 href={brand.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full h-full flex items-center justify-center overflow-hidden"
+                className="w-full h-full flex items-center bg-[#C9A84C] justify-center overflow-hidden"
               >
                 <div className="w-[120px] h-[120px] flex items-center justify-center p-4">
                   <img

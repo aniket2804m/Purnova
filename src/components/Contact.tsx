@@ -249,8 +249,8 @@ const Contact = () => {
     setSending(true);
     try {
       await emailjs.send(
-        "service_t3wcu24",
-        "template_mu6yc7y",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "",
         {
           name: form.name,
           email: form.email,
@@ -262,7 +262,7 @@ const Contact = () => {
           time: new Date().toLocaleString(),
           title: form.name
         },
-        "ZRduGiNvLC4tdj7Gg"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ""
       );
       toast.success("Message sent! We'll get back to you soon.");
       setForm({

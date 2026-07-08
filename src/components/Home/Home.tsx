@@ -6,6 +6,7 @@ import gsap from "gsap";
 import video from "../../img/video.mp4";
 import bgImg from "../../img/background 2.png";
 import { roles } from "../data/Home"
+import ParticleBackground from "@/components/ParticleBackground";
 
 const Home = () => {
   const { scrollY } = useScroll();
@@ -160,8 +161,9 @@ const Home = () => {
         id="home"
         className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden"
       >
+        <ParticleBackground color="#C9A84C" />
         {/* Background Image Wrapper with zoom-out and parallax */}
-        <motion.div
+        {/* <motion.div
           initial={{ scale: 1.25, rotate: 1.5, filter: "blur(12px)", opacity: 0 }}
           animate={{ scale: 1, rotate: 0, filter: "blur(0px)", opacity: 1 }}
           style={{ y: bgY }}
@@ -176,7 +178,7 @@ const Home = () => {
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/90"></div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Cinematic light streaks / floating particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">

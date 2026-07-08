@@ -12,6 +12,7 @@ import {
 import myImage from "../img/logo.png";
 import { ScrollReveal } from "./ScrollProgress";
 import founderImage from "../img/role/rushi sir (1).png";
+import ParticleBackground from "./ParticleBackground";
 
 const services = [
   {
@@ -87,6 +88,7 @@ export default function About() {
       {/* HERO */}
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080808] to-black" />
+        <ParticleBackground color="#C9A84C" />
 
         <div className="relative z-10 text-center max-w-5xl">
           <ScrollReveal variant="fade-down" delay={0.1}>

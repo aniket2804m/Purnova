@@ -1,252 +1,298 @@
-import { useEffect, useState, useMemo } from "react";
-import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaXTwitter,
-  FaYoutube,
-  FaDiscord,
-  FaWhatsapp,
-  FaTelegram,
-  FaReddit,
-  FaTiktok,
-  FaTwitch,
-  FaFacebook,
-  FaSnapchat,
-  FaPinterest,
-} from "react-icons/fa6";
+import { useEffect, useRef } from "react";
 
-interface SocialIconConfig {
-  id: number;
-  Icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
-  name: string;
-  color: string;
-  size: number;
-  initialX: number;
-  initialY: number;
-  animateX: number[];
-  animateY: number[];
-  duration: number;
-  delay: number;
+interface Star {
+  x: number;
+  y: number;
+  z: number;
+  baseSize: number;
+  type: "dust" | "sparkle";
+  twinkleSpeed: number;
+  twinklePhase: number;
+  rotation: number;
+  rotationSpeed: number;
+  baseOpacity: number;
 }
 
-const SOCIAL_ICONS_TEMPLATES = [
-  { Icon: FaGithub, name: "Github", color: "#64748B" }, // Slate gray
-  { Icon: FaLinkedin, name: "Linkedin", color: "#0A66C2" },
-  { Icon: FaInstagram, name: "Instagram", color: "#E4405F" },
-  { Icon: FaXTwitter, name: "Twitter", color: "#0F1419" },
-  { Icon: FaYoutube, name: "Youtube", color: "#FF0000" },
-  { Icon: FaDiscord, name: "Discord", color: "#5865F2" },
-  { Icon: FaWhatsapp, name: "Whatsapp", color: "#25D366" },
-  { Icon: FaTelegram, name: "Telegram", color: "#24A1DE" },
-  { Icon: FaReddit, name: "Reddit", color: "#FF4500" },
-  { Icon: FaTiktok, name: "Tiktok", color: "#FE2C55" },
-  { Icon: FaTwitch, name: "Twitch", color: "#9146FF" },
-  { Icon: FaFacebook, name: "Facebook", color: "#1877F2" },
-  { Icon: FaSnapchat, name: "Snapchat", color: "#FFFC00" },
-  { Icon: FaPinterest, name: "Pinterest", color: "#BD081C" },
-];
+const ParticleBackground = ({ color = "#C9A84C" }: { color?: string }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mouseRef = useRef({ x: 0, y: 0, isHovered: false });
+  const activeCenterRef = useRef({ x: 0, y: 0 });
 
-const FloatingIcon = ({ icon, isMobile }: { icon: SocialIconConfig; isMobile: boolean }) => {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    
-    // Dynamic 3D tilt calculation based on cursor relative position
-    // Max tilt is set to 30 degrees for a noticeable 3D perspective shift
-    const rX = -(y / (rect.height / 2)) * 30;
-    const rY = (x / (rect.width / 2)) * 30;
-    setRotateX(rX);
-    setRotateY(rY);
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setRotateX(0);
-    setRotateY(0);
-  };
-
-  const size = isMobile ? icon.size * 0.7 : icon.size;
-
-  return (
-    <div
-      className="absolute pointer-events-auto"
-      style={{
-        left: `${icon.initialX}%`,
-        top: `${icon.initialY}%`,
-        perspective: 1000,
-      }}
-    >
-      <motion.div
-        className="relative flex items-center justify-center p-3 rounded-2xl cursor-pointer select-none will-change-transform"
-        animate={{
-          x: icon.animateX,
-          y: icon.animateY,
-          rotateX: isHovered ? rotateX : 0,
-          rotateY: isHovered ? rotateY : 0,
-          scale: isHovered ? 1.4 : 1,
-          z: isHovered ? 60 : 0,
-        }}
-        transition={{
-          // Continuous floating loops independently
-          x: { duration: icon.duration, repeat: Infinity, ease: "easeInOut", delay: icon.delay },
-          y: { duration: icon.duration, repeat: Infinity, ease: "easeInOut", delay: icon.delay },
-          // Spring transitions for 3D interactions
-          rotateX: { type: "spring", stiffness: 300, damping: 20 },
-          rotateY: { type: "spring", stiffness: 300, damping: 20 },
-          scale: { type: "spring", stiffness: 300, damping: 20 },
-          z: { type: "spring", stiffness: 300, damping: 20 },
-        }}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        whileTap={{ scale: 0.95 }}
-        style={{
-          width: size,
-          height: size,
-          color: icon.color,
-          transformStyle: "preserve-3d",
-        }}
-      >
-        {/* Soft Radial Neon Glow Effect (Layer 1 - deep background) */}
-        <div
-          className="absolute inset-0 rounded-full blur-2xl scale-75 transition-opacity duration-500"
-          style={{
-            background: `radial-gradient(circle, ${icon.color} 0%, transparent 70%)`,
-            transform: "translateZ(-10px)",
-            opacity: isHovered ? 0.8 : 0,
-            willChange: "opacity, transform",
-          }}
-        />
-
-        {/* 3D Glassmorphism Panel (Layer 2 - middle card border & fill) */}
-        <div
-          className="absolute inset-0 rounded-2xl border border-transparent transition-all duration-300"
-          style={{
-            transform: "translateZ(15px)",
-            backgroundColor: isHovered ? "rgba(255, 255, 255, 0.05)" : "transparent",
-            borderColor: isHovered ? "rgba(255, 255, 255, 0.1)" : "transparent",
-            boxShadow: isHovered 
-              ? `0 20px 40px rgba(0, 0, 0, 0.35), 0 0 30px ${icon.color}25`
-              : "none",
-          }}
-        />
-
-        {/* SVG Icon popping out in 3D parallax space (Layer 3 - frontmost element) */}
-        <icon.Icon
-          className="w-full h-full object-contain filter transition-all duration-300"
-          style={{
-            transform: isHovered ? "translateZ(50px)" : "translateZ(0px)",
-            filter: isHovered 
-              ? `drop-shadow(0 10px 15px ${icon.color}50) drop-shadow(0 15px 30px rgba(0,0,0,0.4))`
-              : "drop-shadow(0 4px 6px rgba(0,0,0,0.15))",
-            willChange: "transform, filter",
-          }}
-        />
-      </motion.div>
-    </div>
-  );
-};
-
-const ParticleBackground = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  // Safe color parsing helper to convert hex or other CSS colors to canvas RGB numbers
+  const rgbColor = (() => {
+    if (color.startsWith("#")) {
+      const hex = color.replace("#", "");
+      if (hex.length === 3) {
+        const r = parseInt(hex[0] + hex[0], 16);
+        const g = parseInt(hex[1] + hex[1], 16);
+        const b = parseInt(hex[2] + hex[2], 16);
+        return `${r}, ${g}, ${b}`;
+      } else if (hex.length === 6) {
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+        return `${r}, ${g}, ${b}`;
+      }
+    }
+    const match = color.match(/\d+\s*,\s*\d+\s*,\s*\d+/);
+    if (match) return match[0];
+    return "201, 168, 76"; // Default gold #C9A84C
+  })();
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-  // Generate stable icon configurations with random parameters
-  const icons: SocialIconConfig[] = useMemo(() => {
-    const list: SocialIconConfig[] = [];
-    const count = 22; // total icons on desktop
+    let animationFrameId: number;
+    let stars: Star[] = [];
+    const maxDepth = 1000;
+    const fov = 250;
 
-    for (let i = 0; i < count; i++) {
-      const template = SOCIAL_ICONS_TEMPLATES[i % SOCIAL_ICONS_TEMPLATES.length];
-      
-      // Distribute position: heavy on Left/Right sides, light in the center
-      let initialX = 0;
-      const distribution = i % 10;
-      if (distribution < 4) {
-        // Left zone: 4% to 28%
-        initialX = Math.random() * 24 + 4;
-      } else if (distribution < 8) {
-        // Right zone: 72% to 96%
-        initialX = Math.random() * 24 + 72;
+    // Detect mobile for optimization and responsiveness
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 60 : 160;
+
+    // Handle canvas sizing relative to container
+    const resizeCanvas = () => {
+      const parent = canvas.parentElement;
+      if (parent) {
+        canvas.width = parent.clientWidth;
+        canvas.height = parent.clientHeight;
       } else {
-        // Center zone: 32% to 68%
-        initialX = Math.random() * 36 + 32;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      activeCenterRef.current = { x: canvas.width / 2, y: canvas.height / 2 };
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Initialize starfield coordinates and styles
+    const initStars = () => {
+      stars = [];
+      for (let i = 0; i < starCount; i++) {
+        // Distribute stars in 3D box coordinates relative to center
+        const x = (Math.random() - 0.5) * canvas.width * 2.5;
+        const y = (Math.random() - 0.5) * canvas.height * 2.5;
+        const z = Math.random() * maxDepth;
+
+        // 15% luxury sparkles, 85% normal star dust particles
+        const type = Math.random() < 0.15 ? "sparkle" : "dust";
+        
+        // Base sizes
+        const baseSize = type === "sparkle" 
+          ? Math.random() * 4 + 4       // 4px to 8px size
+          : Math.random() * 1.5 + 0.8;  // 0.8px to 2.3px size
+
+        // Max opacities - kept low and subtle as requested by the user
+        const baseOpacity = type === "sparkle"
+          ? Math.random() * 0.15 + 0.15 // 0.15 to 0.30 max opacity
+          : Math.random() * 0.12 + 0.08; // 0.08 to 0.20 max opacity
+
+        stars.push({
+          x,
+          y,
+          z,
+          baseSize,
+          type,
+          twinkleSpeed: Math.random() * 0.02 + 0.012,
+          twinklePhase: Math.random() * Math.PI * 2,
+          rotation: Math.random() * Math.PI * 2,
+          rotationSpeed: (Math.random() - 0.5) * 0.008,
+          baseOpacity
+        });
+      }
+    };
+
+    initStars();
+
+    // Mouse interactivity event handlers
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+        isHovered: true,
+      };
+    };
+
+    const handleMouseLeave = () => {
+      mouseRef.current.isHovered = false;
+    };
+
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("mouseleave", handleMouseLeave);
+    canvas.addEventListener("mouseenter", () => { mouseRef.current.isHovered = true; });
+
+    let time = 0;
+
+    // Main Canvas animation render loop
+    const animate = () => {
+      time++;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const targetCenterX = canvas.width / 2;
+      const targetCenterY = canvas.height / 2;
+
+      // Mouse interactive parallax offset
+      let currentTargetX = targetCenterX;
+      let currentTargetY = targetCenterY;
+
+      if (mouseRef.current.isHovered) {
+        // Shift center slightly based on mouse position (subtle, non-distracting drift)
+        const dx = (mouseRef.current.x - targetCenterX) * 0.06;
+        const dy = (mouseRef.current.y - targetCenterY) * 0.06;
+        currentTargetX = targetCenterX + dx;
+        currentTargetY = targetCenterY + dy;
       }
 
-      // Avoid rendering particles too close to vertical screen limits
-      const initialY = Math.random() * 80 + 10; // 10% to 90%
+      // Smoothly lerp center position to prevent jumpy movement
+      activeCenterRef.current.x += (currentTargetX - activeCenterRef.current.x) * 0.05;
+      activeCenterRef.current.y += (currentTargetY - activeCenterRef.current.y) * 0.05;
 
-      // Random movement offsets for floating
-      // Keyframes start and end at 0 to loop smoothly
-      const range = 65; // Max pixels to float from start position
-      const animateX = [
-        0,
-        (Math.random() - 0.5) * range * 2,
-        (Math.random() - 0.5) * range * 2,
-        (Math.random() - 0.5) * range * 2,
-        0,
-      ];
-      const animateY = [
-        0,
-        (Math.random() - 0.5) * range * 2,
-        (Math.random() - 0.5) * range * 2,
-        (Math.random() - 0.5) * range * 2,
-        0,
-      ];
+      const centerX = activeCenterRef.current.x;
+      const centerY = activeCenterRef.current.y;
 
-      // Increased size range (between 48px and 78px)
-      const size = Math.floor(Math.random() * 30) + 35;
+      for (let i = 0; i < stars.length; i++) {
+        const star = stars[i];
 
-      // Animation duration (slow: 20s to 45s)
-      const duration = Math.random() * 25 + 20;
+        // Move stars slowly forward in depth (creates a "going in the background" visual)
+        star.z -= 0.6; 
 
-      // Negative delay so they start at different phases immediately
-      const delay = Math.random() * -20;
+        // Gentle orbital sway animation in space for an attractive flow
+        const swayX = Math.sin(time * 0.0006 + star.twinklePhase) * 0.06;
+        const swayY = Math.cos(time * 0.0006 + star.twinklePhase) * 0.06;
+        star.x += swayX;
+        star.y += swayY;
 
-      list.push({
-        id: i,
-        Icon: template.Icon,
-        name: template.name,
-        color: template.color,
-        size,
-        initialX,
-        initialY,
-        animateX,
-        animateY,
-        duration,
-        delay,
-      });
-    }
-    return list;
-  }, []);
+        // Reset star if it passes the screen plane or gets too close
+        let resetNeeded = false;
+        if (star.z <= 0) {
+          resetNeeded = true;
+        } else {
+          // Project to 2D
+          const px = (star.x / star.z) * fov + centerX;
+          const py = (star.y / star.z) * fov + centerY;
+          
+          // Reset if far offscreen
+          const margin = 120;
+          if (px < -margin || px > canvas.width + margin || py < -margin || py > canvas.height + margin) {
+            resetNeeded = true;
+          }
+        }
 
-  // Show fewer icons on mobile for optimization (half size, half count)
-  const displayedIcons = isMobile ? icons.slice(0, 10) : icons;
+        if (resetNeeded) {
+          star.z = maxDepth;
+          // Spawn around the screen boundaries far away
+          star.x = (Math.random() - 0.5) * canvas.width * 2.5;
+          star.y = (Math.random() - 0.5) * canvas.height * 2.5;
+          continue;
+        }
+
+        // Project coordinate to 2D screen coordinate
+        const px = (star.x / star.z) * fov + centerX;
+        const py = (star.y / star.z) * fov + centerY;
+
+        // Calculate size based on 3D depth
+        const size = ((maxDepth - star.z) / maxDepth) * star.baseSize + 0.4;
+
+        // Twinkle opacity breathing cycle
+        const twinkle = Math.sin(time * star.twinkleSpeed + star.twinklePhase) * 0.45 + 0.55; // 0.1 to 1.0 multiplier
+        
+        // Depth-based fade curve (soft fade in from far background, soft dissolve when very close)
+        let depthFade = 1;
+        if (star.z > maxDepth * 0.8) {
+          depthFade = (maxDepth - star.z) / (maxDepth * 0.2);
+        } else if (star.z < maxDepth * 0.18) {
+          depthFade = star.z / (maxDepth * 0.18);
+        }
+
+        // Combined opacity
+        const opacity = star.baseOpacity * twinkle * depthFade;
+
+        if (opacity <= 0.005) continue;
+
+        // Rotation updates for luxury sparkles
+        if (star.type === "sparkle") {
+          star.rotation += star.rotationSpeed;
+        }
+
+        ctx.save();
+        ctx.translate(px, py);
+
+        if (star.type === "sparkle") {
+          ctx.rotate(star.rotation);
+
+          // 1. Draw glowing background halo (large, soft glow)
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.18})`;
+          ctx.arc(0, 0, size * 2.8, 0, Math.PI * 2);
+          ctx.fill();
+
+          // 2. Draw outer blur sparkle shape
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.32})`;
+          ctx.moveTo(0, -size * 1.4);
+          ctx.quadraticCurveTo(0, 0, size * 1.4, 0);
+          ctx.quadraticCurveTo(0, 0, 0, size * 1.4);
+          ctx.quadraticCurveTo(0, 0, -size * 1.4, 0);
+          ctx.quadraticCurveTo(0, 0, 0, -size * 1.4);
+          ctx.closePath();
+          ctx.fill();
+
+          // 3. Draw core sharp sparkle shape (bright warm gold core)
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255, 253, 245, ${opacity * 0.85})`;
+          ctx.moveTo(0, -size * 0.95);
+          ctx.quadraticCurveTo(0, 0, size * 0.95, 0);
+          ctx.quadraticCurveTo(0, 0, 0, size * 0.95);
+          ctx.quadraticCurveTo(0, 0, -size * 0.95, 0);
+          ctx.quadraticCurveTo(0, 0, 0, -size * 0.95);
+          ctx.closePath();
+          ctx.fill();
+
+        } else {
+          // Normal star dust particle
+
+          // 1. Outer halo glow
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.16})`;
+          ctx.arc(0, 0, size * 2.3, 0, Math.PI * 2);
+          ctx.fill();
+
+          // 2. Core dot
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.7})`;
+          ctx.arc(0, 0, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      canvas.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [rgbColor]);
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
-      {displayedIcons.map((icon) => (
-        <FloatingIcon key={icon.id} icon={icon} isMobile={isMobile} />
-      ))}
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full block"
+        style={{ opacity: 0.9 }}
+      />
     </div>
   );
 };

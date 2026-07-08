@@ -122,7 +122,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center uppercase gap-1">
             {navLinks.map((link) => {
 
               if (link.label === "Services") {

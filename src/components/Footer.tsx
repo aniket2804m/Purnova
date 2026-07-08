@@ -96,7 +96,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/purnovaa/"
                 className="w-10 h-10 border border-[#C9A84C]/20 bg-[#0A0A0A] text-[#F5F0E8] hover:text-[#C9A84C] hover:border-[#C9A84C] hover:scale-105 transition flex items-center justify-center rounded-none shadow-sm"
               >
                 <Instagram size={16} />

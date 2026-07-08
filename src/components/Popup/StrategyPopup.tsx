@@ -160,42 +160,30 @@ export default function StrategyPopup() {
                         scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.1 + delay },
                         y: { repeat: Infinity, duration, ease: "easeInOut", delay }
                       }}
-                      className="strategy-popup-photo
-w-64 h-64 
-sm:w-16 sm:h-16
-md:w-20 md:h-20
-lg:w-24 lg:h-24
-rounded-full
-border-2 border-[#a08846]
-bg-[#0A0A0A]
-object-contain
-object-center
-cursor-pointer
-shadow-lg
-select-none"
+                      className="strategy-popup-photo w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full border-2 border-[#a08846] bg-[#0A0A0A] object-contain object-center cursor-pointer shadow-lg select-none"
                     />
                   );
                 })}
               </div>
 
               {/* Description */}
-              <p className="text-center font-montserrat font-light text-[#F5F0E8]/85 mt-6 sm:mt-8 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="text-center font-montserrat font-light text-[#F5F0E8]/85 mt-6 sm:mt-8 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed px-4">
                 Book strategy call and get clarity on your
                 <br className="hidden sm:inline" />
                 marketing, branding & growth roadmap.
               </p>
 
               {/* Features */}
-              <div className="flex flex-col md:flex-row md:flex-nowrap justify-center items-center gap-3 md:gap-5 lg:gap-6 mt-6 sm:mt-8 text-xs sm:text-sm lg:text-base font-montserrat font-semibold text-center text-[#F5F0E8]/90">
-  <div className="px-3 py-1 bg-[#101010]/60 border border-[#C9A84C]/15 rounded-md whitespace-nowrap">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mt-6 sm:mt-8 text-xs sm:text-sm lg:text-base font-montserrat font-semibold text-center text-[#F5F0E8]/90 px-4">
+  <div className="px-3 py-1.5 bg-[#101010]/60 border border-[#C9A84C]/15 rounded-md whitespace-nowrap">
     ✅ No spam
   </div>
 
-  <div className="px-3 py-1 bg-[#101010]/60 border border-[#C9A84C]/15 rounded-md whitespace-nowrap">
+  <div className="px-3 py-1.5 bg-[#101010]/60 border border-[#C9A84C]/15 rounded-md whitespace-nowrap">
     ✅ No sales pressure
   </div>
 
-  <div className="px-3 py-1 bg-[#101010]/60 border border-[#C9A84C]/15 rounded-md whitespace-nowrap">
+  <div className="px-3 py-1.5 bg-[#101010]/60 border border-[#C9A84C]/15 rounded-md whitespace-nowrap">
     ✅ Just actionable insights
   </div>
 </div>

@@ -87,10 +87,10 @@ const ParticleBackground = ({ color = "#C9A84C" }: { color?: string }) => {
           ? Math.random() * 4 + 4       // 4px to 8px size
           : Math.random() * 1.5 + 0.8;  // 0.8px to 2.3px size
 
-        // Max opacities - kept low and subtle as requested by the user
+        // Max opacities - normally bright as requested by the user
         const baseOpacity = type === "sparkle"
-          ? Math.random() * 0.15 + 0.15 // 0.15 to 0.30 max opacity
-          : Math.random() * 0.12 + 0.08; // 0.08 to 0.20 max opacity
+          ? Math.random() * 0.2 + 0.4   // 0.40 to 0.60 base opacity (brighter)
+          : Math.random() * 0.15 + 0.3; // 0.30 to 0.45 base opacity (brighter)
 
         stars.push({
           x,
@@ -202,16 +202,19 @@ const ParticleBackground = ({ color = "#C9A84C" }: { color?: string }) => {
         // Twinkle opacity breathing cycle
         const twinkle = Math.sin(time * star.twinkleSpeed + star.twinklePhase) * 0.45 + 0.55; // 0.1 to 1.0 multiplier
         
+        // Proximity factor: stars start normally bright in deep space and get even brighter as they get closer (larger)
+        const proximityFactor = 0.35 + 0.65 * ((maxDepth - star.z) / maxDepth); // 0.35 to 1.0
+
         // Depth-based fade curve (soft fade in from far background, soft dissolve when very close)
         let depthFade = 1;
-        if (star.z > maxDepth * 0.8) {
-          depthFade = (maxDepth - star.z) / (maxDepth * 0.2);
-        } else if (star.z < maxDepth * 0.18) {
-          depthFade = star.z / (maxDepth * 0.18);
+        if (star.z > maxDepth * 0.9) {
+          depthFade = (maxDepth - star.z) / (maxDepth * 0.1);
+        } else if (star.z < maxDepth * 0.08) {
+          depthFade = star.z / (maxDepth * 0.08);
         }
 
-        // Combined opacity
-        const opacity = star.baseOpacity * twinkle * depthFade;
+        // Combined opacity: scales up with proximity to make them brighter as they grow larger
+        const opacity = star.baseOpacity * twinkle * proximityFactor * depthFade;
 
         if (opacity <= 0.005) continue;
 
@@ -228,13 +231,13 @@ const ParticleBackground = ({ color = "#C9A84C" }: { color?: string }) => {
 
           // 1. Draw glowing background halo (large, soft glow)
           ctx.beginPath();
-          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.18})`;
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.24})`;
           ctx.arc(0, 0, size * 2.8, 0, Math.PI * 2);
           ctx.fill();
 
           // 2. Draw outer blur sparkle shape
           ctx.beginPath();
-          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.32})`;
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.45})`;
           ctx.moveTo(0, -size * 1.4);
           ctx.quadraticCurveTo(0, 0, size * 1.4, 0);
           ctx.quadraticCurveTo(0, 0, 0, size * 1.4);
@@ -245,7 +248,7 @@ const ParticleBackground = ({ color = "#C9A84C" }: { color?: string }) => {
 
           // 3. Draw core sharp sparkle shape (bright warm gold core)
           ctx.beginPath();
-          ctx.fillStyle = `rgba(255, 253, 245, ${opacity * 0.85})`;
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 0.95})`;
           ctx.moveTo(0, -size * 0.95);
           ctx.quadraticCurveTo(0, 0, size * 0.95, 0);
           ctx.quadraticCurveTo(0, 0, 0, size * 0.95);
@@ -259,13 +262,13 @@ const ParticleBackground = ({ color = "#C9A84C" }: { color?: string }) => {
 
           // 1. Outer halo glow
           ctx.beginPath();
-          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.16})`;
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.22})`;
           ctx.arc(0, 0, size * 2.3, 0, Math.PI * 2);
           ctx.fill();
 
           // 2. Core dot
           ctx.beginPath();
-          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.7})`;
+          ctx.fillStyle = `rgba(${rgbColor}, ${opacity * 0.85})`;
           ctx.arc(0, 0, size, 0, Math.PI * 2);
           ctx.fill();
         }

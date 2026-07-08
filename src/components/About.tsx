@@ -92,25 +92,25 @@ export default function About() {
 
         <div className="relative z-10 text-center max-w-5xl">
           <ScrollReveal variant="fade-down" delay={0.1}>
-            <span className="uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
+            <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
               About Purnova
             </span>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-down" delay={0.2}>
-            <h1 className="mt-5 text-3xl sm:text-4xl md:text-7xl font-cinzel leading-tight">
+            <h1 className="mt-5 text-3xl sm:text-4xl md:text-7xl font-cormorant font-light leading-tight">
               Transforming Brands.
               <br />
               Creating Digital
               <br />
-              <span className="italic text-[#C9A84C]">
+              <span className="italic text-[#C9A84C] font-normal">
                 Success Stories.
               </span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.35}>
-            <p className="max-w-2xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-light text-base md:text-lg">
+            <p className="max-w-2xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
               We help businesses grow through strategic marketing,
               SEO, branding, performance advertising and digital
               experiences designed for measurable results.
@@ -124,7 +124,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
           <ScrollReveal variant="fade-right" delay={0.15}>
             <div>
-              <h2 className="text-[#C9A84C] text-4xl sm:text-5xl md:text-7xl font-cinzel leading-none">
+              <h2 className="text-[#C9A84C] text-4xl sm:text-5xl md:text-7xl font-cormorant font-light leading-none">
                 OUR
                 <br />
                 STORY
@@ -133,7 +133,7 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade-left" delay={0.2}>
-            <div className="space-y-8 text-[#F5F0E8]/75 text-lg leading-relaxed font-light font-montserrat">
+            <div className="space-y-8 text-[#F5F0E8]/75 text-lg leading-relaxed font-montserrat font-light">
               <p>
                 Look closely at the night sky.
               </p>
@@ -159,7 +159,7 @@ export default function About() {
               <p>We combine strategy, design, storytelling, technology, and performance to create brands that don't simply exist—they endure.</p>
 
               <p>Because in a world crowded with noise, visibility is no longer enough.</p>
-              <p className="text-[#C9A84C] font-medium font-cinzel tracking-wider uppercase text-base">
+              <p className="text-[#C9A84C] font-cinzel font-semibold tracking-wider uppercase text-base">
                 Some brands exist. The rare ones lead.
               </p>
             </div>
@@ -206,11 +206,11 @@ export default function About() {
             {/* RIGHT IMAGE */}
             <ScrollReveal variant="fade-left" delay={0.2}>
               <div>
-                <span className="uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
+                <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
                   Founder & Visionary
                 </span>
 
-                <h2 className="mt-5 text-4xl sm:text-5xl md:text-7xl font-cinzel leading-tight text-[#F5F0E8]">
+                <h2 className="mt-5 text-4xl sm:text-5xl md:text-7xl font-cormorant font-light leading-tight text-[#F5F0E8]">
                   Meet The
                   <br />
                   Founder
@@ -218,32 +218,32 @@ export default function About() {
 
                 <div className="w-20 h-[2px] bg-[#C9A84C] my-8" />
 
-                <h3 className="text-2xl sm:text-3xl font-cinzel text-[#C9A84C]">
+                <h3 className="text-2xl sm:text-3xl font-cinzel font-semibold text-[#C9A84C]">
                   Rushikesh Hande
                 </h3>
 
-                <p className="mt-6 text-[#F5F0E8]/70 leading-relaxed text-base sm:text-lg font-light font-montserrat">
+                <p className="mt-6 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base sm:text-lg">
                   At Purnova Digital, our vision has always been simple:
                   help ambitious businesses build a brand that people
                   remember.
                 </p>
 
-                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-light font-montserrat">
+                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light">
                   Founded with a passion for strategy, creativity and
                   measurable growth, Purnova has evolved into a digital
                   growth partner for businesses looking to dominate
                   their market.
                 </p>
 
-                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-light font-montserrat">
+                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light">
                   Every campaign, every design, and every strategy is
                   built around one goal — creating meaningful business
                   growth while building a powerful brand presence.
                 </p>
 
                 {/* Signature Quote */}
-                <div className="mt-10 border-l-2 border-[#C9A84C] pl-6 font-cinzel">
-                  <p className="italic text-lg sm:text-xl md:text-2xl text-[#F5F0E8]">
+                <div className="mt-10 border-l-2 border-[#C9A84C] pl-6 font-cormorant">
+                  <p className="font-light italic text-lg sm:text-xl md:text-2xl text-[#F5F0E8]">
                     "Great brands aren't built by chance.
                     They're built by vision, execution,
                     and relentless consistency."
@@ -260,7 +260,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <ScrollReveal variant="fade-left" delay={0.2}>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-cinzel leading-tight text-[#F5F0E8]">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-cormorant font-light leading-tight text-[#F5F0E8]">
                 Where Ambitious Brands
                 <br />
                 Become Unforgettable
@@ -268,7 +268,7 @@ export default function About() {
 
               <div className="w-20 h-[2px] bg-[#C9A84C] my-8" />
 
-              <p className="text-[#F5F0E8]/70 leading-relaxed font-light text-base md:text-lg">
+              <p className="text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
                 Every strategy we develop, every identity we design,
                 and every experience we create is built to move your
                 brand from recognition to remembrance.
@@ -303,11 +303,11 @@ export default function About() {
               >
                 <stat.icon className="text-[#C9A84C] mb-4 w-6 h-6 sm:w-8 sm:h-8" />
 
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#00A878]">
+                <h3 className="text-2xl sm:text-3xl font-cinzel font-semibold text-[#00A878]">
                   {stat.value}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#F5F0E8]/60 mt-1 font-medium">
+                <p className="text-xs sm:text-sm text-[#F5F0E8]/60 mt-1 font-montserrat font-semibold">
                   {stat.label}
                 </p>
               </motion.div>
@@ -319,13 +319,13 @@ export default function About() {
       {/* BIG STATEMENT */}
       <div className="py-20 md:py-40 px-4 sm:px-6 text-center border-t border-[#C9A84C]/10 bg-[#0A0A0A] relative">
         <ScrollReveal variant="fade-up" delay={0.15}>
-          <h2 className="font-cinzel text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-6xl mx-auto leading-tight text-[#F5F0E8] font-bold">
+          <h2 className="font-cormorant text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-6xl mx-auto leading-tight text-[#F5F0E8] font-light">
             CREATIVITY WITHOUT PURPOSE IS NOISE.
             <br className="hidden sm:inline" />
             STRATEGY WITHOUT EXECUTION IS THEORY.
           </h2>
 
-          <p className="mt-8 text-[#F5F0E8]/70 text-sm sm:text-base md:text-lg font-light font-montserrat">
+          <p className="mt-8 text-[#F5F0E8]/70 text-sm sm:text-base md:text-lg font-montserrat font-light">
             Great brands are built where vision,
             creativity and performance meet.
           </p>
@@ -344,15 +344,15 @@ export default function About() {
                 }}
                 className="border border-[#C9A84C]/20 p-6 sm:p-8 min-h-[220px] bg-[#101010]/30 transition-all duration-300 rounded-none hover:shadow-[0_10px_30px_rgba(201,168,76,0.08)]"
               >
-                <span className="text-[#C9A84C] text-2xl font-cinzel font-bold">
+                <span className="text-[#C9A84C] text-2xl font-cinzel font-semibold">
                   {service.number}
                 </span>
 
-                <h3 className="mt-5 font-semibold text-lg font-cinzel text-[#F5F0E8]">
+                <h3 className="mt-5 font-cinzel font-semibold text-lg text-[#F5F0E8]">
                   {service.title}
                 </h3>
 
-                <p className="mt-4 text-sm text-[#F5F0E8]/60 font-light leading-relaxed">
+                <p className="mt-4 text-sm text-[#F5F0E8]/60 font-montserrat font-light leading-relaxed">
                   {service.desc}
                 </p>
               </motion.div>
@@ -367,13 +367,13 @@ export default function About() {
 
         <div className="relative z-10 font-montserrat">
           <ScrollReveal variant="flip-up" delay={0.15}>
-            <h2 className="font-cinzel text-2xl sm:text-4xl md:text-6xl italic max-w-5xl mx-auto text-[#F5F0E8] leading-tight">
+            <h2 className="font-cormorant text-2xl sm:text-4xl md:text-6xl font-light italic max-w-5xl mx-auto text-[#F5F0E8] leading-tight">
               "STOP CHASING THE MARKET.
               <br className="hidden sm:inline" />
               BECOME THE STANDARD."
             </h2>
 
-            <p className="mt-8 text-[#F5F0E8]/70 max-w-2xl mx-auto font-light text-sm sm:text-base md:text-lg">
+            <p className="mt-8 text-[#F5F0E8]/70 max-w-2xl mx-auto font-montserrat font-light text-sm sm:text-base md:text-lg">
               The future belongs to brands brave enough
               to build something unforgettable.
             </p>
@@ -383,7 +383,7 @@ export default function About() {
                 scale: 1.05,
                 boxShadow: "0 0 20px rgba(201, 168, 76, 0.4)",
               }}
-              className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
+              className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
             >
               Start Your Brand Journey
             </motion.button>

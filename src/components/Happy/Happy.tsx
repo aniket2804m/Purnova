@@ -7,7 +7,7 @@ import brandVideo from "../../img/video.mp4";
 
 // Poster images imports
 import punevoice from "../../img/logo/Copy of Logo Pune voice 5.png";
-import bushare from "../../img/logo/FINAL final.png";
+import cosmicGanges from "../../img/logo/COSMICGANGES Logo.png";
 import wada from "../../img/logo/vada.png";
 import mitraPoster from "../../img/role/rutu.png";
 import unimaxPoster from "../../img/role/pratap.png";
@@ -20,8 +20,8 @@ const brands = [
     video: brandVideo,
   },
   {
-    name: "Bushare",
-    poster: bushare,
+    name: "Cosmic Ganges",
+    poster: cosmicGanges,
     video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   },
   {
@@ -39,11 +39,7 @@ const brands = [
     poster: unimaxPoster,
     video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   },
-  {
-    name: "Btrack India",
-    poster: btrackPoster,
-    video: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  },
+  
 ];
 
 const Happy = () => {

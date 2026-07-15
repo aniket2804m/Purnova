@@ -74,27 +74,27 @@ const App = () => {
     }
   }, [warning]);
 
-  useEffect(() => {
-    const handleCopy = (e: ClipboardEvent) => {
-      e.preventDefault();
-      triggerWarning("Please don't copy content.");
-    };
+  // useEffect(() => {
+  //   const handleCopy = (e: ClipboardEvent) => {
+  //     e.preventDefault();
+  //     triggerWarning("Please don't copy content.");
+  //   };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
-        e.preventDefault();
-        triggerWarning("Please don't copy content.");
-      }
-    };
+  //   const handleKeyDown = (e: KeyboardEvent) => {
+  //     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
+  //       e.preventDefault();
+  //       triggerWarning("Please don't copy content.");
+  //     }
+  //   };
 
-    document.addEventListener("copy", handleCopy);
-    document.addEventListener("keydown", handleKeyDown);
+  //   document.addEventListener("copy", handleCopy);
+  //   document.addEventListener("keydown", handleKeyDown);
 
-    return () => {
-      document.removeEventListener("copy", handleCopy);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("copy", handleCopy);
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
   
   return (
     <QueryClientProvider client={queryClient}>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { X, Calendar } from "lucide-react";
+import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import img1 from "../../img/role/rushi sir (1).png";
 import img2 from "../../img/role/manager.png";
@@ -8,6 +9,7 @@ import img3 from "../../img/role/saurabh sir.png";
 
 export default function StrategyPopup() {
   const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   const [shown, setShown] = useState({
     start: false,
@@ -195,13 +197,13 @@ export default function StrategyPopup() {
                     scale: 1.05,
                     boxShadow: "0 0 20px rgba(201, 168, 76, 0.4)",
                   }}
-                  whileTap={{ scale: 0.98 }}
-                  href="https://calendly.com/your-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                 onClick={() => {
+      setShowPopup(false);   // Popup close
+      navigate("/contact");  // Navigate to Contact page
+    }}
                   className="strategy-popup-btn flex items-center gap-2 border border-[#0A0A0A]/10 bg-[#C9A84C] text-[#0A0A0A] hover:bg-[#F5F0E8] hover:text-[#0A0A0A] transition px-6 py-3.5 sm:px-8 sm:py-4 sm:text-base lg:text-lg font-montserrat font-semibold uppercase tracking-wider text-xs shadow-md"
                 >
-                  <Calendar className="w-5 h-5" />
+                  
                   Book Strategy Call ↗
                 </motion.a>
               </div>

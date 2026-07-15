@@ -90,15 +90,15 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080808] to-black" />
         <ParticleBackground color="#C9A84C" />
 
-        <div className="relative z-10 text-center max-w-5xl">
+        <div className="relative z-10 text-center max-w-5xl mt-5">
           <ScrollReveal variant="fade-down" delay={0.1}>
-            <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
+            <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-xl">
               About Purnova
             </span>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-down" delay={0.2}>
-            <h1 className="mt-5 text-3xl sm:text-4xl md:text-7xl font-cormorant font-light leading-tight">
+            <h1 className="mt-5 text-4xl sm:text-4xl md:text-8xl font-cormorant font-light leading-tight">
               Transforming Brands.
               <br />
               Creating Digital
@@ -110,7 +110,7 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.35}>
-            <p className="max-w-2xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
+            <p className="max-w-3xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
               We help businesses grow through strategic marketing,
               SEO, branding, performance advertising and digital
               experiences designed for measurable results.

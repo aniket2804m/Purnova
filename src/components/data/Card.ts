@@ -9,44 +9,56 @@ export const services = [
     {
         title: "Brand Strategy",
         image: brand,
-        description: "Create a distinct brand identity that sets you apart from competitors.",
+        short: "Build a brand people recognize, trust, and remember.",
+        description: "We help define your positioning, messaging, identity, and market presence so your business stands out for the right reasons.",
         icon: "🚀",
-        route: "/brand"
+        route: "/brand",
+        explore: "Explore Brand Strategy"
     },
     {
         title: "Performance Marketing",
         image: performance,
-        description: "Drive measurable growth with campaigns focused on ROI and conversions.",
+        short: "Turn marketing spend into measurable business growth.",
+        description: "From audience targeting to campaign optimization, we create data driven strategies focused on leads, sales, and ROI.",
         icon: "📱",
-        route: "/perform"
+        route: "/perform",
+        explore: "Explore Performance Marketing"
     },
     {
         title: "Website Development",
         image: website,
-        description: "Build fast, modern websites designed to engage and convert visitors.",
+        short: "Websites designed to convert visitors into customers.",
+        description: "We create fast, responsive, and user focused websites that strengthen credibility and drive action.",
         icon: "🎯",
-        route: "/web"
+        route: "/web",
+        explore: "Explore Website Development"
     },
     {
         title: "Google Ads",
         image: google,
-        description: "Reach customers at the right moment with targeted Google campaigns.",
+        short: "Reach high intent customers exactly when they're searching.",
+        description: "Our Google Ads campaigns are built to increase visibility, generate qualified leads, and maximize return on investment.",
         icon: "💻",
-        route: "/google"
+        route: "/google",
+        explore: "Explore Google Ads"
     },
     {
         title: "SEO Optimization",
         image: seo,
-        description: "Boost your search visibility and attract high intent customers organically.",
+        short: "Get found by the people already looking for what you offer.",
+        description: "We improve your search visibility through strategic SEO that drives long term organic traffic and sustainable growth.",
         icon: "📈",
-        route: "/seo"
+        route: "/seo",
+        explore: "Explore SEO Services"
     },
     {
         title: "Social Media Marketing",
         image: social,
-        description: "Build meaningful connections and grow your brand across social platforms.",
+        short: "Create content that connects, engages, and builds trust.",
+        description: "From strategy and content creation to community growth, we help brands stay relevant where their audience spends time.",
         icon: "📈",
-        route: "/social"
+        route: "/social",
+        explore: " Explore Social Media Marketing"
     },
     
 ];

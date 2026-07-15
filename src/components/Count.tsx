@@ -133,14 +133,28 @@ const Count = () => {
 
         {/* Text descriptions */}
         <div className="max-w-5xl mx-auto text-center mb-16 space-y-6">
-          <p className="count-para text-[#F5F0E8] font-cinzel font-semibold text-lg sm:text-xl lg:text-2xl leading-relaxed">
-            "Purnova: Where the most ambitious brands come to become unforgettable."
+          <p className="count-para text-[#C9A84C] font-bold font-cinzel text-lg sm:text-xl lg:text-2xl leading-relaxed">
+            "Strategy. Creativity. Growth."
           </p>
 
-          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-4xl mx-auto">
-            We don’t look at your business as a checklist of deliverables; we see it as an unfolding legacy. We take the raw, powerful architecture of what you’ve built and breathe an undeniable, modern force into it aligning your strategy, your creative, and your scale until they command the entire landscape.
-            The era of merely competing is over. It is time to occupy the space only you can inhabit.
-            Stop chasing the market. Become the standard.
+          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
+            At Purnova, we believe great marketing isn't about being louder. It's about being clearer, more memorable, and impossible to ignore.
+          </p>
+
+          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
+            We partner with businesses that want more than likes and impressions. They want stronger brands, better customer connections, qualified leads, and sustainable growth.
+          </p>
+
+          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
+            That's why every project begins with strategy, is powered by creativity, and is measured by results.
+          </p>
+
+          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
+            From branding and content to websites and performance marketing, we build systems that help businesses grow today and stay relevant tomorrow.
+          </p>
+
+          <p className="count-para text-[#C9A84C]/75 font-bold font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-4xl mx-auto">
+            "Because marketing should do more than look good. It should move your business forward."
           </p>
         </div>
 

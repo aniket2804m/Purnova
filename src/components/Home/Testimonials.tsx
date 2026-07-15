@@ -79,15 +79,15 @@ const Testimonials = () => {
         {/* Heading Section */}
         <div className="text-center mb-16">
           <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F0E8] font-cinzel tracking-wide leading-tight">
-            Trusted By Businesses{" "}
+            The Brands Behind {" "}
             <span className="text-[#C9A84C]">
-              That Want Results
+              The Success Stories
             </span>
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-[#F5F0E8]/70 font-light text-base md:text-lg leading-relaxed">
+          <p className="mt-6 max-w-6xl mx-auto text-[#F5F0E8] font-light text-base md:text-lg leading-relaxed">
             Real feedback from clients who partnered with us to scale their
-            business, increase revenue, and build a stronger digital presence.
+            business, increase revenue, and build a stronger digital presence.Every partnership begins with a goal. More visibility. Better leads. Stronger positioning. Greater growth. Here's what our clients have to say about the journey and the results we created together.
           </p>
         </div>
 

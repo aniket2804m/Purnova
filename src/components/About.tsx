@@ -1,72 +1,19 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Target,
-  TrendingUp,
-  BarChart3,
-  Globe,
-  Users,
-  Award,
-} from "lucide-react";
+
+import { useNavigate } from "react-router-dom";
 
 import myImage from "../img/logo.png";
 import { ScrollReveal } from "./ScrollProgress";
 import founderImage from "../img/role/rushi sir (1).png";
 import ParticleBackground from "./ParticleBackground";
 
-const services = [
-  {
-    number: "01",
-    title: "Performance Marketing",
-    desc: "ROI-focused campaigns that drive measurable growth.",
-  },
-  {
-    number: "02",
-    title: "SEO Optimization",
-    desc: "Increase visibility and dominate search rankings.",
-  },
-  {
-    number: "03",
-    title: "Lead Generation",
-    desc: "Convert visitors into qualified customers.",
-  },
-  {
-    number: "04",
-    title: "Website Development",
-    desc: "Websites that turn visitors into customers.",
-  },
-  {
-    number: "05",
-    title: "Brand Strategy",
-    desc: "Build memorable brands that stand apart.",
-  },
-];
-
-const stats = [
-  {
-    icon: Users,
-    value: "500+",
-    label: "Happy Clients",
-  },
-  {
-    icon: TrendingUp,
-    value: "10M+",
-    label: "Leads Generated",
-  },
-  {
-    icon: Award,
-    value: "3+",
-    label: "Years Experience",
-  },
-  {
-    icon: Globe,
-    value: "50+",
-    label: "Brands Scaled",
-  },
-];
+import {services, stats} from "../components/data/about"
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -382,6 +329,8 @@ export default function About() {
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 0 20px rgba(201, 168, 76, 0.4)",
+              }}
+              onClick={() => { navigate("/contact");  // Navigate to Contact page
               }}
               className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
             >

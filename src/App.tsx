@@ -35,7 +35,7 @@ const Performance = lazy(() => import("@/components/Services/Performance"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
-const AdsCard = lazy(() => import("@/components/Card/AdsCard"));
+// const AdsCard = lazy(() => import("@/components/Card/AdsCard"));
 const BushareCase = lazy(() => import("@/components/CaseStudy/BushareCase"));
 const CaseStudy = lazy(() => import("@/components/Home/CaseStudy"));
 const Punevoice = lazy(() => import("@/components/CaseStudy/PuneVoicesCase"));

@@ -6,22 +6,22 @@ import Growth from "../../img/process/growth.png";
 
 export const steps = [
   {
-    title: "Research",
+    title: "Clarity",
     image: Search,
     description:
-      "We analyze your business, target audience, competitors, and market trends to identify opportunities and challenges.",
+      "We uncover what makes your business unique, identify growth opportunities, and build a strong foundation for everything that follows.",
   },
   {
     title: "Strategy",
     image: Strategy,
     description:
-      "Based on research, we create a customized strategy that aligns with your business goals and growth objectives.",
+      "We create a customized roadmap that aligns your brand, marketing, and business goals into one clear direction.",
   },
   {
     title: "Execution",
     image: Execution,
     description:
-      "Our team implements the strategy across design, development, marketing, and other required channels.",
+      "From content and campaigns to websites and branding, we turn strategy into action with precision and creativity.",
   },
   {
     title: "Optimization",
@@ -33,6 +33,6 @@ export const steps = [
     title: "Growth",
     image: Growth,
     description:
-      "With optimized systems and proven strategies, we scale your business for long-term sustainable growth.",
+      "Through continuous optimization and smart scaling, we help your business attract more customers and achieve lasting results.",
   },
 ];

@@ -55,9 +55,12 @@ const Card = () => {
           Our <span className="text-[#C9A84C]">Services</span>
         </h2>
 
-        <p className="mt-5 font-montserrat text-[#F5F0E8]/70 max-w-2xl mx-auto text-sm sm:text-base">
-          Scroll down to explore our services one by one with an immersive
-          stacked card experience.
+        <p className="count-para text-[#C9A84C] mt-5 font-bold font-cinzel text-lg sm:text-xl lg:text-2xl leading-relaxed">
+            "Marketing Built For Growth, Not Guesswork."
+          </p>
+
+        <p className="mt-5 font-montserrat text-xl text-[#F5F0E8]/70 max-w-6xl mx-auto sm:text-base">
+          Every business has different goals, challenges, and opportunities. That's why we combine strategy, creativity, technology, and performance marketing to create solutions that help brands attract attention, generate demand, and drive measurable growth.
         </p>
       </div>
 
@@ -84,6 +87,10 @@ const Card = () => {
                     {service.title}
                   </h3>
 
+                  <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg font-montserrat text-[#C9A84C] leading-relaxed">
+                    {service.short}
+                  </p>
+
                   <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg font-montserrat text-[#F5F0E8]/70 leading-relaxed">
                     {service.description}
                   </p>
@@ -92,7 +99,7 @@ const Card = () => {
                     onClick={() => navigate(service.route)}
                     className="mt-6 sm:mt-8 bg-[#C9A84C] hover:bg-[#F5F0E8] transition-all duration-300 text-[#0A0A0A] px-6 sm:px-8 py-3.5 rounded-none font-montserrat font-semibold text-xs tracking-widest uppercase"
                   >
-                    Explore Service ↗
+                    {service.explore}↗
                   </button>
                 </div>
 

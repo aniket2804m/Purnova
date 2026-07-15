@@ -162,23 +162,6 @@ const Home = () => {
         className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden"
       >
         <ParticleBackground color="#C9A84C" />
-        {/* Background Image Wrapper with zoom-out and parallax */}
-        {/* <motion.div
-          initial={{ scale: 1.25, rotate: 1.5, filter: "blur(12px)", opacity: 0 }}
-          animate={{ scale: 1, rotate: 0, filter: "blur(0px)", opacity: 1 }}
-          style={{ y: bgY }}
-          transition={{ duration: 2.8, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0 -z-10 w-full h-full"
-        >
-          <img
-            src={bgImg}
-            alt="Background"
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/90"></div>
-        </motion.div> */}
 
         {/* Cinematic light streaks / floating particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
@@ -308,7 +291,7 @@ const Home = () => {
     2xl:text-4xl
   "
 >
-  Where Brands Become <span className="font-light italic text-[#C9A84C]">Legends</span>
+  We Help Businesses Become Impossible To Ignore. 
 </motion.p>
 
 <motion.p
@@ -351,9 +334,7 @@ const Home = () => {
     lg:px-0
   "
 >
-  We do not decorate brands. We architect transformations reaching into
-  the space between what you are today and everything you are destined to
-  become.
+  From branding and websites to social media and performance marketing, we help ambitious businesses attract attention, build trust, and generate measurable growth. 
 </motion.p>
 
           </motion.div>

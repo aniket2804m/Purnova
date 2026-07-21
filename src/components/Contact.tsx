@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Send, Phone, MapPin, MessageCircle, FileText, ChevronDown, Check } from "lucide-react";
+import { Mail, Send, Phone, MapPin, FileText, ChevronDown, Check } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import { gsap } from "gsap";
@@ -51,9 +52,9 @@ const CustomSelect = ({
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-full flex items-center justify-between bg-[#0A0A0A]/80 border ${
+          className={`select-trigger w-full flex items-center justify-between bg-[#0A0A0A]/80 border ${
             error ? "border-red-500/50" : "border-[#C9A84C]/20"
-          } text-[#F5F0E8] px-4 py-4 text-sm font-light focus:outline-none focus:ring-1 focus:ring-[#C9A84C] focus:border-[#C9A84C] transition-all duration-300 group`}
+          } text-[#F5F0E8] px-4 py-4 text-sm font-light focus:outline-none focus:ring-1 focus:ring-[#C9A84C] focus:border-[#C9A84C] transition-all duration-300 group rounded-xl`}
         >
           <span className={`truncate ${!value ? "text-[#F5F0E8]/40" : "text-[#F5F0E8]"}`}>
             {value || placeholder}
@@ -74,7 +75,7 @@ const CustomSelect = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute z-50 left-0 w-full mt-1 bg-[#0A0A0A]/95 backdrop-blur-xl border border-[#C9A84C]/20 shadow-[0_10px_35px_rgba(0,0,0,0.9)] max-h-60 overflow-y-auto scrollbar-none"
+              className="absolute z-50 left-0 w-full mt-1 bg-[#0A0A0A]/95 backdrop-blur-xl border border-[#C9A84C]/20 shadow-[0_10px_35px_rgba(0,0,0,0.9)] max-h-60 overflow-y-auto scrollbar-none rounded-xl"
             >
               {options.map((option) => (
                 <li key={option}>
@@ -133,7 +134,7 @@ const CustomInput = ({
           onChange={(e) => onChange(e.target.value)}
           className={`w-full bg-[#0A0A0A]/80 border ${
             error ? "border-red-500/50" : "border-[#C9A84C]/20"
-          } text-[#F5F0E8] placeholder:text-[#F5F0E8]/35 px-4 py-4 text-sm font-light focus:outline-none focus:ring-1 focus:ring-[#C9A84C] focus:border-[#C9A84C] transition-all duration-300`}
+          } text-[#F5F0E8] placeholder:text-[#F5F0E8]/35 px-4 py-4 text-sm font-light focus:outline-none focus:ring-1 focus:ring-[#C9A84C] focus:border-[#C9A84C] transition-all duration-300 rounded-xl`}
         />
         {/* Bottom expanding gold line highlight */}
         <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A84C] scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300 origin-center" />
@@ -171,7 +172,7 @@ const CustomTextarea = ({
           onChange={(e) => onChange(e.target.value)}
           className={`w-full bg-[#0A0A0A]/80 border ${
             error ? "border-red-500/50" : "border-[#C9A84C]/20"
-          } text-[#F5F0E8] placeholder:text-[#F5F0E8]/35 px-4 py-4 text-sm font-light min-h-[140px] focus:outline-none focus:ring-1 focus:ring-[#C9A84C] focus:border-[#C9A84C] transition-all duration-300 resize-none`}
+          } text-[#F5F0E8] placeholder:text-[#F5F0E8]/35 px-4 py-4 text-sm font-light min-h-[140px] focus:outline-none focus:ring-1 focus:ring-[#C9A84C] focus:border-[#C9A84C] transition-all duration-300 resize-none rounded-xl`}
         />
         {/* Bottom expanding gold line highlight */}
         <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C9A84C] scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300 origin-center" />
@@ -284,9 +285,9 @@ const Contact = () => {
 
   const contactLinks = [
     { icon: Mail, label: "Email", href: "mailto:Purnovaaa@gmail.com", text: "Purnovaaa@gmail.com" },
-    { icon: Phone, label: "Phone", href: "tel:+918390025023", text: "+91 83900 25023" },
-    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/918390025023", text: "Chat on WhatsApp" },
-    { icon: MapPin, label: "Location", href: "https://maps.app.goo.gl/ni1Votk8grV3SUHg8", text: "Address: 602, D Wing, Swami Chaya Apartments, Lane, DP Rd, opp. Sainath Khanawal, Sridhar Colony, Karvenagar, Pune," },
+    { icon: Phone, label: "Contact", href: "tel:+918390025023", text: "+91 83900 25023" },
+    { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/918390025023", text: "Chat on WhatsApp" },
+    { icon: MapPin, label: "Location", href: "https://maps.app.goo.gl/ni1Votk8grV3SUHg8", text: "602, D Wing, Swami Chaya Apartments, Lane, DP Rd, opp. Sainath Khanawal, Sridhar Colony, Karvenagar, Pune," },
   ];
 
   // GSAP scroll animations
@@ -395,14 +396,14 @@ const Contact = () => {
   }, []);
 
   const requirements = [
-    "Website Development",
-    "Landing Page",
+    "Brand Strategy",
+    "Performance Marketing",
     "Portfolio Website",
-    "E-Commerce Website",
-    "UI/UX Design",
-    "Branding",
-    "SEO",
-    "Web Application",
+    "Social Media Marketing",
+    "SEO Optimization",
+    "Content Creation",
+    "Video creation",
+    "Web Development",
     "Maintenance",
     "Other"
   ];
@@ -453,7 +454,7 @@ const Contact = () => {
             </p>
 
             {/* Resume helper box */}
-            <div className="contact-link-item flex items-center gap-3 mb-6 p-4 rounded-none bg-[#101010]/60 border border-[#C9A84C]/15 backdrop-blur-md">
+            <div className="contact-link-item flex items-center gap-3 mb-6 p-4 rounded-xl bg-[#101010]/60 border border-[#C9A84C]/15 backdrop-blur-md">
               <FileText className="w-5 h-5 text-[#C9A84C] shrink-0" />
               <p className="text-sm text-[#F5F0E8]/90 font-light">
                 Looking for details? <span className="text-[#C9A84C] underline cursor-pointer">Drop a message</span> and we'll share it with you!
@@ -466,9 +467,9 @@ const Contact = () => {
                 href={item.href}
                 target={item.href !== "#" ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="contact-link-item flex items-center gap-4 bg-[#101010]/40 border border-[#C9A84C]/10 backdrop-blur-md rounded-none p-4 hover:bg-[#101010]/90 hover:border-[#C9A84C] hover:shadow-[0_10px_30px_rgba(201,168,76,0.1)] transition-all duration-300 group"
+                className="contact-link-item flex items-center gap-4 bg-[#101010]/40 border border-[#C9A84C]/10 backdrop-blur-md rounded-xl p-4 hover:bg-[#101010]/90 hover:border-[#C9A84C] hover:shadow-[0_10px_30px_rgba(201,168,76,0.1)] transition-all duration-300 group"
               >
-                <div className="p-3 rounded-none bg-[#0A0A0A] text-[#C9A84C] group-hover:bg-[#C9A84C] group-hover:text-[#0A0A0A] transition-all duration-300 shadow-md border border-[#C9A84C]/10">
+                <div className="p-3 rounded-xl bg-[#0A0A0A] text-[#C9A84C] group-hover:bg-[#C9A84C] group-hover:text-[#0A0A0A] transition-all duration-300 shadow-md border border-[#C9A84C]/10">
                   <item.icon className="w-5 h-5" />
                 </div>
                 <div>
@@ -480,10 +481,10 @@ const Contact = () => {
           </div>
 
           {/* Right Column: Contact Form with Sweep Border */}
-          <div className="form-container-card gold-sweep-border p-[1.5px] relative opacity-0">
+          <div className="form-container-card gold-sweep-border p-[1.5px] relative opacity-0 rounded-2xl">
             <form
               onSubmit={handleSubmit}
-              className="bg-[#0A0A0A]/95 p-8 grid grid-cols-1 md:grid-cols-2 gap-6 hover:bg-[#101010]/95 transition-all duration-500"
+              className="bg-[#0A0A0A]/95 p-8 grid grid-cols-1 md:grid-cols-2 gap-6 hover:bg-[#101010]/95 transition-all duration-500 rounded-2xl"
             >
               {/* Row 1 */}
               <CustomInput

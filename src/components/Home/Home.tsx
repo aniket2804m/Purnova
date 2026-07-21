@@ -356,7 +356,7 @@ const Home = () => {
   <span className="absolute -left-8 top-1/2 -translate-y-1/2 w-5 h-[1px] bg-[#C9A84C]"></span>
 
   <span className="bg-gradient-to-r from-[#F5F0E8] via-[#FFF7D6] to-[#C9A84C] bg-clip-text text-transparent">
-    We Help Businesses Become Impossible To Ignore.
+    We Help Businesses Become Impossible To Ignore
   </span>
 
   <span className="absolute -right-8 top-1/2 -translate-y-1/2 w-5 h-[1px] bg-[#C9A84C]"></span>
@@ -434,7 +434,7 @@ const Home = () => {
   </span>
   , and generate{" "}
   <span className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent font-semibold">
-    measurable growth.
+    measurable growth
   </span>
 </motion.p>
 

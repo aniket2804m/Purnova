@@ -11,28 +11,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   {
-    number: 5000,
+    number: 25,
     suffix: "+",
-    title: "Projects",
-    subtitle: "Completed",
+    title: "INDUSTRIES SERVED",
   },
   {
-    number: 50,
+    number: 150,
     suffix: "+",
-    title: "Happy",
-    subtitle: "Clients",
+    title: "BRANDS SCALED",
   },
   {
-    number: 6,
-    suffix: "x",
-    title: "Average ROI",
-    subtitle: "Growth",
+    number: 4.6,
+    suffix: "*",
+    title: "CLIENT RATING",
   },
   {
-    number: 3,
+    number: 5,
     suffix: "+",
-    title: "Years of",
-    subtitle: "Experience",
+    title: "YEAR OF EXPERIENCE",
   },
 ];
 
@@ -239,10 +235,6 @@ const Count = () => {
 
                 <p className="text-base sm:text-lg font-cinzel font-bold mb-1 text-[#F5F0E8] group-hover:text-[#C9A84C] transition-colors duration-300">
                   {item.title}
-                </p>
-
-                <p className="text-xs font-montserrat text-[#F5F0E8]/50">
-                  {item.subtitle}
                 </p>
 
                 {/* Ambient internal light */}

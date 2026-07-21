@@ -116,7 +116,7 @@ export default function StrategyPopup() {
               {/* Close Button */}
               <button
                 onClick={() => setShowPopup(false)}
-                className="absolute top-4 right-4 sm:top-5 sm:right-5 z-20
+                className="close-btn absolute top-4 right-4 sm:top-5 sm:right-5 z-20
                            text-[#F5F0E8] hover:text-[#C9A84C]
                            transition-all duration-500 ease-in-out
                            hover:rotate-[360deg] hover:scale-110"

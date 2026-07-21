@@ -34,14 +34,90 @@
     --input: 44 30% 15%;
     --ring: 44 54% 54%;
 
-    --radius: 0px;
+    --radius: 12px;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
-    border-radius: 0px !important; /* Enforce strict sharp corners for premium aesthetic */
+  }
+
+  /* Override hardcoded rounded-none on non-button elements so they look rounded */
+  div.rounded-none:not(.button):not(.btn),
+  section.rounded-none,
+  img.rounded-none,
+  span.rounded-none:not(.button):not(.btn):not(.bg-\[\#C9A84C\]):not(.border-\[\#C9A84C\]),
+  article.rounded-none,
+  li.rounded-none,
+  form.rounded-none {
+    border-radius: 12px !important;
+  }
+
+  /* Ensure inputs, textareas, cards, and custom components are properly rounded */
+  input,
+  textarea,
+  select,
+  .glass,
+  .card,
+  [class*="border-[#C9A84C]/"] {
+    border-radius: 12px;
+  }
+
+  /* Enforce strict sharp corners ONLY on buttons and button-like interactive items */
+  button:not(.rounded-full):not(.close-btn):not(.icon-btn):not(.marquee-btn):not(.select-trigger),
+  .button:not(.rounded-full),
+  .btn:not(.rounded-full),
+  [type="button"]:not(.rounded-full),
+  [type="submit"],
+  [type="reset"],
+  a[class*="bg-[#C9A84C]"]:not(.rounded-full),
+  a[class*="bg-primary"]:not(.rounded-full),
+  a[class*="border-[#f2c94c]"]:not(.rounded-full),
+  a[class*="border-[#C9A84C]"]:not(.rounded-full),
+  a.rounded-none {
+    border-radius: 0px !important;
+  }
+
+  /* Premium Hover Effects for all buttons & button-like interactive items */
+  button:not(.rounded-full):not(.close-btn):not(.icon-btn):not(.marquee-btn):not(.select-trigger):not(:disabled),
+  .button:not(.rounded-full),
+  .btn:not(.rounded-full),
+  [type="button"]:not(.rounded-full),
+  [type="submit"],
+  a[class*="bg-[#C9A84C]"]:not(.rounded-full),
+  a[class*="bg-primary"]:not(.rounded-full),
+  a[class*="border-[#f2c94c]"]:not(.rounded-full),
+  a[class*="border-[#C9A84C]"]:not(.rounded-full),
+  a.inline-flex.items-center.justify-center:not(.rounded-full) {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  button:not(.rounded-full):not(.close-btn):not(.icon-btn):not(.marquee-btn):not(.select-trigger):hover:not(:disabled),
+  .button:not(.rounded-full):hover,
+  .btn:not(.rounded-full):hover,
+  [type="button"]:not(.rounded-full):hover,
+  [type="submit"]:hover:not(:disabled),
+  a[class*="bg-[#C9A84C]"]:not(.rounded-full):hover,
+  a[class*="bg-primary"]:not(.rounded-full):hover,
+  a[class*="border-[#f2c94c]"]:not(.rounded-full):hover,
+  a[class*="border-[#C9A84C]"]:not(.rounded-full):hover,
+  a.inline-flex.items-center.justify-center:not(.rounded-full):hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(201, 168, 76, 0.25);
+    border-color: #F7E7A8 !important;
+  }
+
+  button:not(.rounded-full):not(.close-btn):not(.icon-btn):not(.marquee-btn):not(.select-trigger):active:not(:disabled),
+  .button:not(.rounded-full):active,
+  .btn:not(.rounded-full):active,
+  [type="button"]:not(.rounded-full):active,
+  [type="submit"]:active:not(:disabled),
+  a[class*="bg-[#C9A84C]"]:not(.rounded-full):active,
+  a.inline-flex.items-center.justify-center:not(.rounded-full):active {
+    transform: translateY(-1px) scale(0.98);
   }
 
   html {

@@ -29,10 +29,9 @@ const CATEGORIES: (Category | "All")[] = [
 ];
 
 const STATS = [
-  { label: "Brands Grown", value: 50, suffix: "+" },
-  { label: "Industries", value: 12, suffix: "" },
-  { label: "Avg. Growth", value: 3, suffix: "x" },
-  { label: "Reels Produced", value: 400, suffix: "+" },
+  { label: "Brands Grown", value: 150, suffix: "+" },
+  { label: "Industries", value: 25, suffix: "" },
+  { label: "Campaigns Run", value: 400, suffix: "+" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -439,13 +438,13 @@ function ClientModal({ client, onClose }: { client: Client; onClose: () => void 
       <motion.div
         layoutId={`card-${client.id}`}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#111111]"
+        className="relative w-[80%] md:w-[60%] max-h-[88vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#111111]"
       >
         {/* Corner Accent Marks ("L" shaped borders for premium certificate/badge feel) */}
-        <div className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-[#f2c94c]/60 pointer-events-none rounded-tl-md z-20" />
+        {/* <div className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-[#f2c94c]/60 pointer-events-none rounded-tl-md z-20" />
         <div className="absolute top-4 right-4 w-5 h-5 border-t-2 border-r-2 border-[#f2c94c]/60 pointer-events-none rounded-tr-md z-20" />
         <div className="absolute bottom-4 left-4 w-5 h-5 border-b-2 border-l-2 border-[#f2c94c]/60 pointer-events-none rounded-bl-md z-20" />
-        <div className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-[#f2c94c]/60 pointer-events-none rounded-br-md z-20" />
+        <div className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-[#f2c94c]/60 pointer-events-none rounded-br-md z-20" /> */}
 
         {/* close button */}
         <button
@@ -721,15 +720,84 @@ export default function Clients() {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* ---------------- HERO ---------------- */}
-      <section ref={heroRef} className="pt-28 pb-16 px-6 text-center relative overflow-hidden">
-        <h1 className="font-serif text-5xl md:text-7xl leading-tight">
-          <span className="hero-line block">The Brands Behind</span>
-          <span className="hero-line block">The Growth.</span>
-        </h1>
-        <p className="hero-sub mt-6 text-white/50 italic text-sm md:text-base">
-          Every logo represents a story. Every story represents trust.
-        </p>
-      </section>
+     <section
+  ref={heroRef}
+  className="relative overflow-hidden pt-32 pb-24 px-6 text-center"
+>
+  {/* Background Glow */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#C9A84C]/10 blur-[180px] rounded-full"></div>
+  </div>
+
+  <div className="relative z-10">
+
+    {/* Small Label */}
+    <motion.p
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="mb-6 uppercase tracking-[0.45em] text-[#C9A84C] text-xs sm:text-sm font-montserrat"
+    >
+      Our Clients
+    </motion.p>
+
+    {/* Heading */}
+    <motion.h1
+      initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="font-cinzel font-bold leading-[0.95]"
+    >
+      <span className="block text-[#F5F0E8] text-5xl md:text-7xl xl:text-8xl">
+        The Brands Behind
+      </span>
+
+      <span className="relative inline-block mt-4 text-5xl md:text-7xl xl:text-8xl bg-gradient-to-r from-[#FFF5D6] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent">
+        The Growth
+
+        <motion.span
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 1 }}
+          className="absolute -bottom-4 left-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent"
+        />
+      </span>
+    </motion.h1>
+
+    {/* Tagline */}
+    <motion.p
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.5, duration: 1 }}
+      className="mt-10 max-w-3xl mx-auto text-[#F5F0E8]/75 font-montserrat text-base md:text-lg leading-9 tracking-wide"
+    >
+      <span className="text-[#C9A84C] italic font-cormorant text-xl">
+        “
+      </span>
+
+      Every logo represents a
+      <span className="text-[#C9A84C] font-medium">
+        {" "}story
+      </span>.
+      Every story represents
+      <span className="text-white font-medium">
+        {" "}trust
+      </span>
+
+      <span className="text-[#C9A84C] italic font-cormorant text-xl">
+        ”
+      </span>
+    </motion.p>
+
+  </div>
+</section>
 
       {/* ---------------- STATS BAR ---------------- */}
       <section className="border-y border-white/10 py-10 px-6">
@@ -741,7 +809,7 @@ export default function Clients() {
       </section>
 
       {/* ---------------- FILTER + SEARCH ---------------- */}
-      <section className="px-6 pt-10 pb-6 flex flex-col items-center gap-5">
+      {/* <section className="px-6 pt-10 pb-6 flex flex-col items-center gap-5">
         <input
           type="text"
           value={search}
@@ -774,10 +842,10 @@ export default function Clients() {
             </button>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ---------------- GRID ---------------- */}
-      <section className="px-6 pb-20 max-w-7xl mx-auto">
+      <section className="px-6 pb-20 mt-20 max-w-7xl mx-auto">
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-min"
@@ -812,26 +880,87 @@ export default function Clients() {
             <button
               key={`${c.id}-${i}`}
               onClick={() => scrollToCard(c.id)}
-              className="mx-6 text-black font-serif text-lg tracking-wide hover:text-white transition-colors"
+              className="marquee-btn mx-6 text-black font-serif text-lg tracking-wide hover:text-white transition-colors"
             >
-              {c.name.toUpperCase()} •
+              {c.name.toUpperCase()} 
             </button>
           ))}
         </div>
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      <section className="py-24 px-6 text-center">
-        <h2 className="font-serif text-6xl md:text-5xl">
-          Your Brand Could
-          <br />
-          Be Next.
-        </h2>
-        <p className="mt-4 text-white/50 text-sm">The strongest brands grow together.</p>
-        <button onClick={() => navigate("/contact")} className="mt-8 border border-[#f2c94c] text-[#f2c94c] rounded-full px-8 py-3 text-xs uppercase tracking-widest hover:bg-[#f2c94c] hover:text-black transition-colors">
-          Start The Conversation
-        </button>
-      </section>
+      <section className="relative overflow-hidden py-28 px-6 text-center">
+
+  {/* Background Glow */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#C9A84C]/10 blur-[180px] rounded-full"></div>
+  </div>
+
+  <div className="relative z-10">
+
+    {/* Small Label */}
+    <p className="uppercase tracking-[0.45em] text-[#C9A84C] text-xs sm:text-sm font-montserrat mb-6">
+      Let's Build Something Exceptional
+    </p>
+
+    {/* Heading */}
+    <h2 className="font-cinzel font-bold leading-[1.05] text-5xl md:text-6xl lg:text-7xl">
+      <span className="text-[#F5F0E8]">
+        Your Brand Could
+      </span>
+
+      <br />
+
+      <span className="bg-gradient-to-r from-[#FFF5D6] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent">
+        Be Next
+      </span>
+    </h2>
+
+    {/* Divider */}
+    <div className="w-24 h-[2px] mx-auto my-8 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent"></div>
+
+    {/* Description */}
+    <p className="max-w-3xl mx-auto text-[#F5F0E8]/75 font-montserrat text-base md:text-lg leading-9 tracking-wide">
+      The strongest brands don't happen by chance,
+      <span className="text-[#C9A84C] font-medium">
+        {" "}They grow together
+      </span>
+    </p>
+
+    {/* Button */}
+    <button
+      onClick={() => navigate("/contact")}
+      className="
+        group
+        mt-12
+        inline-flex
+        items-center
+        gap-4
+        border
+        border-[#C9A84C]
+        px-8
+        py-4
+        uppercase
+        tracking-[0.28em]
+        text-xs
+        font-semibold
+        text-[#C9A84C]
+        transition-all
+        duration-500
+        hover:bg-[#C9A84C]
+        hover:text-[#0A0A0A]
+        hover:shadow-[0_0_35px_rgba(201,168,76,0.35)]
+      "
+    >
+      Start The Conversation
+
+      <span className="transition-transform duration-500 group-hover:translate-x-1">
+        ↗
+      </span>
+    </button>
+
+  </div>
+</section>
     </div>
   );
 }

@@ -145,36 +145,6 @@ const CaseStudy = () => {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
-            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
-              120+
-            </h3>
-            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Projects Delivered</p>
-          </div>
-
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
-            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
-              95%
-            </h3>
-            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Client Retention</p>
-          </div>
-
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
-            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
-              5M+
-            </h3>
-            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Monthly Reach</p>
-          </div>
-
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010] p-6 text-center shadow-sm hover:border-[#C9A84C]/50 transition-colors duration-300">
-            <h3 className="text-3xl font-extrabold text-[#00A878] font-cinzel">
-              ₹10Cr+
-            </h3>
-            <p className="text-[#F5F0E8]/70 font-montserrat text-xs tracking-wider uppercase mt-2">Revenue Generated</p>
-          </div>
-        </div>
       </div>
     </section>
   );

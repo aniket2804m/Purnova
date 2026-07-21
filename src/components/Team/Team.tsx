@@ -261,7 +261,7 @@ const Team = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-2xl text-[#F5F0E8]/75 leading-relaxed font-light"
+        className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-[#F5F0E8]/75 leading-relaxed font-light"
       >
         Meet the{" "}
 
@@ -284,9 +284,9 @@ const Team = () => {
           />
         </span>{" "}
 
-        — the strategists, designers, and brand architects who made it happen.
+        the strategists, designers, and brand architects who made it happen.
         The people your customers will never know by name, but whose thinking
-        shapes every perception they hold of you.
+        shapes every perception they hold of you
       </motion.p>
     </div>
   </div>
@@ -536,30 +536,30 @@ onMouseLeave={() => {
   </h3>
 
   {/* Role */}
-  <div className="mt-4 flex items-center justify-center sm:justify-start gap-3">
-  <span className="w-8 h-[1px] bg-[#C9A84C]"></span>
+  <div className="mt-4 flex text-center items-center justify-center sm:justify-start gap-3">
+  {/* <span className="w-8 h-[1px] bg-[#C9A84C]"></span> */}
 
-  <p className="text-[#C9A84C] uppercase tracking-[0.35em] text-xs sm:text-sm font-cinzel">
+  <p className="text-[#C9A84C] uppercase tracking-[0.35em] text-center text-xs sm:text-sm font-cinzel">
     {member.role}
   </p>
 
-  <span className="w-8 h-[1px] bg-[#C9A84C]"></span>
+  {/* <span className="w-8 h-[1px] bg-[#C9A84C]"></span> */}
 </div>
 </div>
 
-       <p className="relative mt-3 pl-8 text-[#F5F0E8]/85 font-cormorant italic text-lg sm:text-xl leading-8 tracking-wide min-h-[70px]">
-  <span className="absolute left-0 -top-2 text-4xl text-[#C9A84C]">
-    “
-  </span>
+ <div className="mt-3 pl-0">
+  <div className="border-l-2 border-[#C9A84C] pl-5">
+    <p className="relative mt-3 pl-0 text-[#F5F0E8]/85 font-cormorant italic text-lg sm:text-xl leading-8 tracking-wide min-h-[70px]">
+      <span className="bg-[#C9A84C]/10 px-2 py-1 rounded-sm inline">
+        <span className="text-[#C9A84C] text-2xl">“</span>
 
-  <span className="bg-[#C9A84C]/10 px-2 py-1 rounded-sm border-l-2 border-[#C9A84C]">
-    {member.shortDesc.replace(/^"|"$/g, "")}
-  </span>
+        {member.shortDesc.replace(/^"|"$/g, "")}
 
-  <span className="text-[#C9A84C] text-2xl ml-1">
-    ”
-  </span>
-</p>
+        <span className="text-[#C9A84C] text-2xl">”</span>
+      </span>
+    </p>
+  </div>
+</div>
 
 <AnimatePresence mode="wait">
   {showMore && (

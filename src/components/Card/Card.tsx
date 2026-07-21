@@ -140,7 +140,7 @@ const Card = () => {
               zIndex: index + 1,
             }}
           >
-            <div className="bg-[#101010] border border-[#C9A84C]/15 rounded-none overflow-hidden shadow-[0_10px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+            <div className="group bg-[#101010] border border-[#C9A84C]/15 rounded-none overflow-hidden shadow-[0_10px_50px_rgba(0,0,0,0.8)] hover:border-[#C9A84C]/60 hover:shadow-[0_20px_50px_rgba(201,168,76,0.15)] transition-all duration-500 backdrop-blur-xl">
               <div className="grid lg:grid-cols-2 gap-10 items-center">
                 
                 {/* Left Content */}
@@ -178,7 +178,7 @@ const Card = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
                   </div>

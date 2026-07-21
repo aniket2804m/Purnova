@@ -82,8 +82,7 @@ const Footer = () => {
             </h2>
 
             <p className="font-montserrat font-light text-sm text-[#F5F0E8]/70 leading-relaxed">
-              Helping businesses grow through SEO, Social Media Marketing,
-              Performance Ads, Branding and Website Development.
+             Everything your business needs to grow, from branding and websites to performance marketing, SEO, and social media.
             </p>
 
             {/* Social Icons */}
@@ -157,12 +156,12 @@ const Footer = () => {
               {[
                 { name: "Brand Strategy", path: "/brand" },
                 { name: "Performance Marketing", path: "/perform" },
-                { name: "Website Development", path: "/web" },
-                { name: "Google Ads", path: "/google" },
-                { name: "Video Creation", path: "/facebook" },
-                { name: "Content Creation", path: "/linkdin" },
-                { name: "SEO Optimization", path: "/seo" },
                 { name: "Social Media Marketing", path: "/social" },
+                { name: "SEO Optimization", path: "/seo" },
+                { name: "Content Creation", path: "/linkdin" },
+                { name: "Video Creation", path: "/facebook" },
+                { name: "Google Ads", path: "/google" },
+
               ].map((service) => (
                 <li key={service.name}>
                   <Link
@@ -256,7 +255,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-[#C9A84C]/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs font-montserrat font-light text-[#F5F0E8]/70">
-            © {new Date().getFullYear()} Purnova. All Rights Reserved. Where Brands Become Legends.
+            © {new Date().getFullYear()} Purnova. All Rights Reserved.
           </p>
 
           <div className="flex gap-6 text-xs font-montserrat font-light text-[#F5F0E8]/70">

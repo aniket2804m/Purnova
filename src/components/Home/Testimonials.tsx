@@ -308,36 +308,6 @@ const Testimonials = () => {
           </button>
         </div>
 
-        {/* Bottom Metrics statistics */}
-        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 font-montserrat">
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
-              120+
-            </h3>
-            <p className="text-[#F5F0E8]/80 font-light mt-2">Happy Clients</p>
-          </div>
-
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
-              95%
-            </h3>
-            <p className="text-[#F5F0E8]/80 font-light mt-2">Retention Rate</p>
-          </div>
-
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
-              5M+
-            </h3>
-            <p className="text-[#F5F0E8]/80 font-light mt-2">Monthly Reach</p>
-          </div>
-
-          <div className="rounded-none border border-[#C9A84C]/15 bg-[#101010]/60 backdrop-blur-md p-6 text-center shadow-sm">
-            <h3 className="text-3xl font-bold text-[#00A878] font-cinzel">
-              4.9/5
-            </h3>
-            <p className="text-[#F5F0E8]/80 font-light mt-2">Average Rating</p>
-          </div>
-        </div>
       </div>
     </section>
   );

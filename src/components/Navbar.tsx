@@ -27,12 +27,12 @@ const navLinks = [
 const servicesDropdown = [
   { label: "Brand Strategy", href: "/brand" },
   { label: "Performance Marketing", href: "/perform" },
-  { label: "Website Development", href: "/web" },
-  { label: "Google Ads", href: "/google" },
-  { label: "Video Creation", href: "/facebook" },
-  { label: "Content Creation", href: "/linkdin" },
-  { label: "SEO Optimization", href: "/seo" },
   { label: "Social Media Marketing", href: "/social" },
+  { label: "SEO Optimization", href: "/seo" },
+  { label: "Content Creation", href: "/linkdin" },
+  { label: "Video Creation", href: "/facebook" },
+  { label: "Web Development", href: "/web" },
+  { label: "Google Ads", href: "/google" },
 ];
 
 const casestudyDropdown = [

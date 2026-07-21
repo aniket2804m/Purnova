@@ -47,11 +47,11 @@ export default function About() {
 
           <ScrollReveal variant="fade-down" delay={0.2}>
             <h1 className="mt-5 text-4xl sm:text-4xl md:text-8xl font-cormorant font-light leading-tight">
-              Some Brands Are Seen.
+              Some Brands Are Seen
              
               <br />
               <span className="italic text-[#C9A84C] font-normal">
-                 Great Brands Are Remembered.
+                 Great Brands Are Remembered
               </span>
             </h1>
           </ScrollReveal>
@@ -69,9 +69,9 @@ export default function About() {
               }}
               onClick={() => { navigate("/card");  // Navigate to Contact page
               }}
-              className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
+              className="mt-10 bg-[#C9A84C] hover:bg-[#F5F0E8] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
             >
-              Explore Our Work
+              Explore Our Services
             </motion.button>
         </div>
       </div>
@@ -320,49 +320,60 @@ export default function About() {
   </h3>
 
   <p className="mt-8 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light text-base sm:text-lg transition-all duration-500 hover:text-[#F5F0E8]">
-    At <span className="text-[#C9A84C] font-medium">Purnova</span>, our vision has always been simple:
-    help ambitious businesses build a brand that people
-    remember.
-  </p>
+  <span className="text-[#C9A84C] font-medium">Rushikesh</span> believes business growth is never accidental.
+  Behind every enduring <span className="text-[#C9A84C] font-medium">brand</span> is a system of
+  <span className="text-white font-medium"> deliberate decisions</span>,
+  <span className="text-white font-medium"> disciplined execution</span>, and
+  <span className="bg-gradient-to-r from-[#FFF4CC] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent font-semibold">
+    {" "} unwavering consistency.
+  </span>
+</p>
+
+ <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
+  <span className="text-[#C9A84C] font-medium">
+    That philosophy
+  </span>{" "}
+  became{" "}
+  <span className="bg-gradient-to-r from-[#FFF4CC] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent font-semibold">
+    Purnova.
+  </span>
+</p>
 
   <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
-    Founded with a passion for
-    <span className="text-[#C9A84C]"> strategy</span>,
-    <span className="text-[#C9A84C]"> creativity</span> and
-    <span className="text-[#C9A84C]"> measurable growth</span>,
-    Purnova has evolved into a digital
-    growth partner for businesses looking to dominate
-    their market.
-  </p>
+  Today, every
+  <span className="text-[#C9A84C] font-medium"> strategy</span>,
+  every
+  <span className="text-[#C9A84C] font-medium"> campaign</span>, and every
+  <span className="text-[#C9A84C] font-medium"> creative decision</span> is
+  built with one purpose — to transform
+  <span className="text-white font-medium"> ambitious businesses</span> into
+  <span className="bg-gradient-to-r from-[#FFF4CC] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent font-semibold">
+    {" "}category-defining brands
+  </span>{" "}
+  that don't compete for attention —
+  <span className="text-[#C9A84C] font-semibold">
+    {" "}they command it.
+  </span>
+</p>
 
-  <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
-    Every
-    <span className="text-[#C9A84C]"> campaign</span>,
-    every
-    <span className="text-[#C9A84C]"> design</span>,
-    and every
-    <span className="text-[#C9A84C]"> strategy</span> is
-    built around one goal — creating meaningful business
-    growth while building a powerful brand presence.
-  </p>
+<div className="mt-12 relative">
+  <div className="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-[#C9A84C] to-transparent"></div>
 
-  {/* Signature Quote */}
-  <div className="mt-12 border-l-4 border-[#C9A84C] pl-8 py-2 relative">
-    <span className="absolute -top-6 left-2 text-6xl text-[#C9A84C]/20 font-cormorant">
-      “
+  <p className="pl-8 font-cormorant italic text-2xl sm:text-3xl md:text-4xl leading-relaxed text-[#F5F0E8]">
+    <span className="text-[#C9A84C] text-4xl">“</span>
+
+    Vision builds the future.
+
+    <br />
+
+    <span className="text-[#C9A84C]">
+      Consistency makes people believe in it.
     </span>
 
-    <p className="font-cormorant font-light italic text-xl sm:text-2xl md:text-3xl leading-relaxed text-[#F5F0E8]">
-      Great brands aren't built by chance.
-      <br />
-      They're built by
-      <span className="text-[#C9A84C]"> vision</span>,
-      <span className="text-[#C9A84C]"> execution</span>,
-      <br />
-      and relentless
-      <span className="text-[#C9A84C]"> consistency.</span>
-    </p>
-  </div>
+    <span className="text-[#C9A84C] text-4xl">”</span>
+  </p>
+</div>
+
 </div>
             </ScrollReveal>
           </div>
@@ -440,7 +451,7 @@ export default function About() {
           
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 md:mt-24">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 md:mt-24">
           {stats.map((stat, i) => (
             <ScrollReveal key={i} variant="scale-up" delay={0.08 * i}>
               <motion.div
@@ -459,21 +470,21 @@ export default function About() {
               </motion.div>
             </ScrollReveal>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* BIG STATEMENT */}
       <div className="py-20 md:py-40 px-4 sm:px-6 text-center border-t border-[#C9A84C]/10 bg-[#0A0A0A] relative">
         <ScrollReveal variant="fade-up" delay={0.15}>
           <h2 className="font-cormorant text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-6xl mx-auto leading-tight text-[#F5F0E8] font-light">
-            CREATIVITY WITHOUT PURPOSE IS NOISE.
+            CREATIVITY WITHOUT PURPOSE IS NOISE
             <br className="hidden sm:inline" />
-            STRATEGY WITHOUT EXECUTION IS THEORY.
+            STRATEGY WITHOUT EXECUTION IS THEORY
           </h2>
 
           <p className="mt-8 text-[#F5F0E8]/70 text-sm sm:text-base md:text-lg font-montserrat font-light">
             Great brands are built where vision,
-            creativity and performance meet.
+            creativity and performance meet
           </p>
         </ScrollReveal>
       </div>
@@ -516,12 +527,12 @@ export default function About() {
             <h2 className="font-cormorant text-2xl sm:text-4xl md:text-6xl font-light italic max-w-5xl mx-auto text-[#F5F0E8] leading-tight">
               "STOP CHASING THE MARKET.
               <br className="hidden sm:inline" />
-              BECOME THE STANDARD."
+              BECOME THE STANDARD"
             </h2>
 
             <p className="mt-8 text-[#F5F0E8]/70 max-w-2xl mx-auto font-montserrat font-light text-sm sm:text-base md:text-lg">
               The future belongs to brands brave enough
-              to build something unforgettable.
+              to build something unforgettable
             </p>
 
             <motion.button

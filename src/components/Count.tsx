@@ -28,7 +28,7 @@ const stats = [
   {
     number: 5,
     suffix: "+",
-    title: "YEAR OF EXPERIENCE",
+    title: "EXPERIENCE",
   },
 ];
 
@@ -132,13 +132,13 @@ const Count = () => {
 
   {/* Opening Quote */}
   <p className="count-para relative inline-block text-[#C9A84C] font-cormorant italic text-2xl sm:text-3xl lg:text-4xl tracking-wide">
-    <span className="absolute -left-6 -top-3 text-5xl text-[#C9A84C]/30">“</span>
+    <span className="absolute -left-6 -top-3 text-5xl text-[#C9A84C]">“</span>
 
     <span className="bg-gradient-to-r from-[#F7E7A8] via-[#C9A84C] to-[#F7E7A8] bg-clip-text text-transparent">
       Strategy. Creativity. Growth.
     </span>
 
-    <span className="absolute -right-6 bottom-0 text-5xl text-[#C9A84C]/30">”</span>
+    <span className="absolute -right-6 bottom-0 text-5xl text-[#C9A84C]">”</span>
   </p>
 
   {/* Paragraph 1 */}

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const navigate = useNavigate();
+  const [showMore, setShowMore] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -33,86 +34,233 @@ export default function About() {
       className="bg-[#050505] text-[#F5F0E8] overflow-hidden"
     >
       {/* HERO */}
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 relative">
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-10 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080808] to-black" />
         <ParticleBackground color="#C9A84C" />
 
-        <div className="relative z-10 text-center max-w-5xl mt-5">
+        <div className="relative z-10 text-center max-w-5xl">
           <ScrollReveal variant="fade-down" delay={0.1}>
-            <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-xl">
+            <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-xl mb-10">
               About Purnova
             </span>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-down" delay={0.2}>
             <h1 className="mt-5 text-4xl sm:text-4xl md:text-8xl font-cormorant font-light leading-tight">
-              Transforming Brands.
-              <br />
-              Creating Digital
+              Some Brands Are Seen.
+             
               <br />
               <span className="italic text-[#C9A84C] font-normal">
-                Success Stories.
+                 Great Brands Are Remembered.
               </span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.35}>
             <p className="max-w-3xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
-              We help businesses grow through strategic marketing,
-              SEO, branding, performance advertising and digital
-              experiences designed for measurable results.
+              We help businesses build brands people trust, remember, and choose. Through strategy, creativity, and marketing, we turn ambitious ideas into lasting growth
             </p>
           </ScrollReveal>
+
+          <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 20px rgba(201, 168, 76, 0.4)",
+              }}
+              onClick={() => { navigate("/card");  // Navigate to Contact page
+              }}
+              className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
+            >
+              Explore Our Work
+            </motion.button>
         </div>
       </div>
 
       {/* OUR STORY */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-32 border-t border-[#C9A84C]/10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
-          <ScrollReveal variant="fade-right" delay={0.15}>
-            <div>
-              <h2 className="text-[#C9A84C] text-4xl sm:text-5xl md:text-7xl font-cormorant font-light leading-none">
-                OUR
-                <br />
-                STORY
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal variant="fade-left" delay={0.2}>
-            <div className="space-y-8 text-[#F5F0E8]/75 text-lg leading-relaxed font-montserrat font-light">
-              <p>
-                Look closely at the night sky.
-              </p>
-
-              <p>
-                The brightest stars are not born from stillness. They are born from collision, pressure, transformation, and the courage to shine despite the darkness around them.
-              </p>
-
-              <p>
-                PURNOVA was born the same way.
-              </p>
-
-              <p>
-                What appeared to be an ending became the beginning of something stronger — a clearer vision, a sharper purpose, and a relentless commitment to creating work that leaves a mark.
-              </p>
-
-              <p>We believe that every remarkable brand begins with a moment of change. A moment when ordinary is no longer enough. A moment when growth demands reinvention. A moment when ambition refuses to stay hidden.</p>
-
-              <p>That belief became PURNOVA.</p>
-
-              <p>Today, we help businesses transform their potential into presence, their ideas into identity, and their vision into impact.</p>
-
-              <p>We combine strategy, design, storytelling, technology, and performance to create brands that don't simply exist—they endure.</p>
-
-              <p>Because in a world crowded with noise, visibility is no longer enough.</p>
-              <p className="text-[#C9A84C] font-cinzel font-semibold tracking-wider uppercase text-base">
-                Some brands exist. The rare ones lead.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-32 border-t border-[#C9A84C]/10">
+  <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
+    <ScrollReveal variant="fade-right" delay={0.15}>
+      <div>
+        <h2 className="text-[#C9A84C] text-4xl sm:text-5xl md:text-7xl font-cormorant font-light leading-none">
+          OUR
+          <br />
+          STORY
+        </h2>
       </div>
+    </ScrollReveal>
+
+    <ScrollReveal variant="fade-left" delay={0.2}>
+      <div className="space-y-8 text-[#F5F0E8]/75 text-lg leading-relaxed font-montserrat font-light">
+
+        {/* Always Visible */}
+       <p className="text-xl md:text-2xl font-light tracking-wide transition-all duration-500 hover:translate-x-2">
+  <span className="text-[#C9A84C] font-semibold">Look up.</span>
+</p>
+
+<p className="leading-9 tracking-wide transition-all duration-500 hover:text-white">
+  Every{" "}
+  <span className="text-white font-medium relative after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-full after:bg-[#C9A84C]">
+    star
+  </span>{" "}
+  you see tonight was born long before you ever noticed it.
+</p>
+
+<p className="text-lg italic tracking-wide transition-all duration-500 hover:translate-x-2">
+  <span className="text-[#C9A84C] border-l-4 border-[#C9A84C] pl-4">
+    Not in silence.
+  </span>
+</p>
+
+<p className="text-lg leading-8 tracking-wide transition-all duration-500 hover:text-white">
+  But in{" "}
+  <span className="text-white font-semibold bg-gradient-to-r from-[#C9A84C] via-white to-[#C9A84C] bg-clip-text text-transparent">
+    chaos.
+  </span>
+</p>
+
+        
+           <p className="border-l-2 border-[#C9A84C]/60 pl-5">
+  In unimaginable pressure.
+  <br />
+  In violent collisions.
+  <br />
+  In the darkness where nothing seemed possible.
+</p>
+
+           <p className="italic text-xl text-white/90 border-l-4 border-[#C9A84C] pl-6">
+  Only then...
+  <br />
+  did it become light.
+</p>
+
+           <p className="text-xl md:text-2xl text-white font-light tracking-wide transition-all duration-500 hover:text-[#C9A84C]">
+  Brands are born the same way.
+</p>
+
+<div className="border-l-2 border-[#C9A84C]/60 pl-6 space-y-2 transition-all duration-500 hover:border-[#C9A84C] hover:translate-x-2">
+  <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
+    Not from a <span className="text-[#C9A84C] font-medium">logo.</span>
+  </p>
+
+  <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
+    Not from a <span className="text-[#C9A84C] font-medium">campaign.</span>
+  </p>
+
+  <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
+    Not from a <span className="text-[#C9A84C] font-medium">viral post.</span>
+  </p>
+</div>
+
+<p className="text-lg md:text-xl italic text-white/90 border-l-4 border-[#C9A84C] pl-6 py-2 transition-all duration-500 hover:translate-x-2 hover:text-white">
+  They are forged in difficult decisions.
+</p>
+
+{/* Hidden Until Read More */}
+        {showMore && (
+          <>
+
+          <div className="space-y-6">
+
+  <div className="border-l-2 border-[#C9A84C]/60 pl-6 space-y-2">
+    <p className="text-xl text-white font-light hover:text-[#C9A84C] transition-all duration-500">
+      Late nights.
+    </p>
+
+    <p className="text-[#C9A84C] text-xl font-medium tracking-wide hover:translate-x-2 transition-all duration-500">
+      Risk.
+    </p>
+
+    <p className="text-xl text-white font-light hover:text-[#C9A84C] transition-all duration-500">
+      Reinvention.
+    </p>
+  </div>
+
+  <p className="leading-9 tracking-wide hover:text-white transition-all duration-500">
+    And the relentless belief that ordinary was never the destination.
+  </p>
+
+  <p className="text-xl text-white font-light hover:text-[#C9A84C] transition-all duration-500">
+    The brands people remember aren't always the biggest.
+  </p>
+
+  <div className="space-y-2 border-l-2 border-[#C9A84C]/40 pl-6">
+    <p className="hover:text-white transition-all duration-300">
+      They're the <span className="text-[#C9A84C] font-medium">clearest.</span>
+    </p>
+
+    <p className="hover:text-white transition-all duration-300">
+      The <span className="text-[#C9A84C] font-medium">bravest.</span>
+    </p>
+
+    <p className="hover:text-white transition-all duration-300">
+      The ones that know exactly who they are, even when the world doesn't.
+    </p>
+  </div>
+
+  <div className="border-l-4 border-[#C9A84C] pl-6 space-y-3">
+    <p className="text-white">
+      We find the <span className="text-[#C9A84C]">gravity</span> hidden inside ambitious businesses.
+    </p>
+
+    <p className="hover:text-white transition-all duration-300">
+      We shape their identity.
+    </p>
+
+    <p className="hover:text-white transition-all duration-300">
+      Give their story a voice.
+    </p>
+
+    <p className="hover:text-white transition-all duration-300">
+      Build experiences that people don't just notice...
+    </p>
+
+    <p className="text-[#C9A84C] font-medium hover:translate-x-2 transition-all duration-300">
+      They remember.
+    </p>
+  </div>
+
+  <div className="space-y-2">
+    <p className="hover:text-white transition-all duration-300">
+      Because attention fades.
+    </p>
+
+    <p className="hover:text-white transition-all duration-300">
+      Algorithms change.
+    </p>
+
+    <p className="leading-9 hover:text-white transition-all duration-300">
+      But brands built on <span className="text-[#C9A84C]">clarity</span>, <span className="text-[#C9A84C]">purpose</span>, and <span className="text-[#C9A84C]">trust</span> become impossible to ignore.
+    </p>
+  </div>
+
+  <p className="italic text-xl border-l-4 border-[#C9A84C] pl-6 hover:translate-x-2 transition-all duration-500">
+    Like the brightest stars,
+  </p>
+
+  <p className="text-2xl text-white font-light tracking-wide">
+    They become impossible not to see.
+  </p>
+
+  <p className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent font-cinzel font-semibold tracking-[0.25em] uppercase text-lg pt-6">
+    Some brands exist. The rare ones lead.
+  </p>
+
+</div>
+          </>
+        )}
+
+        {/* Read More Button */}
+        <button
+          onClick={() => setShowMore(!showMore)}
+          className="mt-10 bg-[#C9A84C] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
+        >
+          {showMore ? "Read Less" : "Read More"}
+        </button>
+
+      </div>
+    </ScrollReveal>
+  </div>
+</div>
 
       {/* FOUNDER SECTION */}
       <section className="relative py-16 md:py-32 bg-[#0A0A0A] overflow-hidden border-t border-[#C9A84C]/10">
@@ -153,50 +301,69 @@ export default function About() {
             {/* RIGHT IMAGE */}
             <ScrollReveal variant="fade-left" delay={0.2}>
               <div>
-                <span className="font-cinzel font-normal uppercase tracking-[0.3em] text-[#C9A84C] text-sm">
-                  Founder & Visionary
-                </span>
+  <span className="inline-block font-cinzel font-normal uppercase tracking-[0.35em] text-[#C9A84C] text-sm border border-[#C9A84C]/30 px-4 py-2 rounded-full">
+    Founder & Visionary
+  </span>
 
-                <h2 className="mt-5 text-4xl sm:text-5xl md:text-7xl font-cormorant font-light leading-tight text-[#F5F0E8]">
-                  Meet The
-                  <br />
-                  Founder
-                </h2>
+  <h2 className="mt-6 text-4xl sm:text-5xl md:text-7xl font-cormorant font-light leading-tight text-[#F5F0E8]">
+    Meet The
+    <br />
+    <span className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent">
+      Founder
+    </span>
+  </h2>
 
-                <div className="w-20 h-[2px] bg-[#C9A84C] my-8" />
+  <div className="w-24 h-[2px] bg-gradient-to-r from-[#C9A84C] to-transparent my-8" />
 
-                <h3 className="text-2xl sm:text-3xl font-cinzel font-semibold text-[#C9A84C]">
-                  Rushikesh Hande
-                </h3>
+  <h3 className="text-2xl sm:text-3xl font-cinzel font-semibold text-[#C9A84C] tracking-wide hover:tracking-[0.12em] transition-all duration-500">
+    Rushikesh Hande
+  </h3>
 
-                <p className="mt-6 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base sm:text-lg">
-                  At Purnova Digital, our vision has always been simple:
-                  help ambitious businesses build a brand that people
-                  remember.
-                </p>
+  <p className="mt-8 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light text-base sm:text-lg transition-all duration-500 hover:text-[#F5F0E8]">
+    At <span className="text-[#C9A84C] font-medium">Purnova</span>, our vision has always been simple:
+    help ambitious businesses build a brand that people
+    remember.
+  </p>
 
-                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light">
-                  Founded with a passion for strategy, creativity and
-                  measurable growth, Purnova has evolved into a digital
-                  growth partner for businesses looking to dominate
-                  their market.
-                </p>
+  <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
+    Founded with a passion for
+    <span className="text-[#C9A84C]"> strategy</span>,
+    <span className="text-[#C9A84C]"> creativity</span> and
+    <span className="text-[#C9A84C]"> measurable growth</span>,
+    Purnova has evolved into a digital
+    growth partner for businesses looking to dominate
+    their market.
+  </p>
 
-                <p className="mt-5 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light">
-                  Every campaign, every design, and every strategy is
-                  built around one goal — creating meaningful business
-                  growth while building a powerful brand presence.
-                </p>
+  <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
+    Every
+    <span className="text-[#C9A84C]"> campaign</span>,
+    every
+    <span className="text-[#C9A84C]"> design</span>,
+    and every
+    <span className="text-[#C9A84C]"> strategy</span> is
+    built around one goal — creating meaningful business
+    growth while building a powerful brand presence.
+  </p>
 
-                {/* Signature Quote */}
-                <div className="mt-10 border-l-2 border-[#C9A84C] pl-6 font-cormorant">
-                  <p className="font-light italic text-lg sm:text-xl md:text-2xl text-[#F5F0E8]">
-                    "Great brands aren't built by chance.
-                    They're built by vision, execution,
-                    and relentless consistency."
-                  </p>
-                </div>
-              </div>
+  {/* Signature Quote */}
+  <div className="mt-12 border-l-4 border-[#C9A84C] pl-8 py-2 relative">
+    <span className="absolute -top-6 left-2 text-6xl text-[#C9A84C]/20 font-cormorant">
+      “
+    </span>
+
+    <p className="font-cormorant font-light italic text-xl sm:text-2xl md:text-3xl leading-relaxed text-[#F5F0E8]">
+      Great brands aren't built by chance.
+      <br />
+      They're built by
+      <span className="text-[#C9A84C]"> vision</span>,
+      <span className="text-[#C9A84C]"> execution</span>,
+      <br />
+      and relentless
+      <span className="text-[#C9A84C]"> consistency.</span>
+    </p>
+  </div>
+</div>
             </ScrollReveal>
           </div>
         </div>
@@ -206,21 +373,53 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 border-t border-[#C9A84C]/10 font-montserrat">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <ScrollReveal variant="fade-left" delay={0.2}>
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-cormorant font-light leading-tight text-[#F5F0E8]">
-                Where Ambitious Brands
-                <br />
-                Become Unforgettable
-              </h2>
+           <div>
+  {/* Section Title */}
+  <h2 className="text-3xl sm:text-4xl md:text-6xl font-cormorant font-light leading-tight text-[#F5F0E8]">
+    Where Ambitious Brands
+    <br />
+    <span className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent">
+      Become Unforgettable
+    </span>
+  </h2>
 
-              <div className="w-20 h-[2px] bg-[#C9A84C] my-8" />
+  {/* Premium Divider */}
+  <div className="w-24 h-[2px] bg-gradient-to-r from-[#C9A84C] to-transparent my-8" />
 
-              <p className="text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
-                Every strategy we develop, every identity we design,
-                and every experience we create is built to move your
-                brand from recognition to remembrance.
-              </p>
-            </div>
+  {/* Story Paragraph */}
+  <div className="border-l-2 border-[#C9A84C]/40 pl-6">
+    <p className="text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light text-base md:text-lg transition-all duration-500 hover:text-[#F5F0E8]">
+      <span className="text-[#C9A84C] font-medium">
+        We believe
+      </span>{" "}
+      every ambitious business already has something worth remembering.
+      Our job is to{" "}
+      <span className="text-[#C9A84C]">uncover it</span>,{" "}
+      <span className="text-[#C9A84C]">shape it</span>, and help the world
+      see it.
+
+      <br />
+      <br />
+
+      Through{" "}
+      <span className="text-white font-medium">strategy</span>,{" "}
+      <span className="text-white font-medium">branding</span>,{" "}
+      <span className="text-white font-medium">marketing</span>, and{" "}
+      <span className="text-white font-medium">digital experiences</span>,
+      we turn bold ideas into brands people trust, remember, and choose.
+
+      <br />
+      <br />
+
+      Because growth isn't about being louder.
+      <br />
+      It's about becoming{" "}
+      <span className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent font-semibold">
+        unforgettable.
+      </span>
+    </p>
+  </div>
+</div>
           </ScrollReveal>
 
           <ScrollReveal variant="fade-right" delay={0.2}>

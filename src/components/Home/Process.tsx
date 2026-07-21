@@ -99,13 +99,112 @@ const Process = () => {
         </div>
       </div>
 
-      <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-cinzel text-[#C9A84C] mb-4 sm:mb-6 tracking-wide">
-        {step.title}
-      </h3>
+      <motion.h3
+  initial={{
+    opacity: 0,
+    y: 60,
+    scale: 0.9,
+    filter: "blur(10px)",
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+  }}
+  viewport={{ once: true, amount: 0.5 }}
+  transition={{
+    duration: 1,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  whileHover={{
+    scale: 1.03,
+    textShadow: "0 0 20px rgba(201,168,76,0.35)",
+  }}
+  className="
+    relative
+    inline-block
+    text-3xl
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    xl:text-8xl
+    font-bold
+    font-cinzel
+    tracking-wide
+    mb-20
+    bg-gradient-to-b
+    from-[#FFF6D5]
+    via-[#E6C86E]
+    to-[#B88A1D]
+    bg-clip-text
+    text-transparent
+  "
+>
+  {step.title}
 
-      <p className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl font-montserrat text-[#F5F0E8]/75 leading-relaxed">
-        {step.description}
-      </p>
+  <motion.span
+    initial={{ width: 0 }}
+    whileInView={{ width: "100%" }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.5, duration: 1 }}
+    className="absolute -bottom-3 left-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent"
+  />
+</motion.h3>
+
+<motion.p
+  initial={{
+    opacity: 0,
+    y: 40,
+    filter: "blur(6px)",
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+  }}
+  viewport={{ once: true, amount: 0.5 }}
+  transition={{
+    delay: 0.3,
+    duration: 1,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  whileHover={{
+    y: -2,
+  }}
+  className="
+    relative
+    max-w-xs
+    sm:max-w-xl
+    md:max-w-2xl
+    lg:max-w-3xl
+
+    text-sm
+    sm:text-base
+    md:text-lg
+    lg:text-xl
+
+    font-montserrat
+    font-light
+    text-[#F5F0E8]/80
+
+    leading-[2]
+    tracking-[0.03em]
+
+    border-l-2
+    border-[#C9A84C]/50
+    pl-6
+
+    transition-all
+    duration-500
+    hover:text-[#F5F0E8]
+    hover:border-[#C9A84C]
+  "
+>
+  <span className="absolute -left-2 top-2 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+
+  {step.description}
+</motion.p>
     </motion.div>
   );
 })}

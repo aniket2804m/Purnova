@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { motion} from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 
@@ -50,19 +51,84 @@ const Card = () => {
       </div>
 
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-5 md:px-10 mb-20 text-center">
-        <h2 className="text-4xl mt-10 md:text-6xl font-bold font-cinzel text-[#F5F0E8]">
-          Our <span className="text-[#C9A84C]">Services</span>
-        </h2>
+      <div className="max-w-7xl mx-auto px-5 md:px-10 mb-24 text-center">
 
-        <p className="count-para text-[#C9A84C] mt-5 font-bold font-cinzel text-lg sm:text-xl lg:text-2xl leading-relaxed">
-            "Marketing Built For Growth, Not Guesswork."
-          </p>
+  {/* Section Title */}
+  <motion.h2
+    initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+    className="text-4xl md:text-6xl lg:text-7xl font-bold font-cinzel text-[#F5F0E8] mt-10"
+  >
+    Our{" "}
+    <span className="bg-gradient-to-r from-[#FFF3C4] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent">
+      Services
+    </span>
+  </motion.h2>
 
-        <p className="mt-5 font-montserrat text-xl text-[#F5F0E8]/70 max-w-6xl mx-auto sm:text-base">
-          Every business has different goals, challenges, and opportunities. That's why we combine strategy, creativity, technology, and performance marketing to create solutions that help brands attract attention, generate demand, and drive measurable growth.
-        </p>
-      </div>
+  {/* Premium Divider */}
+  <motion.div
+    initial={{ width: 0 }}
+    whileInView={{ width: "120px" }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.3, duration: 1 }}
+    className="h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent mx-auto mt-6"
+  />
+
+  {/* Tagline */}
+  <motion.p
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.4, duration: 1 }}
+    className="relative inline-block mt-8 font-cormorant italic text-xl sm:text-2xl lg:text-3xl"
+  >
+    <span className="absolute -left-6 -top-2 text-5xl text-[#C9A84C]/30">
+      “
+    </span>
+
+    <span className="bg-gradient-to-r from-[#F7E7A8] via-[#C9A84C] to-[#F7E7A8] bg-clip-text text-transparent">
+      Marketing Built For Growth, Not Guesswork.
+    </span>
+
+    <span className="absolute -right-6 bottom-0 text-5xl text-[#C9A84C]/30">
+      ”
+    </span>
+  </motion.p>
+
+  {/* Description */}
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.6, duration: 1 }}
+    className="mt-10 max-w-5xl mx-auto"
+  >
+    <p className="relative border-l-2 border-[#C9A84C]/40 pl-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-base sm:text-lg lg:text-xl leading-[2] tracking-wide hover:text-[#F5F0E8] transition-all duration-500">
+
+      <span className="absolute -left-[5px] top-3 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+
+      Every business has different{" "}
+      <span className="text-[#C9A84C] font-medium">goals</span>,{" "}
+      <span className="text-[#C9A84C] font-medium">challenges</span>, and{" "}
+      <span className="text-[#C9A84C] font-medium">opportunities</span>.
+
+      That's why we combine{" "}
+      <span className="text-white font-medium">strategy</span>,{" "}
+      <span className="text-white font-medium">creativity</span>,{" "}
+      <span className="text-white font-medium">technology</span>, and{" "}
+      <span className="text-white font-medium">performance marketing</span>{" "}
+      to create solutions that help brands{" "}
+      <span className="text-[#C9A84C]">attract attention</span>,{" "}
+      <span className="text-[#C9A84C]">generate demand</span>, and drive{" "}
+      <span className="bg-gradient-to-r from-[#FFF3C4] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent font-semibold">
+        measurable growth.
+      </span>
+    </p>
+  </motion.div>
+
+</div>
 
       {/* Cards */}
       <div className="relative flex flex-col items-center gap-16 md:gap-24 max-w-7xl mx-auto pb-32">
@@ -87,13 +153,16 @@ const Card = () => {
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg font-montserrat text-[#C9A84C] leading-relaxed">
-                    {service.short}
-                  </p>
+                 {/* Short Tagline */}
+<p className="mt-6 inline-flex items-center gap-3 text-[#C9A84C] font-semibold tracking-[0.2em] uppercase text-xs sm:text-sm">
+  <span className="w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+  {service.short}
+</p>
 
-                  <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg font-montserrat text-[#F5F0E8]/70 leading-relaxed">
-                    {service.description}
-                  </p>
+{/* Description */}
+<p className="mt-6 border-l border-[#C9A84C]/40 pl-5 text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base md:text-lg leading-8 tracking-wide">
+  {service.description}
+</p>
 
                   <button
                     onClick={() => navigate(service.route)}

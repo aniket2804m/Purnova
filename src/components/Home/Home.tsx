@@ -219,42 +219,52 @@ const Home = () => {
             className="flex flex-col items-center justify-center font-montserrat"
           >
             <motion.h1
-              variants={{
-                hidden: { opacity: 0, y: 50, filter: "blur(12px)" },
-                visible: { 
-                  opacity: 1, 
-                  y: 0, 
-                  filter: "blur(0px)",
-                  transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1] }
-                }
-              }}
-              onHoverStart={() => {
-                if (window.innerWidth >= 768) {
-                  setShowVideo(true);
-                }
-              }}
-              onHoverEnd={() => {
-                if (window.innerWidth >= 768) {
-                  setShowVideo(false);
-                }
-              }}
-              onClick={() => {
-                if (window.innerWidth < 768) {
-                  setShowVideo(true);
-                  setTimeout(() => {
-                    setShowVideo(false);
-                  }, 12000);
-                }
-              }}
-              whileHover={{
-                scale: 1.02,
-                textShadow: "0 0 30px rgba(201,168,76,0.6)",
-              }}
-              className="
+  variants={{
+    hidden: {
+      opacity: 0,
+      y: 50,
+      filter: "blur(12px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  }}
+  onHoverStart={() => {
+    if (window.innerWidth >= 768) {
+      setShowVideo(true);
+    }
+  }}
+  onHoverEnd={() => {
+    if (window.innerWidth >= 768) {
+      setShowVideo(false);
+    }
+  }}
+  onClick={() => {
+    if (window.innerWidth < 768) {
+      setShowVideo(true);
+      setTimeout(() => {
+        setShowVideo(false);
+      }, 12000);
+    }
+  }}
+  whileHover={{
+    scale: 1.03,
+    letterSpacing: "0.14em",
+    textShadow:
+      "0 0 20px rgba(201,168,76,0.4), 0 0 50px rgba(201,168,76,0.25)",
+  }}
+  className="
+    relative
+    inline-block
     font-cinzel
-    text-[#C9A84C]
+    font-bold
     leading-none
-    tracking-[0.1em]
 
     text-5xl
     sm:text-6xl
@@ -262,26 +272,74 @@ const Home = () => {
     lg:text-8xl
     xl:text-[7rem]
     2xl:text-[9rem]
+
+    tracking-[0.12em]
+
+    bg-gradient-to-b
+    from-[#FFF6D5]
+    via-[#E6C86E]
+    to-[#B88A1D]
+    bg-clip-text
+    text-transparent
+
+    drop-shadow-[0_0_25px_rgba(201,168,76,0.18)]
+    transition-all
+    duration-500
+    cursor-pointer
+    select-none
+    mb-20
   "
-            >
-              PURNOVA
-            </motion.h1>
+>
+  PURNOVA
+
+  {/* Premium Animated Underline */}
+  <motion.span
+    initial={{ width: "0%" }}
+    whileInView={{ width: "100%" }}
+    transition={{ duration: 1.4, delay: 0.5 }}
+    className="absolute -bottom-3 left-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent"
+  />
+
+  {/* Soft Glow Behind */}
+  <motion.span
+    animate={{
+      opacity: [0.15, 0.35, 0.15],
+      scale: [1, 1.08, 1],
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 4,
+      ease: "easeInOut",
+    }}
+    className="absolute inset-0 -z-10 blur-3xl bg-[#C9A84C]/20"
+  />
+</motion.h1>
 
           <motion.p
   variants={{
-    hidden: { opacity: 0, y: 35, filter: "blur(8px)" },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    hidden: {
+      opacity: 0,
+      y: 35,
+      filter: "blur(8px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
       filter: "blur(0px)",
-      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+      transition: {
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1],
+      },
     },
   }}
   className="
+    relative
+    inline-block
     text-[#F5F0E8]
     uppercase
     font-cormorant
-    tracking-[0.25em]
+    font-light
+    tracking-[0.3em]
     mt-6
     text-sm
     sm:text-base
@@ -289,44 +347,61 @@ const Home = () => {
     lg:text-2xl
     xl:text-3xl
     2xl:text-4xl
+    leading-relaxed
+    transition-all
+    duration-500
+    hover:text-white
   "
 >
-  We Help Businesses Become Impossible To Ignore. 
+  <span className="absolute -left-8 top-1/2 -translate-y-1/2 w-5 h-[1px] bg-[#C9A84C]"></span>
+
+  <span className="bg-gradient-to-r from-[#F5F0E8] via-[#FFF7D6] to-[#C9A84C] bg-clip-text text-transparent">
+    We Help Businesses Become Impossible To Ignore.
+  </span>
+
+  <span className="absolute -right-8 top-1/2 -translate-y-1/2 w-5 h-[1px] bg-[#C9A84C]"></span>
 </motion.p>
 
 <motion.p
   variants={{
-    hidden: { opacity: 0, y: 35, filter: "blur(8px)" },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    hidden: {
+      opacity: 0,
+      y: 35,
+      filter: "blur(8px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
       filter: "blur(0px)",
-      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+      transition: {
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1],
+      },
     },
   }}
   className="
-    text-[#F5F0E8]/75
+    relative
+    text-[#F5F0E8]/80
     font-montserrat
     font-light
-    leading-[1.7]
+    leading-[1.9]
+    tracking-wide
     text-center
     mx-auto
-    mt-8
+    mt-10
 
     w-full
     max-w-[350px]
     sm:max-w-[600px]
     md:max-w-[850px]
-    lg:max-w-[1100px]
-    xl:max-w-[1250px]
-    2xl:max-w-[1450px]
+    lg:max-w-[1050px]
+    xl:max-w-[1200px]
 
     text-base
     sm:text-lg
     md:text-xl
     lg:text-2xl
     xl:text-3xl
-    2xl:text-4xl
 
     px-4
     sm:px-6
@@ -334,7 +409,33 @@ const Home = () => {
     lg:px-0
   "
 >
-  From branding and websites to social media and performance marketing, we help ambitious businesses attract attention, build trust, and generate measurable growth. 
+  <span className="text-[#C9A84C] font-medium">
+    From branding
+  </span>{" "}
+  and{" "}
+  <span className="text-white font-medium">
+    websites
+  </span>{" "}
+  to{" "}
+  <span className="text-[#C9A84C] font-medium">
+    social media
+  </span>{" "}
+  and{" "}
+  <span className="text-white font-medium">
+    performance marketing
+  </span>
+  , we help ambitious businesses{" "}
+  <span className="text-[#C9A84C]">
+    attract attention
+  </span>
+  ,{" "}
+  <span className="text-[#C9A84C]">
+    build trust
+  </span>
+  , and generate{" "}
+  <span className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent font-semibold">
+    measurable growth.
+  </span>
 </motion.p>
 
           </motion.div>

@@ -77,19 +77,90 @@ const Testimonials = () => {
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Heading Section */}
-        <div className="text-center mb-16">
-          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-[#F5F0E8] font-cinzel tracking-wide leading-tight">
-            The Brands Behind {" "}
-            <span className="text-[#C9A84C]">
-              The Success Stories
-            </span>
-          </h2>
+       <div className="text-center mb-20">
 
-          <p className="mt-6 max-w-6xl mx-auto text-[#F5F0E8] font-light text-base md:text-lg leading-relaxed">
-            Real feedback from clients who partnered with us to scale their
-            business, increase revenue, and build a stronger digital presence.Every partnership begins with a goal. More visibility. Better leads. Stronger positioning. Greater growth. Here's what our clients have to say about the journey and the results we created together.
-          </p>
-        </div>
+  {/* Heading */}
+  <motion.h2
+    initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+    className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-cinzel leading-tight tracking-wide"
+  >
+    <span className="text-[#F5F0E8]">
+      The Brands Behind
+    </span>
+
+    <br />
+
+    <span className="relative inline-block bg-gradient-to-r from-[#FFF4CC] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent">
+      The Success Stories
+
+      <motion.span
+        initial={{ width: 0 }}
+        whileInView={{ width: "100%" }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 1 }}
+        className="absolute -bottom-3 left-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent"
+      />
+    </span>
+  </motion.h2>
+
+  {/* Luxury Tagline */}
+  <motion.p
+    initial={{ opacity: 0, y: 25 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3, duration: 0.8 }}
+    className="mt-8 font-cormorant italic text-[#C9A84C] text-xl sm:text-2xl lg:text-3xl"
+  >
+    “Every great result begins with trust.”
+  </motion.p>
+
+  {/* Description */}
+  <motion.div
+    initial={{ opacity: 0, y: 35 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.5, duration: 1 }}
+    className="mt-10 max-w-5xl mx-auto"
+  >
+    <p className="relative border-l-2 border-[#C9A84C]/40 pl-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-base md:text-lg leading-[2] tracking-wide">
+
+      <span className="absolute -left-[5px] top-3 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+
+      Real feedback from clients who partnered with us to
+      <span className="text-[#C9A84C] font-medium">
+        {" "}scale their business
+      </span>
+      ,
+      <span className="text-white font-medium">
+        {" "}increase revenue
+      </span>
+      , and build a
+      <span className="text-white font-medium">
+        {" "}stronger digital presence.
+      </span>
+
+      <br />
+      <br />
+
+      Every partnership begins with a goal.
+      <span className="text-[#C9A84C]"> More visibility.</span>
+      <span className="text-[#C9A84C]"> Better leads.</span>
+      <span className="text-[#C9A84C]"> Stronger positioning.</span>
+      <span className="text-[#C9A84C]"> Greater growth.</span>
+
+      <br />
+      <br />
+
+      Here's what our clients have to say about the journey and the
+      <span className="bg-gradient-to-r from-[#FFF4CC] via-[#C9A84C] to-[#A97C20] bg-clip-text text-transparent font-semibold">
+        {" "}results we created together.
+      </span>
+    </p>
+  </motion.div>
+
+</div>
 
         {/* Testimonials Grid / Mobile Slider */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">

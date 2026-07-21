@@ -132,31 +132,77 @@ const Count = () => {
         </div>
 
         {/* Text descriptions */}
-        <div className="max-w-5xl mx-auto text-center mb-16 space-y-6">
-          <p className="count-para text-[#C9A84C] font-bold font-cinzel text-lg sm:text-xl lg:text-2xl leading-relaxed">
-            "Strategy. Creativity. Growth."
-          </p>
+       <div className="max-w-5xl mx-auto text-center mb-20 space-y-10">
 
-          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
-            At Purnova, we believe great marketing isn't about being louder. It's about being clearer, more memorable, and impossible to ignore.
-          </p>
+  {/* Opening Quote */}
+  <p className="count-para relative inline-block text-[#C9A84C] font-cormorant italic text-2xl sm:text-3xl lg:text-4xl tracking-wide">
+    <span className="absolute -left-6 -top-3 text-5xl text-[#C9A84C]/30">“</span>
 
-          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
-            We partner with businesses that want more than likes and impressions. They want stronger brands, better customer connections, qualified leads, and sustainable growth.
-          </p>
+    <span className="bg-gradient-to-r from-[#F7E7A8] via-[#C9A84C] to-[#F7E7A8] bg-clip-text text-transparent">
+      Strategy. Creativity. Growth.
+    </span>
 
-          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
-            That's why every project begins with strategy, is powered by creativity, and is measured by results.
-          </p>
+    <span className="absolute -right-6 bottom-0 text-5xl text-[#C9A84C]/30">”</span>
+  </p>
 
-          <p className="count-para text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-6xl mx-auto">
-            From branding and content to websites and performance marketing, we build systems that help businesses grow today and stay relevant tomorrow.
-          </p>
+  {/* Paragraph 1 */}
+  <div className="count-para border-l-2 border-[#C9A84C]/50 pl-6 text-left">
+    <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
+      At <span className="text-[#C9A84C] font-medium">Purnova</span>, we believe great marketing isn't about being louder.
+      It's about being <span className="text-white font-medium">clearer</span>,
+      more <span className="text-white font-medium">memorable</span>, and
+      <span className="text-[#C9A84C]"> impossible to ignore.</span>
+    </p>
+  </div>
 
-          <p className="count-para text-[#C9A84C]/75 font-bold font-montserrat text-sm sm:text-base lg:text-lg leading-relaxed max-w-4xl mx-auto">
-            "Because marketing should do more than look good. It should move your business forward."
-          </p>
-        </div>
+  {/* Paragraph 2 */}
+  <div className="count-para border-l-2 border-[#C9A84C]/40 pl-6 text-left">
+    <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
+      We partner with businesses that want more than
+      <span className="text-[#C9A84C]"> likes</span> and
+      <span className="text-[#C9A84C]"> impressions</span>.
+      They want stronger brands, better customer connections,
+      qualified leads, and
+      <span className="text-white font-medium"> sustainable growth.</span>
+    </p>
+  </div>
+
+  {/* Paragraph 3 */}
+  <div className="count-para border-l-2 border-[#C9A84C]/40 pl-6 text-left">
+    <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
+      That's why every project begins with
+      <span className="text-[#C9A84C]"> strategy</span>,
+      is powered by
+      <span className="text-[#C9A84C]"> creativity</span>,
+      and is measured by
+      <span className="text-white font-medium"> results.</span>
+    </p>
+  </div>
+
+  {/* Paragraph 4 */}
+  <div className="count-para border-l-2 border-[#C9A84C]/40 pl-6 text-left">
+    <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
+      From
+      <span className="text-[#C9A84C]"> branding</span> and
+      <span className="text-[#C9A84C]"> content</span> to
+      <span className="text-white font-medium"> websites</span> and
+      <span className="text-white font-medium"> performance marketing</span>,
+      we build systems that help businesses grow today and stay relevant tomorrow.
+    </p>
+  </div>
+
+  {/* Closing Quote */}
+  <div className="count-para pt-6">
+    <p className="font-cormorant italic text-xl sm:text-2xl lg:text-3xl leading-relaxed">
+      <span className="bg-gradient-to-r from-[#C9A84C] via-[#F7E7A8] to-[#C9A84C] bg-clip-text text-transparent">
+        “Because marketing should do more than look good.
+        <br />
+        It should move your business forward.”
+      </span>
+    </p>
+  </div>
+
+</div>
 
         {/* Count Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">

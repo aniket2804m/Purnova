@@ -78,9 +78,9 @@ const Team = () => {
       hoverImage: imgh1,
       clickimg: clickimg1,
       shortDesc:
-        "Show me the story. Then show me the spreadsheet...",
+        "Attention gets you noticed. Strategy keeps you remembered",
       fullDesc:
-        "Old Bollywood Songs, Cycling and Talking. Weapons: Phone, Client Emails, Sense of Humour, Killer Beard, Bollywood Movie Situations etc.",
+        "Rushikesh believes every successful brand is built twice, first as a strategy, then as a business. Long before campaigns launch or content goes live, he's already asking the difficult questions that shape lasting growth. He founded Purnova on the belief that creativity earns attention, but strategy earns trust. Everything else is just noise.",
     },
     {
       id: 2,
@@ -90,9 +90,9 @@ const Team = () => {
       hoverImage: imgh3,
       clickimg: clickimg3,
       shortDesc:
-        "My mind multitasks so your brand doesn't have to...",
+        "My mind multitasks so your brand doesn't have to.",
       fullDesc:
-        "From strategy to ideas to animal conversations and puns (really bad puns).",
+        "Pallavi somehow manages five conversations, three deadlines, and one brand crisis all at once and still remembers your dog's name. She calls her mind wonderfully scattered but in her hands, chaos becomes clarity and moving pieces become a plan. Clients don't just trust her with their brand; they trust her with the version they know exists but haven't yet found the words to express.",
     },
     {
       id: 3,
@@ -104,7 +104,7 @@ const Team = () => {
       shortDesc:
         "I don't talk strategy. I deliver it...",
       fullDesc:
-        "Meeting friends in his 30 days and meeting his friends. Wikipedia of Bollywood Movies. People used to call him Napster.",
+        "Saurabh has probably said eight sentences all week, and every one of them moved a number. He's not cold; he's intentional. The kind of person who believes most meetings could've been emails, and most emails could've been silence. While others are busy explaining their wins, he's already building the next campaign, quietly letting the dashboard say everything he doesn't.",
     },
      {
       id: 4,
@@ -116,7 +116,7 @@ const Team = () => {
       shortDesc:
         "I design for the years, not the algorithm...",
       fullDesc:
-        "From strategy to ideas to animal conversations and puns (really bad puns).",
+        "Rutuja designs as though every brand lends her its voice before she opens the first artboard. She doesn't decorate identities, she uncovers them. Every layout, every colour, every line exists for a reason, until the work feels less like design and more like something that always belonged. Her art isn't made for today. It's made to outlive it.",
     },
     {
       id: 5,
@@ -128,7 +128,7 @@ const Team = () => {
       shortDesc:
         "Tell me the task. I'll skip the drama...",
       fullDesc:
-        "From strategy to ideas to animal conversations and puns (really bad puns).",
+        "Aniket believes reliability is a skill, not a personality trait. He delivers exactly what's needed no shortcuts, no overcomplication, no missed deadlines. Ask him for ten things, and you'll get ten things back, finished when promised. He jokes that he only follows instructions, but what he really follows is discipline. Excuses simply don't fit into his workflow.",
     },
     {
       id: 6,
@@ -140,7 +140,7 @@ const Team = () => {
       shortDesc:
         "Every brand has a story. I just go looking for it...",
       fullDesc:
-        "From strategy to ideas to animal conversations and puns (really bad puns).",
+        "Anushka sees stories long before she writes them. In half-finished ideas, overlooked details, and brands still searching for their identity, she finds the narrative waiting to be uncovered. She blends curiosity with strategy, turning ordinary briefs into stories people don't just read they remember. For her, content isn't decoration. It's the voice that gives a brand its place in the world.",
     },
     {
       id: 7,
@@ -152,7 +152,7 @@ const Team = () => {
       shortDesc:
         "I don't find the moment. The moment finds me...",
       fullDesc:
-        "Meeting friends in his 30 days and meeting his friends. Wikipedia of Bollywood Movies. People used to call him Napster.",
+        "Tejas doesn't chase the perfect shot he simply happens to be there when it arrives. He's the kind of observer who notices the half-second between moments, the one everyone else blinks through. Where others see a meeting, a street, or a product on a table, he sees the beginning of a story waiting to be told and instinctively knows when to press record.",
     },
     {
       id: 8,
@@ -164,7 +164,7 @@ const Team = () => {
       shortDesc:
         "Keep it real, or don't keep it at all...",
       fullDesc:
-        "From strategy to ideas to animal conversations and puns (really bad puns).",
+        "Pratap edits the way he speaks straightforward, a little loud, and completely uninterested in polish for the sake of polish. He's not trying to make things look expensive; he's trying to make them feel real. There's a rawness to his cuts that no amount of big-budget gloss can fake, the kind that comes from someone who grew up watching stories, not stock footage.",
     },
     {
       id: 9,
@@ -176,7 +176,7 @@ const Team = () => {
       shortDesc:
         "I don't edit videos. I edit feelings into them...",
       fullDesc:
-        "From strategy to ideas to animal conversations and puns (really bad puns).",
+        "Ritesh treats every timeline like it owes someone an emotion. He'll spend an hour refining a cut most people would never notice simply because he knows they'll feel it. For him, editing isn't assembly; it's the difference between a video that's watched and one that's remembered. He doesn't finish projects so much as pour himself into them, frame by frame, until every second earns its place.",
     },
     {
       id: 10,
@@ -188,7 +188,7 @@ const Team = () => {
       shortDesc:
         "Difficult is just a feature I haven't built yet...",
       fullDesc:
-        "Old Bollywood Songs, Cycling and Talking. Weapons: Phone, Client Emails, Sense of Humour, Killer Beard, Bollywood Movie Situations etc.",
+        "Avinash hears, That's not technically possible,the way most people hear a dare. He doesn't look for easy builds; he looks for the ones with a catch, the kind that make other developers wince. Somewhere between the bug nobody could trace and the deadline nobody believed in, he finds the only satisfaction that matters to him: proving that impossible was just an opinion.",
     },
   ];
 
@@ -202,50 +202,39 @@ const Team = () => {
       <div className="absolute bottom-40 right-1/4 w-96 h-96 bg-[#C9A84C]/2 rounded-none blur-[150px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-5 z-10">
-       <motion.h2
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{
-    duration: 0.8,
-    ease: "easeOut",
-  }}
-  className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-[#C9A84C] font-cinzel mt-6 md:mt-8 lg:mt-10 mb-4 md:mb-5 tracking-wide"
->
-  Meet The Purnovians
-</motion.h2>
+  {/* Section Heading */}
+  <motion.h2
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-[#C9A84C] font-cinzel mt-8 mb-12 tracking-wide"
+  >
+    Meet The Purnovians
+  </motion.h2>
 
+  {/* Intro Section */}
+  <div className="py-6 px-5">
+    <div className="flex flex-col items-center text-center gap-8 font-montserrat">
 
-<div
-  // ref={shootersRef}
-  className="mb-5 py-3 px-5 sm:px-6 md:px-8 lg:px-0"
->
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center font-montserrat">
-
-    <motion.div
-      className=" text-center lg:text-left lg:pl-16 md:pl-8"
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-    >
+      {/* Emoji */}
       <motion.h3
         initial={{ scale: 0.5, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{
-          duration: 5,
-          type: "spring",
-        }}
-        className="text-[#C9A84C] text-3xl sm:text-4xl font-black leading-none"
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, type: "spring" }}
+        className="text-[#C9A84C] text-5xl"
       >
         😎
       </motion.h3>
 
+      {/* Title */}
       <motion.h2
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 2 }}
-        className="mt-3 text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-cinzel text-[#F5F0E8] leading-tight lg:leading-[0.95]"
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-cinzel text-[#F5F0E8] leading-tight"
       >
         Faces Behind
         <br />
@@ -261,46 +250,23 @@ const Team = () => {
               repeat: Infinity,
               duration: 3,
             }}
-            className="absolute -bottom-2 md:-bottom-3 left-0 h-1.5 bg-[#C9A84C]"
+            className="absolute -bottom-2 left-0 h-1 bg-[#C9A84C] block"
           />
         </span>
       </motion.h2>
-    </motion.div>
 
-    <motion.div
-      className=" relative z-30 lg:ml-[-105px]"
-      initial={{ x: 100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 1.2,
-        delay: 0.3,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-    >
+      {/* Description */}
       <motion.p
-        initial={{ y: 40 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 1 }}
-        className="
-          text-base
-          sm:text-lg
-          md:text-xl
-          lg:text-2xl
-          text-[#F5F0E8]/75
-          leading-relaxed
-          font-light
-          ml-0
-          md:ml-0
-          lg:-ml-24
-          text-center
-          lg:text-left
-        "
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="max-w-4xl text-base sm:text-lg md:text-xl lg:text-2xl text-[#F5F0E8]/75 leading-relaxed font-light"
       >
         Meet the{" "}
 
         <span
-          className="relative inline-block md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#C9A84C] cursor-pointer"
+          className="relative inline-block text-[#C9A84C] font-bold cursor-pointer"
           onMouseEnter={() => setShowPurnovaImg(true)}
           onMouseLeave={() => setShowPurnovaImg(false)}
         >
@@ -308,39 +274,35 @@ const Team = () => {
 
           <motion.span
             animate={{
-              opacity: [0.3, 1, 0.3],
+              opacity: [0.2, 0.8, 0.2],
             }}
             transition={{
               repeat: Infinity,
               duration: 2,
             }}
-            className="absolute inset-0 blur-xl rounded-none -z-10"
+            className="absolute inset-0 bg-[#C9A84C]/20 blur-xl rounded-full -z-10"
           />
-        </span>
+        </span>{" "}
 
-        {" "}
-        the strategists, designers, and brand architects who made it happen.
+        — the strategists, designers, and brand architects who made it happen.
         The people your customers will never know by name, but whose thinking
         shapes every perception they hold of you.
       </motion.p>
-    </motion.div>
+    </div>
+  </div>
 
+  {/* Team Cards */}
+  <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    {teamMembers.map((member, index) => (
+      <TeamCard
+        key={member.id}
+        member={member}
+        index={index}
+        setFullscreenImage={setFullscreenImage}
+      />
+    ))}
   </div>
 </div>
-
-   
-
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
-          {teamMembers.map((member, index) => (
-            <TeamCard 
-              key={member.id} 
-              member={member} 
-              index={index}
-              setFullscreenImage={setFullscreenImage} 
-            />
-          ))}
-        </div>
-      </div>
 
 {/* Purnova Team Img */}
      <AnimatePresence>
@@ -565,44 +527,72 @@ onMouseLeave={() => {
       {/* Content */}
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-[#F5F0E8] font-cinzel tracking-wide">
-  {member.name}
-</h3>
+       <div className="mb-5">
+  {/* Name */}
+  <h3 className="relative inline-block text-2xl sm:text-3xl font-cinzel font-semibold text-[#F5F0E8] tracking-wide transition-all duration-500 hover:text-[#C9A84C]">
+    {member.name}
 
-        <p className="text-[#C9A84C]/85 text-xs tracking-wider uppercase mb-4 font-semibold font-montserrat">
-          {member.role}
+    <span className="block mt-2 h-[2px] w-14 bg-gradient-to-r from-[#C9A84C] to-transparent"></span>
+  </h3>
+
+  {/* Role */}
+  <div className="mt-4 flex items-center justify-center sm:justify-start gap-3">
+  <span className="w-8 h-[1px] bg-[#C9A84C]"></span>
+
+  <p className="text-[#C9A84C] uppercase tracking-[0.35em] text-xs sm:text-sm font-cinzel">
+    {member.role}
+  </p>
+
+  <span className="w-8 h-[1px] bg-[#C9A84C]"></span>
+</div>
+</div>
+
+       <p className="relative mt-3 pl-8 text-[#F5F0E8]/85 font-cormorant italic text-lg sm:text-xl leading-8 tracking-wide min-h-[70px]">
+  <span className="absolute left-0 -top-2 text-4xl text-[#C9A84C]">
+    “
+  </span>
+
+  <span className="bg-[#C9A84C]/10 px-2 py-1 rounded-sm border-l-2 border-[#C9A84C]">
+    {member.shortDesc.replace(/^"|"$/g, "")}
+  </span>
+
+  <span className="text-[#C9A84C] text-2xl ml-1">
+    ”
+  </span>
+</p>
+
+<AnimatePresence mode="wait">
+  {showMore && (
+    <motion.div
+      initial={{
+        height: 0,
+        opacity: 0,
+        y: -10,
+      }}
+      animate={{
+        height: "auto",
+        opacity: 1,
+        y: 0,
+      }}
+      exit={{
+        height: 0,
+        opacity: 0,
+        y: -10,
+      }}
+      transition={{
+        duration: 0.45,
+        ease: "easeOut",
+      }}
+      className="overflow-hidden"
+    >
+      <div className="mt-6 border-l-2 border-[#C9A84C]/60 pl-5">
+        <p className="text-[#F5F0E8]/70 font-montserrat font-light text-[14px] sm:text-[15px] leading-8 tracking-wide italic">
+          {member.fullDesc}
         </p>
-
-        <p className="text-[#F5F0E8]/70 font-montserrat font-light text-sm leading-relaxed min-h-[48px]">
-          {member.shortDesc}
-        </p>
-
-        <AnimatePresence>
-          {showMore && (
-            <motion.div
-              initial={{
-                height: 0,
-                opacity: 0,
-              }}
-              animate={{
-                height: "auto",
-                opacity: 1,
-              }}
-              exit={{
-                height: 0,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.4,
-              }}
-              className="overflow-hidden"
-            >
-              <p className="mt-4 text-[#F5F0E8]/60 font-montserrat font-light text-sm leading-relaxed">
-                {member.fullDesc}
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
         <button
           onClick={() =>

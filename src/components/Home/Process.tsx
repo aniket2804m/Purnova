@@ -191,9 +191,9 @@ const Process = () => {
     leading-[2]
     tracking-[0.03em]
 
-    border-l-2
+    border-x-2
     border-[#C9A84C]/50
-    pl-6
+    px-6
 
     transition-all
     duration-500
@@ -201,7 +201,6 @@ const Process = () => {
     hover:border-[#C9A84C]
   "
 >
-  <span className="absolute -left-2 top-2 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
 
   {step.description}
 </motion.p>

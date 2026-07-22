@@ -124,9 +124,7 @@ const Testimonials = () => {
     transition={{ delay: 0.5, duration: 1 }}
     className="mt-10 max-w-5xl mx-auto"
   >
-    <p className="relative border-l-2 border-[#C9A84C]/40 pl-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-base md:text-lg leading-[2] tracking-wide">
-
-      <span className="absolute -left-[5px] top-3 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+    <p className="relative border-x-2 border-[#C9A84C]/40 px-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-base md:text-lg leading-[2] tracking-wide">
 
       Real feedback from clients who partnered with us to
       <span className="text-[#C9A84C] font-medium">

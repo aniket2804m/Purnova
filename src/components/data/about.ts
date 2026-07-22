@@ -10,29 +10,40 @@ import {
 export const services = [
   {
     number: "01",
-    title: "Performance Marketing",
-    desc: "ROI-focused campaigns that drive measurable growth.",
-  },
-  {
-    number: "02",
-    title: "SEO Optimization",
-    desc: "Increase visibility and dominate search rankings.",
-  },
-  {
-    number: "03",
-    title: "Lead Generation",
-    desc: "Convert visitors into qualified customers.",
-  },
-  {
-    number: "04",
-    title: "Website Development",
-    desc: "Websites that turn visitors into customers.",
-  },
-  {
-    number: "05",
     title: "Brand Strategy",
     desc: "Build memorable brands that stand apart.",
   },
+  {
+    number: "02",
+    title: "Performance Marketing",
+    desc: "Turn marketing spend into measurable business growth.",
+  },
+  {
+    number: "03",
+    title: "Social Media Marketing",
+    desc: "Build memorable brands that stand apart.",
+  },
+  {
+    number: "04",
+    title: "SEO Optimization",
+    desc: "Get found by the people already looking for what you offer.",
+  },
+  {
+    number: "05",
+    title: "Content Creation",
+    desc: "Turn ideas into compelling content that builds trust and inspires action."
+},
+{
+    number: "06",
+    title: "Video Creation",
+    desc: "Bring your brand to life with videos that captivate, engage, and convert."
+},
+  {
+    number: "07",
+    title: "Website Development",
+    desc: "Websites that turn visitors into customers.",
+  },
+  
 ];
 
 export const stats = [

@@ -25,22 +25,13 @@ export const services = [
         explore: "Explore Performance Marketing"
     },
     {
-        title: "Website Development",
-        image: website,
-        short: "Websites designed to convert visitors into customers.",
-        description: "We create fast, responsive, and user focused websites that strengthen credibility and drive action.",
-        icon: "🎯",
-        route: "/web",
-        explore: "Explore Website Development"
-    },
-    {
-        title: "Google Ads",
-        image: google,
-        short: "Reach high intent customers exactly when they're searching.",
-        description: "Our Google Ads campaigns are built to increase visibility, generate qualified leads, and maximize return on investment.",
-        icon: "💻",
-        route: "/google",
-        explore: "Explore Google Ads"
+        title: "Social Media Marketing",
+        image: social,
+        short: "Create content that connects, engages, and builds trust.",
+        description: "From strategy and content creation to community growth, we help brands stay relevant where their audience spends time.",
+        icon: "📈",
+        route: "/social",
+        explore: " Explore Social Media Marketing"
     },
     {
         title: "SEO Optimization",
@@ -52,13 +43,33 @@ export const services = [
         explore: "Explore SEO Services"
     },
     {
-        title: "Social Media Marketing",
-        image: social,
-        short: "Create content that connects, engages, and builds trust.",
-        description: "From strategy and content creation to community growth, we help brands stay relevant where their audience spends time.",
-        icon: "📈",
-        route: "/social",
-        explore: " Explore Social Media Marketing"
+    title: "Content Creation",
+    image: google,
+    short: "Create content that captures attention and builds lasting brand trust.",
+    description: "We craft high-quality content tailored to your audience, helping your brand communicate clearly, engage consistently, and drive meaningful business growth across every platform.",
+    icon: "✍️",
+    route: "/content-creation",
+    explore: "Explore Content Creation"
+},
+{
+    title: "Video Creation",
+    image: google,
+    short: "Transform ideas into compelling videos that inspire action.",
+    description: "From concept and scripting to filming and editing, we produce professional videos that tell your brand story, increase engagement, and leave a lasting impression on your audience.",
+    icon: "🎥",
+    route: "/video-creation",
+    explore: "Explore Video Creation"
+},
+    {
+        title: "Website Development",
+        image: website,
+        short: "Websites designed to convert visitors into customers.",
+        description: "We create fast, responsive, and user focused websites that strengthen credibility and drive action.",
+        icon: "🎯",
+        route: "/web",
+        explore: "Explore Website Development"
     },
+    
+    
     
 ];

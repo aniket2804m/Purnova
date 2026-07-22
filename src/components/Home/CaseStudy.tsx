@@ -97,9 +97,7 @@ const CaseStudy = () => {
     transition={{ delay: 0.5, duration: 1 }}
     className="mt-8 max-w-4xl mx-auto"
   >
-    <p className="relative border-l-2 border-[#C9A84C]/40 pl-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-sm sm:text-base lg:text-lg leading-9 tracking-wide">
-
-      <span className="absolute -left-[5px] top-3 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+    <p className="relative border-x-2 border-[#C9A84C]/40 px-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-sm sm:text-base lg:text-lg leading-9 tracking-wide">
 
       Discover how our
       <span className="text-[#C9A84C] font-medium">

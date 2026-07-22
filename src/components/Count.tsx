@@ -22,7 +22,7 @@ const stats = [
   },
   {
     number: 4.6,
-    suffix: "*",
+    suffix: "★",
     title: "CLIENT RATING",
   },
   {
@@ -142,7 +142,7 @@ const Count = () => {
   </p>
 
   {/* Paragraph 1 */}
-  <div className="count-para border-l-2 border-[#C9A84C]/50 pl-6 text-left">
+  <div className="count-para border-x-2 border-[#C9A84C]/50 px-6 text-left">
     <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
       At <span className="text-[#C9A84C] font-medium">Purnova</span>, we believe great marketing isn't about being louder.
       It's about being <span className="text-white font-medium">clearer</span>,
@@ -152,7 +152,7 @@ const Count = () => {
   </div>
 
   {/* Paragraph 2 */}
-  <div className="count-para border-l-2 border-[#C9A84C]/40 pl-6 text-left">
+  <div className="count-para border-x-2 border-[#C9A84C]/40 px-6 text-left">
     <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
       We partner with businesses that want more than
       <span className="text-[#C9A84C]"> likes</span> and
@@ -164,7 +164,7 @@ const Count = () => {
   </div>
 
   {/* Paragraph 3 */}
-  <div className="count-para border-l-2 border-[#C9A84C]/40 pl-6 text-left">
+  <div className="count-para border-x-2 border-[#C9A84C]/40 px-6 text-left">
     <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
       That's why every project begins with
       <span className="text-[#C9A84C]"> strategy</span>,
@@ -176,7 +176,7 @@ const Count = () => {
   </div>
 
   {/* Paragraph 4 */}
-  <div className="count-para border-l-2 border-[#C9A84C]/40 pl-6 text-left">
+  <div className="count-para border-x-2 border-[#C9A84C]/40 px-6 text-left">
     <p className="text-[#F5F0E8]/80 font-montserrat text-base sm:text-lg lg:text-xl leading-9 tracking-wide">
       From
       <span className="text-[#C9A84C]"> branding</span> and
@@ -223,14 +223,15 @@ const Count = () => {
                   {item.suffix}
                 </div>
 
-                <h3 className="text-3xl sm:text-4xl md:text-5xl font-cinzel font-bold mb-4 text-[#00A878]">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-cinzel font-bold mb-4 text-[#C9A84C]">
                   <CountUp
-                    end={item.number}
-                    duration={3}
-                    suffix={item.suffix}
-                    enableScrollSpy
-                    scrollSpyOnce
-                  />
+  end={item.number}
+  duration={3}
+  decimals={item.number % 1 !== 0 ? 1 : 0}
+  suffix={item.suffix}
+  enableScrollSpy
+  scrollSpyOnce
+/>
                 </h3>
 
                 <p className="text-base sm:text-lg font-cinzel font-bold mb-1 text-[#F5F0E8] group-hover:text-[#C9A84C] transition-colors duration-300">

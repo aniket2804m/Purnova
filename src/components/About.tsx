@@ -8,7 +8,7 @@ import { ScrollReveal } from "./ScrollProgress";
 import founderImage from "../img/role/rushi sir (1).png";
 import ParticleBackground from "./ParticleBackground";
 
-import {services, stats} from "../components/data/about"
+import {services} from "../components/data/about"
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,7 +46,7 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade-down" delay={0.2}>
-            <h1 className="mt-5 text-4xl sm:text-4xl md:text-8xl font-cormorant font-light leading-tight">
+            <h1 className="mt-10 text-4xl sm:text-4xl md:text-8xl font-cormorant font-light leading-tight">
               Some Brands Are Seen
              
               <br />
@@ -57,7 +57,7 @@ export default function About() {
           </ScrollReveal>
 
           <ScrollReveal variant="fade-up" delay={0.35}>
-            <p className="max-w-3xl mx-auto mt-8 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
+            <p className="max-w-3xl border-x-2 border-[#C9A84C]/60 px-5 mx-auto mt-10 text-[#F5F0E8]/70 leading-relaxed font-montserrat font-light text-base md:text-lg">
               We help businesses build brands people trust, remember, and choose. Through strategy, creativity, and marketing, we turn ambitious ideas into lasting growth
             </p>
           </ScrollReveal>
@@ -69,7 +69,7 @@ export default function About() {
               }}
               onClick={() => { navigate("/card");  // Navigate to Contact page
               }}
-              className="mt-10 bg-[#C9A84C] hover:bg-[#F5F0E8] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
+              className="mt-20 bg-[#C9A84C] hover:bg-[#F5F0E8] text-black px-6 py-3 sm:px-10 sm:py-4 font-montserrat font-semibold tracking-widest uppercase rounded-none transition-all duration-300 text-sm sm:text-base"
             >
               Explore Our Services
             </motion.button>
@@ -105,8 +105,8 @@ export default function About() {
   you see tonight was born long before you ever noticed it.
 </p>
 
-<p className="text-lg italic tracking-wide transition-all duration-500 hover:translate-x-2">
-  <span className="text-[#C9A84C] border-l-4 border-[#C9A84C] pl-4">
+<p className="text-lg italic tracking-wide transition-all duration-500 hover:translate-x-2 border-x-4 border-[#C9A84C] px-4">
+  <span className="text-[#C9A84C] ">
     Not in silence.
   </span>
 </p>
@@ -118,16 +118,24 @@ export default function About() {
   </span>
 </p>
 
-        
-           <p className="border-l-2 border-[#C9A84C]/60 pl-5">
-  In unimaginable pressure.
-  <br />
-  In violent collisions.
-  <br />
-  In the darkness where nothing seemed possible.
-</p>
 
-           <p className="italic text-xl text-white/90 border-l-4 border-[#C9A84C] pl-6">
+<div className="border-x-2 border-[#C9A84C]/60 px-6 space-y-2 transition-all duration-500 hover:border-[#C9A84C] hover:translate-x-2">
+  <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
+    In unimaginable pressure.
+  </p>
+
+  <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
+    In violent collisions.
+  </p>
+
+  <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
+   In the darkness where nothing seemed possible.
+  </p>
+</div>
+        
+          
+
+           <p className="italic text-xl text-white/90 border-x-4 border-[#C9A84C] px-6">
   Only then...
   <br />
   did it become light.
@@ -137,7 +145,7 @@ export default function About() {
   Brands are born the same way.
 </p>
 
-<div className="border-l-2 border-[#C9A84C]/60 pl-6 space-y-2 transition-all duration-500 hover:border-[#C9A84C] hover:translate-x-2">
+<div className="border-x-2 border-[#C9A84C]/60 px-6 space-y-2 transition-all duration-500 hover:border-[#C9A84C] hover:translate-x-2">
   <p className="text-[#F5F0E8]/75 hover:text-white transition-colors duration-300">
     Not from a <span className="text-[#C9A84C] font-medium">logo.</span>
   </p>
@@ -151,7 +159,7 @@ export default function About() {
   </p>
 </div>
 
-<p className="text-lg md:text-xl italic text-white/90 border-l-4 border-[#C9A84C] pl-6 py-2 transition-all duration-500 hover:translate-x-2 hover:text-white">
+<p className="text-lg md:text-xl italic text-white/90 border-x-4 border-[#C9A84C] px-6 py-2 transition-all duration-500 hover:translate-x-2 hover:text-white">
   They are forged in difficult decisions.
 </p>
 
@@ -161,7 +169,7 @@ export default function About() {
 
           <div className="space-y-6">
 
-  <div className="border-l-2 border-[#C9A84C]/60 pl-6 space-y-2">
+  <div className="border-x-2 border-[#C9A84C]/60 px-6 space-y-2 transition-all duration-500 hover:border-[#C9A84C] hover:translate-x-2">
     <p className="text-xl text-white font-light hover:text-[#C9A84C] transition-all duration-500">
       Late nights.
     </p>
@@ -183,7 +191,7 @@ export default function About() {
     The brands people remember aren't always the biggest.
   </p>
 
-  <div className="space-y-2 border-l-2 border-[#C9A84C]/40 pl-6">
+  <div className="border-x-2 border-[#C9A84C]/60 px-6 space-y-2 transition-all duration-500 hover:border-[#C9A84C] hover:translate-x-2">
     <p className="hover:text-white transition-all duration-300">
       They're the <span className="text-[#C9A84C] font-medium">clearest.</span>
     </p>
@@ -197,7 +205,7 @@ export default function About() {
     </p>
   </div>
 
-  <div className="border-l-4 border-[#C9A84C] pl-6 space-y-3">
+  <div className="border-x-4 border-[#C9A84C] px-6 space-y-3">
     <p className="text-white">
       We find the <span className="text-[#C9A84C]">gravity</span> hidden inside ambitious businesses.
     </p>
@@ -233,7 +241,7 @@ export default function About() {
     </p>
   </div>
 
-  <p className="italic text-xl border-l-4 border-[#C9A84C] pl-6 hover:translate-x-2 transition-all duration-500">
+  <p className="italic text-xl border-x-4 border-[#C9A84C] px-6 hover:translate-x-2 transition-all duration-500">
     Like the brightest stars,
   </p>
 
@@ -319,6 +327,7 @@ export default function About() {
     Rushikesh Hande
   </h3>
 
+<div className="border-x-2 border-[#C9A84C]/60 px-5">
   <p className="mt-8 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light text-base sm:text-lg transition-all duration-500 hover:text-[#F5F0E8]">
   <span className="text-[#C9A84C] font-medium">Rushikesh</span> believes business growth is never accidental.
   Behind every enduring <span className="text-[#C9A84C] font-medium">brand</span> is a system of
@@ -328,6 +337,7 @@ export default function About() {
     {" "} unwavering consistency.
   </span>
 </p>
+</div>
 
  <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
   <span className="text-[#C9A84C] font-medium">
@@ -339,6 +349,7 @@ export default function About() {
   </span>
 </p>
 
+<div className="border-x-2 border-[#C9A84C]/60 px-5">
   <p className="mt-6 text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light transition-all duration-500 hover:text-[#F5F0E8]">
   Today, every
   <span className="text-[#C9A84C] font-medium"> strategy</span>,
@@ -355,6 +366,7 @@ export default function About() {
     {" "}they command it.
   </span>
 </p>
+</div>
 
 <div className="mt-12 relative">
   <div className="absolute -left-6 top-0 w-1 h-full bg-gradient-to-b from-[#C9A84C] to-transparent"></div>
@@ -398,7 +410,7 @@ export default function About() {
   <div className="w-24 h-[2px] bg-gradient-to-r from-[#C9A84C] to-transparent my-8" />
 
   {/* Story Paragraph */}
-  <div className="border-l-2 border-[#C9A84C]/40 pl-6">
+  <div className="border-x-2 border-[#C9A84C]/40 px-6">
     <p className="text-[#F5F0E8]/75 leading-9 tracking-wide font-montserrat font-light text-base md:text-lg transition-all duration-500 hover:text-[#F5F0E8]">
       <span className="text-[#C9A84C] font-medium">
         We believe
@@ -451,26 +463,6 @@ export default function About() {
           
         </div>
 
-        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 md:mt-24">
-          {stats.map((stat, i) => (
-            <ScrollReveal key={i} variant="scale-up" delay={0.08 * i}>
-              <motion.div
-                whileHover={{ y: -5 }}
-                className="border border-[#C9A84C]/20 p-4 sm:p-6 rounded-none bg-[#101010]/30 hover:border-[#C9A84C] transition-all duration-300 shadow-md"
-              >
-                <stat.icon className="text-[#C9A84C] mb-4 w-6 h-6 sm:w-8 sm:h-8" />
-
-                <h3 className="text-2xl sm:text-3xl font-cinzel font-semibold text-[#00A878]">
-                  {stat.value}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-[#F5F0E8]/60 mt-1 font-montserrat font-semibold">
-                  {stat.label}
-                </p>
-              </motion.div>
-            </ScrollReveal>
-          ))}
-        </div> */}
       </div>
 
       {/* BIG STATEMENT */}
@@ -490,33 +482,37 @@ export default function About() {
       </div>
 
       {/* SERVICES */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 border-t border-[#C9A84C]/10 font-montserrat">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
-          {services.map((service, idx) => (
-            <ScrollReveal key={service.number} variant="fade-up" delay={0.08 * idx}>
-              <motion.div
-                whileHover={{
-                  y: -8,
-                  borderColor: "#C9A84C",
-                }}
-                className="border border-[#C9A84C]/20 p-6 sm:p-8 min-h-[220px] bg-[#101010]/30 transition-all duration-300 rounded-none hover:shadow-[0_10px_30px_rgba(201,168,76,0.08)]"
-              >
-                <span className="text-[#C9A84C] text-2xl font-cinzel font-semibold">
-                  {service.number}
-                </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 border-t border-[#C9A84C]/10 overflow-hidden">
+  <motion.div
+    className="flex gap-5"
+    animate={{ x: ["0%", "-50%"] }}
+    transition={{
+      repeat: Infinity,
+      repeatType: "loop",
+      duration: 20,
+      ease: "linear",
+    }}
+  >
+    {[...services, ...services].map((service, idx) => (
+      <div
+        key={idx}
+        className="min-w-[280px] border border-[#C9A84C]/20 p-6 sm:p-8 bg-[#101010]/30 hover:border-[#C9A84C] transition-all duration-300"
+      >
+        <span className="text-[#C9A84C] text-2xl font-cinzel font-semibold">
+          {service.number}
+        </span>
 
-                <h3 className="mt-5 font-cinzel font-semibold text-lg text-[#F5F0E8]">
-                  {service.title}
-                </h3>
+        <h3 className="mt-5 font-cinzel font-semibold text-lg text-[#F5F0E8]">
+          {service.title}
+        </h3>
 
-                <p className="mt-4 text-sm text-[#F5F0E8]/60 font-montserrat font-light leading-relaxed">
-                  {service.desc}
-                </p>
-              </motion.div>
-            </ScrollReveal>
-          ))}
-        </div>
+        <p className="mt-4 text-sm text-[#F5F0E8]/60 leading-relaxed">
+          {service.desc}
+        </p>
       </div>
+    ))}
+  </motion.div>
+</div>
 
       {/* CTA */}
       <div className="relative py-20 md:py-40 px-4 sm:px-6 text-center overflow-hidden border-t border-[#C9A84C]/10 bg-[#0A0A0A]">

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
+import { X } from "lucide-react";
 
 import video from "../../img/video.mp4";
 import bgImg from "../../img/background 2.png";
@@ -119,38 +120,56 @@ const Home = () => {
               }
             }}
           >
-            <div className="relative w-[90vw] h-[80vh] sm:w-[500px] sm:h-[700px] md:w-[700px] md:h-[800px] lg:w-[900px] lg:h-[550px] xl:w-[1200px] xl:h-[700px] p-[3px] overflow-hidden rounded-none shadow-2xl flex items-center justify-center border border-[#C9A84C]/20">
-              <div className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
+            <div 
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-[90vw] h-[80vh] sm:w-[500px] sm:h-[700px] md:w-[700px] md:h-[800px] lg:w-[900px] lg:h-[550px] xl:w-[1200px] xl:h-[700px] p-[3px] overflow-hidden rounded-none shadow-2xl flex items-center justify-center border border-[#C9A84C]/20"
+            >
+              <div className="absolute inset-[-200%] animate-[spin_6s_linear_infinite] pointer-events-none z-0"
                 style={{
                   background: "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
                 }}
               />
               <div className="relative w-full h-full bg-[#0a0a0a] rounded-none overflow-hidden flex items-center justify-center z-10">
-                <motion.img
-                  src={roles[currentRole].hoverImage || roles[currentRole].image}
-                  loading="lazy"
-                  decoding="async"
-                  alt={roles[currentRole].title}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ 
-                    scale: 1, 
-                    opacity: 1,
-                    filter: [
-                      "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))",
-                      "drop-shadow(0 0 35px rgba(201, 168, 76, 0.7))",
-                      "drop-shadow(0 0 20px rgba(201, 168, 76, 0.5))",
-                      "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))"
-                    ]
-                  }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                  transition={{ 
-                    scale: { duration: 0.4 },
-                    opacity: { duration: 0.4 },
-                    filter: { repeat: Infinity, duration: 3, ease: "easeInOut" }
-                  }}
-                  className="w-full h-full object-contain"
-                />
+                <div className="relative max-w-full max-h-full">
+                  <motion.img
+                    src={roles[currentRole].hoverImage || roles[currentRole].image}
+                    loading="lazy"
+                    decoding="async"
+                    alt={roles[currentRole].title}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ 
+                      scale: 1, 
+                      opacity: 1,
+                      filter: [
+                        "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))",
+                        "drop-shadow(0 0 35px rgba(201, 168, 76, 0.7))",
+                        "drop-shadow(0 0 20px rgba(201, 168, 76, 0.5))",
+                        "drop-shadow(0 0 15px rgba(201, 168, 76, 0.4))"
+                      ]
+                    }}
+                    exit={{ scale: 0.8, opacity: 0 }}
+                    transition={{ 
+                      scale: { duration: 0.4 },
+                      opacity: { duration: 0.4 },
+                      filter: { repeat: Infinity, duration: 3, ease: "easeInOut" }
+                    }}
+                    className="max-w-full max-h-[85vh] block object-contain"
+                  />
+                </div>
               </div>
+
+              {/* Close Button inside the modal container (top-right corner) */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setFullscreen(false);
+                  setIsHovered(false);
+                  setHovered(false);
+                }}
+                className="close-btn absolute top-4 right-4 sm:top-5 sm:right-5 z-[1000] text-[#F5F0E8] hover:text-[#C9A84C] transition-all duration-500 ease-in-out hover:rotate-[360deg] hover:scale-110 cursor-pointer"
+              >
+                <X className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
             </div>
           </motion.div>
         )}

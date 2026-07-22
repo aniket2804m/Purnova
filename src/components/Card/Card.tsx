@@ -84,7 +84,7 @@ const Card = () => {
     transition={{ delay: 0.4, duration: 1 }}
     className="relative inline-block mt-8 font-cormorant italic text-xl sm:text-2xl lg:text-3xl"
   >
-    <span className="absolute -left-6 -top-2 text-5xl text-[#C9A84C]/30">
+    <span className="absolute -left-6 -top-2 text-5xl text-[#C9A84C]">
       “
     </span>
 
@@ -92,7 +92,7 @@ const Card = () => {
       Marketing Built For Growth, Not Guesswork.
     </span>
 
-    <span className="absolute -right-6 bottom-0 text-5xl text-[#C9A84C]/30">
+    <span className="absolute -right-6 bottom-0 text-5xl text-[#C9A84C]">
       ”
     </span>
   </motion.p>
@@ -105,9 +105,7 @@ const Card = () => {
     transition={{ delay: 0.6, duration: 1 }}
     className="mt-10 max-w-5xl mx-auto"
   >
-    <p className="relative border-l-2 border-[#C9A84C]/40 pl-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-base sm:text-lg lg:text-xl leading-[2] tracking-wide hover:text-[#F5F0E8] transition-all duration-500">
-
-      <span className="absolute -left-[5px] top-3 w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse"></span>
+    <p className="relative border-x-2 border-[#C9A84C]/40 px-6 text-left text-[#F5F0E8]/80 font-montserrat font-light text-base sm:text-lg lg:text-xl leading-[2] tracking-wide hover:text-[#F5F0E8] transition-all duration-500">
 
       Every business has different{" "}
       <span className="text-[#C9A84C] font-medium">goals</span>,{" "}
@@ -160,7 +158,7 @@ const Card = () => {
 </p>
 
 {/* Description */}
-<p className="mt-6 border-l border-[#C9A84C]/40 pl-5 text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base md:text-lg leading-8 tracking-wide">
+<p className="mt-6 border-x-2 border-[#C9A84C]/40 px-5 text-[#F5F0E8]/75 font-montserrat text-sm sm:text-base md:text-lg leading-8 tracking-wide">
   {service.description}
 </p>
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
+import { X } from "lucide-react";
 
 // Founder
 import img from "../../img/role/rushi sir (1).png"
@@ -335,12 +336,12 @@ const Team = () => {
       >
         {/* Rotating Light Border */}
         <div
-          className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
-          style={{
-            background:
-              "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
-          }}
-        />
+  className="absolute inset-[-200%] animate-[spin_6s_linear_infinite] pointer-events-none z-0"
+  style={{
+    background:
+      "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
+  }}
+/>
 
         {/* Team Image */}
         <div className="relative z-10 w-full h-full bg-[#0a0a0a] rounded-none overflow-hidden flex items-center justify-center">
@@ -394,28 +395,34 @@ const Team = () => {
       >
         {/* Animated Border */}
         <div
-          className="absolute inset-[-200%] animate-[spin_6s_linear_infinite]"
+          className="absolute inset-[-200%] animate-[spin_6s_linear_infinite] pointer-events-none z-0"
           style={{
             background:
               "conic-gradient(from 0deg, transparent 30%, #C9A84C 55%, transparent 80%)",
           }}
         />
 
-        <div className="relative w-full h-full rounded-none bg-black flex items-center justify-center overflow-hidden">
-          <img
-            src={fullscreenImage}
-            alt=""
-            loading="lazy"
-            decoding="async"
-            className="max-w-full max-h-full object-contain"
-          />
+        <div className="relative z-10 w-full h-full rounded-none bg-black flex items-center justify-center overflow-hidden">
+          <div className="relative max-w-full max-h-full">
+            <img
+              src={fullscreenImage}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="max-w-full max-h-[85vh] block object-contain"
+            />
+          </div>
         </div>
 
+        {/* Close Button inside the modal container (top-right corner) */}
         <button
-          onClick={() => setFullscreenImage(null)}
-          className="absolute top-4 right-4 w-10 h-10 rounded-none bg-[#C9A84C]/20 hover:bg-[#C9A84C]/45 text-[#F5F0E8] text-3xl leading-none flex items-center justify-center border border-[#C9A84C]/30"
+          onClick={(e) => {
+            e.stopPropagation();
+            setFullscreenImage(null);
+          }}
+          className="close-btn absolute top-4 right-4 sm:top-5 sm:right-5 z-[1000] text-[#F5F0E8] hover:text-[#C9A84C] transition-all duration-500 ease-in-out hover:rotate-[360deg] hover:scale-110 cursor-pointer"
         >
-          ×
+          <X className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
       </motion.div>
     </motion.div>
@@ -585,11 +592,11 @@ onMouseLeave={() => {
       }}
       className="overflow-hidden"
     >
-      <div className="mt-6 border-l-2 border-[#C9A84C]/60 pl-5">
-        <p className="text-[#F5F0E8]/70 font-montserrat font-light text-[14px] sm:text-[15px] leading-8 tracking-wide italic">
-          {member.fullDesc}
-        </p>
-      </div>
+     <div className="mt-6 border-x-2 border-[#C9A84C]/60 px-5">
+  <p className="text-[#F5F0E8]/70 font-montserrat font-light text-[14px] sm:text-[15px] leading-8 tracking-wide italic">
+    {member.fullDesc}
+  </p>
+</div>
     </motion.div>
   )}
 </AnimatePresence>

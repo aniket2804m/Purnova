@@ -1,0 +1,60 @@
+name: Production Deployment to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Verify Build Completion
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "::error::Build directory 'dist' was not found!"
+            exit 1
+          fi
+          if [ ! -f "dist/index.html" ]; then
+            echo "::error::Build output 'dist/index.html' was not found!"
+            exit 1
+          fi
+          if [ ! -f "dist/.htaccess" ]; then
+            echo "::error::.htaccess was not successfully copied to 'dist/'!"
+            exit 1
+          fi
+          echo "Build and configuration verified successfully!"
+
+      - name: Deploy Build Folder to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          # If Hostinger FTP account root starts at "/", change this to "public_html/"
+          # If Hostinger FTP account is already locked to "public_html/", keep it as "./"
+          server-dir: ./
+          # Exclude files you do not want the deployment script to wipe or overwrite
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .ftp-deploy-sync-state.json

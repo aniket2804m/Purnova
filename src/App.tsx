@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import NotFound from "./pages/NotFound";
-import Website from "@/components/Services/Website";
 
 const Navbar = lazy(() => import("@/components/Navbar"));
 const Hero = lazy(() => import("@/components/Hero"));
@@ -42,21 +41,16 @@ const Client = lazy(() => import("@/components/Clients"));
 
 const queryClient = new QueryClient();
 
-const RouteChangeLoader = ({ setIsLoading }: { setIsLoading: (loading: boolean) => void }) => {
-  const location = useLocation();
-
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, [location.pathname, setIsLoading]);
-
-  return null;
-};
-
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [warning, setWarning] = useState<string | null>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500); // 1.5 seconds loading screen on mount/refresh
+    return () => clearTimeout(timer);
+  }, []);
 
   const triggerWarning = (msg: string) => {
     setWarning(null);
@@ -101,7 +95,6 @@ const App = () => {
         <Sonner />
 
         <BrowserRouter>
-          <RouteChangeLoader setIsLoading={setIsLoading} />
           <LoadingScreen isLoading={isLoading} />
           <ScrollToTop />
           <CursorGlow />
